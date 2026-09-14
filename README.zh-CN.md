@@ -2,7 +2,7 @@
 type: readme
 status: active
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 tags: [zhouyi, skill, documentation]
 ---
 
@@ -16,7 +16,7 @@ tags: [zhouyi, skill, documentation]
 
 根据真实准备进度、可用时间和截止日期选择投稿窗口，比较方案、保存选择，并在计划变化后复核，最终记录实际提交。
 
-**0.7.1 版本 · 本地运行 · Node.js 22+ · 中英文文档与命令行报告**
+**0.8.0 版本 · 本地运行 · Node.js 22+ · 中英文文档与命令行报告**
 
 > 择时与方位属于文化参考，不用于计算论文录用概率。
 
@@ -161,3 +161,7 @@ npm run pack:release
 **玄学提供仪式感，科学提供优先级。** 原始星体状态收进依据，窗口展示结合自填星座的投稿时间分析。星座文化匹配只在现实、学术、用户偏好与日历偏好之后比较。未填写个人星座时不显示个人分析。
 
 经核验且适用于目标期刊的星期偏好可写入 academic_timing：target、timezone、preferred_weekdays（周一=1）、evidence（status=verified、source_url、checked_at、conclusion、applicability）。报告解释科学依据与择吉冲突时的选择。通用研究快照不自动变成周末惩罚，旧研究需确认适用性。准备、截止和可用时间始终优先。
+
+### 离线中英文切换
+
+HTML 右上角提供 **中文 / English** 按钮，切换界面标签、内置说明和朝向，不连接模型或网络。切换时保留当前记录和详情展开状态；用户原文、文献引文和原始 JSON 保留原语言。浏览器允许本地存储时会记住语言偏好。旧 HTML 快照保持不变，重新导出即可获得按钮。

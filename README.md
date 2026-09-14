@@ -2,7 +2,7 @@
 type: readme
 status: active
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 tags: [zhouyi, skill, documentation]
 ---
 
@@ -16,7 +16,7 @@ tags: [zhouyi, skill, documentation]
 
 Plan around your manuscript's readiness, availability and deadline. Compare up to three windows, choose one, revisit it when plans change, and keep the final submission record.
 
-**Release 0.7.1 · Local-first · Node.js 22+ · Chinese / English documentation**
+**Release 0.8.0 · Local-first · Node.js 22+ · Chinese / English documentation**
 
 > Calendar traditions are cultural references. This tool does not estimate acceptance probabilities.
 
@@ -159,3 +159,7 @@ The convention uses twelve equal tropical sectors and geocentric ecliptic coordi
 ## Practical evidence before ritual
 
 The report now analyses the supplied user's sign as a final cultural timing tie-breaker instead of displaying Moon/Mercury badges. Verified, applicable target-specific weekday preferences are supplied through academic_timing (target, timezone, preferred_weekdays, and evidence with status, source_url, checked_at, conclusion, applicability). Real constraints and deadline buffer take priority, then academic preference, user hours, calendar symbolism and personal zodiac symbolism. General literature is not a universal weekend penalty. The report explains conflicts and centers the principle “玄学提供仪式感，科学提供优先级” below the main content.
+
+### Offline language switch
+
+Use **中文 / English** at the top right of the HTML report. Interface labels, built-in guidance and directions switch locally; no model or network is used. Your selected record and open details remain in place. User-authored content, source quotations and raw JSON remain in their original language. The browser remembers the language when local storage is available. Previously exported snapshots remain unchanged; generate a new report to receive this control.

@@ -80,8 +80,9 @@ function inputSummary(input){
  const range=input.range?.mode==='custom'?input.range.start_date+' 至 '+input.range.end_date_exclusive+'（不含终点）':({next_week:'下周',rolling_7_days:'未来七天'}[input.range?.mode]??'未指定');
  const rows=input.mode==='cultural'?[['解读模式','周易文化解读'],['解读动作',input.cultural?.action??'默认文本解读']]:[['目标期刊 / 会议',input.project?.target||'未填写'],['稿件版本',input.project?.manuscript_version||'未填写'],['投稿阶段',stages[input.project?.stage]??'未填写'],['准备状态',ready[input.readiness?.status]??'未填写'],['推荐范围',range],['所在时区',input.timezone??'未填写'],['截止时间',input.deadline?.at?when(input.deadline.at,input.timezone):input.deadline?.status==='none'?'明确无固定截止':'尚未核实'],['提交前待办',input.readiness?.conditions?.join('；')||'未列出待办']];
  if(input.astrology?.personal_sign)rows.push(['个人星座（自填）',input.astrology.personal_sign]);
- for(const [label,value] of rows){const row=el('div',undefined,'input-field');row.append(el('dt',label),el('dd',value));box.append(row);}
+ for(const [label,value] of rows){const row=el('div',undefined,'input-field');row.append(el('dt',label),(({ '目标期刊 / 会议':input.project?.target,'稿件版本':input.project?.manuscript_version,'提交前待办':input.readiness?.conditions?.length,'解读动作':input.cultural?.action }[label])?original(el('dd',value)):el('dd',value)));box.append(row);}
 }
+function original(node){node.setAttribute('data-original','');return node;}
 function renderList(){
  const box=$('history-list');box.replaceChildren();const q=$('search').value.trim().toLowerCase();
  for(const r of records.filter(r=>JSON.stringify([title(r),r.input?.project?.target,r.created_at]).toLowerCase().includes(q))){
@@ -106,11 +107,11 @@ function sourceLink(parent,label,url){
 }
 function renderAcademic(record){
  const box=$('target-evidence');box.replaceChildren();const target=record?.input?.project?.target;
- $('evidence-target').textContent=target?'目标：'+target:'尚未提供目标期刊 / 会议；不能确定其官网规则或编辑部工作时间。';
+ $('evidence-target').replaceChildren(...(target?[el('span','目标：'),original(el('span',target))]:[el('span','尚未提供目标期刊 / 会议；不能确定其官网规则或编辑部工作时间。')]));
  const evidence=record?.input?.academic_evidence,matched=evidence&&target&&evidence.target.trim().toLowerCase()===target.trim().toLowerCase();
  for(const [key,title] of [['journal_system','官网投稿系统说明'],['editorial_office','编辑部时区与工作时间'],['conference_deadline','会议截止与 AoE 规则']]){
   const item=matched?evidence[key]:null,card=el('article',undefined,'evidence-card');card.dataset.status=item?.status??'unknown';
-  card.append(el('h4',title),el('span',({verified:'Agent 已核验 · 见来源',user_supplied:'用户提供 · 未外部核验',not_found:'已检索 · 未找到',unknown:'待核实'}[item?.status]??'待核实'),'reason-kind'),el('p',item?.summary??'本次记录尚无该目标的核验信息，请由 Agent 查证后保存。'));
+  card.append(el('h4',title),el('span',({verified:'Agent 已核验 · 见来源',user_supplied:'用户提供 · 未外部核验',not_found:'已检索 · 未找到',unknown:'待核实'}[item?.status]??'待核实'),'reason-kind'),(item?.summary?original(el('p',item.summary)):el('p','本次记录尚无该目标的核验信息，请由 Agent 查证后保存。')));
   if(item?.checked_at)card.append(el('small','记录核验日：'+item.checked_at));
   if(item?.timezone)card.append(el('p','记录时区：'+item.timezone));
   if(key==='conference_deadline'&&record?.input?.deadline?.at)card.append(el('p','本次已填写截止：'+record.input.deadline.at+'；本地时间：'+when(record.input.deadline.at,record.input.timezone)+'。这不自动证明官网采用 AoE。'));
@@ -138,12 +139,13 @@ function renderReferences(){
  official.append(el('small','文献与公共规则核验日：'+lib.checked+' · 当前 HTML 不自动刷新网络信息'));
 }
 
+function reflectionText(c){const p=el('p',c.zh??c.en);if(c.en)p.setAttribute('data-en',c.en);return p;}
 function show(r){
  selected=r;const report=r.report;renderAcademic(r);
  const policy=$('timing-decision');policy.replaceChildren();policy.hidden=!report.timing_policy;
  if(report.timing_policy){
   policy.append(el('strong','本次排序依据'),el('p',report.timing_policy.explanation));
-  const details=el('details');details.append(el('summary','查看学术依据与适用范围'),el('p',report.timing_policy.evidence.conclusion),el('p',report.timing_policy.evidence.applicability));
+  const details=el('details');details.append(el('summary','查看学术依据与适用范围'),original(el('p',report.timing_policy.evidence.conclusion)),original(el('p',report.timing_policy.evidence.applicability)));
   sourceLink(details,'已核验来源',report.timing_policy.evidence.source_url);policy.append(details);
  }
  $('record-label').textContent=r.record_id===data.current_record_id?'本次调用结果':'往期结果';$('record-label').prepend(icon('calendar'));
@@ -162,8 +164,8 @@ function show(r){
  if(report.status==='degraded')notes.push('当前时区的传统计算受限，请查看完整结果中的说明。');
  if(report.status==='no_candidates')notes.push('当前条件下没有可用窗口，请回到 Agent 调整条件。');
  if(r.source==='import')notes.push('导入记录未重新计算验证输入与结果的对应关系。');
- if(report.readiness?.conditions?.length)notes.push('待完成：'+report.readiness.conditions.join('；'));
- $('result-alert').textContent=notes.join('\n');$('result-alert').hidden=!notes.length;$('result-alert-details').hidden=!notes.length;
+
+ $('result-alert').textContent=notes.join('\n');if(report.readiness?.conditions?.length){$('result-alert').append(el('span',(notes.length?'\n':'')+'待完成：'),original(el('span',report.readiness.conditions.join('；'))));notes.push('conditions');}$('result-alert').hidden=!notes.length;$('result-alert-details').hidden=!notes.length;
  const list=$('candidate-list');list.replaceChildren();
  for(const c of report.recommendations){
  const card=el('article',undefined,'candidate'+(c.rank===1?' is-primary':''));
@@ -182,7 +184,7 @@ function show(r){
  list.append(card);
  }
  const reflection=$('reflection'),c=report.cultural_result;reflection.replaceChildren();reflection.hidden=!c;
- if(c?.text)reflection.append(el('blockquote',c.text),el('p',c.zh??c.en),el('small',c.locator+' · '+c.source_id+' · 现代项目解读'));
+ if(c?.text)reflection.append(el('blockquote',c.text),reflectionText(c),el('small',c.locator+' · '+c.source_id+' · 现代项目解读'));
  else if(c)reflection.append(el('p','已保存六爻记录；详见完整结果。'));
  const select=$('compare-select');select.replaceChildren(el('option','请选择…'));select.firstChild.value='';
  for(const other of records)if(other.record_id!==r.record_id){const o=el('option',title(other)+' · '+when(other.created_at));o.value=other.record_id;select.append(o);}
