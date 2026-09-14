@@ -139,3 +139,7 @@ Validation: 97 automated tests pass, including longitude wrap, 30-degree boundar
 ## 0.7.0 personal timing and evidence priority
 
 Replaces star-position badges with personal zodiac timing analysis. A declared modern element mapping acts only as the final cultural tie-breaker. Verified academic_timing weekday policies require target match, source, checked date, applicability and timezone; they precede calendar/zodiac preferences and relax strict traditional filtering. Real readiness, availability and deadlines remain mandatory. Reports save conflict explanations and source information. No universal weekend or acceptance-rate claim is inferred from the reference library. The core principle appears centered below the report. Validation: 102 tests, including scientific-policy precedence, hard deadlines, verified-target requirements and personal timing.
+
+## 0.7.1 compass cardinal aliases
+
+Fixed missing compass panels for calendar direction names 正南、正北、正东、正西. The renderer maps these to the existing cardinal bearings while preserving the saved label. No time or history recalculation. All four aliases and their highlighted labels are covered by regression checks; 103 tests pass.

@@ -30,5 +30,13 @@ test('fixed-north compass maps all eight saved directions to clockwise bearings'
  }
 });
 test('unknown and missing directions never produce a compass or an invented bearing',()=>{
- for(const name of [null,'','暂缺','__proto__','正东'])assert.equal(panel(name),null);
+ for(const name of [null,'','暂缺','__proto__','未知'])assert.equal(panel(name),null);
+});
+test('cardinal aliases from the calendar render their bearing and highlight canonical labels',()=>{
+ for(const [name,key,angle] of [['正北','北',0],['正东','东',90],['正南','南',180],['正西','西',270]]){
+  const p=panel(name),nodes=all(p);
+  assert.ok(p.attrs['aria-label'].includes(name+'，'+angle+'度'));
+  assert.ok(nodes.some(n=>n.tag==='g'&&n.attrs.transform==='rotate('+angle+' 90 90)'));
+  assert.ok(nodes.some(n=>n.tag==='text'&&n.textContent===key&&n.attrs.class.includes('selected')));
+ }
 });

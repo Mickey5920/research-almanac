@@ -24,8 +24,10 @@ function icon(name){
 }
 function directionPanel(direction){
  const angles={北:0,东北:45,东:90,东南:135,南:180,西南:225,西:270,西北:315};
- if(!direction||!Object.hasOwn(angles,direction.name))return null;
- const name=direction.name,angle=angles[name],box=el('section',undefined,'direction-panel');
+ const aliases={正北:'北',正东:'东',正南:'南',正西:'西'};
+ const key=direction&&Object.hasOwn(aliases,direction.name)?aliases[direction.name]:direction?.name;
+ if(!Object.hasOwn(angles,key))return null;
+ const name=direction.name,angle=angles[key],box=el('section',undefined,'direction-panel');
  box.setAttribute('aria-label','提交朝向：'+name+'，'+angle+'度');
  const heading=el('div',undefined,'direction-heading');heading.append(icon('compass'),el('h4','提交朝向'),el('span','日家喜神','direction-tag'));box.append(heading);
  const layout=el('div',undefined,'direction-layout'),dial=svgNode('svg',{viewBox:'0 0 180 180',class:'direction-dial',role:'img','aria-label':'北方朝上，箭头指向'+name+' '+angle+'度'});
@@ -33,7 +35,7 @@ function directionPanel(direction){
  for(let i=0;i<32;i++)dial.append(svgNode('line',{x1:90,y1:24,x2:90,y2:i%4===0?33:28,transform:'rotate('+i*11.25+' 90 90)',class:'dial-tick'}));
  dial.append(svgNode('path',{d:'M90 39V141M39 90H141',class:'dial-axis'}));
  for(const [label,degrees] of Object.entries(angles)){
-  const a=degrees*Math.PI/180,t=svgNode('text',{x:90+79*Math.sin(a),y:90-79*Math.cos(a),'text-anchor':'middle','dominant-baseline':'central',class:'dial-label'+(label===name?' selected':'')});
+  const a=degrees*Math.PI/180,t=svgNode('text',{x:90+79*Math.sin(a),y:90-79*Math.cos(a),'text-anchor':'middle','dominant-baseline':'central',class:'dial-label'+(label===key?' selected':'')});
   t.textContent=label;dial.append(t);
  }
  const arrow=svgNode('g',{transform:'rotate('+angle+' 90 90)'});
