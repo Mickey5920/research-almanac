@@ -191,3 +191,38 @@ footer{color:#62726b;font-size:11px;padding:24px 0 34px}
 .book-card[data-status="部分启用"] .reason-kind{background:var(--jade-soft);color:var(--jade)}
 .difference .comparison-before{background:#e8edf3;padding:7px 10px;border-radius:3px}
 .difference .comparison-current{background:#e3efe7;color:#345f4c;padding:7px 10px;border-radius:3px}
+
+/* Fixed-north orientation guide and local vector icon set. */
+.ui-icon{display:inline-block;width:16px;height:16px;flex:0 0 16px;vertical-align:-3px}
+.section-heading h2>.ui-icon{width:20px;height:20px;margin-right:8px;vertical-align:-2px}
+.window-field{grid-template-columns:86px minmax(0,1fr)}
+.window-field small{display:flex;gap:6px;align-items:center}
+.window-field small .ui-icon{width:13px;height:13px;flex-basis:13px;color:var(--window-accent)}
+.reason-kind{display:inline-flex;gap:4px;align-items:center}
+.reason-kind .ui-icon{width:11px;height:11px;flex-basis:11px}
+.direction-panel{background:#fcf8ee;border:1px solid #e0d2b5;border-radius:7px;margin:14px 0 0;padding:14px;color:#755b32}
+.direction-heading{display:flex;align-items:center;gap:7px}
+.direction-heading h4{font-size:13px;margin:0;letter-spacing:.5px}
+.direction-tag{margin-left:auto;font-size:9px;border:1px solid #ddcfb0;background:#f1e7d0;color:#7d643b;border-radius:3px;padding:2px 5px;white-space:nowrap}
+.direction-layout{display:grid;grid-template-columns:minmax(110px,1fr) minmax(56px,.55fr);align-items:center;gap:8px;padding:14px 0 9px}
+.direction-dial{width:100%;max-width:190px;aspect-ratio:1;overflow:visible;justify-self:center}
+.dial-ring{fill:#f4eedf;stroke:#bca274;stroke-width:1}
+.dial-inner{fill:#fffaf0;stroke:#d6c6a5;stroke-width:.7}
+.dial-tick{stroke:#b4a184;stroke-width:1}
+.dial-axis{fill:none;stroke:#e2d5bd;stroke-width:.7;stroke-dasharray:3 4}
+.dial-label{font:10px "Microsoft YaHei",sans-serif;fill:#7b6c50}
+.dial-label.selected{fill:#17664c;font-weight:700;font-size:13px}
+.dial-arrow{fill:#24745b;stroke:#18573f;stroke-width:.7}
+.dial-tail{fill:#b9c7b9}
+.dial-pivot{fill:#f8f2df;stroke:#24745b;stroke-width:2}
+.direction-copy small{display:block;font-size:10px;color:#7b6e53;margin-bottom:6px}
+.direction-copy strong{display:block;font:25px/1.4 "Songti SC","SimSun",serif;color:#285f4b}
+.direction-bearing{display:block;font:23px/1.5 Georgia,serif;color:#82602b}
+.direction-copy p{font-size:10px;line-height:1.75;margin:6px 0;color:#76694e}
+.direction-steps{list-style:none;counter-reset:orient;margin:6px 0 0;padding:10px 0 0;border-top:1px solid #e6dbc4;display:grid;gap:8px}
+.direction-steps li{counter-increment:orient;display:grid;grid-template-columns:17px 1fr;gap:7px;align-items:start;font-size:11px;line-height:1.8;color:#685d47}
+.direction-steps li:before{content:counter(orient);font:10px/17px Georgia,serif;text-align:center;border-radius:50%;color:#856631;background:#eee3c9;margin-top:1px}
+.direction-caption{font-size:10px;color:#7a6b50;margin:12px 0 0}
+@media(min-width:1001px) and (max-width:1340px){.direction-panel{display:grid;grid-template-columns:1fr 1fr;gap:0 20px}.direction-heading{grid-column:1/-1}.direction-layout{grid-row:2/4}.direction-steps{border-top:0;padding-top:20px}.direction-caption{align-self:end;padding-bottom:12px}}
+@media(max-width:650px){.direction-layout{grid-template-columns:minmax(130px,1fr) 1fr;gap:20px}.direction-copy strong{font-size:30px}.direction-bearing{font-size:26px}.direction-panel{padding:16px}.direction-steps li{font-size:12px}.direction-copy p{font-size:11px}.window-clock{font-size:21px}}
+@media print{.direction-panel{break-inside:avoid}.direction-dial{max-width:155px}}

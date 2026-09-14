@@ -7,6 +7,44 @@ const labels={ok:'已生成',conditional:'有条件可用',degraded:'传统计�
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 function when(s,zone){try{return new Intl.DateTimeFormat('zh-CN',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(s));}catch{return s??'未记录';}}
 function title(r){return r.report.project_summary?.title??'周易文化解读';}
+const svgNode=(tag,attrs={})=>{const n=document.createElementNS('http://www.w3.org/2000/svg',tag);for(const [key,value] of Object.entries(attrs))n.setAttribute(key,String(value));return n;};
+function icon(name){
+ const paths={
+ calendar:'M5 3v4M19 3v4M3 10h18M5 5h14a2 2 0 0 1 2 2v13H3V7a2 2 0 0 1 2-2M7 14h3M14 14h3M7 17h3',
+ clock:'M12 8v5l3 2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0',
+ pointer:'M5 3l3 17 4-6 7-2-14-9M12 14l4 7',
+ compass:'M15 9l-2 4-4 2 2-4 4-2M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0',
+ star:'M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3',
+ book:'M12 5v15M3 4c4-1 6 0 9 1 3-1 5-2 9-1v15c-4-1-6 0-9 1-3-1-5-2-9-1V4',
+ history:'M3 5v5h5M4 10a8 8 0 1 1 1 8M12 7v5l3 2',
+ chart:'M4 3v17h17M8 15v-4M13 15V7M18 15V4'
+ };
+ const s=svgNode('svg',{viewBox:'0 0 24 24',fill:'none',stroke:'currentColor','stroke-width':1.6,'stroke-linecap':'round','stroke-linejoin':'round','aria-hidden':'true',focusable:'false',class:'ui-icon'});
+ s.append(svgNode('path',{d:paths[name]??paths.compass}));return s;
+}
+function directionPanel(direction){
+ const angles={北:0,东北:45,东:90,东南:135,南:180,西南:225,西:270,西北:315};
+ if(!direction||!Object.hasOwn(angles,direction.name))return null;
+ const name=direction.name,angle=angles[name],box=el('section',undefined,'direction-panel');
+ box.setAttribute('aria-label','提交朝向：'+name+'，'+angle+'度');
+ const heading=el('div',undefined,'direction-heading');heading.append(icon('compass'),el('h4','提交朝向'),el('span','日家喜神','direction-tag'));box.append(heading);
+ const layout=el('div',undefined,'direction-layout'),dial=svgNode('svg',{viewBox:'0 0 180 180',class:'direction-dial',role:'img','aria-label':'北方朝上，箭头指向'+name+' '+angle+'度'});
+ dial.append(svgNode('circle',{cx:90,cy:90,r:66,class:'dial-ring'}),svgNode('circle',{cx:90,cy:90,r:47,class:'dial-inner'}));
+ for(let i=0;i<32;i++)dial.append(svgNode('line',{x1:90,y1:24,x2:90,y2:i%4===0?33:28,transform:'rotate('+i*11.25+' 90 90)',class:'dial-tick'}));
+ dial.append(svgNode('path',{d:'M90 39V141M39 90H141',class:'dial-axis'}));
+ for(const [label,degrees] of Object.entries(angles)){
+  const a=degrees*Math.PI/180,t=svgNode('text',{x:90+79*Math.sin(a),y:90-79*Math.cos(a),'text-anchor':'middle','dominant-baseline':'central',class:'dial-label'+(label===name?' selected':'')});
+  t.textContent=label;dial.append(t);
+ }
+ const arrow=svgNode('g',{transform:'rotate('+angle+' 90 90)'});
+ arrow.append(svgNode('path',{d:'M90 38L80 94L90 88L100 94Z',class:'dial-arrow'}),svgNode('path',{d:'M90 128L83 91L90 96L97 91Z',class:'dial-tail'}));dial.append(arrow,svgNode('circle',{cx:90,cy:90,r:4,class:'dial-pivot'}));
+ const detail=el('div',undefined,'direction-copy');detail.append(el('small','面向此方'),el('strong',name),el('span',angle+'°','direction-bearing'),el('p','以正北为 0°，顺时针读取。'));
+ layout.append(dial,detail);box.append(layout);
+ const steps=el('ol',undefined,'direction-steps');
+ for(const text of ['打开手机指南针，确认北向。','转动身体，使面向读数接近 '+angle+'°（'+name+'）。','将屏幕置于正前方，坐定后提交。'])steps.append(el('li',text));
+ box.append(steps,el('p','固定北向示意 · 用手机指南针现场对齐','direction-caption'));
+ return box;
+}
 function reasonPanel(record,candidate){
  const explanation=data.explanations?.[record.record_id]?.[candidate.candidate_id];if(!explanation?.items?.length)return null;
  const box=el('section',undefined,'window-reasons');box.setAttribute('aria-label','本窗口择时依据');
@@ -14,7 +52,7 @@ function reasonPanel(record,candidate){
  const names={favorable:'有利因素',neutral:'如实说明',caution:'待留意',reference:'方位参考',practical:'实际安排',reflection:'周易启示'};
  for(const item of explanation.items){
  const row=el('div',undefined,'reason-item reason-'+item.kind),heading=el('div',undefined,'reason-item-head');
- heading.append(el('span',names[item.kind]??'依据','reason-kind'),el('strong',item.title));row.append(heading,el('p',item.text));
+ const chip=el('span',names[item.kind]??'依据','reason-kind');chip.prepend(icon(({favorable:'star',practical:'clock',reference:'compass',reflection:'book'})[item.kind]??'star'));heading.append(chip,el('strong',item.title));row.append(heading,el('p',item.text));
  const detail=el('details',undefined,'reason-source');detail.append(el('summary','来源'));
  const source=el('span',item.source_title+' · '+item.source_id);detail.append(source);
  if(item.source_url&&/^https:\/\//.test(item.source_url)){const link=el('a','查阅原始来源 ↗');link.href=item.source_url;link.target='_blank';link.rel='noopener noreferrer';detail.append(link);}
@@ -93,7 +131,7 @@ function renderReferences(){
 
 function show(r){
  selected=r;const report=r.report;renderAcademic(r);
- $('record-label').textContent=r.record_id===data.current_record_id?'本次调用结果':'往期结果';
+ $('record-label').textContent=r.record_id===data.current_record_id?'本次调用结果':'往期结果';$('record-label').prepend(icon('calendar'));
  $('record-title').textContent=title(r);$('result-badge').textContent=labels[report.status]??report.status;$('result-badge').dataset.status=report.status;
  const overview=$('result-overview');overview.replaceChildren();
  for(const [label,value] of [['可用窗口',String(report.recommendations.length).padStart(2,'0')],['当前时区',report.timezone??'文化模式'],['记录归属',r.record_id===data.current_record_id?'本次调用':'往期记录']]){
@@ -117,9 +155,9 @@ function show(r){
  card.dataset.status=c.readiness_status;
  const head=el('div',undefined,'window-heading');head.append(el('span',String(c.rank).padStart(2,'0'),'window-index'),el('span',c.rank===1?'首选窗口':'备选窗口','window-label'),el('span',c.readiness_status==='ready'?'已就绪':'待确认','window-state'));
  const fields=el('div',undefined,'window-fields');
- for(const [label,value,cls] of [['推荐日期',day(c.start_utc,c.timezone),'window-date'],['操作时间',clock(c.start_utc,c.timezone)+' — '+clock(c.end_utc,c.timezone),'window-clock'],['建议点击',clock(c.click_at_utc,c.timezone),'window-value'],['面向参考',c.direction?.name??'暂缺','window-value']]){const field=el('div',undefined,'window-field');field.append(el('small',label),el('div',value,cls));fields.append(field);}
+ for(const [label,value,cls,mark] of [['推荐日期',day(c.start_utc,c.timezone),'window-date','calendar'],['操作时间',clock(c.start_utc,c.timezone)+' — '+clock(c.end_utc,c.timezone),'window-clock','clock'],['建议点击',clock(c.click_at_utc,c.timezone),'window-value','pointer'],['面向参考',c.direction?.name??'暂缺','window-value','compass']]){const field=el('div',undefined,'window-field'),labelNode=el('small',label);labelNode.prepend(icon(mark));field.append(labelNode,el('div',value,cls));fields.append(field);}
  const meta=el('div',undefined,'window-footer');meta.append(el('span',new Intl.DateTimeFormat('zh-CN',{timeZone:c.timezone,year:'numeric'}).format(new Date(c.start_utc))+' · '+c.timezone));if(c.calendar_facts)meta.append(el('span',c.calendar_facts.day_ganzhi+' · '+c.calendar_facts.officer+'日'));
- card.append(head,fields,meta);const reasons=reasonPanel(r,c);if(reasons)card.append(reasons);list.append(card);
+ card.append(head,fields,meta);const direction=directionPanel(c.direction);if(direction)card.append(direction);const reasons=reasonPanel(r,c);if(reasons)card.append(reasons);list.append(card);
  }
  const reflection=$('reflection'),c=report.cultural_result;reflection.replaceChildren();reflection.hidden=!c;
  if(c?.text)reflection.append(el('blockquote',c.text),el('p',c.zh??c.en),el('small',c.locator+' · '+c.source_id+' · 现代项目解读'));
@@ -128,6 +166,9 @@ function show(r){
  for(const other of records)if(other.record_id!==r.record_id){const o=el('option',title(other)+' · '+when(other.created_at));o.value=other.record_id;select.append(o);}
  renderList();compare();
 }
+for(const [selector,mark] of [['.history-panel h2','history'],['.input-panel h2','book'],['#record-label','calendar'],['#academic-section h2','chart'],['#reference-section h2','book']]){
+ const heading=document.querySelector(selector);if(heading)heading.prepend(icon(mark));
+}
 renderReferences();renderAcademic(null);
 $('history-count').textContent=records.length;
 if(data.warnings.length){$('warnings').hidden=false;$('warnings').textContent='部分本地记录无法读取，原文件已保留：\n'+data.warnings.join('\n');}
@@ -135,4 +176,3 @@ $('search').addEventListener('input',renderList);$('compare-select').addEventLis
 if(records.length)show(records.find(r=>r.record_id===data.current_record_id)??records[0]);
 else{$('empty').hidden=false;$('result-content').hidden=true;renderList();}
 })();
-

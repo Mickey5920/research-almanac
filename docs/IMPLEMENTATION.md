@@ -96,3 +96,7 @@ Window reasons show supported favorable factors, direction, concrete submission 
 ## 0.5.2 modular report design
 
 The report uses a history sidebar, structured input cards, a result overview, and aligned submission windows. Jade identifies favorable factors, blue identifies practical schedules and academic evidence, gold identifies cultural references, and slate identifies archives and comparison. Status text accompanies color. Module navigation, mobile stacking, keyboard focus, reduced motion and print styles are included. Existing local snapshots remain immutable.
+
+## 0.5.3 directional guidance
+
+Each window with a supported saved direction displays a fixed-north compass, a clockwise bearing, and three practical steps for aligning the user's facing direction with a phone compass. Eight directions are supported; missing directions omit the panel. Local vector icons identify dates, timing, actions, evidence and cultural references. The HTML uses no location or orientation sensors and makes no network requests.
