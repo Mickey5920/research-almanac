@@ -269,7 +269,126 @@
                 }
               }
             ]
+          },
+          "zodiac_timing": {
+            "type": "object",
+            "required": [
+              "personal_sign",
+              "score",
+              "summary",
+              "action",
+              "method",
+              "version"
+            ],
+            "properties": {
+              "personal_sign": {
+                "enum": [
+                  "白羊座",
+                  "金牛座",
+                  "双子座",
+                  "巨蟹座",
+                  "狮子座",
+                  "处女座",
+                  "天秤座",
+                  "天蝎座",
+                  "射手座",
+                  "摩羯座",
+                  "水瓶座",
+                  "双鱼座"
+                ]
+              },
+              "score": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2
+              },
+              "summary": {
+                "type": "string"
+              },
+              "action": {
+                "type": "string"
+              },
+              "method": {
+                "type": "string"
+              },
+              "version": {
+                "const": "personal-zodiac-timing-v1"
+              }
+            }
           }
+        }
+      }
+    },
+    "timing_policy": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "target",
+        "timezone",
+        "preferred_weekdays",
+        "evidence",
+        "explanation"
+      ],
+      "properties": {
+        "target": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "preferred_weekdays": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 7,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7
+          }
+        },
+        "evidence": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "source_url",
+            "checked_at",
+            "conclusion",
+            "applicability"
+          ],
+          "properties": {
+            "status": {
+              "const": "verified"
+            },
+            "source_url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://"
+            },
+            "checked_at": {
+              "type": "string",
+              "format": "date"
+            },
+            "conclusion": {
+              "type": "string",
+              "minLength": 1
+            },
+            "applicability": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "explanation": {
+          "type": "string"
+        },
+        "principle": {
+          "type": "string"
+        },
+        "order": {
+          "type": "string"
         }
       }
     }

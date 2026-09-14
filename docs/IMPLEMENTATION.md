@@ -135,3 +135,7 @@ Implemented optional user-supplied personal sign, Moon tropical sign and Mercury
 
 Primary sources: [Astronomy Engine documentation](https://github.com/cosinekitty/astronomy/tree/master/source/js) for coordinate methods; [NASA April 8, 2024 eclipse](https://science.nasa.gov/eclipses/future-eclipses/eclipse-2024/) provides a coarse conjunction test anchor. Cultural action prompts are original design choices.
 Validation: 97 automated tests pass, including longitude wrap, 30-degree boundaries, motion thresholds, offset equivalence, candidate-ranking invariance, opt-out, old history and coarse eclipse geometry.
+
+## 0.7.0 personal timing and evidence priority
+
+Replaces star-position badges with personal zodiac timing analysis. A declared modern element mapping acts only as the final cultural tie-breaker. Verified academic_timing weekday policies require target match, source, checked date, applicability and timezone; they precede calendar/zodiac preferences and relax strict traditional filtering. Real readiness, availability and deadlines remain mandatory. Reports save conflict explanations and source information. No universal weekend or acceptance-rate claim is inferred from the reference library. The core principle appears centered below the report. Validation: 102 tests, including scientific-policy precedence, hard deadlines, verified-target requirements and personal timing.

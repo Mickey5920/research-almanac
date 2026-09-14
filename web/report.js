@@ -61,20 +61,13 @@ function reasonPanel(record,candidate){
  }
  return box;
 }
-function astrologyPanel(a){
- if(!a)return null;
+function astrologyPanel(a,z){
+ if(!a||!z)return null;
  const box=el('section',undefined,'astrology-panel'),head=el('div',undefined,'astrology-heading');
- head.append(el('strong','✦ 星象参考'),el('small','文化解读'));box.append(head);
- const motion={direct:'顺行',retrograde:'逆行',stationary:'近留'}[a.mercury.motion];
- const chips=el('div',undefined,'astrology-chips');
- chips.append(el('span','☾ 月亮 · '+a.moon.sign),el('span','☿ 水星 · '+motion));box.append(chips);
- const detail=el('details');detail.append(el('summary','星象解读与计算依据'));
- for(const [label,text] of [['月亮启示',a.interpretation.moon],['文书安排',a.interpretation.mercury]]){
-  const p=el('p');p.append(el('b',label+' · '),el('span',text));detail.append(p);
- }
- if(a.personal){const p=el('p');p.append(el('b',a.personal.glyph+' '+a.personal.sign+' · '),el('span',a.interpretation.personal));detail.append(p);}
- detail.append(el('p','计算时刻：'+when(a.at_utc,selected?.report.timezone)),el('p','月亮黄经 '+a.moon.longitude_degrees.toFixed(2)+'° · 水星黄经 '+a.mercury.longitude_degrees.toFixed(2)+'° · 水星速度 '+a.mercury.speed_degrees_per_day.toFixed(3)+'°/日。','astrology-facts'),el('p',a.convention,'astrology-facts'),el('p','星体位置由星历计算；行动提示为文化联想。','astrology-facts'));
- sourceLink(detail,'Astronomy Engine '+a.engine_version,a.source_url);box.append(detail);return box;
+ head.append(el('strong','✦ 星座择时分析'),el('small','结合自填星座'));box.append(head,el('p',z.summary,'zodiac-summary'));
+ const detail=el('details');detail.append(el('summary','查看个人分析与依据'));
+ detail.append(el('p',z.personal_sign+' · '+z.action),el('p',z.method,'astrology-facts'),el('p','计算时刻：'+when(a.at_utc,selected?.report.timezone),'astrology-facts'),el('p',a.convention,'astrology-facts'));
+ sourceLink(detail,'星历计算 · Astronomy Engine '+a.engine_version,a.source_url);box.append(detail);return box;
 }
 function clock(s,zone){return new Intl.DateTimeFormat('en-GB',{timeZone:zone,hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(s));}
 function day(s,zone){return new Intl.DateTimeFormat('zh-CN',{timeZone:zone,month:'2-digit',day:'2-digit',weekday:'short'}).format(new Date(s));}
@@ -145,6 +138,12 @@ function renderReferences(){
 
 function show(r){
  selected=r;const report=r.report;renderAcademic(r);
+ const policy=$('timing-decision');policy.replaceChildren();policy.hidden=!report.timing_policy;
+ if(report.timing_policy){
+  policy.append(el('strong','本次排序依据'),el('p',report.timing_policy.explanation));
+  const details=el('details');details.append(el('summary','查看学术依据与适用范围'),el('p',report.timing_policy.evidence.conclusion),el('p',report.timing_policy.evidence.applicability));
+  sourceLink(details,'已核验来源',report.timing_policy.evidence.source_url);policy.append(details);
+ }
  $('record-label').textContent=r.record_id===data.current_record_id?'本次调用结果':'往期结果';$('record-label').prepend(icon('calendar'));
  $('record-title').textContent=title(r);$('result-badge').textContent=labels[report.status]??report.status;$('result-badge').dataset.status=report.status;
  const overview=$('result-overview');overview.replaceChildren();
@@ -177,7 +176,7 @@ function show(r){
   brief.textContent=items.filter(i=>i.kind==='favorable').map(i=>i.title).slice(0,2).join(' · ')||items[0]?.title||'';
   const details=el('details',undefined,'reason-disclosure');details.append(el('summary','为什么选这个窗口 · 展开'),reasons);card.append(brief,details);
  }
- const astrology=astrologyPanel(c.astrology);if(astrology)card.append(astrology);
+ const astrology=astrologyPanel(c.astrology,c.zodiac_timing);if(astrology)card.append(astrology);
  list.append(card);
  }
  const reflection=$('reflection'),c=report.cultural_result;reflection.replaceChildren();reflection.hidden=!c;

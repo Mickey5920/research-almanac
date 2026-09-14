@@ -30,3 +30,15 @@ export function astrologyAt(timestamp,personalSign){
   convention:'回归黄道十二等分；月亮采用地心当日黄道经度。水星以点击时刻前后各 6 小时的经度差估算日速度；绝对值小于 0.02°/日记为近留。'
  };
 }
+
+// Modern symbolic mapping, used only after practical and academic priorities.
+export function zodiacTimingAt(timestamp,personalSign){
+ const index=signs.indexOf(personalSign);if(index<0)return null;
+ const date=new Date(timestamp);if(!Number.isFinite(+date)||date.getUTCFullYear()<1900||date.getUTCFullYear()>2100)return null;
+ const moonIndex=Math.floor(normalizeAngle(EclipticGeoMoon(date).lon)/30),element=index%4,moonElement=moonIndex%4;
+ const score=element===moonElement?2:(element+2)%4===moonElement?1:0;
+ const action=prompts[index];
+ return {version:'personal-zodiac-timing-v1',personal_sign:personalSign,score,
+  summary:score===2?'本时段与所填星座取同元素呼应，可作为完成提交的仪式时间。':score===1?'本时段与所填星座取互补元素呼应，可作为推进投稿的仪式时间。':'本时段优先按实际安排执行，结合所填星座安排提交前检查。',
+  action,method:'自填太阳星座与当时月亮的四元素文化映射：同元素 2，火风或土水互补 1，其他 0；仅在现实与学术优先级相同后作文化排序。'};
+}

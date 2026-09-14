@@ -48,7 +48,7 @@ test('bad line input rejected',()=>assert.throws(()=>recommend({mode:'cultural',
 test('rendering depth does not mutate calculation',()=>{const before=JSON.stringify(r);render(r,'zh','detailed');render(r,'en');assert.equal(JSON.stringify(r),before);});
 test('ICS absolute time and stable UID',()=>{const a=exportIcs(r),c=r.recommendations[0];assert.equal(a,exportIcs(r));assert.ok(a.includes('DTSTART:'+DateTime.fromISO(c.start_utc).toUTC().toFormat("yyyyMMdd'T'HHmmss'Z'")));assert.ok(a.split('\r\n').every(l=>Buffer.byteLength(l)<=75));assert.ok(!a.includes('BEGIN:VALARM'));});
 test('direction diagram is not live compass',()=>assert.ok(directionSvg(r.recommendations[0].direction).includes('Not a live compass')));
-test('compare uses real factors',()=>{const [a,b]=r.recommendations;assert.equal(compare(r,a.candidate_id,b.candidate_id).factors[2].a,a.sort_factors.cultural);});
+test('compare uses real factors',()=>{const [a,b]=r.recommendations;assert.equal(compare(r,a.candidate_id,b.candidate_id).factors.find(x=>x.key==='cultural').a,a.sort_factors.cultural);});
 test('patch preserves unrelated input and records changed fields',()=>{const x=input();const p=amendInput(x,{preferences:{preferred_hours:[14]}});assert.deepEqual(p.input.project,x.project);assert.equal(p.changes[0].field,'preferences');assert.equal(x.preferences,undefined);});
 test('patch cannot inject unknown top-level field',()=>assert.throws(()=>amendInput(input(),{birth_data:'secret'})));
 const plan=selectPlan(r,r.recommendations[0].candidate_id);

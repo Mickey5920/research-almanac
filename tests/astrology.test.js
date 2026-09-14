@@ -25,10 +25,10 @@ test('same instant in different offsets yields identical stored ephemeris, with 
  assert.equal(astrologyAt('1800-01-01T00:00:00Z'),null);
  assert.throws(()=>astrologyAt('invalid'));
 });
-test('personalization and disabling astrology leave candidate selection unchanged',()=>{
+test('personalization preserves practical priority while opt-out preserves base selection',()=>{
  const a=recommend(input),b=recommend({...input,astrology:{personal_sign:'处女座'}}),c=recommend({...input,astrology:{enabled:false}});
  const ids=r=>r.recommendations.map(x=>[x.candidate_id,x.rank,x.sort_factors]);
- assert.deepEqual(ids(a),ids(b));assert.deepEqual(ids(a),ids(c));
+ assert.deepEqual(a.recommendations.map(x=>[x.sort_factors.buffer,x.sort_factors.academic,x.sort_factors.preference,x.sort_factors.cultural]),b.recommendations.map(x=>[x.sort_factors.buffer,x.sort_factors.academic,x.sort_factors.preference,x.sort_factors.cultural]));assert.deepEqual(ids(a),ids(c));assert.ok(b.recommendations.every(x=>x.zodiac_timing.personal_sign==='处女座'));
  assert.equal(b.recommendations[0].astrology.personal.sign,'处女座');assert.ok(c.recommendations.every(x=>!x.astrology));
  assert.throws(()=>validateInput({...input,astrology:{personal_sign:'猜测'}}));
  assert.throws(()=>validateInput({...input,astrology:{birth_date:'2000-01-01'}}));

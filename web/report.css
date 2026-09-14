@@ -427,3 +427,11 @@ body{font-weight:400;line-height:1.65}
 .astrology-panel details p{font-size:12px;line-height:1.7;margin:7px 0;color:#405679}
 .astrology-panel details .astrology-facts{font-size:10px;color:#627493}
 .astrology-panel .research-link{font-size:11px}
+
+.design-principle{text-align:center;padding:10px 14px 8px;margin:8px 0 0;background:#fafbf0df;border:1px solid #cbd3bb;border-radius:6px}
+.design-principle p{margin:0;font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:1px;color:#446346}
+.design-principle small{font-size:10px;color:#67785e}
+.timing-decision{padding:9px 12px;margin:6px 0;background:#e9f2f7;border:1px solid #c3d7e2;border-left:3px solid #416f89;border-radius:5px;font-size:12px;color:#355a72}
+.timing-decision p{margin:4px 0}.timing-decision summary{font-size:11px}
+.zodiac-summary{font-size:11px;line-height:1.65;margin:5px 0}
+@media(max-width:650px){.design-principle p{font-size:16px;letter-spacing:0}}

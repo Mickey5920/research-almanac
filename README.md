@@ -16,7 +16,7 @@ tags: [zhouyi, skill, documentation]
 
 Plan around your manuscript's readiness, availability and deadline. Compare up to three windows, choose one, revisit it when plans change, and keep the final submission record.
 
-**Release 0.6.0 · Local-first · Node.js 22+ · Chinese / English documentation**
+**Release 0.7.0 · Local-first · Node.js 22+ · Chinese / English documentation**
 
 > Calendar traditions are cultural references. This tool does not estimate acceptance probabilities.
 
@@ -154,4 +154,8 @@ Each window shows recorded day/hour factors, direction sources, operational minu
 
 New project windows store the Moon's tropical zodiac sign and Mercury motion at the recommended click time, computed locally with Astronomy Engine 2.1.19. The HTML reads saved results only. Optional astrology.personal_sign accepts a Chinese sign name (for example 处女座); no birthday or birthplace is needed. Set astrology.enabled=false to disable this feature. See the [synthetic example](examples/astrology.json).
 
-The convention uses twelve equal tropical sectors and geocentric ecliptic coordinates of date, within 1900–2100. Mercury motion uses a centered 12-hour difference and a near-station threshold of 0.02 degrees/day. Cultural prompts do not change time ranking. Old records are not retroactively calculated.
+The convention uses twelve equal tropical sectors and geocentric ecliptic coordinates of date, within 1900–2100. Mercury motion uses a centered 12-hour difference and a near-station threshold of 0.02 degrees/day. Personal zodiac symbolism is used only as the final cultural timing tie-breaker. Old records are not retroactively calculated.
+
+## Practical evidence before ritual
+
+The report now analyses the supplied user's sign as a final cultural timing tie-breaker instead of displaying Moon/Mercury badges. Verified, applicable target-specific weekday preferences are supplied through academic_timing (target, timezone, preferred_weekdays, and evidence with status, source_url, checked_at, conclusion, applicability). Real constraints and deadline buffer take priority, then academic preference, user hours, calendar symbolism and personal zodiac symbolism. General literature is not a universal weekend penalty. The report explains conflicts and centers the principle “玄学提供仪式感，科学提供优先级” below the main content.

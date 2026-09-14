@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import lunar from 'lunar-javascript';
-import {astrologyAt} from './astrology.js';
+import {astrologyAt,zodiacTimingAt} from './astrology.js';
 const json=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),'utf8'));
 const softwareVersion=json('../package.json').version;
 export const defaults=json('../config/defaults.json'),sources=json('../data/sources.json'),excerpts=json('../data/excerpts.json');
@@ -16,6 +16,10 @@ const iso=d=>d.toUTC().toISO();
 export function validateInput(input){
  if(!validate(input))throw new Error('Invalid input: '+ajv.errorsText(validate.errors));
  if(input.mode==='project'&&!IANAZone.isValidZone(input.timezone))throw new Error('Unknown IANA timezone');
+ if(input.academic_timing){
+  if(input.academic_timing.target.trim().toLowerCase()!==input.project?.target?.trim().toLowerCase())throw Error('Academic timing target must match project.target');
+  if(!IANAZone.isValidZone(input.academic_timing.timezone))throw Error('Unknown academic timing timezone');
+ }
  if(input.academic_evidence&&input.academic_evidence.target.trim().toLowerCase()!==input.project?.target?.trim().toLowerCase())throw new Error('Academic evidence target must match project.target');
  for(const item of Object.values(input.academic_evidence??{}))if(item?.timezone&&!IANAZone.isValidZone(item.timezone))throw new Error('Unknown editorial IANA timezone');
  const p={...defaults,...input.preferences};
@@ -66,6 +70,8 @@ export function recommend(input){
  const r={...base,timezone:input.timezone,project_summary:input.project,resolved_range:{start:iso(start),end:iso(end)},
  readiness:input.readiness,preferences:p,cultural_result:culturalResult({mode:'cultural',project:input.project}),capabilities:{}};
  const cultural=input.tradition?.enabled!==false&&input.timezone==='Asia/Shanghai';
+ const academic=input.academic_timing;
+ if(academic)r.timing_policy={explanation:'先检查准备、截止与可用时间，再按适用学术依据和文化偏好排序。',principle:'玄学提供仪式感，科学提供优先级',...academic,order:'准备与截止 → 截止余量 → 已核验学术偏好 → 用户时段偏好 → 周易与星座文化参考'};
  r.capabilities={calendar:cultural?'available':input.tradition?.enabled===false?'disabled':'unavailable_for_timezone',qimen:'unavailable',bazi:'unavailable',true_solar_time:'unavailable',reminders:'host_only'};
  if(!input.availability)r.assumptions.push('Default local availability: 09:00–18:00, including weekends.');
  r.assumptions.push('Final-operation duration and click offset are editable scheduling preferences.');
@@ -74,7 +80,7 @@ export function recommend(input){
  if(!cultural&&input.tradition?.enabled!==false)r.missing_inputs.push('calendar');
  const fail=reason=>{r.status='no_candidates';r.excluded_summary=[{reason,count:1}];return r;};
  if(input.readiness.status==='blocked')return fail('readiness_blocked');
- if(p.strict_traditional&&!cultural)return fail('strict_traditional_engine_unavailable');
+ if(p.strict_traditional&&!cultural&&!academic)return fail('strict_traditional_engine_unavailable');
  if(end<=now)return fail('range_expired');
  const ready=input.readiness.ready_after?instant(input.readiness.ready_after):null;
  const available=(input.availability??[]).map(x=>[instant(x.start),instant(x.end)]);
@@ -98,29 +104,38 @@ export function recommend(input){
     if(cultural){
      if(periodKey(s)!==periodKey(e.minus({milliseconds:1}))){reject('traditional_period_boundary');continue;}
      cal=calendarAt(click);rank=({'成':3,'开':2,'收':1}[cal.officer]??0)*2+(cal.hour_luck==='吉'?1:0);
-     if(p.strict_traditional&&!(rank>=3&&cal.hour_luck==='吉')){reject('strict_traditional');continue;}
+     if(p.strict_traditional&&!academic&&!(rank>=3&&cal.hour_luck==='吉')){reject('strict_traditional');continue;}
     }
     const key=hash([iso(s),iso(e),input.timezone]);
+    const zodiac=input.astrology?.enabled===false?null:zodiacTimingAt(iso(click),input.astrology?.personal_sign);
+    const academicMatch=academic?academic.preferred_weekdays.includes(click.setZone(academic.timezone).weekday):false;
     all.push({candidate_id:key,local_date:s.toISODate(),start_utc:iso(s),end_utc:iso(e),click_at_utc:iso(click),local_start:s.toISO(),local_end:e.toISO(),local_click:click.toISO(),timezone:input.timezone,
      readiness_status:input.readiness.status==='ready'?'ready':'conditional',conditions:input.readiness.conditions??[],
      deadline_margin_minutes:margin,buffer_met:bufferMet,calendar_facts:cal,
      direction:cal?{name:cal.xi_direction,system:'日家喜神方位',usage:'facing',mapping_kind:'modern_analogy',source_id:'lunar-1.7.7',note:'Facing is a modern optional ritual, not Wenchang or Qimen.'}:null,
      practical_reasons:[{source_id:'config-v1',text:'Fits availability, operation duration and known deadlines.'}],
      cultural_reasons:cal?[{source_id:'local-cultural-v1',text:'Local cultural mapping: officer '+cal.officer+'; hour '+cal.hour_spirit+' '+cal.hour_luck}]:[],
-     sort_factors:{buffer:bufferMet===false?0:1,preference:p.preferred_hours?.includes(click.hour)?1:0,cultural:rank}});
+     ...(zodiac?{zodiac_timing:zodiac}:{}),
+     ...(academic?{academic_timing:{matched:academicMatch,reason:academicMatch?'符合目标期刊的已核验投稿时段偏好。':'当前可用范围内保留的备选时段，未命中学术偏好。',source_url:academic.evidence.source_url}}:{}),
+     sort_factors:{buffer:bufferMet===false?0:1,academic:academicMatch?1:0,preference:p.preferred_hours?.includes(click.hour)?1:0,cultural:rank,zodiac:zodiac?.score??0}});
    }
   }
  }
- all.sort((a,b)=>b.sort_factors.buffer-a.sort_factors.buffer||b.sort_factors.preference-a.sort_factors.preference||b.sort_factors.cultural-a.sort_factors.cultural||a.start_utc.localeCompare(b.start_utc));
+ all.sort((a,b)=>b.sort_factors.buffer-a.sort_factors.buffer||b.sort_factors.academic-a.sort_factors.academic||b.sort_factors.preference-a.sort_factors.preference||b.sort_factors.cultural-a.sort_factors.cultural||b.sort_factors.zodiac-a.sort_factors.zodiac||a.start_utc.localeCompare(b.start_utc));
  const selected=[],dates=new Set();
  for(const c of all)if(!dates.has(c.local_date)&&selected.length<p.count){selected.push(c);dates.add(c.local_date);}
  for(const c of all)if(selected.length<p.count&&!selected.some(x=>x.candidate_id===c.candidate_id||c.start_utc<x.end_utc&&c.end_utc>x.start_utc))selected.push(c);
  r.recommendations=selected.map((c,i)=>({...c,rank:i+1,...(input.astrology?.enabled===false?{}:{astrology:astrologyAt(c.click_at_utc,input.astrology?.personal_sign)})}));r.excluded_summary=Object.entries(counts).map(([reason,count])=>({reason,count}));
  r.status=!selected.length?'no_candidates':!cultural&&input.tradition?.enabled!==false?'degraded':r.missing_inputs.length?'conditional':'ok';
+ if(academic){
+  const overridden=selected.some(c=>c.academic_timing.matched&&all.some(other=>!other.academic_timing.matched&&other.sort_factors.buffer===c.sort_factors.buffer&&(other.sort_factors.cultural>c.sort_factors.cultural||other.sort_factors.zodiac>c.sort_factors.zodiac)));
+  r.timing_policy.explanation=overridden?'本次存在文化择时更优、但未命中学术偏好的时段，已优先选择符合目标期刊学术依据的窗口。':'本次已将目标期刊的已核验学术偏好排在文化择时之前。';
+  if(p.strict_traditional)r.timing_policy.explanation+=' 严格择吉本轮作为偏好处理，避免排除符合学术依据的可用时间。';
+ }
  return r;
 }
 export function compare(report,a,b){
  const x=report.recommendations.find(c=>c.candidate_id===a),y=report.recommendations.find(c=>c.candidate_id===b);
  if(!x||!y)throw new Error('Unknown candidate');
- return {candidate_ids:[a,b],factors:['buffer','preference','cultural'].map(key=>({key,a:x.sort_factors[key],b:y.sort_factors[key],equal:x.sort_factors[key]===y.sort_factors[key]})),deadline_margin_minutes:[x.deadline_margin_minutes,y.deadline_margin_minutes],note:'Ordered factors; cultural rank is not a probability.'};
+ return {candidate_ids:[a,b],factors:['buffer','academic','preference','cultural','zodiac'].map(key=>({key,a:x.sort_factors[key],b:y.sort_factors[key],equal:x.sort_factors[key]===y.sort_factors[key]})),deadline_margin_minutes:[x.deadline_margin_minutes,y.deadline_margin_minutes],note:'Ordered factors; cultural rank is not a probability.'};
 }
