@@ -32,5 +32,5 @@ A submission confirmation file has `{"confirmed":true}` plus optional actual_cli
 
 Readiness fields are supplied facts, not an automated scientific review. CLI commands do not open a submission portal, send emails, check journal sites or set external reminders. The Skill's host agent supplies those contextual facts or optional authorized capabilities.
 
-Output: recommendations.json, report.md, report.en.md, manifest.json; project candidates also produce submission-windows.ics and direction.svg. The SVG is a fixed-north schematic. The ICS contains candidate events, no alarms. Original input is not copied into outputs; output still contains project title, conditions and source references, so keep runs private.
+Output: recommendations.json, report.md, report.en.md, manifest.json; project candidates also produce submission-windows.ics and direction.svg. The SVG is a fixed-north schematic. The ICS contains candidate events, no alarms. Full original input is saved in input.json and record.json, paired with results in private local history. report.html embeds these records. Keep runs and .local-data private.
 

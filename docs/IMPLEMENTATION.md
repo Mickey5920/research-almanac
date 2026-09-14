@@ -6,9 +6,13 @@ updated: 2026-09-14
 tags: [zhouyi, implementation]
 ---
 
-# Implementation status — 0.5.0 preview
+# Implementation status — current release 0.8.1
 
 This is a working local preview, not a claim that every roadmap item is complete. The package is ready for source upload to GitHub; it has not been published or installed globally.
+
+## Current release summary — 2026-09-15
+
+Version 0.8.1 consolidates the English and Chinese README, adds localized editable workflow diagrams, and corrects historical output documentation. Runtime behavior is unchanged from 0.8.0. The current report supports an offline Chinese/English switch, compact window comparisons, direction bearings including cardinal aliases, personal zodiac timing and applicable academic timing priority. The current Node suite contains 106 tests. Counts and browser observations in the dated sections below describe earlier releases, not the current UI verification status.
 
 ## 0.4.0 interaction correction
 

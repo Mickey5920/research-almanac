@@ -12,154 +12,237 @@ tags: [zhouyi, skill, documentation]
 
 # Zhouyi Paper Submit Advisor
 
-**A local agent Skill for thoughtful paper-submission planning, with traceable Yijing cultural reflection.**
+**Turn your manuscript's readiness, deadlines and availability into a practical submission plan—with Yijing reflection and optional personal zodiac symbolism.**
 
-Plan around your manuscript's readiness, availability and deadline. Compare up to three windows, choose one, revisit it when plans change, and keep the final submission record.
+An Agent Skill for initial submissions, revisions and resubmissions. Describe your project in the Agent conversation; receive up to three submission windows with exact local times, facing directions, explanations and a portable HTML report.
 
-**Release 0.8.0 · Local-first · Node.js 22+ · Chinese / English documentation**
+<p align="center"><strong>Mysticism offers ritual; science sets priorities.</strong></p>
+<p align="center">v0.8.1 · Node.js 22+ · Local computation · Offline bilingual HTML · MIT</p>
 
-> Calendar traditions are cultural references. This tool does not estimate acceptance probabilities.
+[Quick start](#quick-start) · [Features](#features) · [How ranking works](#how-ranking-works) · [Commands](#commands) · [FAQ](#faq)
 
-## What works today
+## At a glance
 
-| Capability | What you get |
+![Workflow: Agent conversation, local Skill computation, read-only HTML and local records](assets/diagrams/workflow.en.png)
+
+*Workflow illustration, not a product screenshot. The banner and poster are promotional artwork.*
+
+1. **Describe your project.** The Agent reads the project material you specify and gathers your constraints.
+2. **Generate the plan locally.** The Skill validates inputs, evaluates feasible windows and saves its results.
+3. **Open the HTML.** Compare windows, inspect reasons and revisit earlier records without an AI connection.
+4. **Adjust through the Agent.** New instructions produce a new record and report; existing snapshots remain available.
+
+The Agent handles conversation and any source verification. The local engine handles calculation. The HTML displays saved data only.
+
+## Features
+
+| Capability | What you receive |
 |---|---|
-| Agent HTML output | Agent saves paired inputs/results and returns a read-only local history template |
-| Local history | Current invocation and earlier records; offline search and comparison, without AI connections |
-| Project-aware scheduling | Readiness conditions, earliest-ready time, availability, exclusions and a stage-specific deadline |
-| Traditional reference | Pinned Chinese-calendar day/hour labels and daily Xi-shen direction for Asia/Shanghai |
-| Exact operational times | Local timestamps with offsets; editable final-operation duration and click offset |
-| Compare and choose | Stable ordering, diverse dates, plan snapshots and explicit review states |
-| Conversational adjustments | The host agent converts requests into validated local JSON patches |
-| Cultural reflection | Four sourced excerpts from 乾 and 謙, brief/detailed explanations, supplied six-line recording |
-| Prepare and record | Dependency-aware preparation backplanning and idempotent submission confirmation |
-| Portable output | Chinese/English Markdown, JSON, candidate ICS and a fixed-north direction schematic |
+| Project-aware scheduling | Submission stage, readiness, earliest-ready time, availability, exclusions and deadline constraints |
+| Three-window comparison | A preferred window and alternatives on different dates, when enough feasible dates exist |
+| Exact timing | Local dates, time zones, operation windows, suggested click times and deadline margins |
+| Facing guidance | Direction name, clockwise bearing and a north-up compass with alignment instructions |
+| Reasons for each window | Available day/hour factors, direction sources, minute-by-minute plans and Yijing reflection |
+| Academic evidence | Separate study summaries and saved target-specific official rules, office information and deadline evidence |
+| Personal zodiac timing | Optional supplied sun sign used in cultural timing analysis, after practical and academic priorities |
+| Compact report | Aligned window cards, collapsible details, local search and comparisons between saved records |
+| Chinese / English switch | Offline interface translation that preserves the selected record, open details and original project text |
+| Plan lifecycle | Compare, select, review changes, backplan preparation and record an explicitly confirmed submission |
+| Portable output | HTML, bilingual Markdown, JSON, candidate calendar events and a direction schematic |
 
-Other timezones support practical scheduling with explicitly degraded traditional coverage. Qimen, personal Bazi, true solar time, additional schools and autonomous reminder providers are **not implemented**. See [implementation status](docs/IMPLEMENTATION.md) for exact boundaries.
+The HTML uses a jade-and-gold observatory theme with local illustration assets, compact typography and no external font dependency.
 
 ## Quick start
 
-Invoke the Skill in your Agent conversation and provide the paper project and constraints there. The Agent returns **report.html**, a read-only local template showing this invocation's input/result and earlier local records. Open the file directly: no model connection, network requests, browser form or service is required.
+### 1. Prepare the Skill folder
 
-The Agent uses:
+Download the repository or a source release. Keep the complete folder named **zhouyi-paper-submit-advisor**, including `SKILL.md`, scripts, schemas, templates and assets. Place it in the Skill directory supported by your Agent host; the location and discovery mechanism depend on the host.
+
+Install **Node.js 22 or later** and npm. In this folder, run:
 
 ~~~sh
 npm ci --ignore-scripts
-node scripts/cli.js recommend examples/project.json --out runs/new-agent-run
 ~~~
 
-Each run saves input.json, record.json, report.html and bilingual reports, and appends a pair to private .local-data/history/. The example uses a frozen synthetic date/deadline; real inputs must replace these details and omit fixed now.
+This installs pinned dependencies and requires package-registry access unless they are cached. After installation, the local engine and exported HTML do not need an AI API key. Your Agent host has its own model and permission settings.
 
-To rebuild history without recalculating or adding a record:
+### 2. Invoke it in the Agent
+
+> Use $zhouyi-paper-submit-advisor for my paper project. I am preparing a revision and use Asia/Shanghai time. Suggest three submission windows next week, show exact local times and facing directions, explain the available factors, and return the local HTML report. Ask me for any essential missing project facts.
+
+Optional follow-ups:
+
+> My sign is Virgo. Include personal zodiac timing as a cultural preference.
+
+> Wednesday morning is unavailable. Keep the other constraints and generate a new report.
+
+> Keep the selected plan and review it against the updated deadline.
+
+The Agent maps your natural-language request to validated inputs. It reads only the project context relevant to the request. The CLI does not independently crawl your files or browse journal websites.
+
+### 3. Try the reproducible demo
 
 ~~~sh
-node scripts/cli.js history-html --out runs/history-view-new.html
+node scripts/cli.js recommend examples/project.json --out runs/readme-demo
 ~~~
 
-New invocations generate new HTML snapshots; existing files do not update automatically. Changes are requested in the Agent conversation. See [Agent output and Git guide](docs/WORKBENCH.md).
+Open **runs/readme-demo/report.html** directly in your browser. Use **中文 / English** in the top right to switch the interface. No local server is required.
 
-## Use as an agent Skill
+The example uses a frozen synthetic date and deadline. For a live request, replace its project details, readiness, availability and deadline, and omit `now`. Every `--out` destination must be new; choose another directory when rerunning.
 
-Keep this whole folder named **zhouyi-paper-submit-advisor**. Place it in your agent host's supported Skill directory, install the local dependencies there, and invoke:
+## What to provide
 
-> Use $zhouyi-paper-submit-advisor to read my paper project's current preparation status and suggest three submission windows next week. Show local time, optional facing direction, sources and remaining tasks.
+| Information | Purpose |
+|---|---|
+| Project title and submission stage | Identify the manuscript and distinguish initial submission, revision or resubmission |
+| Readiness and remaining tasks | Avoid treating unfinished materials or unconfirmed author approval as ready |
+| Time zone | Display all operational times correctly; use an IANA identifier such as `Asia/Shanghai` |
+| Planning range | Next calendar week, a rolling seven-day range, or a custom range |
+| Deadline status | Record a known timestamp and source, explicitly no fixed deadline, or unknown status |
+| Available and excluded times | Keep recommendations compatible with your schedule |
+| Target journal or conference | Associate official instructions and applicable academic evidence with the correct venue |
+| Personal sign, optionally | Add symbolic timing analysis without birth date, birth time or birthplace |
 
-[SKILL.md](SKILL.md) is the entrypoint. No login or API key is required. The CLI runs directly; the browser workbench uses a local-only service. The host agent reads project context; the CLI itself does not crawl your files or browse journal websites.
+A target with no known deadline can still be represented honestly. Essential uncertainty appears in the result status and saved conditions.
 
-## A continuous workflow
+[Project example](examples/project.json) · [Personal zodiac example](examples/astrology.json) · [Input schema](schemas/input.schema.json)
 
-1. **Recommend** — generate feasible windows with labelled cultural references.
-2. **Compare** — inspect the factors that actually determined the ranking.
-3. **Select** — save a plan instead of recalculating every time you view it.
-4. **Review** — check changed deadlines, availability, manuscript version or prerequisites.
-5. **Submit and record** — explicitly confirm the actual event and save its evidence reference.
+## How ranking works
+
+Preparation, availability and hard deadlines determine which windows are feasible. Among feasible windows, the current priority order is:
+
+1. Deadline buffer.
+2. Verified, applicable academic timing preference for the target venue.
+3. Your preferred hours.
+4. Traditional calendar preference.
+5. Personal zodiac symbolism as the final cultural tie-breaker.
+
+The engine also keeps alternatives on different dates. When applicable academic evidence conflicts with cultural timing, the report explains the choice. A general study summary does not automatically penalize weekends: target-specific applicability must be established before a weekday preference affects ranking.
+
+| Reference layer | Current implementation |
+|---|---|
+| Chinese calendar | Pinned calendar rules for day/hour labels and daily Xi-shen direction in `Asia/Shanghai`; other zones retain practical scheduling with limited traditional coverage |
+| Yijing reflection | Four sourced excerpts from Qian (乾) and Qian/Modesty (謙), with modern project interpretations |
+| Personal zodiac | Local ephemeris from Astronomy Engine; a declared elemental mapping between the supplied sun sign and calculated Moon sign, used only at the last ranking level |
+| Academic context | Stored research snapshots plus Agent-verified target instructions, published office details, deadlines and applicable timing evidence |
+
+Specific click minutes reserve time for checks and receipts. The compass is a fixed-north guide, not a live location sensor. Cultural factors do not estimate manuscript acceptance probability.
+
+Personal zodiac input is optional. Without it, the HTML omits personal analysis. Set `astrology.enabled` to `false` to disable the module. Ephemeris support is limited to 1900–2100; conventions are documented in [SKILL.md](SKILL.md).
+
+## Reports and local records
+
+A recommendation with candidates produces:
+
+~~~text
+runs/readme-demo/
+  report.html               Offline bilingual report and history snapshot
+  input.json                Exact saved input
+  record.json               Paired input/result record
+  recommendations.json      Structured results and sources
+  report.md                 Chinese Markdown report
+  report.en.md              English Markdown report
+  manifest.json             Run identifiers and versions
+  submission-windows.ics    Candidate calendar events, without alarms
+  direction.svg             Preferred-window north-up direction schematic
+~~~
+
+Calendar and direction files are produced when candidates exist. Each invocation also appends an independent record under `.local-data/history/`. Keep this private directory if you want history to continue across Skill updates.
+
+To export current history without recalculating or adding a record:
 
 ~~~sh
-node scripts/cli.js compare runs/demo/recommendations.json 1 2
-node scripts/cli.js select runs/demo/recommendations.json 1 --out runs/plan-1.json
-node scripts/cli.js patch examples/project.json examples/patch.json --out runs/changed-input.json
-node scripts/cli.js recommend runs/changed-input.json --out runs/changed-plan
-node scripts/cli.js render runs/demo/recommendations.json en detailed
+node scripts/cli.js history-html --out runs/history-view.html
+~~~
+
+The resulting HTML embeds the available records, styles, images and display logic. It does not fetch new records or refresh sources after export. A new invocation or history export produces an updated snapshot. The language switch translates built-in presentation text; user-written content, original quotations and raw JSON retain their original language. Language preference is remembered when browser local storage is available.
+
+## Commands
+
+Run from the Skill folder. The first command below creates the demo used by the subsequent commands; skip it if you already created that directory.
+
+~~~sh
+node scripts/cli.js recommend examples/project.json --out runs/readme-demo
+node scripts/cli.js compare runs/readme-demo/recommendations.json 1 2
+node scripts/cli.js select runs/readme-demo/recommendations.json 1 --out runs/selected-plan.json
+node scripts/cli.js patch examples/project.json examples/patch.json --out runs/updated-input.json
+node scripts/cli.js review runs/selected-plan.json runs/updated-input.json --out runs/reviewed-plan.json
+node scripts/cli.js recommend runs/updated-input.json --out runs/updated-run
+node scripts/cli.js render runs/readme-demo/recommendations.json en detailed
 node scripts/cli.js backplan examples/tasks.json
 ~~~
 
-[Full command reference](docs/COMMANDS.md) · [Input schema](schemas/input.schema.json) · [Sample report](docs/example-report.en.md)
-
-## Cultural mode
+For text-only cultural reflection or user-supplied six-line recording:
 
 ~~~sh
-node scripts/cli.js recommend examples/cultural.json --out runs/reflection
-node scripts/cli.js recommend examples/lines.json --out runs/six-lines
+node scripts/cli.js recommend examples/cultural.json --out runs/reflection-demo
+node scripts/cli.js recommend examples/lines.json --out runs/lines-demo
 ~~~
 
-Text reflection requires no project or deadline. The six-line mode takes user-supplied 6/7/8/9 values, bottom to top, and mechanically transforms moving lines. It is not random casting or a full 64-hexagram commentary engine.
+Six-line mode accepts six user-supplied values, bottom to top, and transforms moving lines. Selection, review and submission recording are Agent/CLI actions; the report stays read-only. See [all commands](docs/COMMANDS.md) for actual submission confirmation and further options.
 
-The day-officer ranking and optional facing adaptation are explicitly modern project analogies. The minutes are scheduling preferences, not minute-level divination. See [calendar rules](references/calendar-rules.md) and [sources](docs/DECISIONS.md).
+## FAQ
 
-## Privacy and reminders
+**Does the HTML call an AI model?** No. It displays embedded local records, and its security policy blocks network connections. Source links open only when you choose to visit them.
 
-The input schema rejects unsupported fields, including birth data. Reports contain your supplied project title and conditions, so keep runs/ private. The release exporter excludes runs, dependencies, caches and environment files.
+**Can I use the report after closing the Agent?** Yes. Keep the exported HTML file. It is self-contained and can be opened from disk.
 
-ICS export creates candidate calendar events **without alarms**. Actual reminders require an available host tool and user authorization. No successful external reminder is claimed merely because a local file exists.
+**Why are there fewer than three windows?** Your readiness, range, availability, exclusions or deadline may leave fewer feasible dates. Adjust these through the Agent.
 
-## Repository map
+**Does changing language recompute the plan?** No. It changes the presentation of the existing snapshot.
+
+**Are all the reference books implemented as calculation engines?** The book catalog describes reference scope. Current calculation support is listed above. Meihua, Qimen, personal Bazi, true solar time and full 64-hexagram commentary are future work.
+
+**Will it submit my paper or create reminders?** The Skill plans and records; it does not operate a submission portal. ICS files contain candidate events without alarms. Actual reminders require an available, authorized host tool.
+
+## Repository and development
 
 ~~~text
-SKILL.md                 Agent entrypoint
-agents/                  Optional host UI metadata
-scripts/                 Scheduling, reports, plans and release export
-schemas/                 Validated input and output contracts
-data/                    Excerpts and source registry
-config/                  Editable operational defaults
-references/              Focused agent instructions
-examples/                Synthetic, portable inputs
-tests/                   Automated behavioral checks
-docs/                    Design, decisions and implementation evidence
-assets/marketing/        Generated promotional art and prompts
+SKILL.md              Agent entrypoint
+agents/               Host metadata
+scripts/              Calculation, reports, plan lifecycle and packaging
+web/                  Offline HTML templates, styles and translations
+schemas/              Input/output validation contracts
+config/               Operational defaults
+examples/             Synthetic inputs for local demonstrations
+references/           Focused Agent instructions and evidence rules
+data/                 Curated excerpts and reference snapshots
+assets/               Interface art, promotional images and diagrams
+tests/                Behavioral and integration tests
+docs/                 Project guide, commands and implementation history
 ~~~
 
-## For GitHub
+~~~sh
+npm test
+npm run check
+~~~
 
-Upload this folder's source contents, or use:
+The repository includes [GitHub Actions configuration](.github/workflows/test.yml) for Node 22/24 on Windows and Linux. Check the Actions tab in your own repository after publishing for actual CI results.
+
+Contributions should include a reproducible example and preserve time-zone correctness, immutable records, source traceability and the separation between empirical evidence and cultural interpretation.
+
+## Prepare a GitHub upload
 
 ~~~sh
 npm run check
 npm run pack:release
 ~~~
 
-The exporter creates a clean folder under dist/ with only allowlisted public source, documentation and images. Upload the **contents** of that clean folder as the GitHub repository root; do not upload node_modules or private runs. GitHub's top language link switches directly between the two README files. No repository URL, build badge or published release is fabricated.
+The exporter creates **dist/0.8.1/zhouyi-paper-submit-advisor/** using an allowlist of public source, documentation and assets. Upload the **contents of that folder** as your repository root. Keep `README.md`, `README.zh-CN.md` and `assets/` together so the language links and images work on GitHub. If the release folder already exists, use the existing package or choose a new release version; the exporter preserves prior releases.
 
-The CI workflow is configured for Node 22/24 on Windows and Linux. A configured workflow is not evidence that GitHub CI has already run.
+Private `runs/`, `.local-data/`, dependencies, caches and environment files are excluded. Reports contain supplied project information even though they are offline; share only synthetic examples. A source package does not include Git history. Use the source repository or a Git bundle if you need commit history. Creating a local package does not publish it to GitHub.
 
-## Design and release scope
+## Documentation and artwork
 
-[Full project guide (Chinese)](docs/PROJECT-GUIDE.md) · [Implementation and verification](docs/IMPLEMENTATION.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
+[Project guide (Chinese)](docs/PROJECT-GUIDE.md) · [Implementation history](docs/IMPLEMENTATION.md) · [Agent output guide](docs/WORKBENCH.md) · [Academic evidence rules](references/academic-evidence.md) · [English sample report](docs/example-report.en.md)
 
-The guide includes future work; it is not a claim that every planned feature is implemented. Contributions should preserve explicit unknowns, traceable rules and reproducible time calculations.
+The project guide includes planned features. Use the current capability table and implementation notes to distinguish available functions from the roadmap.
 
 <details>
-<summary>Promotional poster</summary>
+<summary>View the Chinese promotional poster</summary>
 
-![Chinese promotional poster](assets/marketing/poster.zh-v2.png)
+![周易论文投稿择时 — Chinese promotional poster](assets/marketing/poster.zh-v2.png)
 
 </details>
 
-Code and original documentation: [MIT](LICENSE). Third-party material retains its applicable terms. Generated art provenance: [prompts and tool notes](assets/marketing/PROMPTS.md).
-
-## Window explanations and academic evidence
-
-Each window shows recorded day/hour factors, direction sources, operational minute rationale and a stage-level Zhouyi reflection. The HTML adds a book catalog, three published-study summaries with sample/denominator limits, a historical weekday chart, target-specific official evidence and a bilingual glossary. Unimplemented traditions remain unavailable. No personal acceptance probability is inferred. The Agent verifies target sources and stores them locally; HTML stays read-only. See [evidence rules](references/academic-evidence.md).
-
-## Zodiac and window astrology
-
-New project windows store the Moon's tropical zodiac sign and Mercury motion at the recommended click time, computed locally with Astronomy Engine 2.1.19. The HTML reads saved results only. Optional astrology.personal_sign accepts a Chinese sign name (for example 处女座); no birthday or birthplace is needed. Set astrology.enabled=false to disable this feature. See the [synthetic example](examples/astrology.json).
-
-The convention uses twelve equal tropical sectors and geocentric ecliptic coordinates of date, within 1900–2100. Mercury motion uses a centered 12-hour difference and a near-station threshold of 0.02 degrees/day. Personal zodiac symbolism is used only as the final cultural timing tie-breaker. Old records are not retroactively calculated.
-
-## Practical evidence before ritual
-
-The report now analyses the supplied user's sign as a final cultural timing tie-breaker instead of displaying Moon/Mercury badges. Verified, applicable target-specific weekday preferences are supplied through academic_timing (target, timezone, preferred_weekdays, and evidence with status, source_url, checked_at, conclusion, applicability). Real constraints and deadline buffer take priority, then academic preference, user hours, calendar symbolism and personal zodiac symbolism. General literature is not a universal weekend penalty. The report explains conflicts and centers the principle “玄学提供仪式感，科学提供优先级” below the main content.
-
-### Offline language switch
-
-Use **中文 / English** at the top right of the HTML report. Interface labels, built-in guidance and directions switch locally; no model or network is used. Your selected record and open details remain in place. User-authored content, source quotations and raw JSON remain in their original language. The browser remembers the language when local storage is available. Previously exported snapshots remain unchanged; generate a new report to receive this control.
+Code and original documentation: [MIT License](LICENSE). Third-party materials retain their applicable terms; see [third-party notices](THIRD_PARTY_NOTICES.md). Generated promotional artwork is documented in [image provenance](assets/marketing/PROMPTS.md); workflow diagrams are editable SVGs in `assets/diagrams/`.
