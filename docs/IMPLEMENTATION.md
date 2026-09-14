@@ -120,3 +120,7 @@ A newly generated light celadon celestial atlas is embedded as the fixed backgro
 ## 0.5.8 at-a-glance report
 
 Removed the local-history hero tag. Default view prioritizes three candidate windows, small compasses and reason summaries. History, input, pending items and full reasons expand on demand. All record data remains available. The hero and spacing are reduced; narrow screens retain natural vertical reading.
+
+## 0.5.9 background rendering correction
+
+The full-page artwork is now a fixed, decorative image element beneath positioned content, instead of a multi-megabyte CSS custom property. This avoids CSS variable size limits and makes the image layer explicit. Generated image bytes are checked against the embedded payload. Panel fills are slightly lighter to reveal the artwork.

@@ -16,7 +16,7 @@ tags: [zhouyi, skill, documentation]
 
 Plan around your manuscript's readiness, availability and deadline. Compare up to three windows, choose one, revisit it when plans change, and keep the final submission record.
 
-**Release 0.5.8 · Local-first · Node.js 22+ · Chinese / English documentation**
+**Release 0.5.9 · Local-first · Node.js 22+ · Chinese / English documentation**
 
 > Calendar traditions are cultural references. This tool does not estimate acceptance probabilities.
 
