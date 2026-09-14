@@ -92,3 +92,7 @@ The HTML includes three published study summaries with distinct denominators, a 
 ## 0.5.1 concise window reasons
 
 Window reasons show supported favorable factors, direction, concrete submission timing and sufficient deadline margin directly. Missing or neutral factors are omitted; an empty explanation hides the whole section. Sources remain collapsed. Historical inputs and results are preserved.
+
+## 0.5.2 modular report design
+
+The report uses a history sidebar, structured input cards, a result overview, and aligned submission windows. Jade identifies favorable factors, blue identifies practical schedules and academic evidence, gold identifies cultural references, and slate identifies archives and comparison. Status text accompanies color. Module navigation, mobile stacking, keyboard focus, reduced motion and print styles are included. Existing local snapshots remain immutable.

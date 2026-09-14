@@ -36,7 +36,7 @@ function renderList(){
  const box=$('history-list');box.replaceChildren();const q=$('search').value.trim().toLowerCase();
  for(const r of records.filter(r=>JSON.stringify([title(r),r.input?.project?.target,r.created_at]).toLowerCase().includes(q))){
   const b=el('button',undefined,'history-item'+(selected?.record_id===r.record_id?' active':''));
-  b.type='button';b.append(el('strong',title(r)),el('small',when(r.created_at)),el('span',r.record_id===data.current_record_id?'本次调用':'往期记录','record-label'));
+  b.type='button';b.setAttribute('aria-pressed',String(selected?.record_id===r.record_id));b.append(el('strong',title(r)),el('small',when(r.created_at)),el('span',r.record_id===data.current_record_id?'本次调用':'往期记录','record-label'));
   b.addEventListener('click',()=>show(r));box.append(b);
  }
  if(!box.children.length)box.append(el('p','没有匹配的本地记录。','muted'));
@@ -45,7 +45,7 @@ function flatten(v,p='',o={}){if(v&&typeof v==='object'&&!Array.isArray(v))for(c
 function compare(){
  const box=$('comparison');box.replaceChildren();const other=records.find(r=>r.record_id===$('compare-select').value);if(!other||!selected)return;
  if(other.input&&selected.input){const a=flatten(other.input),b=flatten(selected.input);const keys=[...new Set([...Object.keys(a),...Object.keys(b)])].filter(k=>JSON.stringify(a[k])!==JSON.stringify(b[k]));
- box.append(el('p','输入差异：'+keys.length+' 项','muted'));for(const k of keys){const row=el('div',undefined,'difference');row.append(el('b',k),el('p','对比记录：'+JSON.stringify(a[k]??null)),el('p','当前记录：'+JSON.stringify(b[k]??null)));box.append(row);}}
+ box.append(el('p','输入差异：'+keys.length+' 项','muted'));for(const k of keys){const row=el('div',undefined,'difference');row.append(el('b',k),el('p','对比记录：'+JSON.stringify(a[k]??null),'comparison-before'),el('p','当前记录：'+JSON.stringify(b[k]??null),'comparison-current'));box.append(row);}}
  else box.append(el('p','一条记录缺少原始输入，仅对比结果。'));
  for(const [label,r] of [['对比记录',other],['当前记录',selected]])box.append(el('p',label+'：'+(r.report.recommendations.map(c=>c.local_click+' / '+(c.direction?.name??'方位暂缺')).join('；')||'没有候选窗口'),'difference'));
 }
@@ -59,7 +59,7 @@ function renderAcademic(record){
  $('evidence-target').textContent=target?'目标：'+target:'尚未提供目标期刊 / 会议；不能确定其官网规则或编辑部工作时间。';
  const evidence=record?.input?.academic_evidence,matched=evidence&&target&&evidence.target.trim().toLowerCase()===target.trim().toLowerCase();
  for(const [key,title] of [['journal_system','官网投稿系统说明'],['editorial_office','编辑部时区与工作时间'],['conference_deadline','会议截止与 AoE 规则']]){
-  const item=matched?evidence[key]:null,card=el('article',undefined,'evidence-card');
+  const item=matched?evidence[key]:null,card=el('article',undefined,'evidence-card');card.dataset.status=item?.status??'unknown';
   card.append(el('h4',title),el('span',({verified:'Agent 已核验 · 见来源',user_supplied:'用户提供 · 未外部核验',not_found:'已检索 · 未找到',unknown:'待核实'}[item?.status]??'待核实'),'reason-kind'),el('p',item?.summary??'本次记录尚无该目标的核验信息，请由 Agent 查证后保存。'));
   if(item?.checked_at)card.append(el('small','记录核验日：'+item.checked_at));
   if(item?.timezone)card.append(el('p','记录时区：'+item.timezone));
@@ -73,7 +73,7 @@ function renderReferences(){
  const lib=data.reference_library;if(!lib)return;
  const box=$('study-list');
  for(const study of lib.studies){
-  const card=el('article',undefined,'study-card');card.append(el('div',Number(study.sample).toLocaleString('en-US'),'sample-size'),el('small',study.sample_label),el('h3',study.title),el('p',study.citation,'muted'),el('p','样本时期：'+study.period,'muted'),el('p',study.finding),el('p',study.limitation,'study-limit'));
+  const card=el('article',undefined,'study-card');card.append(el('div',Number(study.sample).toLocaleString('en-US'),'sample-size'),el('small',study.sample_label),el('h3',study.title),el('p',study.citation,'muted'),el('p','样本时期：'+study.period,'muted'),el('p',study.finding,'study-finding'),el('p',study.limitation,'study-limit'));
   sourceLink(card,'研究来源 · DOI '+study.doi,study.url);
   if(study.rates){const detail=el('details',undefined,'rates-detail');detail.append(el('summary','查看历史样本的星期分布（非个人预测）'));
    const rows=el('div',undefined,'rate-chart');
@@ -87,14 +87,18 @@ function renderReferences(){
  for(const item of lib.official_examples){const p=el('p',item.text);sourceLink(p,item.title,item.url);official.append(p);}
  official.append(el('small','文献与公共规则核验日：'+lib.checked+' · 当前 HTML 不自动刷新网络信息'));
  const books=$('book-list');
- for(const book of lib.books){const c=el('article',undefined,'book-card');c.append(el('h4',book.title),el('span',book.status,'reason-kind'),el('p',book.scope));sourceLink(c,'查阅文本 / 版本',book.url);books.append(c);}
+ for(const book of lib.books){const c=el('article',undefined,'book-card');c.dataset.status=book.status;c.append(el('h4',book.title),el('span',book.status,'reason-kind'),el('p',book.scope));sourceLink(c,'查阅文本 / 版本',book.url);books.append(c);}
  const body=$('glossary-body');for(const terms of lib.glossary){const tr=el('tr');for(const text of terms)tr.append(el('td',text));body.append(tr);}
 }
 
 function show(r){
  selected=r;const report=r.report;renderAcademic(r);
  $('record-label').textContent=r.record_id===data.current_record_id?'本次调用结果':'往期结果';
- $('record-title').textContent=title(r);$('result-badge').textContent=labels[report.status]??report.status;
+ $('record-title').textContent=title(r);$('result-badge').textContent=labels[report.status]??report.status;$('result-badge').dataset.status=report.status;
+ const overview=$('result-overview');overview.replaceChildren();
+ for(const [label,value] of [['可用窗口',String(report.recommendations.length).padStart(2,'0')],['当前时区',report.timezone??'文化模式'],['记录归属',r.record_id===data.current_record_id?'本次调用':'往期记录']]){
+  const metric=el('div',undefined,'overview-metric');metric.append(el('dt',label),el('dd',value));overview.append(metric);
+ }
  $('record-meta').textContent='保存于 '+when(r.created_at)+' · '+(report.timezone??'文化模式')+' · 引擎 '+report.versions.skill;
  $('input-note').textContent='这份输入与右侧结果来自同一条已保存记录。';
  $('record-input').textContent=r.input?JSON.stringify(r.input,null,2):'该旧记录未保存原始输入，无法准确还原。';
@@ -110,6 +114,7 @@ function show(r){
  const list=$('candidate-list');list.replaceChildren();
  for(const c of report.recommendations){
  const card=el('article',undefined,'candidate'+(c.rank===1?' is-primary':''));
+ card.dataset.status=c.readiness_status;
  const head=el('div',undefined,'window-heading');head.append(el('span',String(c.rank).padStart(2,'0'),'window-index'),el('span',c.rank===1?'首选窗口':'备选窗口','window-label'),el('span',c.readiness_status==='ready'?'已就绪':'待确认','window-state'));
  const fields=el('div',undefined,'window-fields');
  for(const [label,value,cls] of [['推荐日期',day(c.start_utc,c.timezone),'window-date'],['操作时间',clock(c.start_utc,c.timezone)+' — '+clock(c.end_utc,c.timezone),'window-clock'],['建议点击',clock(c.click_at_utc,c.timezone),'window-value'],['面向参考',c.direction?.name??'暂缺','window-value']]){const field=el('div',undefined,'window-field');field.append(el('small',label),el('div',value,cls));fields.append(field);}
@@ -130,3 +135,4 @@ $('search').addEventListener('input',renderList);$('compare-select').addEventLis
 if(records.length)show(records.find(r=>r.record_id===data.current_record_id)??records[0]);
 else{$('empty').hidden=false;$('result-content').hidden=true;renderList();}
 })();
+
