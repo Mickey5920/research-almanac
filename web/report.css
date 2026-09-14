@@ -382,3 +382,38 @@ body{position:relative;isolation:isolate;background:#e5ecdf}
 @media print{.page-backdrop{display:none}}
 .page-backdrop{z-index:0}
 body>main,body>.topbar{position:relative;z-index:1}
+
+/* Offline typography: clear interface text, restrained literary display, aligned numerals. */
+:root{
+ --font-ui:"Microsoft YaHei UI","PingFang SC","Noto Sans CJK SC","Source Han Sans SC","Microsoft YaHei",system-ui,sans-serif;
+ --font-display:"Noto Serif CJK SC","Source Han Serif SC","Songti SC","SimSun",serif;
+ --font-numeric:"Bahnschrift","DIN Alternate","Segoe UI",var(--font-ui);
+}
+body,button,input,select,textarea{font-family:var(--font-ui)}
+body{font-weight:400;line-height:1.65}
+.brand{font-family:var(--font-ui);font-weight:600;letter-spacing:1px}
+.brand small{font-family:var(--font-numeric);font-size:9px;letter-spacing:2px}
+.hero h1{font-family:var(--font-display);font-weight:600;letter-spacing:2px;font-size:26px;line-height:1.35}
+.hero .eyebrow{letter-spacing:2px;font-weight:500}
+.section-heading h2,#record-title,.direction-copy strong,.book-card h4{font-family:var(--font-ui);font-weight:600;letter-spacing:.2px}
+#record-title{font-size:17px;line-height:1.55}
+.section-heading h2{font-size:16px}
+.direction-copy strong{font-size:20px}
+.window-index,.window-clock,.window-field:nth-child(3) .window-value,.direction-bearing,.sample-size,.overview-metric:first-child dd,.count,.module-nav b{
+ font-family:var(--font-numeric);font-variant-numeric:lining-nums tabular-nums;font-weight:500;letter-spacing:.2px;
+}
+.window-clock{font-size:19px;line-height:1.35}
+.window-field:nth-child(3) .window-value{font-size:20px}
+.window-index{font-size:22px}
+.window-date,.window-value{font-family:var(--font-ui);font-variant-numeric:tabular-nums}
+.window-date{font-size:13px;font-weight:500}
+.window-label,.reason-item-head strong,.overview-disclosure>summary{font-weight:600}
+.reason-item p,.reason-brief,.direction-steps li{font-size:12px;line-height:1.7}
+.window-field small,.input-field dt,.direction-copy p{font-size:11px}
+#record-meta,.window-footer{font-size:11px;line-height:1.55}
+.reflection blockquote{font-family:var(--font-display);font-size:20px;line-height:1.7;letter-spacing:.5px}
+.dial-label{font-family:var(--font-ui)}
+.glossary td:nth-child(3){font-family:var(--font-ui)}
+@media(max-width:950px){.window-clock{font-size:17px}}
+@media(max-width:650px){.hero h1{font-size:23px}.window-clock{font-size:19px}.brand{font-size:14px}}
+@media print{.window-clock{font-size:16px}.reason-item p{font-size:10px}}

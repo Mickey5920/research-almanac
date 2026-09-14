@@ -124,3 +124,7 @@ Removed the local-history hero tag. Default view prioritizes three candidate win
 ## 0.5.9 background rendering correction
 
 The full-page artwork is now a fixed, decorative image element beneath positioned content, instead of a multi-megabyte CSS custom property. This avoids CSS variable size limits and makes the image layer explicit. Generated image bytes are checked against the embedded payload. Panel fills are slightly lighter to reveal the artwork.
+
+## 0.5.10 offline typography
+
+Unifies interface text with Microsoft YaHei UI / PingFang / Noto Sans CJK fallbacks. Literary serif styling is limited to the hero and quotations. Bahnschrift / DIN Alternate / Segoe UI provide clear tabular numerals. No font files are redistributed or downloaded. Slightly larger metadata and reason text improve readability while keeping the overview compact.
