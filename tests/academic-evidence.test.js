@@ -23,7 +23,6 @@ test('reference snapshot preserves distinct sample denominators and disabled tra
  assert.equal(lib.studies[0].rates.reduce((sum,x)=>sum+x.submitted,0),596);
  assert.ok(lib.studies.find(x=>x.sample===178000).limitation.includes('分母'));assert.ok(lib.studies.find(x=>x.sample===11499).limitation.includes('OR'));
  assert.equal(lib.glossary.length,7);assert.equal(lib.books.length,6);
- const html=await renderHistoryHtml({records:[]});assert.ok(html.includes('19.2 学术参考'));assert.ok(html.includes('reference_library'));
- assert.ok(!/\bfetch\s*\(|XMLHttpRequest|WebSocket/.test(html));assert.ok(html.includes('体用'));
+ const html=await renderHistoryHtml({records:[]});assert.ok(html.includes('学术参考'));assert.ok(html.includes('reference_library'));
+ assert.ok(!/\bfetch\s*\(|XMLHttpRequest|WebSocket/.test(html));assert.ok(html.includes('体用'));assert.ok(!html.includes('19.1 参考书目与启用状态'));assert.ok(!html.includes('19.3 术语表'));
 });
-

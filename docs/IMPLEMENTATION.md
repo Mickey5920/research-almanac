@@ -104,3 +104,7 @@ Each window with a supported saved direction displays a fixed-north compass, a c
 ## 0.5.4 compact report
 
 Reduced vertical spacing, hero height and card padding. Submission time, direction and window reasons remain visible. Alignment steps, full reflection, comparison, academic detail and book references expand on demand. Desktop and print layouts keep candidate windows side by side where space permits; page count depends on paper size, viewport and expanded content.
+
+## 0.5.5 focused report
+
+Removed bibliography/activation-status and bilingual glossary modules and their navigation from the HTML. The academic heading and introduction use concise neutral wording. Reference data remains in the project; removing activation labels does not change implemented calculations.

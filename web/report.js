@@ -125,9 +125,6 @@ function renderReferences(){
  const official=$('official-examples');official.append(el('p','公共核验范例 · 不自动适用于当前目标','research-note'));
  for(const item of lib.official_examples){const p=el('p',item.text);sourceLink(p,item.title,item.url);official.append(p);}
  official.append(el('small','文献与公共规则核验日：'+lib.checked+' · 当前 HTML 不自动刷新网络信息'));
- const books=$('book-list');
- for(const book of lib.books){const c=el('article',undefined,'book-card');c.dataset.status=book.status;c.append(el('h4',book.title),el('span',book.status,'reason-kind'),el('p',book.scope));sourceLink(c,'查阅文本 / 版本',book.url);books.append(c);}
- const body=$('glossary-body');for(const terms of lib.glossary){const tr=el('tr');for(const text of terms)tr.append(el('td',text));body.append(tr);}
 }
 
 function show(r){
@@ -167,7 +164,7 @@ function show(r){
  for(const other of records)if(other.record_id!==r.record_id){const o=el('option',title(other)+' · '+when(other.created_at));o.value=other.record_id;select.append(o);}
  renderList();compare();
 }
-for(const [selector,mark] of [['.history-panel h2','history'],['.input-panel h2','book'],['#record-label','calendar'],['#academic-section h2','chart'],['#reference-section h2','book']]){
+for(const [selector,mark] of [['.history-panel h2','history'],['.input-panel h2','book'],['#record-label','calendar'],['#academic-section h2','chart']]){
  const heading=document.querySelector(selector);if(heading)heading.prepend(icon(mark));
 }
 renderReferences();renderAcademic(null);
