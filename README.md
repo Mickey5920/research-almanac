@@ -8,13 +8,13 @@ tags: [zhouyi, skill, documentation]
 
 <p align="center"><strong>English</strong> · <a href="./README.zh-CN.md">简体中文</a></p>
 
-![Zhouyi Paper Submit Advisor — Plan thoughtfully. Submit calmly.](assets/marketing/hero.png)
+<p align="center"><img src="assets/marketing/poster.en-v1.png" alt="Zhouyi Paper Submit Advisor — Plan thoughtfully. Submit calmly." width="560"></p>
 
 # Zhouyi Paper Submit Advisor
 
 **Turn your manuscript's readiness, deadlines and availability into a practical submission plan—with Yijing reflection and optional personal zodiac symbolism.**
 
-An Agent Skill for initial submissions, revisions and resubmissions. Describe your project in the Agent conversation; receive up to three submission windows with exact local times, facing directions, explanations and a portable HTML report.
+An Agent Skill for initial submissions, revisions and resubmissions. Describe your project in the Agent conversation; receive three submission windows by default when feasible with exact local times, facing directions, explanations and a portable HTML report.
 
 <p align="center"><strong>Mysticism offers ritual; science sets priorities.</strong></p>
 <p align="center">v0.8.1 · Node.js 22+ · Local computation · Offline bilingual HTML · MIT</p>
@@ -42,19 +42,14 @@ The same synthetic record is shown in both languages, rendered from the actual v
 
 *From project context to saved results: the Agent, calculation engine and HTML each have a clear role.*
 
-1. **Describe your project.** The Agent reads the project material you specify and gathers your constraints.
-2. **Generate the plan locally.** The Skill validates inputs, evaluates feasible windows and saves its results.
-3. **Open the HTML.** Compare windows, inspect reasons and revisit earlier records without an AI connection.
-4. **Adjust through the Agent.** New instructions produce a new record and report; existing snapshots remain available.
-
-The Agent handles conversation and any source verification. The local engine handles calculation. The HTML displays saved data only.
+Make adjustments in the Agent conversation. Each new recommendation saves a new record and HTML snapshot.
 
 ## Features
 
 | Capability | What you receive |
 |---|---|
 | Project-aware scheduling | Submission stage, readiness, earliest-ready time, availability, exclusions and deadline constraints |
-| Three-window comparison | A preferred window and alternatives on different dates, when enough feasible dates exist |
+| Window comparison | Three windows by default; configurable from 1–10, prioritizing different dates and then non-overlapping times |
 | Exact timing | Local dates, time zones, operation windows, suggested click times and deadline margins |
 | Facing guidance | Direction name, clockwise bearing and a north-up compass with alignment instructions |
 | Reasons for each window | Available day/hour factors, direction sources, minute-by-minute plans and Yijing reflection |
@@ -71,7 +66,7 @@ The HTML uses a jade-and-gold observatory theme with local illustration assets, 
 
 ### 1. Prepare the Skill folder
 
-Download the repository or a source release. Keep the complete folder named **zhouyi-paper-submit-advisor**, including `SKILL.md`, scripts, schemas, templates and assets. Place it in the Skill directory supported by your Agent host; the location and discovery mechanism depend on the host.
+Use **Code → Download ZIP** on the [repository page](https://github.com/Mickey5920/zhouyi-paper-submit-advisor), then extract it. Keep the complete folder named **zhouyi-paper-submit-advisor**, including `SKILL.md`, scripts, schemas, templates and assets. Place it in the Skill directory supported by your Agent host; the location and discovery mechanism depend on the host.
 
 Install **Node.js 22 or later** and npm. In this folder, run:
 
@@ -120,6 +115,8 @@ The example uses a frozen synthetic date and deadline. For a live request, repla
 
 A target with no known deadline can still be represented honestly. Essential uncertainty appears in the result status and saved conditions.
 
+For structured input, set `preferences.count` to an integer from 1–10. `next_week` means the next Monday through the following Monday (end excluded); use `rolling_7_days` for a rolling range.
+
 [Project example](examples/project.json) · [Personal zodiac example](examples/astrology.json) · [Input schema](schemas/input.schema.json)
 
 ## How ranking works
@@ -132,7 +129,7 @@ Preparation, availability and hard deadlines determine which windows are feasibl
 4. Traditional calendar preference.
 5. Personal zodiac symbolism as the final cultural tie-breaker.
 
-The engine also keeps alternatives on different dates. When applicable academic evidence conflicts with cultural timing, the report explains the choice. A general study summary does not automatically penalize weekends: target-specific applicability must be established before a weekday preference affects ranking.
+The engine prioritizes different dates, then fills remaining places with non-overlapping windows when available. When applicable academic evidence conflicts with cultural timing, the report explains the choice. A general study summary does not automatically penalize weekends: target-specific applicability must be established before a weekday preference affects ranking.
 
 | Reference layer | Current implementation |
 |---|---|
@@ -203,7 +200,7 @@ Six-line mode accepts six user-supplied values, bottom to top, and transforms mo
 
 **Can I use the report after closing the Agent?** Yes. Keep the exported HTML file. It is self-contained and can be opened from disk.
 
-**Why are there fewer than three windows?** Your readiness, range, availability, exclusions or deadline may leave fewer feasible dates. Adjust these through the Agent.
+**Why are there fewer than three windows?** Your readiness, range, availability, exclusions or deadline may leave too few feasible windows. Adjust these through the Agent.
 
 **Does changing language recompute the plan?** No. It changes the presentation of the existing snapshot.
 
@@ -244,9 +241,5 @@ Found an issue or have an idea? [Open an issue](https://github.com/Mickey5920/zh
 [Project guide (Chinese)](docs/PROJECT-GUIDE.md) · [Implementation history](docs/IMPLEMENTATION.md) · [Agent output guide](docs/WORKBENCH.md) · [Academic evidence rules](references/academic-evidence.md) · [English sample report](docs/example-report.en.md)
 
 The project guide includes planned features. Use the current capability table and implementation notes to distinguish available functions from the roadmap.
-
-## Promotional poster
-
-![Zhouyi Paper Submit Advisor — Plan thoughtfully. Submit calmly.](assets/marketing/poster.en-v1.png)
 
 Code and original documentation: [MIT License](LICENSE). Third-party materials retain their applicable terms; see [third-party notices](THIRD_PARTY_NOTICES.md). Generated promotional artwork is documented in [image provenance](assets/marketing/PROMPTS.md); workflow diagrams are editable SVGs in `assets/diagrams/`.

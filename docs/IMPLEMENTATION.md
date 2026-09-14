@@ -8,7 +8,7 @@ tags: [zhouyi, implementation]
 
 # Implementation status — current release 0.8.1
 
-This is a working local preview, not a claim that every roadmap item is complete. The package is ready for source upload to GitHub; it has not been published or installed globally.
+The source is published at [Mickey5920/zhouyi-paper-submit-advisor](https://github.com/Mickey5920/zhouyi-paper-submit-advisor). Installation depends on the Agent host. The current release summary distinguishes implemented features from planned work; dated sections below preserve earlier verification records.
 
 ## Current release summary — 2026-09-15
 

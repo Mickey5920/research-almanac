@@ -72,7 +72,7 @@ Git 管理代码和文档，不管理私人历史；源码 ZIP 与 Git bundle �
 
 ## Git
 
-开发目录保留独立 main 分支、0.2 基线、v0.3.0 和 v0.4.0 的提交历史。未配置远程或推送 GitHub。
+开发目录使用独立 main 分支，保留历次提交和版本标签。公开仓库：[Mickey5920/zhouyi-paper-submit-advisor](https://github.com/Mickey5920/zhouyi-paper-submit-advisor)。Git 只同步代码、文档与公开示例，私人历史继续保存在本地。
 
 ~~~sh
 git status
