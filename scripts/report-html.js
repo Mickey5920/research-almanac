@@ -7,7 +7,7 @@ export const defaultHistoryDir=fileURLToPath(new URL('../.local-data/history/',i
 export async function renderHistoryHtml({records,warnings=[],current_record_id=null}){
  const [template,baseCss,js,reportCss]=await Promise.all(['report.html','style.css','report.js','report.css'].map(p=>readFile(new URL('../web/'+p,import.meta.url),'utf8')));
  const css=baseCss+'\n'+reportCss;
- const art=await readFile(new URL('../assets/interface/cosmic-luopan-v1.png',import.meta.url));
+ const art=await readFile(new URL('../assets/interface/observatory-luopan-v2.png',import.meta.url));
  const reference_library=JSON.parse(await readFile(new URL('../data/reference-library.json',import.meta.url),'utf8'));
  const explanations=Object.fromEntries(records.map(r=>[r.record_id,Object.fromEntries((r.report.recommendations??[]).map(c=>[c.candidate_id,windowReasons(r,c)]))]));
  const payload=JSON.stringify({records,warnings,current_record_id,explanations,reference_library}).replace(/</g,'\\u003c');

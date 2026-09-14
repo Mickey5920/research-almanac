@@ -108,3 +108,7 @@ Reduced vertical spacing, hero height and card padding. Submission time, directi
 ## 0.5.5 focused report
 
 Removed bibliography/activation-status and bilingual glossary modules and their navigation from the HTML. The academic heading and introduction use concise neutral wording. Reference data remains in the project; removing activation labels does not change implemented calculations.
+
+## 0.5.6 observatory background
+
+Added a generated ink-teal and antique-brass armillary/luopan background, with its reusable prompt. The compact hero embeds the new local image; the page uses a subtle coordinate grid. The original artwork is preserved.
