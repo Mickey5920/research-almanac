@@ -146,7 +146,7 @@ function show(r){
  if(report.status==='no_candidates')notes.push('当前条件下没有可用窗口，请回到 Agent 调整条件。');
  if(r.source==='import')notes.push('导入记录未重新计算验证输入与结果的对应关系。');
  if(report.readiness?.conditions?.length)notes.push('待完成：'+report.readiness.conditions.join('；'));
- $('result-alert').textContent=notes.join('\n');$('result-alert').hidden=!notes.length;
+ $('result-alert').textContent=notes.join('\n');$('result-alert').hidden=!notes.length;$('result-alert-details').hidden=!notes.length;
  const list=$('candidate-list');list.replaceChildren();
  for(const c of report.recommendations){
  const card=el('article',undefined,'candidate'+(c.rank===1?' is-primary':''));
@@ -155,7 +155,13 @@ function show(r){
  const fields=el('div',undefined,'window-fields');
  for(const [label,value,cls,mark] of [['推荐日期',day(c.start_utc,c.timezone),'window-date','calendar'],['操作时间',clock(c.start_utc,c.timezone)+' — '+clock(c.end_utc,c.timezone),'window-clock','clock'],['建议点击',clock(c.click_at_utc,c.timezone),'window-value','pointer'],['面向参考',c.direction?.name??'暂缺','window-value','compass']]){const field=el('div',undefined,'window-field'),labelNode=el('small',label);labelNode.prepend(icon(mark));field.append(labelNode,el('div',value,cls));fields.append(field);}
  const meta=el('div',undefined,'window-footer');meta.append(el('span',new Intl.DateTimeFormat('zh-CN',{timeZone:c.timezone,year:'numeric'}).format(new Date(c.start_utc))+' · '+c.timezone));if(c.calendar_facts)meta.append(el('span',c.calendar_facts.day_ganzhi+' · '+c.calendar_facts.officer+'日'));
- card.append(head,fields,meta);const direction=directionPanel(c.direction);if(direction)card.append(direction);const reasons=reasonPanel(r,c);if(reasons)card.append(reasons);list.append(card);
+ card.append(head,fields,meta);const direction=directionPanel(c.direction);if(direction)card.append(direction);const reasons=reasonPanel(r,c);
+ if(reasons){
+  const brief=el('p',undefined,'reason-brief'),items=data.explanations?.[r.record_id]?.[c.candidate_id]?.items??[];
+  brief.textContent=items.filter(i=>i.kind==='favorable').map(i=>i.title).slice(0,2).join(' · ')||items[0]?.title||'';
+  const details=el('details',undefined,'reason-disclosure');details.append(el('summary','为什么选这个窗口 · 展开'),reasons);card.append(brief,details);
+ }
+ list.append(card);
  }
  const reflection=$('reflection'),c=report.cultural_result;reflection.replaceChildren();reflection.hidden=!c;
  if(c?.text)reflection.append(el('blockquote',c.text),el('p',c.zh??c.en),el('small',c.locator+' · '+c.source_id+' · 现代项目解读'));

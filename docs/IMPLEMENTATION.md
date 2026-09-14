@@ -116,3 +116,7 @@ Added a generated ink-teal and antique-brass armillary/luopan background, with i
 ## 0.5.7 whole-page celestial atlas
 
 A newly generated light celadon celestial atlas is embedded as the fixed background for the entire document. The sidebar, project profile, results, navigation and academic section use coordinated translucent surfaces, fine brass/jade accents and readable card backgrounds. The compact spacing remains. Both original artwork and generation prompts are preserved.
+
+## 0.5.8 at-a-glance report
+
+Removed the local-history hero tag. Default view prioritizes three candidate windows, small compasses and reason summaries. History, input, pending items and full reasons expand on demand. All record data remains available. The hero and spacing are reduced; narrow screens retain natural vertical reading.

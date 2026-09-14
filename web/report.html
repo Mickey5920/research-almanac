@@ -11,23 +11,23 @@
 <body>
 <header class="topbar"><a class="brand" href="#"><span class="seal">易</span><span>周易论文投稿择时<small>ZHOUYI · LOCAL RECORDS</small></span></a><span class="local-pill">本地记录 · 只读展示</span></header>
 <main>
-<section class="intro hero"><!-- HERO_ART --><div class="hero-copy"><p class="eyebrow">天时有序 · 科研有据</p><h1>观天时，<em>定此程。</em></h1><p class="intro-copy">把准备落在实处，把时机留在心间。<br>这一稿的输入、择时与每一次调整，都在这里。</p><div class="hero-tags"><span>周易文化参考</span><span>本地历史留存</span><span>顺天时，投稿顺</span></div></div></section>
+<section class="intro hero"><!-- HERO_ART --><div class="hero-copy"><p class="eyebrow">天时有序 · 科研有据</p><h1>观天时，<em>定此程。</em></h1><p class="intro-copy">把准备落在实处，把时机留在心间。<br>这一稿的输入、择时与每一次调整，都在这里。</p><div class="hero-tags"><span>周易文化参考</span><span>顺天时，投稿顺</span></div></div></section>
 <div id="warnings" class="notice error" hidden role="status"></div>
 <nav class="module-nav" aria-label="报告模块"><a href="#record-workspace"><b>01</b> 投稿档案</a><a href="#academic-section"><b>02</b> 学术参考</a><span class="color-key"><i></i> 择时 <i></i> 实证 <i></i> 周易</span></nav>
 <div id="record-workspace" class="workspace record-view">
-<aside class="history-panel" aria-label="历史记录">
+<aside class="history-panel" aria-label="历史记录"><details class="overview-disclosure"><summary>本次与往期 · 切换记录</summary>
 <div class="section-heading"><h2>本次与往期</h2><span id="history-count" class="count"></span></div>
 <label>搜索本地记录<input id="search" type="search" placeholder="标题、期刊或日期"></label>
 <div id="history-list" class="history-list"></div>
 <div class="history-bottom"><p>需要调整时，请回到 Agent 继续对话。<br>新调用会保存新记录，并生成新的 HTML。</p></div>
-</aside>
-<section class="input-panel" aria-label="已保存输入"><div class="section-heading"><div><p class="eyebrow">PROJECT PROFILE · 项目档案</p><h2>当时的输入</h2></div><span class="module-tag">已保存</span></div><p id="input-note" class="muted"></p><dl id="input-summary" class="input-summary"></dl><details class="data-details"><summary>完整输入 JSON</summary><pre id="record-input" class="input-json"></pre></details></section>
+</details></aside>
+<section class="input-panel" aria-label="已保存输入"><details class="overview-disclosure"><summary>项目输入 · 查看详情</summary><div class="section-heading"><div><p class="eyebrow">PROJECT PROFILE · 项目档案</p><h2>当时的输入</h2></div><span class="module-tag">已保存</span></div><p id="input-note" class="muted"></p><dl id="input-summary" class="input-summary"></dl><details class="data-details"><summary>完整输入 JSON</summary><pre id="record-input" class="input-json"></pre></details></details></section>
 <section class="result-panel" aria-label="已保存结果">
 <div class="section-heading"><div><p class="eyebrow">SUBMISSION WINDOWS · 择时方案</p><h2 id="record-label">本次结果</h2></div><span id="result-badge" class="status-badge"></span></div>
 <div id="empty" class="empty-result" hidden>还没有已保存记录。</div>
 <div id="result-content">
 <h3 id="record-title"></h3><p id="record-meta" class="muted"></p><dl id="result-overview" class="result-overview"></dl>
-<div id="result-alert" class="notice" hidden></div><div id="candidate-list"></div>
+<details id="result-alert-details" class="pending-details" hidden><summary>待办与确认 · 展开查看</summary><div id="result-alert" class="notice" hidden></div></details><div id="candidate-list"></div>
 <details class="reflection-detail"><summary>周易启示 · 查看完整解读</summary><div id="reflection" class="reflection" hidden></div></details>
 <details class="data-details"><summary>完整结果与来源</summary><pre id="record-result"></pre></details>
 <details class="compare-panel"><summary>↔ 记录对比 · 追踪每次调整</summary><label>选择对比记录<select id="compare-select"><option value="">请选择…</option></select></label><div id="comparison"></div></details>
