@@ -1,5 +1,8 @@
 node_modules/
 runs/
+.local-data/
+zhouyi-history-*.html
+zhouyi-record-*.json
 .cache/
 dist/
 .env

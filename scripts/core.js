@@ -5,6 +5,7 @@ import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import lunar from 'lunar-javascript';
 const json=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),'utf8'));
+const softwareVersion=json('../package.json').version;
 export const defaults=json('../config/defaults.json'),sources=json('../data/sources.json'),excerpts=json('../data/excerpts.json');
 const ajv=new Ajv({allErrors:true,strict:false});addFormats(ajv);
 const validate=ajv.compile(json('../schemas/input.schema.json'));
@@ -55,7 +56,7 @@ export function culturalResult(input){
 export function recommend(input){
  const p=validateInput(input),now=input.now?instant(input.now):DateTime.utc();
  const base={schema_version:'1.1',mode:input.mode,run_id:randomUUID(),generated_at:iso(now),status:'ok',recommendations:[],
- assumptions:[],missing_inputs:[],excluded_summary:[],sources,versions:{skill:'0.2.0',lunar:'1.7.7',ruleset:'local-cultural-v1'},
+ assumptions:[],missing_inputs:[],excluded_summary:[],sources,versions:{skill:softwareVersion,lunar:'1.7.7',ruleset:'local-cultural-v1'},
  notice:'Traditional timing and direction are cultural references, not acceptance probabilities.'};
  if(input.mode==='cultural')return {...base,cultural_result:culturalResult(input)};
  const {start,end}=resolveRange(input,now),deadline=input.deadline?.at?instant(input.deadline.at):null;
@@ -120,4 +121,3 @@ export function compare(report,a,b){
  if(!x||!y)throw new Error('Unknown candidate');
  return {candidate_ids:[a,b],factors:['buffer','preference','cultural'].map(key=>({key,a:x.sort_factors[key],b:y.sort_factors[key],equal:x.sort_factors[key]===y.sort_factors[key]})),deadline_margin_minutes:[x.deadline_margin_minutes,y.deadline_margin_minutes],note:'Ordered factors; cultural rank is not a probability.'};
 }
-

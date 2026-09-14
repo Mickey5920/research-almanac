@@ -41,7 +41,7 @@ try{
  }else if(cmd==='reminder-status'){save({status:'unavailable',reason:'Use an available host reminder tool with explicit authorization. No reminder was created.'});
  }else if(cmd==='validate'){validateInput(load(args[0]));console.log('Valid input');
  }else{
- console.log('Zhouyi Paper Submit Advisor 0.2.0\nCommands:\n recommend input.json --out runs/new-run\n render report.json [zh|en] [brief|detailed]\n compare report.json 1 2\n select report.json 1 --out runs/plan.json\n patch input.json patch.json --out runs/updated-input.json\n review plan.json [updated-input.json] --out runs/reviewed-plan.json\n submitted plan.json confirmation.json --out runs/submitted-plan.json\n backplan tasks.json\n validate input.json\n reminder-status\nAll --out destinations must be new. Calendar export does not create reminders.');
+ console.log('Zhouyi Paper Submit Advisor 0.3.0\nCommands:\n recommend input.json --out runs/new-run\n render report.json [zh|en] [brief|detailed]\n compare report.json 1 2\n select report.json 1 --out runs/plan.json\n patch input.json patch.json --out runs/updated-input.json\n review plan.json [updated-input.json] --out runs/reviewed-plan.json\n submitted plan.json confirmation.json --out runs/submitted-plan.json\n backplan tasks.json\n validate input.json\n reminder-status\nAll --out destinations must be new. Calendar export does not create reminders.');
  if(cmd&&cmd!=='help'&&cmd!=='--help')process.exitCode=1;
  }
 }catch(error){console.error('Error: '+error.message);process.exitCode=1;}

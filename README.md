@@ -16,7 +16,7 @@ tags: [zhouyi, skill, documentation]
 
 Plan around your manuscript's readiness, availability and deadline. Compare up to three windows, choose one, revisit it when plans change, and keep the final submission record.
 
-**Release 0.2.0 · Local-first · Node.js 22+ · Chinese / English**
+**Release 0.3.0 · Local-first · Node.js 22+ · Chinese / English documentation**
 
 > Calendar traditions are cultural references. This tool does not estimate acceptance probabilities.
 
@@ -24,6 +24,8 @@ Plan around your manuscript's readiness, availability and deadline. Compare up t
 
 | Capability | What you get |
 |---|---|
+| Local HTML workbench | Fill a form, generate actual results and retain paired inputs/results across restarts |
+| History and portability | Search, restore as a new run, compare, import JSON and export a self-contained read-only HTML archive |
 | Project-aware scheduling | Readiness conditions, earliest-ready time, availability, exclusions and a stage-specific deadline |
 | Traditional reference | Pinned Chinese-calendar day/hour labels and daily Xi-shen direction for Asia/Shanghai |
 | Exact operational times | Local timestamps with offsets; editable final-operation duration and click offset |
@@ -36,6 +38,19 @@ Plan around your manuscript's readiness, availability and deadline. Compare up t
 Other timezones support practical scheduling with explicitly degraded traditional coverage. Qimen, personal Bazi, true solar time, additional schools and autonomous reminder providers are **not implemented**. See [implementation status](docs/IMPLEMENTATION.md) for exact boundaries.
 
 ## Quick start
+
+For the browser workbench:
+
+~~~sh
+npm ci --ignore-scripts
+npm start
+~~~
+
+Open [the local workbench](http://127.0.0.1:4318). Each generation saves the full normalized input and result to .local-data/history/. Drafts are saved in the current browser. This release's browser interface is Chinese; CLI reports and documentation support both languages.
+
+Use **导出历史 HTML** to save all history in one file that opens offline. The exported archive is read-only; generating new results requires the running local service. Opening web/index.html directly does not run the engine. History and exports contain project information and should stay private. See [workbench and Git guide](docs/WORKBENCH.md).
+
+For the command-line demo:
 
 ~~~sh
 npm ci --ignore-scripts
@@ -59,7 +74,7 @@ Keep this whole folder named **zhouyi-paper-submit-advisor**. Place it in your a
 
 > Use $zhouyi-paper-submit-advisor to read my paper project's current preparation status and suggest three submission windows next week. Show local time, optional facing direction, sources and remaining tasks.
 
-[SKILL.md](SKILL.md) is the entrypoint. No server, login or API key is required for local scheduling. The host agent reads project context; the CLI itself does not crawl your files or browse journal websites.
+[SKILL.md](SKILL.md) is the entrypoint. No login or API key is required. The CLI runs directly; the browser workbench uses a local-only service. The host agent reads project context; the CLI itself does not crawl your files or browse journal websites.
 
 ## A continuous workflow
 
@@ -140,4 +155,3 @@ The guide includes future work; it is not a claim that every planned feature is 
 </details>
 
 Code and original documentation: [MIT](LICENSE). Third-party material retains its applicable terms. Generated art provenance: [prompts and tool notes](assets/marketing/PROMPTS.md).
-

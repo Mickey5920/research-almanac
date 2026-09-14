@@ -6,7 +6,7 @@ updated: 2026-09-14
 tags: [zhouyi, implementation]
 ---
 
-# Implementation status — 0.2.0 preview
+# Implementation status — 0.3.0 preview
 
 This is a working local preview, not a claim that every roadmap item is complete. The package is ready for source upload to GitHub; it has not been published or installed globally.
 
@@ -14,11 +14,14 @@ This is a working local preview, not a claim that every roadmap item is complete
 
 - Local runtime: Node 24.15.0 on Windows. All dependencies pinned in package-lock.json.
 - Scheduling, schema validation, bilingual rendering, candidate ICS, direction SVG, comparison, JSON patches, plan selection/review, submission confirmation, preparation backplanning and local cultural reflection are implemented.
-- Node test suite: **68 tests passed**, with no skipped tests in the recorded final local run. This includes date/time boundaries, DST, hard/soft buffers, readiness, deterministic ordering, source references, cultural-only requests and lifecycle regression cases. See tests/engine.test.js.
+- Node test suite: **76 tests passed**, with no skipped tests. Includes the existing 68 engine/lifecycle cases and eight web/history tests covering form dates, DST, persistence, import/export, escaping and local request boundaries. See tests/engine.test.js and tests/web.test.js.
+- A local HTML workbench stores paired full inputs/results, browser drafts, immutable history, restore-as-new, comparison and JSON import/export. All history can be exported as a self-contained read-only HTML archive. Source lives in web/ and the local service in scripts/server.js.
+- Independent Git repository on main, baseline plus feature commit, version tag v0.3.0. Private history is excluded from Git and the release exporter; no remote is configured or pushed.
 - Skill frontmatter/structure passed the bundled skill-creator validator.
 - Independent forward checks reproduced three initial defects: non-boolean confirmation accepted; requested range ignored during review; stale click/readiness during review. These were fixed and regression-tested. A follow-up found a stale proposed candidate after reverting a preference; that was also fixed with a dedicated regression test.
 - Synthetic demo generated Chinese/English Markdown, JSON, manifest, ICS and a direction schematic. CLI cultural mode exported successfully without a project or deadline.
 - GitHub CI is configured, but no remote CI run or release URL exists yet.
+- Browser checks on 2026-09-14: generated two synthetic records, restored one as new JSON, compared three changed input fields, recovered the draft and both records after reload, and downloaded the archive. A separate static-only preview opened the exported HTML with both embedded records, switched their inputs and compared results without calculation endpoints. The 390px mobile layout was also inspected. No browser console errors were observed in these checks. Real-user usability remains untested.
 
 ## Feature coverage
 
@@ -31,12 +34,13 @@ This is a working local preview, not a claim that every roadmap item is complete
 | F11 export/blessings | ICS implemented; original blessings can be written by the host under Skill instructions, no independent blessing database. |
 | F12–F13 advanced traditions | Not implemented: Qimen, personal Bazi, true solar time. |
 | F14 multi-project/profile | Not implemented as a shared profile; per-project input JSON can preserve preferences. |
-| F15–F18 segmented operation/card/adjust/compare | Implemented as local workflow plus agent instructions; no standalone GUI. |
+| F15–F18 segmented operation/card/adjust/compare | Local workflow plus agent instructions; 0.3.0 adds a browser workbench for recommendation inputs and historical comparisons. Plan selection/submission lifecycle remains CLI/agent-based. |
 | F19–F20 plan lock/review | Snapshot and review implemented; new selections create separate plans. Automatic cross-plan supersession and a persistent background watcher are not implemented. |
 | F21 backplanning | Single-person conservative task scheduler with dependencies, required estimates and conflicts. |
 | F22–F24 diagram/record/depth | Implemented; fixed-north schematic, explicit submission record and rendering-only depth changes. |
 | F25 edition/school choices | One collection and one ruleset; additional editions/schools are unavailable, not simulated. |
 | F27 reminders | Host integration instructions and explicit unavailable CLI state. No native provider or background scheduler. |
+| F28 HTML history / Git | Implemented local input/result history, restore, comparison, JSON interchange, offline read-only HTML and independent source versioning. See [workbench guide](WORKBENCH.md). |
 
 ## Work-package assessment
 
@@ -68,4 +72,3 @@ node scripts/cli.js recommend examples/cultural.json --out runs/cultural-new
 ~~~
 
 Use fresh output directories. Private forward-check runs are excluded from release exports. The automated regression tests preserve the reproduced issues without copying private paths or machine-specific tool output.
-

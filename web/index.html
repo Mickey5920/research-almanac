@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>周易论文投稿择时 · 本地工作台</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="paper-grain" aria-hidden="true"></div>
+<header class="topbar">
+ <a class="brand" href="#"><span class="seal">易</span><span>周易论文投稿择时<small>ZHOUYI · SUBMISSION JOURNAL</small></span></a>
+ <div class="top-actions"><span class="local-pill"><i></i><span id="mode-label">本地工作台</span></span><button id="export-html" class="quiet">导出历史 HTML ↗</button></div>
+</header>
+<main>
+<section class="intro">
+ <div><p class="eyebrow">留一份记录 · 赴下一程</p><h1>从容择时，<em>落笔有据。</em></h1><p class="intro-copy">填写本次安排，留存每一次输入与结果。计划有变化，回来接着调整。</p></div>
+ <div class="intro-note"><span class="six-lines" aria-hidden="true">☷</span><p>顺天时，投稿顺<br>愿此稿，中顶刊</p><small>文化祝愿 · 以实际准备与截止为先</small></div>
+</section>
+<div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+<section class="workspace">
+ <aside class="history-panel" aria-label="历史记录">
+  <div class="section-heading"><h2>往期记录</h2><span id="history-count" class="count">0</span></div>
+  <label class="search-label"><span class="sr-only">搜索历史记录</span><input id="search" type="search" placeholder="搜索论文、期刊或日期…"></label>
+  <div id="history-list" class="history-list"></div>
+  <div class="history-bottom"><button id="import-button" class="quiet">＋ 导入已有记录</button><input id="import-file" type="file" accept=".json,application/json" hidden><p>输入与结果保存在本机<br>不会随 Git 提交</p></div>
+ </aside>
+ <section class="input-panel" aria-labelledby="input-title">
+  <div class="section-heading"><div><p class="eyebrow">01 / 本次输入</p><h2 id="input-title">安排这一稿</h2></div><button id="new-draft" class="quiet" type="button">新建</button></div>
+  <div class="mode-switch" role="group" aria-label="输入方式"><button id="form-mode" class="active" type="button">简明填写</button><button id="json-mode" type="button">完整 JSON</button></div>
+  <p id="parent-label" class="muted" hidden></p>
+  <form id="input-form">
+   <div id="simple-fields">
+    <label>论文标题 <span class="required">*</span><input name="title" required maxlength="300" placeholder="例如：多模态疾病风险预测研究"></label>
+    <div class="two-col"><label>目标期刊 / 会议<input name="target" placeholder="选填"></label><label>稿件版本<input name="manuscript_version" placeholder="例如：revision-v2"></label></div>
+    <div class="two-col"><label>投稿阶段<select name="stage"><option value="initial">首次投稿</option><option value="revision">返修提交</option><option value="resubmission">修改后重投</option><option value="unknown">尚未确定</option></select></label><label>准备情况<select name="readiness"><option value="unknown">尚未核实</option><option value="conditional">还有待办 / 待确认</option><option value="ready">已准备就绪</option><option value="blocked">暂不具备提交条件</option></select></label></div>
+    <label>提交前还需要完成<textarea name="conditions" rows="2" placeholder="每行一项，例如：合作者确认、核对补充材料"></textarea></label>
+    <div class="form-divider"><span>日期与时间</span></div>
+    <div class="two-col"><label>推荐范围<select name="range_mode"><option value="next_week">下周（周一至周日）</option><option value="rolling_7_days">未来七天</option><option value="custom">自定义日期</option></select></label><label>所在时区<select name="timezone"><option value="Asia/Shanghai">北京时间 · Asia/Shanghai</option><option value="Asia/Hong_Kong">香港 · Asia/Hong_Kong</option><option value="Europe/London">伦敦 · Europe/London</option><option value="America/New_York">纽约 · America/New_York</option><option value="America/Los_Angeles">洛杉矶 · America/Los_Angeles</option><option value="UTC">UTC</option></select></label></div>
+    <div id="custom-range" class="two-col" hidden><label>开始日期<input name="start_date" type="date"></label><label>结束日期（包含当天）<input name="end_date" type="date"></label></div>
+    <div class="two-col"><label>每日可用起点<input name="day_start" type="time" value="09:00"></label><label>每日可用终点<input name="day_end" type="time" value="18:00"></label></div>
+    <fieldset class="weekdays"><legend>可用星期</legend><label><input type="checkbox" name="weekday" value="1" checked><span>一</span></label><label><input type="checkbox" name="weekday" value="2" checked><span>二</span></label><label><input type="checkbox" name="weekday" value="3" checked><span>三</span></label><label><input type="checkbox" name="weekday" value="4" checked><span>四</span></label><label><input type="checkbox" name="weekday" value="5" checked><span>五</span></label><label><input type="checkbox" name="weekday" value="6" checked><span>六</span></label><label><input type="checkbox" name="weekday" value="7" checked><span>日</span></label></fieldset>
+    <label>截止时间状态<select name="deadline_status"><option value="unknown">暂未核实截止时间</option><option value="none">已明确没有固定截止</option><option value="set">我来填写截止时间</option></select></label>
+    <label id="deadline-field" hidden>截止时间（按所选时区）<input name="deadline_at" type="datetime-local"></label>
+    <details class="advanced"><summary>更多安排选项</summary><div class="two-col"><label>推荐数量<input name="count" type="number" value="3" min="1" max="10"></label><label>最终操作预算（分钟）<input name="operation_minutes" type="number" value="30" min="5" max="240"></label><label>窗口开始后点击（分钟）<input name="click_offset_minutes" type="number" value="10" min="0" max="239"></label><label>期望提前（小时）<input name="buffer_hours" type="number" value="24" min="0" max="720"></label></div>
+     <label>提前量要求<select name="buffer_mode"><option value="soft">尽量满足，临近截止仍可推荐</option><option value="hard">必须满足</option></select></label><label>最早准备完成时间<input name="ready_after" type="datetime-local"></label><label class="check-line"><input name="strict_traditional" type="checkbox">严格采用当前文化筛选规则</label>
+    </details>
+   </div>
+   <div id="json-fields" hidden><label>完整输入 JSON<textarea id="json-input" rows="23" spellcheck="false" placeholder='{"mode":"cultural","cultural":{"action":"interpret_text"}}'></textarea></label><p class="muted">支持项目择时和纯文化解读。载入历史时保留全部输入字段；移除固定 now 后按当前时间运行。</p></div>
+   <div class="submit-row"><button id="generate" type="submit" class="primary">生成并保存本次结果 <span>↗</span></button><span id="draft-state" class="muted">草稿自动保存在当前浏览器</span></div>
+  </form>
+ </section>
+ <section class="result-panel" aria-labelledby="result-title">
+  <div class="section-heading"><div><p class="eyebrow">02 / 输入与结果</p><h2 id="result-title">本次记录</h2></div><span id="result-badge" class="status-badge" hidden></span></div>
+  <div id="result-empty" class="empty-result"><div class="empty-symbol" aria-hidden="true">☰</div><h3>先把这一稿，安排清楚。</h3><p>完成左侧输入后，结果会显示在这里。<br>每次生成独立保存，历史不会被覆盖。</p><div class="empty-steps"><span>填写</span><b>→</b><span>择时</span><b>→</b><span>留存</span></div></div>
+  <div id="result-content" hidden>
+   <p id="record-meta" class="muted"></p><h3 id="record-title" class="record-title"></h3>
+   <div class="record-actions"><button id="restore" class="quiet">载入为新输入</button><button id="download-record" class="quiet">导出本条 JSON ↓</button></div>
+   <div id="result-alert" class="result-alert" hidden></div>
+   <div id="candidate-list"></div>
+   <div id="reflection" class="reflection" hidden></div>
+   <details class="data-details"><summary>查看这次的完整输入</summary><pre id="record-input"></pre></details>
+   <details class="data-details"><summary>查看完整结果与来源</summary><pre id="record-result"></pre></details>
+   <div class="compare-panel"><label>与另一条历史记录对比<select id="compare-select"><option value="">选择记录…</option></select></label><div id="comparison"></div></div>
+  </div>
+ </section>
+</section>
+<footer><span>周易论文投稿择时 · <span id="version">0.3.0</span></span><span>传统文化参考，不表示论文录用概率。先备妥材料，再从容提交。</span></footer>
+</main>
+<script src="/app.js" defer></script>
+</body>
+</html>
+

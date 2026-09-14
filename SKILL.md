@@ -24,6 +24,10 @@ Use the repository's actual scripts, not invented calendar calculations. Install
 8. On explicit selection use select; preserve that plan. To continue, review with current project facts rather than silently selecting another window. Changing display language/depth uses render, not new calendar calculation. See [plan lifecycle](references/plan-lifecycle.md).
 9. Only an explicit user statement of submission or an authorized system receipt can create a submitted record. Use confirmed: true as a boolean, never replace actual time with planned time. Save a new revision file.
 
+## Local HTML history
+
+When the user wants a form or history browser, run npm start from this folder and open http://127.0.0.1:4318. The workbench stores each validated input/result pair in ignored .local-data/history/. It supports restore-as-new, comparison and a read-only single-file HTML export. Do not commit or publicly share personal history exports. Existing CLI reports can be imported; when their original input was not saved, mark it missing rather than reconstructing it. CLI generation does not automatically append workbench history. See [workbench guide](docs/WORKBENCH.md).
+
 ## Cultural requests
 
 No project, deadline or date range is required for text reflection. Run recommend using mode cultural and a supported excerpt_id, or omit it for the default short excerpt. The curated collection contains four excerpts from two chapters. Do not suggest full-book coverage.
@@ -37,4 +41,3 @@ Read [sources and decisions](docs/DECISIONS.md) when explaining conventions. Cla
 The CLI exports ICS but creates no scheduled reminders. If the user requests reminders and the host offers an actual tool, use it within the user's authorization, record its returned ID/status privately, and accurately report failures and plan changes. Without a host tool say unavailable.
 
 Use backplan for estimated preparation tasks, and the generated fixed-north direction.svg as a schematic, never a live compass. See [commands](docs/COMMANDS.md) and [release status](docs/IMPLEMENTATION.md) for supported vs deferred features.
-

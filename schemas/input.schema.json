@@ -41,6 +41,10 @@
         "manuscript_version": {
           "type": "string"
         },
+        "target": {
+          "type": "string",
+          "maxLength": 300
+        },
         "source_ids": {
           "type": "array",
           "items": {
