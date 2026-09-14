@@ -34,6 +34,21 @@ An Agent Skill for initial submissions, revisions and resubmissions. Describe yo
 
 The Agent handles conversation and any source verification. The local engine handles calculation. The HTML displays saved data only.
 
+## Page previews
+
+The same synthetic record is shown in both languages, rendered from the actual v0.8.1 HTML template using [examples/astrology.json](examples/astrology.json). Captured at a 1680 × 1200 desktop viewport. These are product screenshots; they contain no private project history. Original project text remains bilingual when the interface is switched.
+
+### English interface
+
+![English HTML report: three submission windows, facing compasses, zodiac analysis and the language switch](assets/screenshots/report.en.png)
+
+<details>
+<summary>View the Chinese interface</summary>
+
+![Chinese HTML report showing the same synthetic submission plan](assets/screenshots/report.zh-CN.png)
+
+</details>
+
 ## Features
 
 | Capability | What you receive |

@@ -34,6 +34,21 @@ tags: [zhouyi, skill, documentation]
 
 Agent 负责对话与来源核验，本地引擎负责计算，HTML 只展示已经保存的数据。
 
+## 页面预览
+
+以下为真实 v0.8.1 HTML 模板的中英文截图，使用同一份 [examples/astrology.json 模拟数据](examples/astrology.json)，桌面视口为 1680 × 1200。截图不包含私人项目历史；切换界面语言后，项目原文仍保留原来的中英文内容。
+
+### 中文界面
+
+![中文 HTML 报告：三个投稿窗口、朝向罗盘、星座分析与中英文切换按钮](assets/screenshots/report.zh-CN.png)
+
+<details>
+<summary>展开英文界面预览</summary>
+
+![英文 HTML 报告，展示同一份模拟投稿方案](assets/screenshots/report.en.png)
+
+</details>
+
 ## 功能一览
 
 | 功能 | 你会得到什么 |
