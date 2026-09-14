@@ -47,3 +47,9 @@ Read [sources and decisions](docs/DECISIONS.md) when explaining conventions. Cla
 The CLI exports ICS but creates no scheduled reminders. If the user requests reminders and the host offers an actual tool, use it within the user's authorization, record its returned ID/status privately, and accurately report failures and plan changes. Without a host tool say unavailable.
 
 Use backplan for estimated preparation tasks, and the generated fixed-north direction.svg as a schematic, never a live compass. See [commands](docs/COMMANDS.md) and [release status](docs/IMPLEMENTATION.md) for supported vs deferred features.
+
+## Optional zodiac and window astrology
+
+New project recommendations include a locally calculated moon tropical zodiac sign and Mercury motion at the exact recommended click time. Set input.astrology.enabled to false to omit this module. input.astrology.personal_sign optionally accepts a Chinese zodiac-sign name such as 处女座; ask only if the user wants personalization, and never infer it from their work or request a birth date. No birthplace or birth time is needed.
+
+The engine computes geocentric ecliptic positions with astronomy-engine. Tropical signs divide longitude into twelve equal 30-degree sectors, not IAU constellation boundaries. Mercury motion is a centered 12-hour finite difference with a 0.02 degree/day near-station threshold. Support is limited to 1900–2100; outside this range astrology is omitted. Interpretations are original cultural prompts, do not determine time ranking and do not claim acceptance effects. Save results at recommendation time. Old records without astrology remain unchanged; the HTML must not calculate or infer missing charts.

@@ -61,6 +61,21 @@ function reasonPanel(record,candidate){
  }
  return box;
 }
+function astrologyPanel(a){
+ if(!a)return null;
+ const box=el('section',undefined,'astrology-panel'),head=el('div',undefined,'astrology-heading');
+ head.append(el('strong','✦ 星象参考'),el('small','文化解读'));box.append(head);
+ const motion={direct:'顺行',retrograde:'逆行',stationary:'近留'}[a.mercury.motion];
+ const chips=el('div',undefined,'astrology-chips');
+ chips.append(el('span','☾ 月亮 · '+a.moon.sign),el('span','☿ 水星 · '+motion));box.append(chips);
+ const detail=el('details');detail.append(el('summary','星象解读与计算依据'));
+ for(const [label,text] of [['月亮启示',a.interpretation.moon],['文书安排',a.interpretation.mercury]]){
+  const p=el('p');p.append(el('b',label+' · '),el('span',text));detail.append(p);
+ }
+ if(a.personal){const p=el('p');p.append(el('b',a.personal.glyph+' '+a.personal.sign+' · '),el('span',a.interpretation.personal));detail.append(p);}
+ detail.append(el('p','计算时刻：'+when(a.at_utc,selected?.report.timezone)),el('p','月亮黄经 '+a.moon.longitude_degrees.toFixed(2)+'° · 水星黄经 '+a.mercury.longitude_degrees.toFixed(2)+'° · 水星速度 '+a.mercury.speed_degrees_per_day.toFixed(3)+'°/日。','astrology-facts'),el('p',a.convention,'astrology-facts'),el('p','星体位置由星历计算；行动提示为文化联想。','astrology-facts'));
+ sourceLink(detail,'Astronomy Engine '+a.engine_version,a.source_url);box.append(detail);return box;
+}
 function clock(s,zone){return new Intl.DateTimeFormat('en-GB',{timeZone:zone,hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(s));}
 function day(s,zone){return new Intl.DateTimeFormat('zh-CN',{timeZone:zone,month:'2-digit',day:'2-digit',weekday:'short'}).format(new Date(s));}
 function inputSummary(input){
@@ -69,6 +84,7 @@ function inputSummary(input){
  const ready={ready:'已准备就绪',conditional:'还有待办 / 待确认',blocked:'暂不具备提交条件',unknown:'尚未核实'};
  const range=input.range?.mode==='custom'?input.range.start_date+' 至 '+input.range.end_date_exclusive+'（不含终点）':({next_week:'下周',rolling_7_days:'未来七天'}[input.range?.mode]??'未指定');
  const rows=input.mode==='cultural'?[['解读模式','周易文化解读'],['解读动作',input.cultural?.action??'默认文本解读']]:[['目标期刊 / 会议',input.project?.target||'未填写'],['稿件版本',input.project?.manuscript_version||'未填写'],['投稿阶段',stages[input.project?.stage]??'未填写'],['准备状态',ready[input.readiness?.status]??'未填写'],['推荐范围',range],['所在时区',input.timezone??'未填写'],['截止时间',input.deadline?.at?when(input.deadline.at,input.timezone):input.deadline?.status==='none'?'明确无固定截止':'尚未核实'],['提交前待办',input.readiness?.conditions?.join('；')||'未列出待办']];
+ if(input.astrology?.personal_sign)rows.push(['个人星座（自填）',input.astrology.personal_sign]);
  for(const [label,value] of rows){const row=el('div',undefined,'input-field');row.append(el('dt',label),el('dd',value));box.append(row);}
 }
 function renderList(){
@@ -161,6 +177,7 @@ function show(r){
   brief.textContent=items.filter(i=>i.kind==='favorable').map(i=>i.title).slice(0,2).join(' · ')||items[0]?.title||'';
   const details=el('details',undefined,'reason-disclosure');details.append(el('summary','为什么选这个窗口 · 展开'),reasons);card.append(brief,details);
  }
+ const astrology=astrologyPanel(c.astrology);if(astrology)card.append(astrology);
  list.append(card);
  }
  const reflection=$('reflection'),c=report.cultural_result;reflection.replaceChildren();reflection.hidden=!c;

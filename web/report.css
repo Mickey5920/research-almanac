@@ -417,3 +417,13 @@ body{font-weight:400;line-height:1.65}
 @media(max-width:950px){.window-clock{font-size:17px}}
 @media(max-width:650px){.hero h1{font-size:23px}.window-clock{font-size:19px}.brand{font-size:14px}}
 @media print{.window-clock{font-size:16px}.reason-item p{font-size:10px}}
+
+.astrology-panel{margin-top:8px;padding:8px 10px;background:linear-gradient(120deg,#e9edf8,#f1f4fc);border:1px solid #ccd5ea;border-left:3px solid #667bb5;border-radius:5px;color:#435b8d}
+.astrology-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px}
+.astrology-heading small{font-size:10px;color:#63779c}
+.astrology-chips{display:flex;flex-wrap:wrap;gap:5px;margin:5px 0}
+.astrology-chips span{padding:2px 6px;background:#ffffffb0;border:1px solid #d8e0f2;border-radius:4px;font-size:11px}
+.astrology-panel summary{font-size:11px;color:#546b98}
+.astrology-panel details p{font-size:12px;line-height:1.7;margin:7px 0;color:#405679}
+.astrology-panel details .astrology-facts{font-size:10px;color:#627493}
+.astrology-panel .research-link{font-size:11px}

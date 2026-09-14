@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.1",
+  "mode": "project",
+  "now": "2026-09-14T08:00:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "project": {
+    "title": "星象模块演示 / Zodiac example",
+    "stage": "revision",
+    "manuscript_version": "example-v2"
+  },
+  "readiness": {
+    "status": "conditional",
+    "ready_after": "2026-09-21T09:00:00+08:00",
+    "conditions": [
+      "Confirm the coauthor approval / 确认合作者同意",
+      "Check revised PDF against response letter / 核对修订稿与回复信"
+    ]
+  },
+  "range": {
+    "mode": "next_week"
+  },
+  "deadline": {
+    "status": "user_supplied",
+    "at": "2026-09-28T18:00:00+08:00",
+    "source": "Synthetic example deadline, not a real journal or conference"
+  },
+  "preferences": {
+    "count": 3,
+    "language": "zh"
+  },
+  "astrology": {
+    "enabled": true,
+    "personal_sign": "处女座"
+  }
+}

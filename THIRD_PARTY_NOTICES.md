@@ -19,3 +19,8 @@ Short ancient Chinese quotations are attributed in data/sources.json. The cited 
 
 Promotional images were generated using the host's built-in image tool. Their prompts and provenance are documented in assets/marketing/PROMPTS.md. They are illustrative marketing art, not screenshots or historical diagrams. Actual model identity is not exposed by the tool response.
 
+
+Astronomy Engine (astronomy-engine), MIT License
+Copyright (c) 2019-2023 Don Cross
+Source: https://github.com/cosinekitty/astronomy
+The installed astronomy.js includes its MIT license header. Used for local geocentric ephemeris calculations.

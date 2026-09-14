@@ -102,6 +102,173 @@
           "local_click": {
             "type": "string",
             "format": "date-time"
+          },
+          "astrology": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "method",
+                  "at_utc",
+                  "engine",
+                  "engine_version",
+                  "source_url",
+                  "moon",
+                  "mercury",
+                  "personal",
+                  "interpretation",
+                  "convention"
+                ],
+                "properties": {
+                  "method": {
+                    "const": "tropical-geocentric-v1"
+                  },
+                  "at_utc": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "engine": {
+                    "const": "astronomy-engine"
+                  },
+                  "engine_version": {
+                    "type": "string"
+                  },
+                  "source_url": {
+                    "const": "https://github.com/cosinekitty/astronomy"
+                  },
+                  "moon": {
+                    "type": "object",
+                    "required": [
+                      "longitude_degrees",
+                      "sign",
+                      "glyph"
+                    ],
+                    "properties": {
+                      "longitude_degrees": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMaximum": 360
+                      },
+                      "sign": {
+                        "enum": [
+                          "白羊座",
+                          "金牛座",
+                          "双子座",
+                          "巨蟹座",
+                          "狮子座",
+                          "处女座",
+                          "天秤座",
+                          "天蝎座",
+                          "射手座",
+                          "摩羯座",
+                          "水瓶座",
+                          "双鱼座"
+                        ]
+                      },
+                      "glyph": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "mercury": {
+                    "type": "object",
+                    "required": [
+                      "longitude_degrees",
+                      "speed_degrees_per_day",
+                      "motion"
+                    ],
+                    "properties": {
+                      "longitude_degrees": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMaximum": 360
+                      },
+                      "speed_degrees_per_day": {
+                        "type": "number"
+                      },
+                      "motion": {
+                        "enum": [
+                          "direct",
+                          "retrograde",
+                          "stationary"
+                        ]
+                      }
+                    }
+                  },
+                  "personal": {
+                    "anyOf": [
+                      {
+                        "type": "null"
+                      },
+                      {
+                        "type": "object",
+                        "required": [
+                          "sign",
+                          "glyph",
+                          "basis"
+                        ],
+                        "properties": {
+                          "sign": {
+                            "enum": [
+                              "白羊座",
+                              "金牛座",
+                              "双子座",
+                              "巨蟹座",
+                              "狮子座",
+                              "处女座",
+                              "天秤座",
+                              "天蝎座",
+                              "射手座",
+                              "摩羯座",
+                              "水瓶座",
+                              "双鱼座"
+                            ]
+                          },
+                          "glyph": {
+                            "type": "string"
+                          },
+                          "basis": {
+                            "const": "user_supplied"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "interpretation": {
+                    "type": "object",
+                    "required": [
+                      "kind",
+                      "moon",
+                      "mercury",
+                      "personal"
+                    ],
+                    "properties": {
+                      "kind": {
+                        "const": "cultural_reflection"
+                      },
+                      "moon": {
+                        "type": "string"
+                      },
+                      "mercury": {
+                        "type": "string"
+                      },
+                      "personal": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    }
+                  },
+                  "convention": {
+                    "type": "string"
+                  }
+                }
+              }
+            ]
           }
         }
       }

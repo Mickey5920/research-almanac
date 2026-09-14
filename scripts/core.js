@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import lunar from 'lunar-javascript';
+import {astrologyAt} from './astrology.js';
 const json=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),'utf8'));
 const softwareVersion=json('../package.json').version;
 export const defaults=json('../config/defaults.json'),sources=json('../data/sources.json'),excerpts=json('../data/excerpts.json');
@@ -114,7 +115,7 @@ export function recommend(input){
  const selected=[],dates=new Set();
  for(const c of all)if(!dates.has(c.local_date)&&selected.length<p.count){selected.push(c);dates.add(c.local_date);}
  for(const c of all)if(selected.length<p.count&&!selected.some(x=>x.candidate_id===c.candidate_id||c.start_utc<x.end_utc&&c.end_utc>x.start_utc))selected.push(c);
- r.recommendations=selected.map((c,i)=>({...c,rank:i+1}));r.excluded_summary=Object.entries(counts).map(([reason,count])=>({reason,count}));
+ r.recommendations=selected.map((c,i)=>({...c,rank:i+1,...(input.astrology?.enabled===false?{}:{astrology:astrologyAt(c.click_at_utc,input.astrology?.personal_sign)})}));r.excluded_summary=Object.entries(counts).map(([reason,count])=>({reason,count}));
  r.status=!selected.length?'no_candidates':!cultural&&input.tradition?.enabled!==false?'degraded':r.missing_inputs.length?'conditional':'ok';
  return r;
 }

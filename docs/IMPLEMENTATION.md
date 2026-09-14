@@ -128,3 +128,10 @@ The full-page artwork is now a fixed, decorative image element beneath positione
 ## 0.5.10 offline typography
 
 Unifies interface text with Microsoft YaHei UI / PingFang / Noto Sans CJK fallbacks. Literary serif styling is limited to the hero and quotations. Bahnschrift / DIN Alternate / Segoe UI provide clear tabular numerals. No font files are redistributed or downloaded. Slightly larger metadata and reason text improve readability while keeping the overview compact.
+
+## 0.6.0 zodiac and ephemeris module
+
+Implemented optional user-supplied personal sign, Moon tropical sign and Mercury motion for new candidate windows, stored with timestamp, engine version, coordinate convention and original cultural prompts. Astronomy Engine 2.1.19 is pinned; calculations occur after candidate selection, never in HTML. Existing history is preserved. UI uses compact blue labels and expandable evidence. Input and output validation reject malformed signs, inconsistent timestamps and inconsistent derived labels.
+
+Primary sources: [Astronomy Engine documentation](https://github.com/cosinekitty/astronomy/tree/master/source/js) for coordinate methods; [NASA April 8, 2024 eclipse](https://science.nasa.gov/eclipses/future-eclipses/eclipse-2024/) provides a coarse conjunction test anchor. Cultural action prompts are original design choices.
+Validation: 97 automated tests pass, including longitude wrap, 30-degree boundaries, motion thresholds, offset equivalence, candidate-ranking invariance, opt-out, old history and coarse eclipse geometry.
