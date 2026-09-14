@@ -6,7 +6,7 @@ updated: 2026-09-14
 tags: [zhouyi, implementation]
 ---
 
-# Implementation status — 0.4.1 preview
+# Implementation status — 0.5.0 preview
 
 This is a working local preview, not a claim that every roadmap item is complete. The package is ready for source upload to GitHub; it has not been published or installed globally.
 
@@ -80,3 +80,11 @@ Use fresh output directories. Private forward-check runs are excluded from relea
 ## 0.4.1 visual refinement
 
 The read-only HTML now embeds a generated dark-teal/gold luopan hero and uses a dedicated report stylesheet. Primary and alternate windows share identical padding and field grids; only color highlights the primary. Inputs have a readable summary plus expandable JSON. The image is decorative and does not supply calendar or direction facts. Embedded-image regression checks and the existing 78 tests pass. Browser automation was unavailable in this session, so a fresh browser screenshot and measured visual alignment remain unverified. See [image prompt and provenance](../assets/interface/PROMPTS.md).
+
+## 0.5.0 window explanations and reference library
+
+Every candidate displays recorded officer/hour factors, direction context, the operational minute budget, relevant remaining conditions and a checked stage-level Zhouyi reflection. Sources are expandable; explanation version window-explanation-v1 is separate from the unchanged stored report/ranking.
+
+The HTML includes three published study summaries with distinct denominators, a JSCS historical weekday chart, six book categories with explicit availability, seven bilingual terms, and target-specific official evidence from input.academic_evidence. Verified entries require a source URL/title and check date; venue mismatch or invalid editorial timezone is rejected. The schema checks structure; the Agent must actually verify the source.
+
+88 automated tests pass. No model client or automatic network retrieval is introduced into HTML. Unimplemented Meihua/Qimen/Bazi systems stay unavailable. No journal-specific current acceptance dataset is claimed. Target official information remains unknown until provided and verified; no office hours inferred from publisher addresses. See [evidence rules and bibliography](../references/academic-evidence.md). Fresh visual browser verification remains pending because browser automation was unavailable.

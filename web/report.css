@@ -34,3 +34,23 @@ body{background:linear-gradient(160deg,#e9f0ed,#f3f1e8);color:var(--ink)}
 @media(max-width:650px){.intro.hero{margin:16px 0;padding:27px 23px;min-height:240px}.hero-copy{max-width:100%}.hero-art{object-position:65% center;opacity:.45}.hero:after{background:#062b2c55}.hero .intro-copy{font-size:11px}.hero h1{font-size:27px}.workspace.record-view{display:flex}.record-view .history-panel{order:0}.record-view .input-panel,.record-view .result-panel{padding:20px}.window-fields{grid-template-columns:1fr 1fr;gap:14px 10px}.window-clock{font-size:20px}.window-date{font-size:14px}.record-view .candidate,.record-view .candidate:first-child{padding:14px}.window-heading{grid-template-columns:28px 1fr auto;gap:6px}.window-label{letter-spacing:1px}.topbar .local-pill{display:none}}
 @media print{.hero-art{print-color-adjust:exact}.history-panel{display:none!important}.workspace.record-view{display:block}.candidate{break-inside:avoid}body{background:white}}
 @media(max-width:380px){.window-clock{font-size:16px}.window-date{font-size:13px}}
+
+.window-reasons{margin-top:16px;border-top:1px solid #cbdcce;padding-top:14px}
+.reason-heading{font-size:12px;letter-spacing:1px;color:#345f50;margin:0 0 12px}
+.reason-item{border-left:2px solid #ccd8cb;padding:0 0 0 11px;margin:0 0 14px}
+.reason-favorable{border-color:#638f6c}.reason-caution{border-color:#be995b}.reason-reflection{border-color:#ae9875}
+.reason-item-head{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}.reason-item-head strong{font-size:11px;font-weight:600;line-height:1.7}
+.reason-kind{font-size:9px;padding:1px 5px;background:#e4ece1;border-radius:3px;color:#5e765c;white-space:nowrap}
+.reason-caution .reason-kind{background:#f0e5cf;color:#8a6b37}.reason-favorable .reason-kind{background:#d8e9d9;color:#386445}
+.reason-item p{font-size:11px;line-height:1.85;margin:5px 0;color:#526c5f}
+.reason-source{font-size:10px;color:#758574}.reason-source summary{font-size:10px}.reason-source a{display:inline-block;margin-left:8px;color:#356859}
+
+.research-panel{margin-top:24px;background:#fafcf7;border:1px solid var(--line);border-radius:12px;padding:26px}.research-panel h3{font-size:15px}.research-panel h4{font-size:13px;margin:0 0 9px}
+.study-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:20px 0 28px}.study-card,.evidence-card,.book-card{padding:18px;border:1px solid #d6e2d7;background:#f4f8f0;border-radius:7px;min-width:0}
+.sample-size{font:30px Georgia,serif;color:#376d5c;font-variant-numeric:tabular-nums}.study-card p,.evidence-card p,.book-card p{font-size:12px;line-height:1.8}.study-card small{color:#6f826e;font-size:11px}
+.study-limit{border-left:2px solid #b49d74;padding-left:10px;color:#6a705e}.research-note{font-size:11px;color:#758171;line-height:1.8}.research-link{display:inline-block;font-size:11px;color:#3b715d;overflow-wrap:anywhere;margin:6px 0 0}
+.target-evidence{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.book-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:20px 0}.glossary{border-top:1px solid var(--line);padding-top:20px;margin-top:20px}.table-scroll{overflow-x:auto;margin-top:15px}.glossary table{width:100%;border-collapse:collapse;font-size:12px;text-align:left}.glossary td,.glossary th{padding:12px;border-bottom:1px solid var(--line);min-width:100px}.glossary td:nth-child(2){min-width:240px}
+#official-examples{margin-top:24px;padding-top:12px;border-top:1px solid var(--line);font-size:12px}#official-examples a{margin-left:8px}
+.rate-chart{display:grid;gap:7px;margin-top:12px}.rate-row{display:grid;grid-template-columns:30px 1fr 43px 42px;gap:6px;align-items:center;font-size:10px;font-variant-numeric:tabular-nums}.rate-track{height:7px;background:#e0e8dd;border-radius:3px;overflow:hidden}.rate-bar{height:100%;background:#729782}.rates-detail{margin-top:14px}.rates-detail summary{font-size:11px}
+@media(max-width:1000px){.study-list,.target-evidence{grid-template-columns:1fr}.book-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.research-panel{padding:20px}.book-list{grid-template-columns:1fr}.research-panel .section-heading{align-items:flex-start}}

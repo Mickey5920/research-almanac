@@ -16,7 +16,7 @@ tags: [zhouyi, skill, documentation]
 
 Plan around your manuscript's readiness, availability and deadline. Compare up to three windows, choose one, revisit it when plans change, and keep the final submission record.
 
-**Release 0.4.1 · Local-first · Node.js 22+ · Chinese / English documentation**
+**Release 0.5.0 · Local-first · Node.js 22+ · Chinese / English documentation**
 
 > Calendar traditions are cultural references. This tool does not estimate acceptance probabilities.
 
@@ -145,3 +145,7 @@ The guide includes future work; it is not a claim that every planned feature is 
 </details>
 
 Code and original documentation: [MIT](LICENSE). Third-party material retains its applicable terms. Generated art provenance: [prompts and tool notes](assets/marketing/PROMPTS.md).
+
+## Window explanations and academic evidence
+
+Each window shows recorded day/hour factors, direction sources, operational minute rationale and a stage-level Zhouyi reflection. The HTML adds a book catalog, three published-study summaries with sample/denominator limits, a historical weekday chart, target-specific official evidence and a bilingual glossary. Unimplemented traditions remain unavailable. No personal acceptance probability is inferred. The Agent verifies target sources and stores them locally; HTML stays read-only. See [evidence rules](references/academic-evidence.md).

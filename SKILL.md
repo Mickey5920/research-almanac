@@ -38,6 +38,10 @@ For user-supplied six line values use cultural.action cast, lines bottom to top 
 
 ## Evidence and optional features
 
+For every HTML report include window explanations and the reference library. Read [academic evidence rules](references/academic-evidence.md) when resolving a target venue. The Agent, not the HTML, checks official author instructions, actual editorial-office timezone/hours if published, and the conference's year/track/stage deadline including any explicit AoE rule. Save target-specific facts in input.academic_evidence with status, source URL and checked date; its target must match project.target. Not found and unknown are useful outcomes. Never invent office hours from a publisher address or apply a general journal example as the target's policy.
+
+The reference books are a catalog of eligible sources, not a claim that all divination engines are implemented. Only supported and actually calculated factors may explain a window. Meihua, Qimen and Bazi remain unavailable; do not invent favorable configurations from their book titles. Published submission studies are descriptive evidence with sample/denominator limitations; they do not alter ranking or estimate personal acceptance probabilities.
+
 Read [sources and decisions](docs/DECISIONS.md) when explaining conventions. Classical quotations come only from data/excerpts.json; modern explanations and blessings are original. A direction is the library's daily Xi-shen direction, optionally adapted to facing, not Wenchang or Qimen. No acceptance probabilities.
 
 The CLI exports ICS but creates no scheduled reminders. If the user requests reminders and the host offers an actual tool, use it within the user's authorization, record its returned ID/status privately, and accurately report failures and plan changes. Without a host tool say unavailable.

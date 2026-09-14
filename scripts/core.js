@@ -15,6 +15,8 @@ const iso=d=>d.toUTC().toISO();
 export function validateInput(input){
  if(!validate(input))throw new Error('Invalid input: '+ajv.errorsText(validate.errors));
  if(input.mode==='project'&&!IANAZone.isValidZone(input.timezone))throw new Error('Unknown IANA timezone');
+ if(input.academic_evidence&&input.academic_evidence.target.trim().toLowerCase()!==input.project?.target?.trim().toLowerCase())throw new Error('Academic evidence target must match project.target');
+ for(const item of Object.values(input.academic_evidence??{}))if(item?.timezone&&!IANAZone.isValidZone(item.timezone))throw new Error('Unknown editorial IANA timezone');
  const p={...defaults,...input.preferences};
  if(p.click_offset_minutes>=p.operation_minutes)throw new Error('Click offset must be inside operation window');
  for(const r of [...(input.availability??[]),...(input.excluded_intervals??[])])if(instant(r.start)>=instant(r.end))throw new Error('Invalid interval order');

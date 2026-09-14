@@ -276,6 +276,194 @@
         }
       },
       "required": []
+    },
+    "academic_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target"
+      ],
+      "properties": {
+        "target": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "journal_system": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "summary"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "verified",
+                "user_supplied",
+                "not_found",
+                "unknown"
+              ]
+            },
+            "summary": {
+              "type": "string",
+              "maxLength": 3000
+            },
+            "source_title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 300
+            },
+            "source_url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://"
+            },
+            "checked_at": {
+              "type": "string",
+              "format": "date"
+            },
+            "timezone": {
+              "type": "string",
+              "maxLength": 80
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "verified"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "source_title",
+                  "source_url",
+                  "checked_at"
+                ]
+              }
+            }
+          ]
+        },
+        "editorial_office": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "summary"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "verified",
+                "user_supplied",
+                "not_found",
+                "unknown"
+              ]
+            },
+            "summary": {
+              "type": "string",
+              "maxLength": 3000
+            },
+            "source_title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 300
+            },
+            "source_url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://"
+            },
+            "checked_at": {
+              "type": "string",
+              "format": "date"
+            },
+            "timezone": {
+              "type": "string",
+              "maxLength": 80
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "verified"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "source_title",
+                  "source_url",
+                  "checked_at"
+                ]
+              }
+            }
+          ]
+        },
+        "conference_deadline": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "summary"
+          ],
+          "properties": {
+            "status": {
+              "enum": [
+                "verified",
+                "user_supplied",
+                "not_found",
+                "unknown"
+              ]
+            },
+            "summary": {
+              "type": "string",
+              "maxLength": 3000
+            },
+            "source_title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 300
+            },
+            "source_url": {
+              "type": "string",
+              "format": "uri",
+              "pattern": "^https://"
+            },
+            "checked_at": {
+              "type": "string",
+              "format": "date"
+            },
+            "timezone": {
+              "type": "string",
+              "maxLength": 80
+            }
+          },
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "verified"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "source_title",
+                  "source_url",
+                  "checked_at"
+                ]
+              }
+            }
+          ]
+        }
+      }
     }
   },
   "required": [

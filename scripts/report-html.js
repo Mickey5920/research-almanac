@@ -2,12 +2,15 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {join} from 'node:path';
 import {HistoryStore} from './history-store.js';
+import {windowReasons} from './window-reasons.js';
 export const defaultHistoryDir=fileURLToPath(new URL('../.local-data/history/',import.meta.url));
 export async function renderHistoryHtml({records,warnings=[],current_record_id=null}){
  const [template,baseCss,js,reportCss]=await Promise.all(['report.html','style.css','report.js','report.css'].map(p=>readFile(new URL('../web/'+p,import.meta.url),'utf8')));
  const css=baseCss+'\n'+reportCss;
  const art=await readFile(new URL('../assets/interface/cosmic-luopan-v1.png',import.meta.url));
- const payload=JSON.stringify({records,warnings,current_record_id}).replace(/</g,'\\u003c');
+ const reference_library=JSON.parse(await readFile(new URL('../data/reference-library.json',import.meta.url),'utf8'));
+ const explanations=Object.fromEntries(records.map(r=>[r.record_id,Object.fromEntries((r.report.recommendations??[]).map(c=>[c.candidate_id,windowReasons(r,c)]))]));
+ const payload=JSON.stringify({records,warnings,current_record_id,explanations,reference_library}).replace(/</g,'\\u003c');
  return template.replace('<!-- STYLE -->',()=>'<style>'+css+'</style>')
  .replace('<!-- HERO_ART -->',()=>'<img class="hero-art" alt="" aria-hidden="true" src="data:image/png;base64,'+art.toString('base64')+'">')
  .replace('<!-- DATA -->',()=>'<script id="local-records" type="application/json">'+payload+'</script>')

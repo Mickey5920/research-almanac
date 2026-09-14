@@ -1,0 +1,166 @@
+{
+  "version": "references-v1",
+  "checked": "2026-09-14",
+  "books": [
+    {
+      "title": "《周易》",
+      "status": "部分启用",
+      "scope": "乾、謙四条核验引文用于项目启示；不直接推出具体投稿分钟。",
+      "url": "https://zh.wikisource.org/wiki/周易/乾"
+    },
+    {
+      "title": "《梅花易数》",
+      "status": "参考书目 · 算法未启用",
+      "scope": "体用、互变、生克的参考；没有实际起卦与体用计算时不生成有利判断。",
+      "url": "https://zh.wikisource.org/zh-hant/梅花易數/卷三"
+    },
+    {
+      "title": "《奇门遁甲》相关典籍",
+      "status": "参考书目 · 排盘未启用",
+      "scope": "需指定具体版本；本轮定位《遁甲演义》（四库全书本）。未起局，不声称得吉门、吉星或用神得地。",
+      "url": "https://zh.wikisource.org/zh-hant/遁甲演義_(四庫全書本)"
+    },
+    {
+      "title": "《渊海子平》",
+      "status": "参考书目 · 八字未启用",
+      "scope": "命理体系参考；不收集出生数据，不据此生成十神、用神或个人择时结论。",
+      "url": "https://zh.wikisource.org/zh-hant/淵海子平"
+    },
+    {
+      "title": "《三命通会》",
+      "status": "参考书目 · 八字未启用",
+      "scope": "已定位卷一文本；后续规则需指定卷章并单独核验，当前不参与排序。",
+      "url": "https://zh.wikisource.org/zh-hant/三命通會/卷一"
+    },
+    {
+      "title": "黄历择吉相关通书",
+      "status": "待选定版本",
+      "scope": "需固定书名、版本、年份与条目。当前日时标签来自 lunar-javascript 1.7.7，尚未逐条与通书校勘。",
+      "url": null
+    }
+  ],
+  "glossary": [
+    [
+      "建除十二神",
+      "建、除、满、平、定、执、破、危、成、收、开、闭。传统日课标签，非录用概率。",
+      "Twelve Day Officers"
+    ],
+    [
+      "真太阳时",
+      "结合经度与均时差校正的地方太阳时；当前未启用校正。",
+      "True Solar Time"
+    ],
+    [
+      "文昌位",
+      "传统文化中联系学业、功名和文书的方位；流派有别，不等于本工具的喜神方位。",
+      "Wenchang Direction"
+    ],
+    [
+      "用神",
+      "依术数体系和所问事项选定的代表符号；奇门用神规则需指定流派。",
+      "Useful God"
+    ],
+    [
+      "体用",
+      "梅花易数中主体与所问事项及其卦象、生克关系；当前未计算。",
+      "Ti-Yong"
+    ],
+    [
+      "十神",
+      "八字中以日干为基准，按阴阳五行生克形成的十类关系；当前未计算。",
+      "Ten Gods"
+    ],
+    [
+      "AoE",
+      "Anywhere on Earth；日期在全球所有地方都结束才过期，通常按 UTC−12 换算。具体截止分钟遵循官网。",
+      "Anywhere on Earth"
+    ]
+  ],
+  "studies": [
+    {
+      "id": "jscs-2016",
+      "title": "JSCS 投稿日与结局个案",
+      "citation": "Ausloos, Nedic & Dekanski (2016), Physica A 456:197–203",
+      "sample": 596,
+      "sample_label": "投稿记录",
+      "period": "2013–2014",
+      "url": "https://arxiv.org/html/1604.01544v1",
+      "doi": "10.1016/j.physa.2016.03.032",
+      "finding": "原文表 1 的周二接收比例为 60/108（55.6%），周六为 14/47（29.8%）。",
+      "limitation": "单一期刊历史观察性数据，不代表其他期刊，也不证明改变投稿日会改变结局。原文引言与摘要对周二/周三的文字表述有不一致；此处按表 1 展示，不合并不同结局类别。",
+      "rates": [
+        {
+          "day": "周一",
+          "submitted": 97,
+          "accepted": 42
+        },
+        {
+          "day": "周二",
+          "submitted": 108,
+          "accepted": 60
+        },
+        {
+          "day": "周三",
+          "submitted": 117,
+          "accepted": 51
+        },
+        {
+          "day": "周四",
+          "submitted": 98,
+          "accepted": 43
+        },
+        {
+          "day": "周五",
+          "submitted": 90,
+          "accepted": 38
+        },
+        {
+          "day": "周六",
+          "submitted": 47,
+          "accepted": 14
+        },
+        {
+          "day": "周日",
+          "submitted": 39,
+          "accepted": 14
+        }
+      ]
+    },
+    {
+      "id": "four-journals-2018",
+      "title": "四刊大样本的投稿日分布",
+      "citation": "Boja et al. (2018), Scientometrics 117:887–918; arXiv deposit 2020",
+      "sample": 178000,
+      "sample_label": "约 17.8 万篇已接收论文",
+      "period": "不同期刊历史样本，非实时数据库",
+      "url": "https://arxiv.org/abs/2005.04398",
+      "doi": "10.1007/s11192-018-2911-7",
+      "finding": "研究覆盖 Nature、Cell、PLOS ONE、Physica A，报告已接收论文的投稿日分布存在星期差异。",
+      "limitation": "只看已接收论文缺少全部投稿分母，不能直接推导按星期的接收率。不能与其他样本简单相加或推算你的录用概率。"
+    },
+    {
+      "id": "jpch-2023",
+      "title": "JPCH 投稿时刻与编辑决定",
+      "citation": "McGee, Graves & Barnett (2023), JPCH 59(1):89–94",
+      "sample": 11499,
+      "sample_label": "投稿记录",
+      "period": "2015-01-01 至 2022-08-01",
+      "url": "https://researchers.westernsydney.edu.au/en/publications/timing-of-submissions-to-the-journal-of-paediatrics-and-child-hea/",
+      "doi": "10.1111/jpc.16242",
+      "finding": "原文报告周末相对工作日的更正向编辑决定关联：OR 0.87，95% 贝叶斯可信区间 0.78–0.97。",
+      "limitation": "结果涉及接收/修改等编辑决定，OR 不等于接收率，也不是绝对下降 13 个百分点。单刊回顾性研究仍可能受稿件质量等混杂影响。"
+    }
+  ],
+  "official_examples": [
+    {
+      "title": "期刊官网投稿系统说明 · Nature 示例",
+      "url": "https://www.nature.com/nature/for-authors/initial-submission",
+      "text": "官网要求通过在线系统提交，并确认作者名单与投稿知情。此处仅演示核验方式，不自动套用到你的目标期刊。"
+    },
+    {
+      "title": "AoE 官方定义 · IEEE 802.16",
+      "url": "https://www.ieee802.org/16/aoe.html",
+      "text": "AoE 的一天在 UTC 次日中午结束。若官网指定 23:59 UTC−12，换算北京时间为次日 19:59；必须核对会议年份、稿件类型、截止阶段与官网原文。"
+    }
+  ]
+}
