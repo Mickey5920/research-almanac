@@ -88,3 +88,7 @@ Every candidate displays recorded officer/hour factors, direction context, the o
 The HTML includes three published study summaries with distinct denominators, a JSCS historical weekday chart, six book categories with explicit availability, seven bilingual terms, and target-specific official evidence from input.academic_evidence. Verified entries require a source URL/title and check date; venue mismatch or invalid editorial timezone is rejected. The schema checks structure; the Agent must actually verify the source.
 
 88 automated tests pass. No model client or automatic network retrieval is introduced into HTML. Unimplemented Meihua/Qimen/Bazi systems stay unavailable. No journal-specific current acceptance dataset is claimed. Target official information remains unknown until provided and verified; no office hours inferred from publisher addresses. See [evidence rules and bibliography](../references/academic-evidence.md). Fresh visual browser verification remains pending because browser automation was unavailable.
+
+## 0.5.1 concise window reasons
+
+Window reasons show supported favorable factors, direction, concrete submission timing and sufficient deadline margin directly. Missing or neutral factors are omitted; an empty explanation hides the whole section. Sources remain collapsed. Historical inputs and results are preserved.

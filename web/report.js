@@ -8,17 +8,17 @@ const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefine
 function when(s,zone){try{return new Intl.DateTimeFormat('zh-CN',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(s));}catch{return s??'未记录';}}
 function title(r){return r.report.project_summary?.title??'周易文化解读';}
 function reasonPanel(record,candidate){
- const explanation=data.explanations?.[record.record_id]?.[candidate.candidate_id];if(!explanation)return null;
+ const explanation=data.explanations?.[record.record_id]?.[candidate.candidate_id];if(!explanation?.items?.length)return null;
  const box=el('section',undefined,'window-reasons');box.setAttribute('aria-label','本窗口择时依据');
  box.append(el('h4','为什么选这个窗口','reason-heading'));
  const names={favorable:'有利因素',neutral:'如实说明',caution:'待留意',reference:'方位参考',practical:'实际安排',reflection:'周易启示'};
  for(const item of explanation.items){
  const row=el('div',undefined,'reason-item reason-'+item.kind),heading=el('div',undefined,'reason-item-head');
  heading.append(el('span',names[item.kind]??'依据','reason-kind'),el('strong',item.title));row.append(heading,el('p',item.text));
- const detail=el('details',undefined,'reason-source');detail.append(el('summary','来源 / 解释层级'));
+ const detail=el('details',undefined,'reason-source');detail.append(el('summary','来源'));
  const source=el('span',item.source_title+' · '+item.source_id);detail.append(source);
  if(item.source_url&&/^https:\/\//.test(item.source_url)){const link=el('a','查阅原始来源 ↗');link.href=item.source_url;link.target='_blank';link.rel='noopener noreferrer';detail.append(link);}
- row.append(detail);box.append(row);
+ if(item.source_title)row.append(detail);box.append(row);
  }
  return box;
 }
