@@ -298,3 +298,29 @@ body{background-color:#eef2ed;background-image:linear-gradient(#315f4f06 1px,tra
 .module-nav{border-bottom:1px solid #cdd8cd;margin-bottom:8px}
 @media(max-width:650px){.hero-art{width:75%;opacity:.48}.hero:after{background:linear-gradient(90deg,#062a2bdd,#062a2b33)}}
 @media print{body{background:white}.hero-art{opacity:.9}.intro.hero{print-color-adjust:exact}}
+
+/* Whole-page celestial atlas: continuous artwork beneath the entire report. */
+body{background-color:#e5ecdf;background-image:linear-gradient(#edf2e526,#edf2e526),var(--page-art);background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:fixed}
+.topbar{background:#082e30ed;border-bottom-color:#a48d5866}
+.module-nav{background:#f6f8efdc;border:1px solid #c3cdbdaa;border-radius:7px;padding:5px 10px;margin-bottom:9px;box-shadow:0 2px 9px #334d3310}
+.workspace.record-view{background:transparent;border-color:#acbba6;box-shadow:0 9px 28px #344e3420}
+.record-view .history-panel{background:linear-gradient(165deg,#e5ecdfeb,#d6e2d0dc);border-color:#bdcbb6}
+.record-view .input-panel{background:linear-gradient(120deg,#fbfcf3ed,#eaf1e4e3)}
+.record-view .result-panel{background:linear-gradient(160deg,#fffef5ed,#eff4e8e3)}
+.record-view .section-heading{border-bottom-color:#bccaad}
+.section-heading{position:relative}
+.section-heading:after{content:"";position:absolute;right:0;bottom:-1px;width:48px;height:2px;background:linear-gradient(90deg,#9b7c42,#47755f);pointer-events:none}
+.input-field{background:#fffef6e8;border-color:#cfdbc7}
+.history-item{background:#f9fbf1a6}
+.history-item.active{background:#fffdf2;border-color:#91a57e}
+.record-view .candidate,.record-view .candidate:first-child{background:linear-gradient(145deg,#f9fbfffa,#eaf1f6f2);box-shadow:inset 0 0 0 3px #ffffff68,0 3px 8px #35544309}
+.record-view .candidate.is-primary{background:linear-gradient(145deg,#f6fbf1fa,#e5efdef2);box-shadow:inset 0 0 0 3px #ffffff78,0 3px 8px #3554430c}
+.window-heading{border-bottom:1px solid #bdcdb880;padding-bottom:6px}
+.direction-panel{background-image:radial-gradient(circle at 12% 46%,#ffffff96 0,transparent 60%),linear-gradient(115deg,#f7f0dfe8,#eee6cfe6);border-color:#cdbc95}
+.result-overview{background:linear-gradient(90deg,#e9f1e1,#f6f9ef);border-color:#becfb3}
+.academic-section{background:linear-gradient(135deg,#f4f9fdeb,#e4eef2e8);border-color:#a7bdc7}
+.academic-section .section-heading:after{background:linear-gradient(90deg,#557b91,#a18b54)}
+#official-examples{background:#e4edf2df}
+footer{background:#f6f8efda;border-top:1px solid #bbc9b1;border-radius:0 0 7px 7px;padding:9px 12px;margin:9px 0 14px;color:#506149}
+@media(max-width:650px){body{background-position:62% center}.module-nav{padding:4px}.record-view .history-panel{background:#e1ebdbe8}.record-view .input-panel,.record-view .result-panel{background:#f9fcf2ed}}
+@media print{body{background:white}.topbar{background:white;color:#173e3c}.brand{color:#173e3c}.workspace.record-view{box-shadow:none}.record-view .input-panel,.record-view .result-panel{background:#fff}.module-nav,footer{display:none}}

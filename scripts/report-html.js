@@ -6,7 +6,8 @@ import {windowReasons} from './window-reasons.js';
 export const defaultHistoryDir=fileURLToPath(new URL('../.local-data/history/',import.meta.url));
 export async function renderHistoryHtml({records,warnings=[],current_record_id=null}){
  const [template,baseCss,js,reportCss]=await Promise.all(['report.html','style.css','report.js','report.css'].map(p=>readFile(new URL('../web/'+p,import.meta.url),'utf8')));
- const css=baseCss+'\n'+reportCss;
+ const pageArt=await readFile(new URL('../assets/interface/celestial-page-v1.png',import.meta.url));
+ const css=baseCss+'\n'+reportCss+'\n:root{--page-art:url("data:image/png;base64,'+pageArt.toString('base64')+'")}';
  const art=await readFile(new URL('../assets/interface/observatory-luopan-v2.png',import.meta.url));
  const reference_library=JSON.parse(await readFile(new URL('../data/reference-library.json',import.meta.url),'utf8'));
  const explanations=Object.fromEntries(records.map(r=>[r.record_id,Object.fromEntries((r.report.recommendations??[]).map(c=>[c.candidate_id,windowReasons(r,c)]))]));

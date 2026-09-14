@@ -112,3 +112,7 @@ Removed bibliography/activation-status and bilingual glossary modules and their 
 ## 0.5.6 observatory background
 
 Added a generated ink-teal and antique-brass armillary/luopan background, with its reusable prompt. The compact hero embeds the new local image; the page uses a subtle coordinate grid. The original artwork is preserved.
+
+## 0.5.7 whole-page celestial atlas
+
+A newly generated light celadon celestial atlas is embedded as the fixed background for the entire document. The sidebar, project profile, results, navigation and academic section use coordinated translucent surfaces, fine brass/jade accents and readable card backgrounds. The compact spacing remains. Both original artwork and generation prompts are preserved.
