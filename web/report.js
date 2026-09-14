@@ -7,6 +7,16 @@ const labels={ok:'已生成',conditional:'有条件可用',degraded:'传统计�
 const el=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 function when(s,zone){try{return new Intl.DateTimeFormat('zh-CN',{timeZone:zone,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(s));}catch{return s??'未记录';}}
 function title(r){return r.report.project_summary?.title??'周易文化解读';}
+function clock(s,zone){return new Intl.DateTimeFormat('en-GB',{timeZone:zone,hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date(s));}
+function day(s,zone){return new Intl.DateTimeFormat('zh-CN',{timeZone:zone,month:'2-digit',day:'2-digit',weekday:'short'}).format(new Date(s));}
+function inputSummary(input){
+ const box=$('input-summary');box.replaceChildren();if(!input){box.append(el('p','原始输入未保存。','muted'));return;}
+ const stages={initial:'首次投稿',revision:'返修提交',resubmission:'修改后重投',unknown:'尚未确定'};
+ const ready={ready:'已准备就绪',conditional:'还有待办 / 待确认',blocked:'暂不具备提交条件',unknown:'尚未核实'};
+ const range=input.range?.mode==='custom'?input.range.start_date+' 至 '+input.range.end_date_exclusive+'（不含终点）':({next_week:'下周',rolling_7_days:'未来七天'}[input.range?.mode]??'未指定');
+ const rows=input.mode==='cultural'?[['解读模式','周易文化解读'],['解读动作',input.cultural?.action??'默认文本解读']]:[['目标期刊 / 会议',input.project?.target||'未填写'],['稿件版本',input.project?.manuscript_version||'未填写'],['投稿阶段',stages[input.project?.stage]??'未填写'],['准备状态',ready[input.readiness?.status]??'未填写'],['推荐范围',range],['所在时区',input.timezone??'未填写'],['截止时间',input.deadline?.at?when(input.deadline.at,input.timezone):input.deadline?.status==='none'?'明确无固定截止':'尚未核实'],['提交前待办',input.readiness?.conditions?.join('；')||'未列出待办']];
+ for(const [label,value] of rows){const row=el('div',undefined,'input-field');row.append(el('dt',label),el('dd',value));box.append(row);}
+}
 function renderList(){
  const box=$('history-list');box.replaceChildren();const q=$('search').value.trim().toLowerCase();
  for(const r of records.filter(r=>JSON.stringify([title(r),r.input?.project?.target,r.created_at]).toLowerCase().includes(q))){
@@ -31,6 +41,7 @@ function show(r){
  $('record-meta').textContent='保存于 '+when(r.created_at)+' · '+(report.timezone??'文化模式')+' · 引擎 '+report.versions.skill;
  $('input-note').textContent='这份输入与右侧结果来自同一条已保存记录。';
  $('record-input').textContent=r.input?JSON.stringify(r.input,null,2):'该旧记录未保存原始输入，无法准确还原。';
+ inputSummary(r.input);
  $('record-result').textContent=JSON.stringify(report,null,2);
  const notes=[];
  if(report.status==='conditional')notes.push('准备条件或截止信息仍待确认。');
@@ -41,10 +52,12 @@ function show(r){
  $('result-alert').textContent=notes.join('\n');$('result-alert').hidden=!notes.length;
  const list=$('candidate-list');list.replaceChildren();
  for(const c of report.recommendations){
- const card=el('article',undefined,'candidate');
- card.append(el('div','0'+c.rank+' / '+(c.rank===1?'首选窗口':'备选窗口'),'candidate-rank'),el('div',when(c.start_utc,c.timezone),'candidate-date'),el('p','至 '+when(c.end_utc,c.timezone)+' · 点击 '+when(c.click_at_utc,c.timezone),'candidate-reason'));
- const meta=el('div',undefined,'candidate-meta');meta.append(el('span','方位参考 · '+(c.direction?.name??'暂缺')));if(c.calendar_facts)meta.append(el('span',c.calendar_facts.day_ganzhi+' · '+c.calendar_facts.officer+'日'));
- card.append(meta);list.append(card);
+ const card=el('article',undefined,'candidate'+(c.rank===1?' is-primary':''));
+ const head=el('div',undefined,'window-heading');head.append(el('span',String(c.rank).padStart(2,'0'),'window-index'),el('span',c.rank===1?'首选窗口':'备选窗口','window-label'),el('span',c.readiness_status==='ready'?'已就绪':'待确认','window-state'));
+ const fields=el('div',undefined,'window-fields');
+ for(const [label,value,cls] of [['推荐日期',day(c.start_utc,c.timezone),'window-date'],['操作时间',clock(c.start_utc,c.timezone)+' — '+clock(c.end_utc,c.timezone),'window-clock'],['建议点击',clock(c.click_at_utc,c.timezone),'window-value'],['面向参考',c.direction?.name??'暂缺','window-value']]){const field=el('div',undefined,'window-field');field.append(el('small',label),el('div',value,cls));fields.append(field);}
+ const meta=el('div',undefined,'window-footer');meta.append(el('span',new Intl.DateTimeFormat('zh-CN',{timeZone:c.timezone,year:'numeric'}).format(new Date(c.start_utc))+' · '+c.timezone));if(c.calendar_facts)meta.append(el('span',c.calendar_facts.day_ganzhi+' · '+c.calendar_facts.officer+'日'));
+ card.append(head,fields,meta);list.append(card);
  }
  const reflection=$('reflection'),c=report.cultural_result;reflection.replaceChildren();reflection.hidden=!c;
  if(c?.text)reflection.append(el('blockquote',c.text),el('p',c.zh??c.en),el('small',c.locator+' · '+c.source_id+' · 现代项目解读'));
@@ -59,4 +72,3 @@ $('search').addEventListener('input',renderList);$('compare-select').addEventLis
 if(records.length)show(records.find(r=>r.record_id===data.current_record_id)??records[0]);
 else{$('empty').hidden=false;$('result-content').hidden=true;renderList();}
 })();
-

@@ -6,7 +6,7 @@ updated: 2026-09-14
 tags: [zhouyi, implementation]
 ---
 
-# Implementation status — 0.4.0 preview
+# Implementation status — 0.4.1 preview
 
 This is a working local preview, not a claim that every roadmap item is complete. The package is ready for source upload to GitHub; it has not been published or installed globally.
 
@@ -76,3 +76,7 @@ node scripts/cli.js recommend examples/cultural.json --out runs/cultural-new
 ~~~
 
 Use fresh output directories. Private forward-check runs are excluded from release exports. The automated regression tests preserve the reproduced issues without copying private paths or machine-specific tool output.
+
+## 0.4.1 visual refinement
+
+The read-only HTML now embeds a generated dark-teal/gold luopan hero and uses a dedicated report stylesheet. Primary and alternate windows share identical padding and field grids; only color highlights the primary. Inputs have a readable summary plus expandable JSON. The image is decorative and does not supply calendar or direction facts. Embedded-image regression checks and the existing 78 tests pass. Browser automation was unavailable in this session, so a fresh browser screenshot and measured visual alignment remain unverified. See [image prompt and provenance](../assets/interface/PROMPTS.md).

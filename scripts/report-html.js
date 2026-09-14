@@ -4,9 +4,12 @@ import {join} from 'node:path';
 import {HistoryStore} from './history-store.js';
 export const defaultHistoryDir=fileURLToPath(new URL('../.local-data/history/',import.meta.url));
 export async function renderHistoryHtml({records,warnings=[],current_record_id=null}){
- const [template,css,js]=await Promise.all(['report.html','style.css','report.js'].map(p=>readFile(new URL('../web/'+p,import.meta.url),'utf8')));
+ const [template,baseCss,js,reportCss]=await Promise.all(['report.html','style.css','report.js','report.css'].map(p=>readFile(new URL('../web/'+p,import.meta.url),'utf8')));
+ const css=baseCss+'\n'+reportCss;
+ const art=await readFile(new URL('../assets/interface/cosmic-luopan-v1.png',import.meta.url));
  const payload=JSON.stringify({records,warnings,current_record_id}).replace(/</g,'\\u003c');
  return template.replace('<!-- STYLE -->',()=>'<style>'+css+'</style>')
+ .replace('<!-- HERO_ART -->',()=>'<img class="hero-art" alt="" aria-hidden="true" src="data:image/png;base64,'+art.toString('base64')+'">')
  .replace('<!-- DATA -->',()=>'<script id="local-records" type="application/json">'+payload+'</script>')
  .replace('<!-- SCRIPT -->',()=>'<script>'+js+'</script>');
 }
@@ -24,4 +27,3 @@ export async function exportLocalHistory(out,historyDir=defaultHistoryDir){
  const history=await new HistoryStore(historyDir).list();
  await writeFile(out,await renderHistoryHtml(history),{flag:'wx'});
 }
-

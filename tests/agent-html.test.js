@@ -20,6 +20,7 @@ test('Agent CLI saves paired local records and default HTML across two invocatio
  assert.equal(payload.records.length,2);assert.equal(payload.current_record_id,b.record_id);
  assert.ok(!/\bfetch\s*\(|XMLHttpRequest|WebSocket|api\/generate|api\/session/.test(html));
  assert.ok(html.includes("connect-src 'none'"));assert.ok(!/<script[^>]+src=|<link[^>]+href=/.test(html));
+ assert.ok(html.includes('src="data:image/png;base64,'));assert.ok(!html.includes('<!-- HERO_ART -->'));
  assert.throws(()=>execFileSync(process.execPath,[cli,'recommend',path,'--out',join(root,'run2'),'--history-dir',history],{stdio:'pipe'}));
  assert.equal((await readdir(history)).length,2);
  execFileSync(process.execPath,[cli,'history-html','--out',join(root,'all.html'),'--history-dir',history]);
@@ -30,4 +31,3 @@ test('read-only renderer preserves literals, marks incomplete history and escape
  assert.ok(!html.includes('<img src=x'));assert.ok(html.includes('\\u003c/script>'));assert.ok(html.includes('$&'));
  assert.ok(html.includes('damaged record'));assert.ok(html.includes('"current_record_id":"test"'));
 });
-

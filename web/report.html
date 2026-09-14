@@ -6,12 +6,12 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
 <title>周易论文投稿择时 · 本地记录</title>
 <!-- STYLE -->
-<style>.record-view{grid-template-columns:230px minmax(280px,.85fr) minmax(360px,1.2fr)}.input-json{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.8 Consolas,monospace;max-height:720px;overflow:auto}.record-view .input-panel{background:#faf9f2}.history-item small{white-space:normal}.record-label{color:var(--gold);font-size:12px}.filter-label{margin-bottom:5px}.result-text{white-space:pre-wrap;overflow-wrap:anywhere}.record-view .source-list{font-size:12px;padding-left:18px;overflow-wrap:anywhere}@media(max-width:1120px){.record-view{grid-template-columns:195px minmax(0,1fr)}}@media(max-width:650px){.record-view{display:flex}.record-view .history-panel{order:0}.input-json{max-height:300px}}</style>
+
 </head>
 <body>
 <header class="topbar"><a class="brand" href="#"><span class="seal">易</span><span>周易论文投稿择时<small>ZHOUYI · LOCAL RECORDS</small></span></a><span class="local-pill">本地记录 · 只读展示</span></header>
 <main>
-<section class="intro"><div><p class="eyebrow">每一次认真准备，都值得留存</p><h1>这一稿，<em>有迹可循。</em></h1><p class="intro-copy">由 Agent 调用 Skill 生成。本页只展示生成时读取的本地记录，不连接 AI 模型。</p></div><div class="intro-note"><span class="six-lines">☷</span><p>顺天时，投稿顺<br>愿此稿，中顶刊</p><small>文化祝愿 · 以实际准备与截止为先</small></div></section>
+<section class="intro hero"><!-- HERO_ART --><div class="hero-copy"><p class="eyebrow">天时有序 · 科研有据</p><h1>观天时，<em>定此程。</em></h1><p class="intro-copy">把准备落在实处，把时机留在心间。<br>这一稿的输入、择时与每一次调整，都在这里。</p><div class="hero-tags"><span>周易文化参考</span><span>本地历史留存</span><span>顺天时，投稿顺</span></div></div></section>
 <div id="warnings" class="notice error" hidden role="status"></div>
 <div class="workspace record-view">
 <aside class="history-panel" aria-label="历史记录">
@@ -20,7 +20,7 @@
 <div id="history-list" class="history-list"></div>
 <div class="history-bottom"><p>需要调整时，请回到 Agent 继续对话。<br>新调用会保存新记录，并生成新的 HTML。</p></div>
 </aside>
-<section class="input-panel" aria-label="已保存输入"><div class="section-heading"><h2>当时的输入</h2></div><p id="input-note" class="muted"></p><pre id="record-input" class="input-json"></pre></section>
+<section class="input-panel" aria-label="已保存输入"><div class="section-heading"><h2>当时的输入</h2></div><p id="input-note" class="muted"></p><dl id="input-summary" class="input-summary"></dl><details class="data-details"><summary>完整输入 JSON</summary><pre id="record-input" class="input-json"></pre></details></section>
 <section class="result-panel" aria-label="已保存结果">
 <div class="section-heading"><h2 id="record-label">本次结果</h2><span id="result-badge" class="status-badge"></span></div>
 <div id="empty" class="empty-result" hidden>还没有已保存记录。</div>
