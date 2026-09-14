@@ -100,3 +100,7 @@ The report uses a history sidebar, structured input cards, a result overview, an
 ## 0.5.3 directional guidance
 
 Each window with a supported saved direction displays a fixed-north compass, a clockwise bearing, and three practical steps for aligning the user's facing direction with a phone compass. Eight directions are supported; missing directions omit the panel. Local vector icons identify dates, timing, actions, evidence and cultural references. The HTML uses no location or orientation sensors and makes no network requests.
+
+## 0.5.4 compact report
+
+Reduced vertical spacing, hero height and card padding. Submission time, direction and window reasons remain visible. Alignment steps, full reflection, comparison, academic detail and book references expand on demand. Desktop and print layouts keep candidate windows side by side where space permits; page count depends on paper size, viewport and expanded content.

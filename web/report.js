@@ -42,7 +42,8 @@ function directionPanel(direction){
  layout.append(dial,detail);box.append(layout);
  const steps=el('ol',undefined,'direction-steps');
  for(const text of ['打开手机指南针，确认北向。','转动身体，使面向读数接近 '+angle+'°（'+name+'）。','将屏幕置于正前方，坐定后提交。'])steps.append(el('li',text));
- box.append(steps,el('p','固定北向示意 · 用手机指南针现场对齐','direction-caption'));
+ const guide=el('details',undefined,'direction-guide');guide.append(el('summary','如何对齐朝向'),steps);
+ box.append(guide,el('p','北向示意 · 手机指南针对齐','direction-caption'));
  return box;
 }
 function reasonPanel(record,candidate){
