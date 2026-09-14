@@ -1,0 +1,38 @@
+[
+  {
+    "id": "qian-image",
+    "source_id": "zhouyi-qian",
+    "locator": "象曰",
+    "text": "天行健，君子以自強不息。",
+    "stage": "initial",
+    "zh": "把持续打磨落实为一次清晰的提交：核对主张、材料和版本。此为现代解读，不是录用预测。",
+    "en": "Turn sustained work into a clear submission: check claims, materials and versions. A modern reflection, not a prediction."
+  },
+  {
+    "id": "qian-line3",
+    "source_id": "zhouyi-qian",
+    "locator": "九三",
+    "text": "君子終日乾乾，夕惕若；厲，无咎。",
+    "stage": "revision",
+    "zh": "把谨慎落实到逐条回复与稿件交叉核对，不把核查留到最后一分钟。",
+    "en": "Cross-check each response against the revised manuscript before the final window."
+  },
+  {
+    "id": "modesty",
+    "source_id": "zhouyi-qian15",
+    "locator": "卦辞",
+    "text": "謙：亨，君子有終。",
+    "stage": "resubmission",
+    "zh": "重投时清楚表述证据边界，完成必要收尾；这是项目层面的文化联系。",
+    "en": "Keep resubmission claims proportionate to evidence and finish remaining work."
+  },
+  {
+    "id": "modesty-line3",
+    "source_id": "zhouyi-qian15",
+    "locator": "九三",
+    "text": "勞謙君子，有終吉。",
+    "stage": "unknown",
+    "zh": "关注已经完成的工作与仍需收尾的事项，稳妥完成提交。",
+    "en": "Recognize completed work and finish what remains with care."
+  }
+]

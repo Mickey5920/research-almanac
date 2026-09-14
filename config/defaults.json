@@ -1,0 +1,10 @@
+{
+  "count": 3,
+  "operation_minutes": 30,
+  "click_offset_minutes": 10,
+  "buffer_hours": 24,
+  "buffer_mode": "soft",
+  "strict_traditional": false,
+  "language": "zh",
+  "depth": "brief"
+}

@@ -1,0 +1,110 @@
+{
+  "type": "object",
+  "required": [
+    "schema_version",
+    "mode",
+    "run_id",
+    "generated_at",
+    "status",
+    "recommendations",
+    "sources",
+    "versions",
+    "cultural_result"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.1"
+    },
+    "mode": {
+      "enum": [
+        "project",
+        "cultural"
+      ]
+    },
+    "run_id": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "ok",
+        "conditional",
+        "degraded",
+        "no_candidates"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "scope"
+        ]
+      }
+    },
+    "versions": {
+      "type": "object"
+    },
+    "cultural_result": {
+      "type": "object"
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "candidate_id",
+          "rank",
+          "start_utc",
+          "end_utc",
+          "click_at_utc",
+          "local_start",
+          "local_end",
+          "local_click",
+          "practical_reasons",
+          "cultural_reasons",
+          "direction",
+          "sort_factors"
+        ],
+        "properties": {
+          "candidate_id": {
+            "type": "string"
+          },
+          "rank": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "start_utc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end_utc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "click_at_utc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "local_start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "local_end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "local_click": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  }
+}

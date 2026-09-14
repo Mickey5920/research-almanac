@@ -1,0 +1,299 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.1"
+    },
+    "mode": {
+      "enum": [
+        "project",
+        "cultural"
+      ]
+    },
+    "now": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "stage": {
+          "enum": [
+            "initial",
+            "revision",
+            "resubmission",
+            "unknown"
+          ]
+        },
+        "project_ref": {
+          "type": "string"
+        },
+        "manuscript_version": {
+          "type": "string"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "title",
+        "stage"
+      ]
+    },
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "ready",
+            "conditional",
+            "unknown",
+            "blocked"
+          ]
+        },
+        "ready_after": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    "range": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "enum": [
+            "next_week",
+            "rolling_7_days",
+            "custom"
+          ]
+        },
+        "start_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "end_date_exclusive": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "mode"
+      ]
+    },
+    "deadline": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "none",
+            "unknown",
+            "user_supplied",
+            "verified"
+          ]
+        },
+        "at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "status"
+      ]
+    },
+    "availability": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "start",
+          "end"
+        ]
+      }
+    },
+    "excluded_intervals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "start",
+          "end"
+        ]
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "operation_minutes": {
+          "type": "integer",
+          "minimum": 5,
+          "maximum": 240
+        },
+        "click_offset_minutes": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 239
+        },
+        "buffer_hours": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 720
+        },
+        "buffer_mode": {
+          "enum": [
+            "soft",
+            "hard"
+          ]
+        },
+        "strict_traditional": {
+          "type": "boolean"
+        },
+        "language": {
+          "enum": [
+            "zh",
+            "en"
+          ]
+        },
+        "depth": {
+          "enum": [
+            "brief",
+            "detailed"
+          ]
+        },
+        "preferred_hours": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 23
+          }
+        }
+      },
+      "required": []
+    },
+    "tradition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "ruleset": {
+          "const": "local-cultural-v1"
+        }
+      },
+      "required": []
+    },
+    "cultural": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "enum": [
+            "interpret_text",
+            "cast",
+            "continue_reading"
+          ]
+        },
+        "excerpt_id": {
+          "type": "string"
+        },
+        "reading": {
+          "type": "object"
+        },
+        "lines": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "enum": [
+              6,
+              7,
+              8,
+              9
+            ]
+          }
+        }
+      },
+      "required": []
+    }
+  },
+  "required": [
+    "mode"
+  ],
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "project"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "timezone",
+          "project",
+          "readiness"
+        ]
+      }
+    }
+  ]
+}

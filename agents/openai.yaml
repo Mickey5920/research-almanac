@@ -1,0 +1,5 @@
+interface:
+  display_name: "周易投稿择时 / Zhouyi Submit Advisor"
+  short_description: "Plan paper submissions with traceable cultural reflection"
+  default_prompt: "Use $zhouyi-paper-submit-advisor to suggest next week's submission windows for my paper project."
+

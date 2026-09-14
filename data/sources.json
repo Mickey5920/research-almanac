@@ -1,0 +1,35 @@
+[
+  {
+    "id": "lunar-1.7.7",
+    "title": "lunar-javascript 1.7.7",
+    "url": "https://github.com/6tail/lunar-javascript",
+    "checked": "2026-09-14",
+    "scope": "API, source and reference fixtures; no efficacy claim"
+  },
+  {
+    "id": "zhouyi-qian",
+    "title": "周易·乾（维基文库转录）",
+    "url": "https://zh.wikisource.org/wiki/周易/乾",
+    "checked": "2026-09-14",
+    "scope": "Short original-text excerpts checked"
+  },
+  {
+    "id": "zhouyi-qian15",
+    "title": "周易·謙（维基文库转录）",
+    "url": "https://zh.wikisource.org/wiki/周易/謙",
+    "checked": "2026-09-14",
+    "scope": "Short original-text excerpts checked"
+  },
+  {
+    "id": "local-cultural-v1",
+    "title": "Modern submission analogy v1",
+    "url": null,
+    "scope": "Product-defined preference for 成/开/收 and library auspicious hours"
+  },
+  {
+    "id": "config-v1",
+    "title": "Operational defaults v1",
+    "url": null,
+    "scope": "Editable scheduling preferences"
+  }
+]

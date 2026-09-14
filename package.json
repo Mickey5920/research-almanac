@@ -1,0 +1,20 @@
+{
+  "name": "zhouyi-paper-submit-advisor",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Local, evidence-labelled paper submission planning with Yijing cultural reflection",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node scripts/cli.js recommend examples/project.json --out runs/demo",
+    "check": "node scripts/check-package.js",
+    "pack:release": "node scripts/pack-release.js"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "lunar-javascript": "1.7.7",
+    "luxon": "3.7.2"
+  }
+}

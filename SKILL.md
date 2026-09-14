@@ -1,0 +1,40 @@
+---
+name: zhouyi-paper-submit-advisor
+description: Read a specified paper project's readiness and recommend submission windows with traceable Chinese-calendar cultural references, practical deadlines, exact local times and optional facing directions. Also support Yijing text reflection, plan comparison, selection and review.
+metadata:
+  type: agent-skill
+  status: implemented-with-limits
+  created: "2026-09-14"
+  updated: "2026-09-14"
+---
+
+# Zhouyi Paper Submit Advisor
+
+Use the repository's actual scripts, not invented calendar calculations. Install dependencies with npm ci --ignore-scripts once if absent. Work from this Skill folder; save user runs under runs/ or another user-authorized private output directory. Never write private project inputs into committed examples/.
+
+## Project requests
+
+1. Read the user-specified project. Start with its overview, task list, manuscript manifest and submission requirements. Read only related sections needed to resolve missing facts. Preserve source references and distinguish supplied, verified, inferred and unknown information. If several projects are equally plausible, ask which one.
+2. Follow [project context](references/project-context.md). Prepare input matching [input schema](schemas/input.schema.json). Do not invent city, birthday, readiness, deadline, journal weekday advantages or approval.
+3. Resolve the active submission stage before filling deadline. For a journal with explicitly no deadline use status none; an unknown deadline is status unknown. Use an ISO timestamp with explicit offset and source; AoE is UTC−12 only if actually specified.
+4. For live requests omit the example's fixed now. Use the known IANA timezone. next_week means the next Monday through the following Monday; rolling_7_days is a different mode.
+5. Run node scripts/cli.js recommend INPUT.json --out runs/UNIQUE-RUN. Do not overwrite prior runs. Present report.md and the actual resulting status. [Rules and limits](references/calendar-rules.md) define the currently supported tradition.
+6. Show the short recommendation card first. Separate preparation, upload/check, final submit and receipt. Unknown prerequisites remain conditions. Report concrete timestamps in the user's clock timezone; minutes are operational preferences.
+7. For natural-language adjustments, translate only the specified fields into a JSON patch, run patch, then recommend. "Cannot" is an exclusion; "prefer" is a soft hour preference. Preserve unrelated settings. For comparison use compare REPORT.json RANK RANK.
+8. On explicit selection use select; preserve that plan. To continue, review with current project facts rather than silently selecting another window. Changing display language/depth uses render, not new calendar calculation. See [plan lifecycle](references/plan-lifecycle.md).
+9. Only an explicit user statement of submission or an authorized system receipt can create a submitted record. Use confirmed: true as a boolean, never replace actual time with planned time. Save a new revision file.
+
+## Cultural requests
+
+No project, deadline or date range is required for text reflection. Run recommend using mode cultural and a supported excerpt_id, or omit it for the default short excerpt. The curated collection contains four excerpts from two chapters. Do not suggest full-book coverage.
+
+For user-supplied six line values use cultural.action cast, lines bottom to top with 6/7/8/9. This records supplied lines and transforms moving lines; it does not perform random coin casting, Meihua, Qimen or full 64-hexagram interpretation. Continue with the same reading object. Unsupported methods must be stated as unavailable.
+
+## Evidence and optional features
+
+Read [sources and decisions](docs/DECISIONS.md) when explaining conventions. Classical quotations come only from data/excerpts.json; modern explanations and blessings are original. A direction is the library's daily Xi-shen direction, optionally adapted to facing, not Wenchang or Qimen. No acceptance probabilities.
+
+The CLI exports ICS but creates no scheduled reminders. If the user requests reminders and the host offers an actual tool, use it within the user's authorization, record its returned ID/status privately, and accurately report failures and plan changes. Without a host tool say unavailable.
+
+Use backplan for estimated preparation tasks, and the generated fixed-north direction.svg as a schematic, never a live compass. See [commands](docs/COMMANDS.md) and [release status](docs/IMPLEMENTATION.md) for supported vs deferred features.
+
