@@ -19,20 +19,7 @@ tags: [zhouyi, skill, documentation]
 <p align="center"><strong>玄学提供仪式感，科学提供优先级。</strong></p>
 <p align="center">v0.8.1 · Node.js 22+ · 本地计算 · 离线中英文 HTML · MIT</p>
 
-[快速开始](#快速开始) · [功能一览](#功能一览) · [时间如何排序](#时间如何排序) · [常用命令](#常用命令) · [常见问题](#常见问题)
-
-## 一图了解
-
-![工作流：Agent 对话、本地 Skill 计算、只读 HTML 与本地记录](assets/diagrams/workflow.zh.png)
-
-*上图为工作流程示意，不是界面截图。页首横幅和文末海报为宣传插画。*
-
-1. **说明论文项目**：Agent 按需读取你指定的项目资料，整理准备进度和投稿要求。
-2. **本地生成安排**：Skill 校验输入，筛选可用窗口，计算并保存结果。
-3. **打开 HTML**：对比窗口、展开依据、查看往期记录，全程无需连接 AI。
-4. **继续对话调整**：新要求生成新记录和新报告，原有快照保留。
-
-Agent 负责对话与来源核验，本地引擎负责计算，HTML 只展示已经保存的数据。
+[页面预览](#页面预览) · [快速开始](#快速开始) · [功能一览](#功能一览) · [时间如何排序](#时间如何排序) · [常用命令](#常用命令) · [常见问题](#常见问题)
 
 ## 页面预览
 
@@ -48,6 +35,19 @@ Agent 负责对话与来源核验，本地引擎负责计算，HTML 只展示已
 ![英文 HTML 报告，展示同一份模拟投稿方案](assets/screenshots/report.en.png)
 
 </details>
+
+## 一图了解
+
+![工作流：Agent 对话、本地 Skill 计算、只读 HTML 与本地记录](assets/diagrams/workflow.zh.png)
+
+*从项目资料到保存结果：Agent、本地引擎与 HTML 各司其职。*
+
+1. **说明论文项目**：Agent 按需读取你指定的项目资料，整理准备进度和投稿要求。
+2. **本地生成安排**：Skill 校验输入，筛选可用窗口，计算并保存结果。
+3. **打开 HTML**：对比窗口、展开依据、查看往期记录，全程无需连接 AI。
+4. **继续对话调整**：新要求生成新记录和新报告，原有快照保留。
+
+Agent 负责对话与来源核验，本地引擎负责计算，HTML 只展示已经保存的数据。
 
 ## 功能一览
 
@@ -164,6 +164,8 @@ runs/readme-demo/
 
 日历和方位文件在存在候选窗口时生成。每次调用还会在 `.local-data/history/` 新增独立记录。更新 Skill 时保留这个私人目录，即可延续本地历史。
 
+`runs/` 和 `.local-data/` 已被 Git 忽略。导出的报告仍包含你提供的项目资料，公开展示请使用模拟示例。
+
 只想从现有历史导出 HTML，不重新计算或增加记录：
 
 ~~~sh
@@ -174,10 +176,9 @@ HTML 已嵌入生成时的记录、样式、图片和展示逻辑；导出后不
 
 ## 常用命令
 
-在 Skill 根目录执行。第一条命令生成后续命令使用的示例；如果已生成同名目录，跳过第一条即可。
+完成快速开始中的示例后，在 Skill 根目录执行以下命令。每个保存路径都需使用新名称。
 
 ~~~sh
-node scripts/cli.js recommend examples/project.json --out runs/readme-demo
 node scripts/cli.js compare runs/readme-demo/recommendations.json 1 2
 node scripts/cli.js select runs/readme-demo/recommendations.json 1 --out runs/selected-plan.json
 node scripts/cli.js patch examples/project.json examples/patch.json --out runs/updated-input.json
@@ -232,20 +233,11 @@ npm test
 npm run check
 ~~~
 
-仓库包含 Windows/Linux、Node 22/24 的 [GitHub Actions 配置](.github/workflows/test.yml)。发布后可在自己仓库的 Actions 页面查看实际执行结果。
+仓库包含 Windows/Linux、Node 22/24 的 [GitHub Actions 配置](.github/workflows/test.yml)。当前执行结果见仓库的 [Actions 页面](https://github.com/Mickey5920/zhouyi-paper-submit-advisor/actions)。
 
 欢迎附带可复现示例的改进。代码变更应保持时区计算正确、历史记录不可变、来源可追溯，并区分实证依据与文化解读。
 
-## 准备上传 GitHub
-
-~~~sh
-npm run check
-npm run pack:release
-~~~
-
-导出脚本按公开文件白名单生成 **dist/0.8.1/zhouyi-paper-submit-advisor/**。将这个文件夹中的**内容**作为 GitHub 仓库根目录上传，保留 `README.md`、`README.zh-CN.md` 与 `assets/` 的相对位置，图片和中英文切换链接即可正常显示。同版本发布目录已经存在时，使用现有包或选择新的发布版本；脚本会保留旧版本。
-
-导出会排除私人 `runs/`、`.local-data/`、依赖、缓存和环境文件。离线报告仍包含项目资料，公开演示应使用模拟数据。源代码包不包含 Git 历史；需要提交记录时使用源仓库或 Git bundle。本地打包不会自动发布到 GitHub。
+遇到问题或有改进建议，可在 [Issues](https://github.com/Mickey5920/zhouyi-paper-submit-advisor/issues) 提供模拟示例、预期行为和 Node.js 版本。
 
 ## 文档与图片
 
@@ -253,11 +245,8 @@ npm run pack:release
 
 项目指导文件包含后续规划，当前可用能力请结合本文功能表和实施记录阅读。
 
-<details>
-<summary>展开中文宣传海报</summary>
+## 宣传海报
 
-![周易论文投稿择时宣传海报](assets/marketing/poster.zh-v2.png)
-
-</details>
+![周易论文投稿择时 — 顺天时，投稿顺](assets/marketing/poster.zh-v2.png)
 
 代码和原创文档采用 [MIT 许可证](LICENSE)。第三方资料保留各自适用条款，见[第三方说明](THIRD_PARTY_NOTICES.md)。宣传插画的生成记录见[图片来源](assets/marketing/PROMPTS.md)；流程示意图以可编辑 SVG 保存在 `assets/diagrams/`。

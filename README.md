@@ -19,20 +19,7 @@ An Agent Skill for initial submissions, revisions and resubmissions. Describe yo
 <p align="center"><strong>Mysticism offers ritual; science sets priorities.</strong></p>
 <p align="center">v0.8.1 · Node.js 22+ · Local computation · Offline bilingual HTML · MIT</p>
 
-[Quick start](#quick-start) · [Features](#features) · [How ranking works](#how-ranking-works) · [Commands](#commands) · [FAQ](#faq)
-
-## At a glance
-
-![Workflow: Agent conversation, local Skill computation, read-only HTML and local records](assets/diagrams/workflow.en.png)
-
-*Workflow illustration, not a product screenshot. The banner and poster are promotional artwork.*
-
-1. **Describe your project.** The Agent reads the project material you specify and gathers your constraints.
-2. **Generate the plan locally.** The Skill validates inputs, evaluates feasible windows and saves its results.
-3. **Open the HTML.** Compare windows, inspect reasons and revisit earlier records without an AI connection.
-4. **Adjust through the Agent.** New instructions produce a new record and report; existing snapshots remain available.
-
-The Agent handles conversation and any source verification. The local engine handles calculation. The HTML displays saved data only.
+[Page previews](#page-previews) · [Quick start](#quick-start) · [Features](#features) · [How ranking works](#how-ranking-works) · [Commands](#commands) · [FAQ](#faq)
 
 ## Page previews
 
@@ -48,6 +35,19 @@ The same synthetic record is shown in both languages, rendered from the actual v
 ![Chinese HTML report showing the same synthetic submission plan](assets/screenshots/report.zh-CN.png)
 
 </details>
+
+## At a glance
+
+![Workflow: Agent conversation, local Skill computation, read-only HTML and local records](assets/diagrams/workflow.en.png)
+
+*From project context to saved results: the Agent, calculation engine and HTML each have a clear role.*
+
+1. **Describe your project.** The Agent reads the project material you specify and gathers your constraints.
+2. **Generate the plan locally.** The Skill validates inputs, evaluates feasible windows and saves its results.
+3. **Open the HTML.** Compare windows, inspect reasons and revisit earlier records without an AI connection.
+4. **Adjust through the Agent.** New instructions produce a new record and report; existing snapshots remain available.
+
+The Agent handles conversation and any source verification. The local engine handles calculation. The HTML displays saved data only.
 
 ## Features
 
@@ -137,7 +137,7 @@ The engine also keeps alternatives on different dates. When applicable academic 
 | Reference layer | Current implementation |
 |---|---|
 | Chinese calendar | Pinned calendar rules for day/hour labels and daily Xi-shen direction in `Asia/Shanghai`; other zones retain practical scheduling with limited traditional coverage |
-| Yijing reflection | Four sourced excerpts from Qian (乾) and Qian/Modesty (謙), with modern project interpretations |
+| Yijing reflection | Four sourced excerpts from 乾 (The Creative) and 謙 (Modesty), with modern project interpretations |
 | Personal zodiac | Local ephemeris from Astronomy Engine; a declared elemental mapping between the supplied sun sign and calculated Moon sign, used only at the last ranking level |
 | Academic context | Stored research snapshots plus Agent-verified target instructions, published office details, deadlines and applicable timing evidence |
 
@@ -164,6 +164,8 @@ runs/readme-demo/
 
 Calendar and direction files are produced when candidates exist. Each invocation also appends an independent record under `.local-data/history/`. Keep this private directory if you want history to continue across Skill updates.
 
+`runs/` and `.local-data/` are excluded from Git. Exported reports still contain your supplied project information; share synthetic examples for public demonstrations.
+
 To export current history without recalculating or adding a record:
 
 ~~~sh
@@ -174,10 +176,9 @@ The resulting HTML embeds the available records, styles, images and display logi
 
 ## Commands
 
-Run from the Skill folder. The first command below creates the demo used by the subsequent commands; skip it if you already created that directory.
+After running the quick-start demo, use these commands from the Skill folder. Each saved output path must be new.
 
 ~~~sh
-node scripts/cli.js recommend examples/project.json --out runs/readme-demo
 node scripts/cli.js compare runs/readme-demo/recommendations.json 1 2
 node scripts/cli.js select runs/readme-demo/recommendations.json 1 --out runs/selected-plan.json
 node scripts/cli.js patch examples/project.json examples/patch.json --out runs/updated-input.json
@@ -232,20 +233,11 @@ npm test
 npm run check
 ~~~
 
-The repository includes [GitHub Actions configuration](.github/workflows/test.yml) for Node 22/24 on Windows and Linux. Check the Actions tab in your own repository after publishing for actual CI results.
+The repository includes [GitHub Actions configuration](.github/workflows/test.yml) for Node 22/24 on Windows and Linux. See the [Actions page](https://github.com/Mickey5920/zhouyi-paper-submit-advisor/actions) for current CI results.
 
 Contributions should include a reproducible example and preserve time-zone correctness, immutable records, source traceability and the separation between empirical evidence and cultural interpretation.
 
-## Prepare a GitHub upload
-
-~~~sh
-npm run check
-npm run pack:release
-~~~
-
-The exporter creates **dist/0.8.1/zhouyi-paper-submit-advisor/** using an allowlist of public source, documentation and assets. Upload the **contents of that folder** as your repository root. Keep `README.md`, `README.zh-CN.md` and `assets/` together so the language links and images work on GitHub. If the release folder already exists, use the existing package or choose a new release version; the exporter preserves prior releases.
-
-Private `runs/`, `.local-data/`, dependencies, caches and environment files are excluded. Reports contain supplied project information even though they are offline; share only synthetic examples. A source package does not include Git history. Use the source repository or a Git bundle if you need commit history. Creating a local package does not publish it to GitHub.
+Found an issue or have an idea? [Open an issue](https://github.com/Mickey5920/zhouyi-paper-submit-advisor/issues) with a synthetic example, expected behavior and your Node.js version.
 
 ## Documentation and artwork
 
@@ -253,11 +245,8 @@ Private `runs/`, `.local-data/`, dependencies, caches and environment files are 
 
 The project guide includes planned features. Use the current capability table and implementation notes to distinguish available functions from the roadmap.
 
-<details>
-<summary>View the Chinese promotional poster</summary>
+## Promotional poster
 
-![周易论文投稿择时 — Chinese promotional poster](assets/marketing/poster.zh-v2.png)
-
-</details>
+![Zhouyi Paper Submit Advisor — Plan thoughtfully. Submit calmly.](assets/marketing/poster.en-v1.png)
 
 Code and original documentation: [MIT License](LICENSE). Third-party materials retain their applicable terms; see [third-party notices](THIRD_PARTY_NOTICES.md). Generated promotional artwork is documented in [image provenance](assets/marketing/PROMPTS.md); workflow diagrams are editable SVGs in `assets/diagrams/`.
