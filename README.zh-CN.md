@@ -16,7 +16,7 @@ tags: [zhouyi, skill, documentation]
 
 根据真实准备进度、可用时间和截止日期选择投稿窗口，比较方案、保存选择，并在计划变化后复核，最终记录实际提交。
 
-**0.3.0 版本 · 本地运行 · Node.js 22+ · 中英文文档与命令行报告**
+**0.4.0 版本 · 本地运行 · Node.js 22+ · 中英文文档与命令行报告**
 
 > 择时与方位属于文化参考，不用于计算论文录用概率。
 
@@ -24,8 +24,8 @@ tags: [zhouyi, skill, documentation]
 
 | 功能 | 实际能力 |
 |---|---|
-| HTML 本地工作台 | 填表生成实际结果，每次完整输入与结果配对保存，重启后仍在 |
-| 历史与离线留存 | 搜索、载入为新输入、两次对比、JSON 导入导出、单文件历史 HTML |
+| Agent 输出 HTML | 在 Agent 中输入，Skill 保存结果并用本地只读模板展示 |
+| 本次与历史记录 | 包含本次输入与结果、本地往期记录；可离线搜索和对比 |
 | 结合论文项目 | 准备条件、最早就绪时间、可用时段、排除区间和当前阶段截止 |
 | 传统日时参考 | 固定版本历法库；北京时间下的干支、建除、时辰与日家喜神方位 |
 | 具体操作时间 | 带时区偏移的本地时间；可修改最终提交预算和建议点击偏移 |
@@ -39,36 +39,24 @@ tags: [zhouyi, skill, documentation]
 
 ## 快速开始
 
-推荐使用浏览器工作台：
+在 Agent 对话中调用 Skill，提供论文项目和投稿要求。Agent 完成处理后返回 **report.html**，展示本次输入、结果与本地往期记录。HTML 直接打开即可，只负责展示，不连接 AI 模型、不计算，不需要网页填表或启动服务。
+
+Agent 使用以下本地脚本：
 
 ~~~sh
 npm ci --ignore-scripts
-npm start
+node scripts/cli.js recommend examples/project.json --out runs/new-agent-run
 ~~~
 
-打开[本地工作台](http://127.0.0.1:4318)。填写后点击“生成并保存本次结果”，左侧保留往期记录，右侧显示所选记录的输入与结果。每次完整记录保存到 .local-data/history/；未提交草稿保存在当前浏览器。
+每次保存 input.json、record.json、report.html 及原有中英文报告，同时在被 Git 忽略的 .local-data/history/ 中新增独立记录。示例采用固定模拟时间/截止；真实使用由 Agent 替换信息并移除固定 now。
 
-点击“导出历史 HTML”即可得到一个可直接打开的离线文件，支持查看、搜索和对比全部历史。离线文件只读；生成新结果需要启动本地工作台，直接双击 web/index.html 无法计算。当前网页界面为中文。
-
-历史与导出文件包含项目资料，请私人保存。Git 忽略历史、运行记录和依赖。[工作台、备份与 Git 指南](docs/WORKBENCH.md)说明了迁移和版本管理方法。
-
-如需命令行演示：
+仅从本地历史重建 HTML，不重新推算：
 
 ~~~sh
-npm ci --ignore-scripts
-npm test
-npm run demo
+node scripts/cli.js history-html --out runs/history-view-new.html
 ~~~
 
-打开 **runs/demo/report.md** 查看中文结果，或 **runs/demo/report.en.md** 查看英文结果。生成的私人报告放在被 Git 忽略的 runs/ 中。
-
-演示固定使用 2026 年 9 月的模拟时间和虚构截止，便于复现。真实使用时，将[示例输入](examples/project.json)复制到私人工作位置，删除固定的 now，填写自己的项目、准备条件和截止信息：
-
-~~~sh
-node scripts/cli.js recommend your-input.json --out runs/my-first-plan
-~~~
-
-输出目录必须是新的。首次运行 demo 后，再次运行会拒绝覆盖；请改用新的 --out 目录。
+HTML 是生成时的快照；新调用生成包含新记录的新文件，旧 HTML 不自动更新。调整要求继续在 Agent 对话中提出。[Agent 输出、历史备份与 Git 指南](docs/WORKBENCH.md)说明完整流程。
 
 ## 作为 Skill 使用
 

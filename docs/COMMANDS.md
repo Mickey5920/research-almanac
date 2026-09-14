@@ -8,6 +8,8 @@ tags: [zhouyi, skill, documentation]
 
 # Commands
 
+Default Agent output: recommend with --out saves input.json, record.json and report.html plus persistent local history. Return report.html to the user. Use node scripts/cli.js history-html --out runs/history-new.html to rebuild history without a calculation. Both commands accept --history-dir PRIVATE-DIRECTORY. The HTML does not connect to AI models or require a service.
+
 Run commands from the repository root. Requires Node 22+ and npm. Install with `npm ci --ignore-scripts`. Run `npm test` and `npm run check`.
 
 ~~~sh

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>周易论文投稿择时 · 本地记录</title>
+<!-- STYLE -->
+<style>.record-view{grid-template-columns:230px minmax(280px,.85fr) minmax(360px,1.2fr)}.input-json{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.8 Consolas,monospace;max-height:720px;overflow:auto}.record-view .input-panel{background:#faf9f2}.history-item small{white-space:normal}.record-label{color:var(--gold);font-size:12px}.filter-label{margin-bottom:5px}.result-text{white-space:pre-wrap;overflow-wrap:anywhere}.record-view .source-list{font-size:12px;padding-left:18px;overflow-wrap:anywhere}@media(max-width:1120px){.record-view{grid-template-columns:195px minmax(0,1fr)}}@media(max-width:650px){.record-view{display:flex}.record-view .history-panel{order:0}.input-json{max-height:300px}}</style>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="seal">易</span><span>周易论文投稿择时<small>ZHOUYI · LOCAL RECORDS</small></span></a><span class="local-pill">本地记录 · 只读展示</span></header>
+<main>
+<section class="intro"><div><p class="eyebrow">每一次认真准备，都值得留存</p><h1>这一稿，<em>有迹可循。</em></h1><p class="intro-copy">由 Agent 调用 Skill 生成。本页只展示生成时读取的本地记录，不连接 AI 模型。</p></div><div class="intro-note"><span class="six-lines">☷</span><p>顺天时，投稿顺<br>愿此稿，中顶刊</p><small>文化祝愿 · 以实际准备与截止为先</small></div></section>
+<div id="warnings" class="notice error" hidden role="status"></div>
+<div class="workspace record-view">
+<aside class="history-panel" aria-label="历史记录">
+<div class="section-heading"><h2>本次与往期</h2><span id="history-count" class="count"></span></div>
+<label>搜索本地记录<input id="search" type="search" placeholder="标题、期刊或日期"></label>
+<div id="history-list" class="history-list"></div>
+<div class="history-bottom"><p>需要调整时，请回到 Agent 继续对话。<br>新调用会保存新记录，并生成新的 HTML。</p></div>
+</aside>
+<section class="input-panel" aria-label="已保存输入"><div class="section-heading"><h2>当时的输入</h2></div><p id="input-note" class="muted"></p><pre id="record-input" class="input-json"></pre></section>
+<section class="result-panel" aria-label="已保存结果">
+<div class="section-heading"><h2 id="record-label">本次结果</h2><span id="result-badge" class="status-badge"></span></div>
+<div id="empty" class="empty-result" hidden>还没有已保存记录。</div>
+<div id="result-content">
+<h3 id="record-title"></h3><p id="record-meta" class="muted"></p>
+<div id="result-alert" class="notice" hidden></div><div id="candidate-list"></div>
+<div id="reflection" class="reflection" hidden></div>
+<details class="data-details"><summary>完整结果与来源</summary><pre id="record-result"></pre></details>
+<div class="compare-panel"><label>与另一条记录对比<select id="compare-select"><option value="">请选择…</option></select></label><div id="comparison"></div></div>
+</div>
+</section>
+</div>
+<footer><span>本地文件快照 · 关闭 Agent 后仍可查看</span><span>传统文化参考，不表示论文录用概率。此文件包含项目资料，请私人保存。</span></footer>
+</main>
+<!-- DATA -->
+<!-- SCRIPT -->
+</body></html>
+

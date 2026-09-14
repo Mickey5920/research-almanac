@@ -67,6 +67,7 @@ test('HTTP generation, reopening history, import, export and request boundaries'
  assert.equal((await post('/api/import',{input:input(),report:record.report})).status,201);
  const legacy=await (await post('/api/import',record.report)).json();assert.equal(legacy.record.input,null);
  const list=await (await fetch(url+'/api/history')).json();assert.equal(list.records.length,3);
+ const landing=await (await fetch(url+'/')).text();assert.ok(landing.includes('local-records'));assert.ok(!landing.includes('api/generate'));assert.ok(landing.includes("connect-src 'none'"));
  const exported=await fetch(url+'/api/export.html');assert.equal(exported.status,200);
  const html=await exported.text();for(const item of list.records)assert.ok(html.includes(item.record_id));
 });

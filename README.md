@@ -16,7 +16,7 @@ tags: [zhouyi, skill, documentation]
 
 Plan around your manuscript's readiness, availability and deadline. Compare up to three windows, choose one, revisit it when plans change, and keep the final submission record.
 
-**Release 0.3.0 · Local-first · Node.js 22+ · Chinese / English documentation**
+**Release 0.4.0 · Local-first · Node.js 22+ · Chinese / English documentation**
 
 > Calendar traditions are cultural references. This tool does not estimate acceptance probabilities.
 
@@ -24,8 +24,8 @@ Plan around your manuscript's readiness, availability and deadline. Compare up t
 
 | Capability | What you get |
 |---|---|
-| Local HTML workbench | Fill a form, generate actual results and retain paired inputs/results across restarts |
-| History and portability | Search, restore as a new run, compare, import JSON and export a self-contained read-only HTML archive |
+| Agent HTML output | Agent saves paired inputs/results and returns a read-only local history template |
+| Local history | Current invocation and earlier records; offline search and comparison, without AI connections |
 | Project-aware scheduling | Readiness conditions, earliest-ready time, availability, exclusions and a stage-specific deadline |
 | Traditional reference | Pinned Chinese-calendar day/hour labels and daily Xi-shen direction for Asia/Shanghai |
 | Exact operational times | Local timestamps with offsets; editable final-operation duration and click offset |
@@ -39,34 +39,24 @@ Other timezones support practical scheduling with explicitly degraded traditiona
 
 ## Quick start
 
-For the browser workbench:
+Invoke the Skill in your Agent conversation and provide the paper project and constraints there. The Agent returns **report.html**, a read-only local template showing this invocation's input/result and earlier local records. Open the file directly: no model connection, network requests, browser form or service is required.
+
+The Agent uses:
 
 ~~~sh
 npm ci --ignore-scripts
-npm start
+node scripts/cli.js recommend examples/project.json --out runs/new-agent-run
 ~~~
 
-Open [the local workbench](http://127.0.0.1:4318). Each generation saves the full normalized input and result to .local-data/history/. Drafts are saved in the current browser. This release's browser interface is Chinese; CLI reports and documentation support both languages.
+Each run saves input.json, record.json, report.html and bilingual reports, and appends a pair to private .local-data/history/. The example uses a frozen synthetic date/deadline; real inputs must replace these details and omit fixed now.
 
-Use **导出历史 HTML** to save all history in one file that opens offline. The exported archive is read-only; generating new results requires the running local service. Opening web/index.html directly does not run the engine. History and exports contain project information and should stay private. See [workbench and Git guide](docs/WORKBENCH.md).
-
-For the command-line demo:
+To rebuild history without recalculating or adding a record:
 
 ~~~sh
-npm ci --ignore-scripts
-npm test
-npm run demo
+node scripts/cli.js history-html --out runs/history-view-new.html
 ~~~
 
-Open **runs/demo/report.md** or **runs/demo/report.en.md**. All generated user reports stay under the ignored runs/ folder.
-
-The demo is deliberately frozen to September 2026 and uses a synthetic deadline. For a real project, copy [examples/project.json](examples/project.json) into a private working location, remove the fixed now, and replace project information, readiness and deadline.
-
-~~~sh
-node scripts/cli.js recommend your-input.json --out runs/my-first-plan
-~~~
-
-Output destinations must be new; repeating npm run demo after its first successful run will refuse to overwrite runs/demo. Use a different --out directory.
+New invocations generate new HTML snapshots; existing files do not update automatically. Changes are requested in the Agent conversation. See [Agent output and Git guide](docs/WORKBENCH.md).
 
 ## Use as an agent Skill
 

@@ -5,8 +5,11 @@ import {recommend,compare,validateInput,hash} from './core.js';
 import {render,exportIcs,directionSvg} from './render.js';
 import {selectPlan,amendInput,reviewPlan,recordSubmission,backplan} from './plans.js';
 import {validateReport} from './validate-report.js';
+import {publishAgentReport,exportLocalHistory,defaultHistoryDir} from './report-html.js';
 const args=process.argv.slice(2),cmd=args.shift(),outIndex=args.indexOf('--out');
 const out=outIndex>=0?args.splice(outIndex,2)[1]:null;
+const historyIndex=args.indexOf('--history-dir');
+const historyDir=historyIndex>=0?resolve(args.splice(historyIndex,2)[1]):defaultHistoryDir;
 const load=p=>JSON.parse(readFileSync(resolve(p),'utf8').replace(/^\uFEFF/,''));
 function save(value){
  if(!out){console.log(JSON.stringify(value,null,2));return;}
@@ -15,16 +18,20 @@ function save(value){
 }
 try{
  if(cmd==='recommend'){
-  if(!args[0])throw new Error('Input JSON required');const input=load(args[0]),r=recommend(input);validateReport(r);
+  if(!args[0])throw new Error('Input JSON required');const input=load(args[0]);validateInput(input);
+  if(!input.now)input.now=new Date().toISOString();const r=recommend(input);validateReport(r);
   if(!out)save(r);else{
    const dir=resolve(out);if(existsSync(dir))throw new Error('Output directory already exists. Use a new run directory.');
    mkdirSync(dir,{recursive:true});writeFileSync(join(dir,'recommendations.json'),JSON.stringify(r,null,2)+'\n');
    writeFileSync(join(dir,'report.md'),render(r));writeFileSync(join(dir,'report.en.md'),render(r,'en'));
    writeFileSync(join(dir,'manifest.json'),JSON.stringify({run_id:r.run_id,generated_at:r.generated_at,versions:r.versions,
-    input_hash:hash(input),notice:'No original input or private birth information is persisted.'},null,2));
+    input_hash:hash(input),notice:'Full input and result saved privately in input.json, record.json and local history; report.html is a read-only local snapshot.'},null,2));
    if(r.recommendations.length){writeFileSync(join(dir,'submission-windows.ics'),exportIcs(r));writeFileSync(join(dir,'direction.svg'),directionSvg(r.recommendations[0].direction));}
-   console.log(dir);
+   await publishAgentReport(input,r,dir,historyDir);
+   console.log(join(dir,'report.html'));
   }
+ }else if(cmd==='history-html'){
+  if(!out)throw new Error('--out HTML path required');mkdirSync(dirname(resolve(out)),{recursive:true});await exportLocalHistory(resolve(out),historyDir);console.log(resolve(out));
  }else if(cmd==='render'){
   const r=load(args[0]);validateReport(r);const text=render(r,args[1]??'zh',args[2]??'brief');
   if(out)writeFileSync(resolve(out),text,{flag:'wx'});else console.log(text);
@@ -41,8 +48,7 @@ try{
  }else if(cmd==='reminder-status'){save({status:'unavailable',reason:'Use an available host reminder tool with explicit authorization. No reminder was created.'});
  }else if(cmd==='validate'){validateInput(load(args[0]));console.log('Valid input');
  }else{
- console.log('Zhouyi Paper Submit Advisor 0.3.0\nCommands:\n recommend input.json --out runs/new-run\n render report.json [zh|en] [brief|detailed]\n compare report.json 1 2\n select report.json 1 --out runs/plan.json\n patch input.json patch.json --out runs/updated-input.json\n review plan.json [updated-input.json] --out runs/reviewed-plan.json\n submitted plan.json confirmation.json --out runs/submitted-plan.json\n backplan tasks.json\n validate input.json\n reminder-status\nAll --out destinations must be new. Calendar export does not create reminders.');
+ console.log('Zhouyi Paper Submit Advisor 0.4.0\nCommands:\n history-html --out runs/history-new.html [--history-dir PRIVATE-DIR]\n recommend input.json --out runs/new-run\n render report.json [zh|en] [brief|detailed]\n compare report.json 1 2\n select report.json 1 --out runs/plan.json\n patch input.json patch.json --out runs/updated-input.json\n review plan.json [updated-input.json] --out runs/reviewed-plan.json\n submitted plan.json confirmation.json --out runs/submitted-plan.json\n backplan tasks.json\n validate input.json\n reminder-status\nAll --out destinations must be new. Calendar export does not create reminders.');
  if(cmd&&cmd!=='help'&&cmd!=='--help')process.exitCode=1;
  }
 }catch(error){console.error('Error: '+error.message);process.exitCode=1;}
-

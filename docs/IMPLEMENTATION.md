@@ -6,17 +6,21 @@ updated: 2026-09-14
 tags: [zhouyi, implementation]
 ---
 
-# Implementation status — 0.3.0 preview
+# Implementation status — 0.4.0 preview
 
 This is a working local preview, not a claim that every roadmap item is complete. The package is ready for source upload to GitHub; it has not been published or installed globally.
+
+## 0.4.0 interaction correction
+
+The Agent conversation is the input surface. recommend --out saves full inputs/results and outputs report.html with earlier local records and the current invocation explicitly selected. history-html rebuilds the view without calculating. The HTML has no model client, network requests or calculation controls. Local records are embedded at generation time; no service is required. The older form tool remains at /workbench; the optional service root now shows the read-only template.
 
 ## 已验证事实 / Verified facts
 
 - Local runtime: Node 24.15.0 on Windows. All dependencies pinned in package-lock.json.
 - Scheduling, schema validation, bilingual rendering, candidate ICS, direction SVG, comparison, JSON patches, plan selection/review, submission confirmation, preparation backplanning and local cultural reflection are implemented.
-- Node test suite: **76 tests passed**, with no skipped tests. Includes the existing 68 engine/lifecycle cases and eight web/history tests covering form dates, DST, persistence, import/export, escaping and local request boundaries. See tests/engine.test.js and tests/web.test.js.
-- A local HTML workbench stores paired full inputs/results, browser drafts, immutable history, restore-as-new, comparison and JSON import/export. All history can be exported as a self-contained read-only HTML archive. Source lives in web/ and the local service in scripts/server.js.
-- Independent Git repository on main, baseline plus feature commit, version tag v0.3.0. Private history is excluded from Git and the release exporter; no remote is configured or pushed.
+- Node test suite: **78 tests passed**, with no skipped tests. Includes the existing 68 engine/lifecycle cases eight web/history tests and two Agent HTML integration tests covering form dates, DST, persistence, import/export, escaping and local request boundaries. See tests/engine.test.js and tests/web.test.js.
+- Agent invocations now automatically save input.json, record.json and report.html with local history. The 0.3.0 form workbench remains a compatibility tool; the default workflow no longer requires it. Source templates are web/report.html and web/report.js; generation is scripts/report-html.js.
+- Independent Git repository on main, baseline plus feature commit, version tags v0.3.0 and v0.4.0. Private history is excluded from Git and the release exporter; no remote is configured or pushed.
 - Skill frontmatter/structure passed the bundled skill-creator validator.
 - Independent forward checks reproduced three initial defects: non-boolean confirmation accepted; requested range ignored during review; stale click/readiness during review. These were fixed and regression-tested. A follow-up found a stale proposed candidate after reverting a preference; that was also fixed with a dedicated regression test.
 - Synthetic demo generated Chinese/English Markdown, JSON, manifest, ICS and a direction schematic. CLI cultural mode exported successfully without a project or deadline.
@@ -40,7 +44,7 @@ This is a working local preview, not a claim that every roadmap item is complete
 | F22–F24 diagram/record/depth | Implemented; fixed-north schematic, explicit submission record and rendering-only depth changes. |
 | F25 edition/school choices | One collection and one ruleset; additional editions/schools are unavailable, not simulated. |
 | F27 reminders | Host integration instructions and explicit unavailable CLI state. No native provider or background scheduler. |
-| F28 HTML history / Git | Implemented local input/result history, restore, comparison, JSON interchange, offline read-only HTML and independent source versioning. See [workbench guide](WORKBENCH.md). |
+| F28 HTML history / Git | Agent-first input and automatic paired local records; read-only HTML output with current/history comparison and no model/network connection. Independent Git source versioning. See [output guide](WORKBENCH.md). |
 
 ## Work-package assessment
 

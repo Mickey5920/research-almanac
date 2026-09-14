@@ -7,9 +7,10 @@ import {recommend,validateInput} from './core.js';
 import {validateReport} from './validate-report.js';
 import {HistoryStore} from './history-store.js';
 import {formToInput} from './web-input.js';
+import {renderHistoryHtml} from './report-html.js';
 const root=fileURLToPath(new URL('..',import.meta.url));
 const version=JSON.parse(await readFile(join(root,'package.json'),'utf8')).version;
-const assets=new Map([['/',['web/index.html','text/html; charset=utf-8']],['/app.js',['web/app.js','text/javascript; charset=utf-8']],['/style.css',['web/style.css','text/css; charset=utf-8']]]);
+const assets=new Map([['/workbench',['web/index.html','text/html; charset=utf-8']],['/app.js',['web/app.js','text/javascript; charset=utf-8']],['/style.css',['web/style.css','text/css; charset=utf-8']]]);
 const escapeJson=x=>JSON.stringify(x).replace(/</g,'\\u003c');
 async function body(req){
  const chunks=[];let size=0;for await(const chunk of req){size+=chunk.length;if(size>1024*1024)throw new Error('输入超过 1 MB 限制。');chunks.push(chunk);}
@@ -33,6 +34,7 @@ export function createServer({dataDir=join(root,'.local-data','history')}={}){
    if(!allowedHosts.includes(req.headers.host))return send(403,{error:'仅允许本机访问。'});
    if(req.headers.origin&&!expectedOrigins.includes(req.headers.origin))return send(403,{error:'跨站请求被拒绝。'});
    const path=new URL(req.url,'http://'+host).pathname;
+   if(req.method==='GET'&&path==='/'){const history=await store.list();return send(200,await renderHistoryHtml({...history,current_record_id:history.records[0]?.record_id}),'text/html; charset=utf-8');}
    if(req.method==='GET'&&assets.has(path)){const [file,type]=assets.get(path);return send(200,await readFile(join(root,file)),type);}
    if(req.method==='GET'&&path==='/api/session')return send(200,{token,version});
    if(req.method==='GET'&&path==='/api/history')return send(200,await store.list());

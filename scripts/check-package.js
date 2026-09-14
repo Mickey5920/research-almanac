@@ -2,7 +2,7 @@ import {readFileSync,readdirSync,statSync,existsSync} from 'node:fs';
 import {resolve,dirname,join} from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('..',import.meta.url));
-const required=['SKILL.md','README.md','README.zh-CN.md','LICENSE','package-lock.json','docs/PROJECT-GUIDE.md','docs/IMPLEMENTATION.md','docs/WORKBENCH.md','web/index.html','web/app.js','web/style.css','scripts/server.js','assets/marketing/hero.png','assets/marketing/poster.zh.png'];
+const required=['SKILL.md','README.md','README.zh-CN.md','LICENSE','package-lock.json','docs/PROJECT-GUIDE.md','docs/IMPLEMENTATION.md','docs/WORKBENCH.md','web/report.html','web/report.js','scripts/report-html.js','web/index.html','web/app.js','web/style.css','scripts/server.js','assets/marketing/hero.png','assets/marketing/poster.zh.png'];
 for(const p of required)if(!existsSync(join(root,p)))throw new Error('Missing '+p);
 const skip=new Set(['node_modules','runs','.local-data','.git','.cache','dist']);
 let count=0,links=0;
