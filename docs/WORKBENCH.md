@@ -8,7 +8,7 @@ tags: [zhouyi, skill, html, history, git]
 
 # Agent 调用与 HTML 本地记录输出
 
-[简体中文 README](../README.zh-CN.md) · [English README](../README.md)
+[简体中文 README](../README.md) · [English README](../README.en.md)
 
 ## 用户怎么用
 

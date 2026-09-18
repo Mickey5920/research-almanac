@@ -2,13 +2,17 @@
 type: implementation-record
 status: active
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-18
 tags: [zhouyi, implementation]
 ---
 
-# Implementation status — current release 0.9.0
+# Implementation status — current release 0.9.1
 
 The source is published at [Mickey5920/zhouyi-paper-submit-advisor](https://github.com/Mickey5920/zhouyi-paper-submit-advisor). Installation depends on the Agent host. The current release summary distinguishes implemented features from planned work; dated sections below preserve earlier verification records.
+
+## 0.9.1 — Bilingual product showcase (2026-09-18)
+
+Chinese is now the default GitHub README, with a complete English README and language links. Three feature illustrations introduce scheduling and direction, classical references and academic evidence, and local bilingual reports. Updated synthetic screenshots show both languages, expanded trigram references and the eight-trigram atlas. Workflow artwork and release packaging include the new documentation assets. Scheduling and ranking behavior are unchanged.
 
 ## 0.9.0 — Eight-trigram references (2026-09-18)
 

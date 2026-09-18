@@ -6,7 +6,7 @@ const root=fileURLToPath(new URL('..',import.meta.url));
 const version=JSON.parse(readFileSync(join(root,'package.json'),'utf8')).version;
 const target=resolve(root,'dist',version,'zhouyi-paper-submit-advisor');
 if(existsSync(target))throw new Error('Release folder exists; preserve it and choose a new version before exporting again.');
-const allowed=['SKILL.md','README.md','README.zh-CN.md','LICENSE','THIRD_PARTY_NOTICES.md','package.json','package-lock.json','.gitignore','.gitattributes','.github','agents','assets','config','data','docs','examples','references','schemas','scripts','tests','web'];
+const allowed=['SKILL.md','README.md','README.en.md','README.zh-CN.md','LICENSE','THIRD_PARTY_NOTICES.md','package.json','package-lock.json','.gitignore','.gitattributes','.github','agents','assets','config','data','docs','examples','references','schemas','scripts','tests','web'];
 mkdirSync(target,{recursive:true});
 for(const p of allowed)cpSync(join(root,p),join(target,p),{recursive:true,errorOnExist:true});
 const sums=[];

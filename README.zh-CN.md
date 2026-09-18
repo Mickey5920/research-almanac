@@ -6,7 +6,7 @@ updated: 2026-09-18
 tags: [zhouyi, skill, documentation]
 ---
 
-<p align="center"><a href="./README.md">English</a> · <strong>简体中文</strong></p>
+<p align="center"><strong>简体中文</strong> · <a href="./README.en.md">English</a></p>
 
 <p align="center"><img src="assets/marketing/poster.zh-v2.png" alt="周易论文投稿择时 — 顺天时，投稿顺" width="560"></p>
 
@@ -17,51 +17,80 @@ tags: [zhouyi, skill, documentation]
 这是一个用于首次投稿、返修与重投的 Agent Skill。在对话中说明论文项目，即可默认获得三个投稿窗口（以实际可行为准）：本地具体时间、提交朝向、选择依据，以及可独立打开的 HTML 报告。
 
 <p align="center"><strong>玄学提供仪式感，科学提供优先级。</strong></p>
-<p align="center">v0.9.0 · Node.js 22+ · 本地计算 · 离线中英文 HTML · MIT</p>
+<p align="center">v0.9.1 · Node.js 22+ · 本地计算 · 离线中英文 HTML · MIT</p>
 
 [页面预览](#页面预览) · [快速开始](#快速开始) · [功能一览](#功能一览) · [时间如何排序](#时间如何排序) · [常用命令](#常用命令) · [常见问题](#常见问题)
 
+## 功能一览
+
+### 01 · 把「下周投稿」变成可执行的安排
+
+![投稿安排功能插画：稿件、日历、操作时间与方位罗盘](assets/marketing/features/submission-planning.png)
+
+**从论文进度出发，把时间、余量和朝向安排在一起。**
+
+| 功能 | 对应结果 |
+|---|---|
+| 结合完整项目条件 | 纳入首次投稿、返修或重投阶段，准备状态、剩余待办、可用时段与截止限制 |
+| 首选与备选窗口 | 默认三个窗口，可配置 1–10 个；优先不同日期，再补充不重叠时段 |
+| 精确到操作时刻 | 显示本地日期、时区、操作区间、建议点击时间和截止余量 |
+| 提交朝向指引 | 给出方向、方位角、固定北向罗盘与对齐方法 |
+| 计划持续调整 | 支持窗口对比、选定计划、条件变更复核、准备任务倒排与实际提交确认记录 |
+
+### 02 · 有原文的文化解读，有依据的现实排序
+
+![文化与学术参考功能插画：古籍、八卦意象与研究资料](assets/marketing/features/bagua-evidence.png)
+
+**读懂为什么选这个窗口，也读到启示从哪里来。**
+
+| 功能 | 对应结果 |
+|---|---|
+| 八卦原文与解释 | 按保存的朝向对应后天八卦，展开查看卦象、经典原文、白话解释与投稿启示 |
+| 八卦总览 | 八个卦象集中查阅，中英文切换时保留经典中文原文 |
+| 窗口有利因素 | 展示已有的日课、时辰与方位依据，区分传统解释和现代安排 |
+| 学术参考 | 展示研究样本，以及已保存的目标期刊官网要求、编辑部信息和截止依据 |
+| 个人星座分析 | 根据自填星座加入文化择时分析，作为现实安排与学术依据之后的参考 |
+
+现实条件先决定能不能提交，适用且已核实的学术依据再参与排序；传统择吉与个人星座提供文化参考。具体规则见[时间如何排序](#时间如何排序)。
+
+### 03 · 一份报告，把本次安排与每次调整留在身边
+
+![本地报告功能插画：紧凑窗口卡片、本地文件与版本记录](assets/marketing/features/local-reports.png)
+
+**在 Agent 中对话，在 HTML 中查看；打开文件即可回顾。**
+
+| 功能 | 对应结果 |
+|---|---|
+| 紧凑的报告界面 | 首选与备选卡片对齐，关键时间一眼可见，详细内容按需展开 |
+| 本地记录与对比 | 查看生成时保存的输入和结果，搜索往期记录，比较前后变化 |
+| 中文 / English | 离线切换界面，保留当前记录、展开状态与项目原文 |
+| 独立 HTML | 背景图片随报告嵌入；只读展示本地记录，无需连接 AI 模型或启动服务 |
+| 多格式携带 | HTML、中英文 Markdown、JSON、候选日历事件与方位示意图 |
+
+*以上为功能主题插画；实际界面、数据和卦象见下方真实页面截图。*
+
 ## 页面预览
 
-以下为真实 v0.9.0 HTML 模板的中英文截图，使用同一份 [examples/astrology.json 模拟数据](examples/astrology.json)，桌面视口为 1680 × 1320。截图不包含私人项目历史；切换界面语言后，项目原文仍保留原来的中英文内容。
+以下为真实 v0.9.1 HTML 模板的中英文截图，使用同一份 [examples/astrology.json 模拟数据](examples/astrology.json)，桌面视口为 1680 × 1320。截图不包含私人项目历史；切换界面语言后，项目原文仍保留原来的中英文内容。
 
 ### 中文界面
 
-![中文 HTML 报告：三个投稿窗口、朝向罗盘、星座分析与中英文切换按钮](assets/screenshots/report.zh-CN.png)
+![中文 HTML 报告：三个投稿窗口、朝向罗盘、星座分析与中英文切换按钮](assets/screenshots/report.v091.zh-CN.png)
 
 <details>
 <summary>展开英文界面预览</summary>
 
-![英文 HTML 报告，展示同一份模拟投稿方案](assets/screenshots/report.en.png)
+![英文 HTML 报告，展示同一份模拟投稿方案](assets/screenshots/report.v091.en.png)
 
 </details>
 
 ## 一图了解
 
-![工作流：Agent 对话、本地 Skill 计算、只读 HTML 与本地记录](assets/diagrams/workflow.zh.png)
+![工作流：Agent 对话、本地 Skill 计算、只读 HTML 与本地记录](assets/diagrams/workflow.v091.zh.png)
 
 *从项目资料到保存结果：Agent、本地引擎与 HTML 各司其职。*
 
 需要调整时，继续在 Agent 对话中提出；每次新推荐都会保存新记录与 HTML 快照。
-
-## 功能一览
-
-| 功能 | 你会得到什么 |
-|---|---|
-| 结合论文项目 | 投稿阶段、准备条件、最早就绪时间、可用时段、排除区间与截止限制 |
-| 窗口对比 | 默认 3 个，可配置 1–10 个；优先不同日期，再补充不重叠时段 |
-| 具体提交时间 | 本地日期、时区、操作时段、建议点击时刻与截止余量 |
-| 提交朝向 | 方向名称、顺时针方位角、固定北向罗盘与对齐步骤 |
-| 窗口选择依据 | 已有的日课与时辰因素、方位来源、分钟安排和周易启示 |
-| 八卦原文解读 | 按朝向对应后天八卦，展示卦象、经典原文、白话解释与投稿启示；附可展开的八卦总览 |
-| 学术参考 | 分别展示研究样本，以及已保存的目标官网要求、编辑部信息与截止依据 |
-| 个人星座择时 | 根据自填星座加入文化分析，排序位于现实安排与学术依据之后 |
-| 紧凑报告 | 对齐的窗口卡片、可展开详情、本地搜索与往期记录对比 |
-| 中英文切换 | 离线切换界面，保留当前记录、展开状态和项目原文 |
-| 投稿计划管理 | 对比、选定、变更复核、准备任务倒排、实际提交确认记录 |
-| 多格式输出 | HTML、中英文 Markdown、JSON、候选日历事件与方位示意图 |
-
-界面采用青玉与鎏金配色，配合天文仪器和罗盘意象；背景插画随报告嵌入，字体使用本机通用字体，无需外部字体服务。
 
 ## 快速开始
 
@@ -103,6 +132,9 @@ node scripts/cli.js recommend examples/project.json --out runs/readme-demo
 
 ## 需要提供什么
 
+<details>
+<summary>展开输入信息清单</summary>
+
 | 信息 | 用途 |
 |---|---|
 | 项目标题与投稿阶段 | 确认当前稿件，以及首次投稿、返修或重投 |
@@ -119,6 +151,8 @@ node scripts/cli.js recommend examples/project.json --out runs/readme-demo
 结构化输入中，`preferences.count` 接受 1–10 的整数。`next_week` 指下周一至再下周一（不含终点）；滚动七天使用 `rolling_7_days`。
 
 [项目示例](examples/project.json) · [个人星座示例](examples/astrology.json) · [完整输入结构](schemas/input.schema.json)
+
+</details>
 
 ## 时间如何排序
 
@@ -145,7 +179,14 @@ node scripts/cli.js recommend examples/project.json --out runs/readme-demo
 
 八卦原文采用《说卦传》第七章及第十一章节录，方位约定与引文出处见[八卦参考说明](references/bagua.md)。每个窗口默认收起详情，展开即可阅读“原文—白话解释—现代投稿启示”；此层用于文化解读，不改变时间排序。
 
-![展开后的八卦解读：经典原文、白话解释与现代投稿启示](assets/screenshots/bagua.zh-CN.png)
+![展开后的八卦解读：经典原文、白话解释与现代投稿启示](assets/screenshots/bagua.v091.zh-CN.png)
+
+<details>
+<summary>查看八卦总览：原文、白话与投稿启示</summary>
+
+![八卦总览：八个卦象及其原文、解释与投稿启示](assets/screenshots/bagua-atlas.v091.zh-CN.png)
+
+</details>
 
 ## 报告与本地记录
 
@@ -178,6 +219,9 @@ HTML 已嵌入生成时的记录、样式、图片和展示逻辑；导出后不
 
 ## 常用命令
 
+<details>
+<summary>展开命令行用法</summary>
+
 完成快速开始中的示例后，在 Skill 根目录执行以下命令。每个保存路径都需使用新名称。
 
 ~~~sh
@@ -198,6 +242,8 @@ node scripts/cli.js recommend examples/lines.json --out runs/lines-demo
 ~~~
 
 六爻模式接受从下到上提供的六个数值，并转换动爻。选定、复核和实际提交记录通过 Agent 或命令行执行，报告保持只读。实际提交确认与其他选项见[完整命令说明](docs/COMMANDS.md)。
+
+</details>
 
 ## 常见问题
 
@@ -247,4 +293,4 @@ npm run check
 
 项目指导文件包含后续规划，当前可用能力请结合本文功能表和实施记录阅读。
 
-代码和原创文档采用 [MIT 许可证](LICENSE)。第三方资料保留各自适用条款，见[第三方说明](THIRD_PARTY_NOTICES.md)。宣传插画的生成记录见[图片来源](assets/marketing/PROMPTS.md)；流程示意图以可编辑 SVG 保存在 `assets/diagrams/`。
+代码和原创文档采用 [MIT 许可证](LICENSE)。第三方资料保留各自适用条款，见[第三方说明](THIRD_PARTY_NOTICES.md)。宣传插画的生成记录见[图片来源](assets/marketing/PROMPTS.md)；新增功能配图的提示词见[功能插画记录](assets/marketing/features/PROMPTS.md)；流程示意图以可编辑 SVG 保存在 `assets/diagrams/`。
