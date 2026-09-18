@@ -202,6 +202,7 @@ Object.assign(dictionary,{
   " · 当前 HTML 不自动刷新网络信息": " · This HTML does not refresh online information automatically"
 });
 Object.assign(dictionary,{'对比记录':'Compared record','当前记录':'Current record'});
+Object.assign(dictionary,{'《说卦传》 · 原文来源':'Shuogua · Original source','《周易总义》卷二十':'Zhouyi Zongyi · Volume 20','《周易正义》说卦卷九之五':'Zhouyi Zhengyi · 09.05'});
 const directions={北:'North',东北:'Northeast',东:'East',东南:'Southeast',南:'South',西南:'Southwest',西:'West',西北:'Northwest',正北:'North',正东:'East',正南:'South',正西:'West'};
 Object.assign(dictionary,directions);
 ['白羊座','金牛座','双子座','巨蟹座','狮子座','处女座','天秤座','天蝎座','射手座','摩羯座','水瓶座','双鱼座'].forEach((sign,i)=>dictionary[sign]=['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'][i]);

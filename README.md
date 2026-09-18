@@ -2,7 +2,7 @@
 type: readme
 status: active
 created: 2026-09-14
-updated: 2026-09-15
+updated: 2026-09-18
 tags: [zhouyi, skill, documentation]
 ---
 
@@ -17,13 +17,13 @@ tags: [zhouyi, skill, documentation]
 An Agent Skill for initial submissions, revisions and resubmissions. Describe your project in the Agent conversation; receive three submission windows by default when feasible with exact local times, facing directions, explanations and a portable HTML report.
 
 <p align="center"><strong>Mysticism offers ritual; science sets priorities.</strong></p>
-<p align="center">v0.8.1 · Node.js 22+ · Local computation · Offline bilingual HTML · MIT</p>
+<p align="center">v0.9.0 · Node.js 22+ · Local computation · Offline bilingual HTML · MIT</p>
 
 [Page previews](#page-previews) · [Quick start](#quick-start) · [Features](#features) · [How ranking works](#how-ranking-works) · [Commands](#commands) · [FAQ](#faq)
 
 ## Page previews
 
-The same synthetic record is shown in both languages, rendered from the actual v0.8.1 HTML template using [examples/astrology.json](examples/astrology.json). Captured at a 1680 × 1200 desktop viewport. These are product screenshots; they contain no private project history. Original project text remains bilingual when the interface is switched.
+The same synthetic record is shown in both languages, rendered from the actual v0.9.0 HTML template using [examples/astrology.json](examples/astrology.json). Captured at a 1680 × 1320 desktop viewport. These are product screenshots; they contain no private project history. Original project text remains bilingual when the interface is switched.
 
 ### English interface
 
@@ -53,6 +53,7 @@ Make adjustments in the Agent conversation. Each new recommendation saves a new 
 | Exact timing | Local dates, time zones, operation windows, suggested click times and deadline margins |
 | Facing guidance | Direction name, clockwise bearing and a north-up compass with alignment instructions |
 | Reasons for each window | Available day/hour factors, direction sources, minute-by-minute plans and Yijing reflection |
+| Eight-trigram reference | Match saved directions to Later Heaven trigrams, with classical passages, meanings, submission reflections and an expandable atlas |
 | Academic evidence | Separate study summaries and saved target-specific official rules, office information and deadline evidence |
 | Personal zodiac timing | Optional supplied sun sign used in cultural timing analysis, after practical and academic priorities |
 | Compact report | Aligned window cards, collapsible details, local search and comparisons between saved records |
@@ -141,6 +142,10 @@ The engine prioritizes different dates, then fills remaining places with non-ove
 Specific click minutes reserve time for checks and receipts. The compass is a fixed-north guide, not a live location sensor. Cultural factors do not estimate manuscript acceptance probability.
 
 Personal zodiac input is optional. Without it, the HTML omits personal analysis. Set `astrology.enabled` to `false` to disable the module. Ephemeris support is limited to 1900–2100; conventions are documented in [SKILL.md](SKILL.md).
+
+The eight-trigram layer uses excerpts from Shuogua chapters 7 and 11. See [the reference notes](references/bagua.md) for directional conventions and sources. Each window keeps details collapsed until opened: classical text, plain-language meaning and modern submission reflection. This layer does not alter timing scores.
+
+![Expanded trigram reference: classical Chinese text, meaning and English submission reflection](assets/screenshots/bagua.en.png)
 
 ## Reports and local records
 

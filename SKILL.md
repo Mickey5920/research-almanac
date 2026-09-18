@@ -5,7 +5,7 @@ metadata:
   type: agent-skill
   status: implemented-with-limits
   created: "2026-09-14"
-  updated: "2026-09-14"
+  updated: "2026-09-18"
 ---
 
 # Zhouyi Paper Submit Advisor
@@ -63,3 +63,7 @@ For target-specific academic timing, verify the primary source and save input.ac
 Preparation, availability and hard deadlines remain mandatory. Sort by deadline buffer, applicable academic preference, user hour preference, traditional calendar preference, then personal-zodiac symbolic tie-breaker. Academic evidence overrides strict traditional filtering. Preserve diversity across dates. The output timing_policy explains conflicts and cites the evidence. If no policy matches a feasible window, retain feasible alternatives and their unmatched status; never move past a deadline for a preferred weekday.
 
 Ask for the personal sign only when the user requests personalized astrology and has not supplied one. The report analyses that user's timing; it does not label a window as suitable for a general zodiac audience. The personal sign is optional. Current zodiac tie-breaking uses symbolic element relationships with the computed Moon sign; it is a declared cultural convention, not an empirical success model.
+
+## Eight trigrams and original passages
+
+Read [trigram reference](references/bagua.md) when explaining 八卦 or classical meanings. Use data/bagua.json and scripts/bagua.js to relate an existing facing direction to a Later Heaven trigram. Explain the exact original passage, its chapter, a plain-language meaning, and a separately labelled modern submission reflection. Chinese originals stay unchanged in English output. The HTML and bilingual Markdown expose this layer automatically; it does not change timing scores or create a divination. Do not infer a trigram for a missing direction or pass a trigram quotation off as the source of a minute-level recommendation.

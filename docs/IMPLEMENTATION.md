@@ -6,11 +6,15 @@ updated: 2026-09-14
 tags: [zhouyi, implementation]
 ---
 
-# Implementation status — current release 0.8.1
+# Implementation status — current release 0.9.0
 
 The source is published at [Mickey5920/zhouyi-paper-submit-advisor](https://github.com/Mickey5920/zhouyi-paper-submit-advisor). Installation depends on the Agent host. The current release summary distinguishes implemented features from planned work; dated sections below preserve earlier verification records.
 
-## Current release summary — 2026-09-15
+## 0.9.0 — Eight-trigram references (2026-09-18)
+
+HTML windows and bilingual Markdown now add a Later Heaven trigram based on the saved facing direction. Each reference separates classical text, original plain-language paraphrase and modern submission advice. HTML adds a collapsed eight-trigram atlas and preserves Chinese quotations when switching languages. Direction matching does not change timing scores or mutate historical input/result pairs. New reference data, sources and Agent instructions are in [bagua reference](../references/bagua.md). Validation: 110 Node tests; browser checks for three matched windows, eight atlas entries, bilingual round trip, preserved expansion state, no script errors and no horizontal overflow at 390 px. Public screenshots use synthetic data.
+
+## 0.8.1 release summary — 2026-09-15
 
 Version 0.8.1 consolidates the English and Chinese README, adds localized editable workflow diagrams, and corrects historical output documentation. Runtime behavior is unchanged from 0.8.0. The current report supports an offline Chinese/English switch, compact window comparisons, direction bearings including cardinal aliases, personal zodiac timing and applicable academic timing priority. The current Node suite contains 106 tests. Counts and browser observations in the dated sections below describe earlier releases, not the current UI verification status.
 

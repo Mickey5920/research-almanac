@@ -24,3 +24,7 @@ Astronomy Engine (astronomy-engine), MIT License
 Copyright (c) 2019-2023 Don Cross
 Source: https://github.com/cosinekitty/astronomy
 The installed astronomy.js includes its MIT license header. Used for local geocentric ephemeris calculations.
+
+## Bagua classical text
+
+The eight-trigram collection uses public-domain classical Chinese excerpts from Shuogua chapters 7 and 11. Source editions and directional commentary references are recorded in [bagua reference](references/bagua.md). The Chinese paraphrases, English explanations and modern submission applications are original project text, not copied modern translations.

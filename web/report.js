@@ -63,6 +63,24 @@ function reasonPanel(record,candidate){
  }
  return box;
 }
+function bilingual(tag,zh,en,cls){const node=el(tag,zh,cls);node.setAttribute('data-en',en);return node;}
+function baguaPanel(b,overview=false){
+ if(!b)return null;
+ const box=el('details',undefined,'bagua-card');
+ const title=b.symbol+' '+b.name+'卦 · '+b.image;
+ const summary=el('summary');summary.append(bilingual('span',title,b.symbol+' '+b.id.toUpperCase()+' · '+b.image_en),bilingual('small',overview?b.direction:'八卦 · 原文解读',overview?b.direction_en:'Trigram · Text & meaning'));box.append(summary);
+ const body=el('div',undefined,'bagua-body');
+ body.append(bilingual('small','经典原文 · 《说卦传》第七章','Classical text · Shuogua, chapter 7'),el('blockquote',b.quote),bilingual('small','取象原文 · 第十一章（节录）','Natural image · Chapter 11 (excerpt)'),el('blockquote',b.nature_quote),bilingual('strong','白话解释','Meaning · Project paraphrase'),bilingual('p',b.meaning,b.meaning_en),bilingual('strong','投稿启示 · 现代解读','Submission reflection · Modern interpretation'),bilingual('p',b.application,b.application_en));
+ body.append(bilingual('small','后天八卦方位 · '+b.direction,'Later Heaven direction · '+b.direction_en));
+ const source=b.source??data.bagua_library?.source;if(source)sourceLink(body,'《说卦传》 · 原文来源',source.url);
+ box.append(body);return box;
+}
+function renderBaguaAtlas(){
+ const box=$('bagua-atlas'),lib=data.bagua_library;if(!box||!lib)return;
+ box.replaceChildren();box.append(bilingual('p',lib.mapping_note,lib.mapping_note_en,'research-note'));
+ const grid=el('div',undefined,'bagua-grid');for(const b of lib.trigrams)grid.append(baguaPanel(b,true));box.append(grid);
+ for(const source of lib.mapping_sources)sourceLink(box,source.title,source.url);
+}
 function astrologyPanel(a,z){
  if(!a||!z)return null;
  const box=el('section',undefined,'astrology-panel'),head=el('div',undefined,'astrology-heading');
@@ -180,6 +198,7 @@ function show(r){
   brief.textContent=items.filter(i=>i.kind==='favorable').map(i=>i.title).slice(0,2).join(' · ')||items[0]?.title||'';
   const details=el('details',undefined,'reason-disclosure');details.append(el('summary','为什么选这个窗口 · 展开'),reasons);card.append(brief,details);
  }
+ const bagua=baguaPanel(data.explanations?.[r.record_id]?.[c.candidate_id]?.bagua);if(bagua)card.append(bagua);
  const astrology=astrologyPanel(c.astrology,c.zodiac_timing);if(astrology)card.append(astrology);
  list.append(card);
  }
@@ -193,7 +212,7 @@ function show(r){
 for(const [selector,mark] of [['.history-panel h2','history'],['.input-panel h2','book'],['#record-label','calendar'],['#academic-section h2','chart']]){
  const heading=document.querySelector(selector);if(heading)heading.prepend(icon(mark));
 }
-renderReferences();renderAcademic(null);
+renderReferences();renderAcademic(null);renderBaguaAtlas();
 $('history-count').textContent=records.length;
 if(data.warnings.length){$('warnings').hidden=false;$('warnings').textContent='部分本地记录无法读取，原文件已保留：\n'+data.warnings.join('\n');}
 $('search').addEventListener('input',renderList);$('compare-select').addEventListener('change',compare);

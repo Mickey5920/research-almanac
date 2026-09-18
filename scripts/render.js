@@ -1,3 +1,4 @@
+import {baguaForDirection} from './bagua.js';
 import {DateTime} from 'luxon';
 const safe=x=>String(x??'—').replace(/[|<>\r\n]/g,' ');
 const esc=x=>String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
@@ -13,6 +14,15 @@ export function render(report,language=report.preferences?.language??'zh',depth=
  if(depth==='detailed')for(const c of report.recommendations)lines.push('','## '+(zh?'候选 ':'Candidate ')+c.rank,
  '- '+c.cultural_reasons.map(x=>safe(x.text)).join('; '),'- '+(zh?'截止余量（分钟）':'Deadline margin (minutes)')+': '+safe(c.deadline_margin_minutes),
  '- ID: '+c.candidate_id);
+ for(const candidate of report.recommendations){
+ const b=baguaForDirection(candidate.direction);if(!b)continue;
+ lines.push('', '### '+(zh?'窗口 ':'Window ')+candidate.rank+' · '+b.symbol+' '+(zh?b.name+'卦':b.id.toUpperCase())+' · '+(zh?b.direction:b.direction_en),
+ '', '**'+(zh?'经典原文':'Classical text')+'** — '+b.quote_locator, '> '+b.quote,
+ '> '+b.nature_quote+'（'+b.nature_locator+'）',
+ '', '**'+(zh?'白话解释':'Meaning (project paraphrase)')+'**: '+(zh?b.meaning:b.meaning_en),
+ '', '**'+(zh?'投稿启示 · 现代解读':'Submission reflection · Modern interpretation')+'**: '+(zh?b.application:b.application_en),
+ '', '['+b.source.title+']('+b.source.url+') · '+(zh?b.convention:b.convention_en));
+ }
  if(report.missing_inputs.length)lines.push('',(zh?'待补信息：':'Missing: ')+report.missing_inputs.join(', '));
  if(!report.recommendations.length)lines.push('',JSON.stringify(report.excluded_summary));
  }
