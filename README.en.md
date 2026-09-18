@@ -25,7 +25,7 @@ An Agent Skill for initial submissions, revisions and resubmissions. Describe yo
 
 ### 01 · Turn “submit next week” into an actionable plan
 
-![Planning illustration: manuscript, calendar, operation times and a facing compass](assets/marketing/features/submission-planning.png)
+![Planning illustration: manuscript, calendar, operation times and a facing compass](assets/marketing/features/submission-planning.en-v2.png)
 
 **Bring manuscript readiness, available time and facing guidance into one plan.**
 
@@ -39,7 +39,7 @@ An Agent Skill for initial submissions, revisions and resubmissions. Describe yo
 
 ### 02 · Classical passages to reflect on. Evidence to prioritize.
 
-![Reference illustration: classical text, trigram motifs and research materials](assets/marketing/features/bagua-evidence.png)
+![Reference illustration: classical text, trigram motifs and research materials](assets/marketing/features/bagua-evidence.en-v2.png)
 
 **See why a window was chosen and where its interpretation comes from.**
 
@@ -55,7 +55,7 @@ Practical constraints determine feasibility. Applicable, verified academic evide
 
 ### 03 · Keep your plan—and each revision—in a portable report
 
-![Local report illustration: compact cards, local files and a version timeline](assets/marketing/features/local-reports.png)
+![Local report illustration: compact cards, local files and a version timeline](assets/marketing/features/local-reports.en-v2.png)
 
 **Discuss changes in the Agent. Open the HTML to review them.**
 
@@ -295,4 +295,4 @@ The project guide includes planned features. Use the current capability table an
 
 Code and original documentation: [MIT License](LICENSE). Third-party materials retain their applicable terms; see [third-party notices](THIRD_PARTY_NOTICES.md). Generated promotional artwork is documented in [image provenance](assets/marketing/PROMPTS.md); workflow diagrams are editable SVGs in `assets/diagrams/`.
 
-Feature illustration prompts: [generation records](assets/marketing/features/PROMPTS.md).
+Feature illustration prompts: [generation records](assets/marketing/features/PROMPTS-v2.md).

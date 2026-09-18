@@ -25,7 +25,7 @@ tags: [zhouyi, skill, documentation]
 
 ### 01 · 把「下周投稿」变成可执行的安排
 
-![投稿安排功能插画：稿件、日历、操作时间与方位罗盘](assets/marketing/features/submission-planning.png)
+![投稿安排功能插画：稿件、日历、操作时间与方位罗盘](assets/marketing/features/submission-planning.zh-v2.png)
 
 **从论文进度出发，把时间、余量和朝向安排在一起。**
 
@@ -39,7 +39,7 @@ tags: [zhouyi, skill, documentation]
 
 ### 02 · 有原文的文化解读，有依据的现实排序
 
-![文化与学术参考功能插画：古籍、八卦意象与研究资料](assets/marketing/features/bagua-evidence.png)
+![文化与学术参考功能插画：古籍、八卦意象与研究资料](assets/marketing/features/bagua-evidence.zh-v2.png)
 
 **读懂为什么选这个窗口，也读到启示从哪里来。**
 
@@ -55,7 +55,7 @@ tags: [zhouyi, skill, documentation]
 
 ### 03 · 一份报告，把本次安排与每次调整留在身边
 
-![本地报告功能插画：紧凑窗口卡片、本地文件与版本记录](assets/marketing/features/local-reports.png)
+![本地报告功能插画：紧凑窗口卡片、本地文件与版本记录](assets/marketing/features/local-reports.zh-v2.png)
 
 **在 Agent 中对话，在 HTML 中查看；打开文件即可回顾。**
 
@@ -293,4 +293,4 @@ npm run check
 
 项目指导文件包含后续规划，当前可用能力请结合本文功能表和实施记录阅读。
 
-代码和原创文档采用 [MIT 许可证](LICENSE)。第三方资料保留各自适用条款，见[第三方说明](THIRD_PARTY_NOTICES.md)。宣传插画的生成记录见[图片来源](assets/marketing/PROMPTS.md)；新增功能配图的提示词见[功能插画记录](assets/marketing/features/PROMPTS.md)；流程示意图以可编辑 SVG 保存在 `assets/diagrams/`。
+代码和原创文档采用 [MIT 许可证](LICENSE)。第三方资料保留各自适用条款，见[第三方说明](THIRD_PARTY_NOTICES.md)。宣传插画的生成记录见[图片来源](assets/marketing/PROMPTS.md)；新增功能配图的提示词见[功能插画记录](assets/marketing/features/PROMPTS-v2.md)；流程示意图以可编辑 SVG 保存在 `assets/diagrams/`。
