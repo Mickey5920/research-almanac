@@ -1,7 +1,9 @@
 // Offline presentation translations. Saved records and user-authored text stay intact.
 (()=>{
 'use strict';
-const pairs=`周易论文投稿择时|Zhouyi Submission Planner
+const pairs=`科研黄历|Research Almanac
+投稿择日|Submission timing
+周易论文投稿择时|Zhouyi Submission Planner
 本地记录|Local records
 只读展示|Read-only
 天时有序 · 科研有据|Celestial rhythm · Research evidence
@@ -255,7 +257,7 @@ function sync(){
   }attributes.set(element,saved);
  }
  document.documentElement.lang=language;
- document.title=language==='en'?'Zhouyi Submission Planner · Local records':'周易论文投稿择时 · 本地记录';
+ document.title=language==='en'?'Research Almanac · Submission Timing':'科研黄历 · 投稿择日';
  for(const button of document.querySelectorAll('[data-language]'))button.setAttribute('aria-pressed',String(button.dataset.language===language));
  observer.observe(document.body,{childList:true,subtree:true,characterData:true});
 }

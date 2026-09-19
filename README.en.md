@@ -8,18 +8,20 @@ tags: [research-almanac, zhouyi, skill, documentation]
 
 <p align="center"><a href="./README.md">简体中文</a> · <strong>English</strong></p>
 
-# Research Almanac · Zhouyi Submission Support
+# Research Almanac
 
-**Plan your research week, then choose a submission window for a prepared manuscript.**
+**Research Planning · Submission Timing**
+
+Plan your research week, then choose a submission window for a prepared manuscript.
 
 An Agent Skill that brings daily actions, expected outputs, discipline-specific rhythms and sourced Yijing readings into a compact weekly plan. When submission is relevant, expand the existing planner for exact times, facing directions, trigrams and supporting evidence.
 
 <p align="center"><strong>Tradition offers ritual; science sets priorities.</strong></p>
-<p align="center">v0.10.0 · Node.js 22+ · Local computation · Offline bilingual HTML · MIT</p>
+<p align="center">v0.11.0 · Node.js 22+ · Local computation · Offline bilingual HTML · MIT</p>
 
-![English research almanac: seven days, six disciplines, daily rhythms and submission support](assets/screenshots/almanac.v0100.en.png)
+![English research almanac: seven days, six disciplines, daily rhythms and submission timing](assets/screenshots/almanac.v0110.en.png)
 
-[Features](#a-clearer-research-week) · [Quick start](#quick-start) · [Submission support](#submission-support-with-the-original-capabilities) · [Saved reports](#one-invocation-one-saved-record) · [Planning rules](#how-the-plan-is-built)
+[Features](#a-clearer-research-week) · [Quick start](#quick-start) · [Submission timing](#submission-timing) · [Saved reports](#one-invocation-one-saved-record) · [Planning rules](#how-the-plan-is-built)
 
 ## A clearer research week
 
@@ -34,7 +36,7 @@ An Agent Skill that brings daily actions, expected outputs, discipline-specific 
 | Chinese / English | Offline translations of the interface and built-in guidance, preserving user text and classical originals |
 | Saved reports | Switch between research almanacs and the original submission reports |
 
-![Weekly overview with six disciplines and seven days](assets/screenshots/almanac-week.v0100.en.png)
+![Weekly overview with six disciplines and seven days](assets/screenshots/almanac-week.v0110.en.png)
 
 Use the general view to orient the week. Add actual project tasks for a schedule that reflects your constraints. Tasks without estimates or feasible slots remain visible for follow-up; planning them does not mark them completed.
 
@@ -42,7 +44,7 @@ Use the general view to orient the week. Add actual project tasks for a schedule
 
 ### 1. Keep the complete Skill folder
 
-Download the [repository](https://github.com/Mickey5920/zhouyi-paper-submit-advisor), extract the complete `zhouyi-paper-submit-advisor` folder and place it in a Skill directory supported by your Agent host. The repository and invocation names remain unchanged.
+Download the [repository](https://github.com/Mickey5920/research-almanac), extract the complete `research-almanac` folder and place it in a Skill directory supported by your Agent host. The invocation name is now `$research-almanac`. Preserve your existing local history directory when upgrading.
 
 Install Node.js 22+, then run once from the Skill folder:
 
@@ -54,7 +56,7 @@ After installation, the local engine and exported HTML require no model API key.
 
 ### 2. Ask in the Agent conversation
 
-> Use $zhouyi-paper-submit-advisor to build next week's research almanac and weekly work plan across all six disciplines. My timezone is Asia/Shanghai. Keep research planning primary, add submission support when relevant, and save an offline HTML report with Chinese/English switching.
+> Use $research-almanac to build next week's research almanac and weekly work plan across all six disciplines. My timezone is Asia/Shanghai. Keep research planning primary, add submission timing when relevant, and save an offline HTML report with Chinese/English switching.
 
 For a specific project:
 
@@ -72,17 +74,17 @@ For an adjustment:
 # General research almanac
 node scripts/cli.js weekly examples/weekly.json --out runs/first-week
 
-# Project plan with submission support
+# Project plan with submission timing
 node scripts/cli.js weekly examples/weekly-project.json --out runs/project-week
 ~~~
 
 Open **report.html** in the output directory. Examples use fixed synthetic dates and tasks. For real use, remove `now` and supply actual project facts. Use a new output directory for each invocation.
 
-## Submission support with the original capabilities
+## Submission timing
 
 Research tasks are scheduled first; submission uses the remaining availability. Expand the support area for preferred and alternative windows, then open the full embedded report for directions, trigrams, personal zodiac interpretation and evidence.
 
-<p align="center"><img src="assets/marketing/poster.en-v1.png" alt="Zhouyi Paper Submit Advisor: the integrated submission support module" width="480"></p>
+<p align="center"><img src="assets/marketing/research-almanac.en-v1.png" alt="Research Almanac: Research Planning and Submission Timing" width="480"></p>
 
 | Preserved capability | Where it appears |
 |---|---|
@@ -105,7 +107,7 @@ See the [submission guide](docs/SUBMISSION-GUIDE.en.md) for complete usage and t
 
 ~~~text
 runs/project-week/
-  report.html              Almanac with expandable submission support
+  report.html              Almanac with expandable submission timing
   input.json               Complete saved input
   weekly.json              Seven-day structured result
   record.json              Paired input and result
@@ -129,7 +131,7 @@ The HTML embeds the saved inputs, results, images and display logic. New request
 <details>
 <summary>View the Chinese interface</summary>
 
-![Chinese research almanac showing the same saved synthetic record](assets/screenshots/almanac.v0100.zh-CN.png)
+![Chinese research almanac showing the same saved synthetic record](assets/screenshots/almanac.v0110.zh-CN.png)
 
 </details>
 

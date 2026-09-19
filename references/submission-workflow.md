@@ -6,7 +6,7 @@ updated: 2026-09-20
 tags: [zhouyi, submission, workflow]
 ---
 
-# Zhouyi Paper Submit Advisor
+# Research Almanac · Submission Timing
 
 Use the repository's actual scripts, not invented calendar calculations. Install dependencies with npm ci --ignore-scripts once if absent. Work from this Skill folder; save user runs under runs/ or another user-authorized private output directory. Never write private project inputs into committed examples/.
 

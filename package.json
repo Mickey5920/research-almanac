@@ -1,8 +1,8 @@
 {
-  "name": "zhouyi-paper-submit-advisor",
-  "version": "0.10.0",
+  "name": "research-almanac",
+  "version": "0.11.0",
   "private": true,
-  "description": "Weekly research almanac and project planning with optional Zhouyi submission support",
+  "description": "Research Almanac: weekly research planning and submission timing with sourced cultural reflection",
   "type": "module",
   "engines": {
     "node": ">=22"

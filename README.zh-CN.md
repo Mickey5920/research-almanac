@@ -8,18 +8,20 @@ tags: [research-almanac, zhouyi, skill, documentation]
 
 <p align="center"><strong>简体中文</strong> · <a href="./README.en.md">English</a></p>
 
-# 科研黄历 · 周易投稿辅助
+# 科研黄历
 
-**先安排一周科研，再为准备好的论文选择投稿时机。**
+**科研安排 · 投稿择日**
+
+先安排一周科研，再为准备好的论文选择投稿时机。
 
 一个可在 Agent 中调用的 Skill：把六大学科的每日重点、具体行动、预期产物和周易选读放进一份紧凑的周计划。需要投稿时，再展开原有的具体时间、提交朝向、八卦解释与已有依据。
 
 <p align="center"><strong>玄学提供仪式感，科学提供优先级。</strong></p>
-<p align="center">v0.10.0 · Node.js 22+ · 本地计算 · 中英文离线 HTML · MIT</p>
+<p align="center">v0.11.0 · Node.js 22+ · 本地计算 · 中英文离线 HTML · MIT</p>
 
-![科研黄历中文界面：七天安排、六大学科、今日节奏与投稿辅助](assets/screenshots/almanac.v0100.zh-CN.png)
+![科研黄历中文界面：七天安排、六大学科、今日节奏与投稿择日](assets/screenshots/almanac.v0110.zh-CN.png)
 
-[功能](#把一周安排清楚) · [快速开始](#快速开始) · [投稿辅助](#投稿作为辅助完整能力保留) · [本地报告](#一次调用一份完整记录) · [规则与范围](#安排如何产生)
+[功能](#把一周安排清楚) · [快速开始](#快速开始) · [投稿择日](#投稿择日) · [本地报告](#一次调用一份完整记录) · [规则与范围](#安排如何产生)
 
 ## 把一周安排清楚
 
@@ -34,7 +36,7 @@ tags: [research-almanac, zhouyi, skill, documentation]
 | 中英文切换 | 界面与内置建议离线切换，保留用户原文与古文 |
 | 本次与往期 | 从本地保存的记录切换科研黄历和原有投稿报告 |
 
-![整周安排：六大学科的每日重点与对应产物](assets/screenshots/almanac-week.v0100.zh-CN.png)
+![整周安排：六大学科的每日重点与对应产物](assets/screenshots/almanac-week.v0110.zh-CN.png)
 
 通用模式适合先看一周；提供具体项目任务后，会增加真实约束下的项目安排。缺少估时或暂时排不下的任务保留在“待安排事项”，不会自动当作完成。
 
@@ -42,7 +44,7 @@ tags: [research-almanac, zhouyi, skill, documentation]
 
 ### 1. 放好整个 Skill 文件夹
 
-从[仓库首页](https://github.com/Mickey5920/zhouyi-paper-submit-advisor)下载并解压，保留完整的 `zhouyi-paper-submit-advisor` 文件夹，放入 Agent 宿主支持的 Skill 目录。仓库名和调用名保持不变。
+从[仓库首页](https://github.com/Mickey5920/research-almanac)下载并解压，保留完整的 `research-almanac` 文件夹，放入 Agent 宿主支持的 Skill 目录。新调用名为 `$research-almanac`。升级时保留原来的本地记录目录。
 
 安装 Node.js 22+，在 Skill 文件夹内执行一次：
 
@@ -54,7 +56,7 @@ npm ci --ignore-scripts
 
 ### 2. 直接在 Agent 中说
 
-> 使用 $zhouyi-paper-submit-advisor，给我下周的科研黄历和一周工作安排，六大学科都展示。我使用 Asia/Shanghai 时区，以科研安排为主，投稿作为辅助，输出中英文可切换的本地 HTML。
+> 使用 $research-almanac，给我下周的科研黄历和一周工作安排，六大学科都展示。我使用 Asia/Shanghai 时区，以科研安排为主，需要时加入投稿择日，输出中英文可切换的本地 HTML。
 
 结合项目时：
 
@@ -72,17 +74,17 @@ npm ci --ignore-scripts
 # 通用科研黄历
 node scripts/cli.js weekly examples/weekly.json --out runs/first-week
 
-# 项目科研安排 + 投稿辅助
+# 项目科研安排 + 投稿择日
 node scripts/cli.js weekly examples/weekly-project.json --out runs/project-week
 ~~~
 
 打开对应目录中的 **report.html**。示例使用固定模拟日期与任务；实际使用需移除 `now` 并替换为真实项目条件。每次输出用新目录，保留之前的记录。
 
-## 投稿作为辅助，完整能力保留
+## 投稿择日
 
 科研任务先安排，投稿使用剩余可用时间。展开辅助区可看首选、备选窗口；继续展开完整报告，可以使用原有的朝向、八卦、星座与学术依据模块。
 
-<p align="center"><img src="assets/marketing/poster.zh-v2.png" alt="周易论文投稿择时：融合版中的投稿辅助模块" width="480"></p>
+<p align="center"><img src="assets/marketing/research-almanac.zh-v1.png" alt="科研黄历：科研安排与投稿择日" width="480"></p>
 
 | 保留能力 | 在融合版中的位置 |
 |---|---|
@@ -105,7 +107,7 @@ node scripts/cli.js recommend examples/project.json --out runs/submission-only
 
 ~~~text
 runs/project-week/
-  report.html              科研黄历 + 展开式投稿辅助
+  report.html              科研黄历 + 展开式投稿择日
   input.json               本次完整输入
   weekly.json              七天安排与结构化结果
   record.json              输入与结果的配对记录
@@ -129,7 +131,7 @@ HTML 嵌入生成时的输入、结果、图片和展示逻辑。新输入和新
 <details>
 <summary>查看英文界面</summary>
 
-![英文科研黄历，展示同一份保存的示例记录](assets/screenshots/almanac.v0100.en.png)
+![英文科研黄历，展示同一份保存的示例记录](assets/screenshots/almanac.v0110.en.png)
 
 </details>
 

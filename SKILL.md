@@ -1,5 +1,5 @@
 ---
-name: zhouyi-paper-submit-advisor
+name: research-almanac
 description: Build a weekly research almanac and project work plan across six disciplines, with date-specific workflows, sourced Yijing passages and an offline bilingual HTML report. Add precise Zhouyi paper submission windows as optional support, or handle an explicit submission-only request with the existing planner. Use for research-week planning, 科研黄历 and 投稿择时, not predictions of scientific or publication success.
 metadata:
   type: agent-skill
@@ -8,9 +8,9 @@ metadata:
   updated: "2026-09-19"
 ---
 
-# Research Almanac · Zhouyi Submission Support
+# 科研黄历 · Research Almanac
 
-The weekly research almanac is the primary experience; submission timing is optional support. Keep the existing Skill name, one portable folder and one private history store. Use the actual local scripts. Install missing dependencies with `npm ci --ignore-scripts` from this folder. Never put private project inputs into committed examples.
+The weekly research almanac is the primary experience; submission timing is available as a companion workflow. The product is 科研黄历 / Research Almanac, containing Research Planning (科研安排) and Submission Timing (投稿择日). The invocation name and portable folder are research-almanac. Keep one private history store when upgrading from the previous name. Use the actual local scripts. Install missing dependencies with `npm ci --ignore-scripts` from this folder. Never put private project inputs into committed examples.
 
 ## Choose the route
 

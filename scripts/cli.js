@@ -26,7 +26,7 @@ try{
    const dir=resolve(out);if(existsSync(dir))throw new Error('Output directory already exists. Use a new run directory.');
    mkdirSync(dir,{recursive:true});
    await publishWeeklyReport(input,report,dir,historyDir);
-   writeFileSync(join(dir,'manifest.json'),JSON.stringify({run_id:report.run_id,mode:'weekly',generated_at:report.generated_at,version:report.version,input_hash:hash(input),notice:'Read-only local weekly snapshot with optional submission support; no AI connection.'},null,2)+'\n',{flag:'wx'});
+   writeFileSync(join(dir,'manifest.json'),JSON.stringify({run_id:report.run_id,mode:'weekly',generated_at:report.generated_at,version:report.version,input_hash:hash(input),notice:'Read-only local weekly snapshot with submission timing; no AI connection.'},null,2)+'\n',{flag:'wx'});
    console.log(join(dir,'report.html'));
   }
  }else if(cmd==='recommend'){
@@ -62,7 +62,7 @@ try{
  }else if(cmd==='validate-weekly'){validateWeeklyInput(load(args[0]));console.log('Valid weekly input');
  }else if(cmd==='validate'){validateInput(load(args[0]));console.log('Valid input');
  }else{
- console.log('Research Almanac + Zhouyi Submit Advisor 0.10.0\nCommands:\n weekly weekly-input.json --out runs/new-week\n validate-weekly weekly-input.json\n history-html --out runs/history-new.html [--history-dir PRIVATE-DIR]\n recommend input.json --out runs/new-run\n render report.json [zh|en] [brief|detailed]\n compare report.json 1 2\n select report.json 1 --out runs/plan.json\n patch input.json patch.json --out runs/updated-input.json\n review plan.json [updated-input.json] --out runs/reviewed-plan.json\n submitted plan.json confirmation.json --out runs/submitted-plan.json\n backplan tasks.json\n validate input.json\n reminder-status\nAll --out destinations must be new. Calendar export does not create reminders.');
+ console.log('Research Almanac 0.11.0\nCommands:\n weekly weekly-input.json --out runs/new-week\n validate-weekly weekly-input.json\n history-html --out runs/history-new.html [--history-dir PRIVATE-DIR]\n recommend input.json --out runs/new-run\n render report.json [zh|en] [brief|detailed]\n compare report.json 1 2\n select report.json 1 --out runs/plan.json\n patch input.json patch.json --out runs/updated-input.json\n review plan.json [updated-input.json] --out runs/reviewed-plan.json\n submitted plan.json confirmation.json --out runs/submitted-plan.json\n backplan tasks.json\n validate input.json\n reminder-status\nAll --out destinations must be new. Calendar export does not create reminders.');
  if(cmd&&cmd!=='help'&&cmd!=='--help')process.exitCode=1;
  }
 }catch(error){console.error('Error: '+error.message);process.exitCode=1;}

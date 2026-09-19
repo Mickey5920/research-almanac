@@ -2,7 +2,7 @@
 type: submission-guide
 status: active
 created: 2026-09-14
-updated: 2026-09-18
+updated: 2026-09-20
 tags: [zhouyi, skill, documentation]
 ---
 
@@ -13,7 +13,7 @@ tags: [zhouyi, skill, documentation]
 > Complete submission workflow and v0.9.1 interface examples. The default entry is now the [Research Almanac](../README.en.md); submission also remains available independently.
 
 
-# Submission support guide
+# Submission timing guide
 
 **Turn your manuscript's readiness, deadlines and availability into a practical submission plan—with Yijing reflection and optional personal zodiac symbolism.**
 
@@ -99,7 +99,7 @@ Make adjustments in the Agent conversation. Each new recommendation saves a new 
 
 ### 1. Prepare the Skill folder
 
-Use **Code → Download ZIP** on the [repository page](https://github.com/Mickey5920/zhouyi-paper-submit-advisor), then extract it. Keep the complete folder named **zhouyi-paper-submit-advisor**, including `SKILL.md`, scripts, schemas, templates and assets. Place it in the Skill directory supported by your Agent host; the location and discovery mechanism depend on the host.
+Use **Code → Download ZIP** on the [repository page](https://github.com/Mickey5920/research-almanac), then extract it. Keep the complete folder named **zhouyi-paper-submit-advisor**, including `SKILL.md`, scripts, schemas, templates and assets. Place it in the Skill directory supported by your Agent host; the location and discovery mechanism depend on the host.
 
 Install **Node.js 22 or later** and npm. In this folder, run:
 
@@ -111,7 +111,7 @@ This installs pinned dependencies and requires package-registry access unless th
 
 ### 2. Invoke it in the Agent
 
-> Use $zhouyi-paper-submit-advisor for my paper project. I am preparing a revision and use Asia/Shanghai time. Suggest three submission windows next week, show exact local times and facing directions, explain the available factors, and return the local HTML report. Ask me for any essential missing project facts.
+> Use $research-almanac for my paper project. I am preparing a revision and use Asia/Shanghai time. Suggest three submission windows next week, show exact local times and facing directions, explain the available factors, and return the local HTML report. Ask me for any essential missing project facts.
 
 Optional follow-ups:
 
@@ -284,11 +284,11 @@ npm test
 npm run check
 ~~~
 
-The repository includes [GitHub Actions configuration](../.github/workflows/test.yml) for Node 22/24 on Windows and Linux. See the [Actions page](https://github.com/Mickey5920/zhouyi-paper-submit-advisor/actions) for current CI results.
+The repository includes [GitHub Actions configuration](../.github/workflows/test.yml) for Node 22/24 on Windows and Linux. See the [Actions page](https://github.com/Mickey5920/research-almanac/actions) for current CI results.
 
 Contributions should include a reproducible example and preserve time-zone correctness, immutable records, source traceability and the separation between empirical evidence and cultural interpretation.
 
-Found an issue or have an idea? [Open an issue](https://github.com/Mickey5920/zhouyi-paper-submit-advisor/issues) with a synthetic example, expected behavior and your Node.js version.
+Found an issue or have an idea? [Open an issue](https://github.com/Mickey5920/research-almanac/issues) with a synthetic example, expected behavior and your Node.js version.
 
 ## Documentation and artwork
 

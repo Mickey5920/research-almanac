@@ -3,7 +3,7 @@ import {DateTime} from 'luxon';
 const safe=x=>String(x??'—').replace(/[|<>\r\n]/g,' ');
 const esc=x=>String(x).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
 export function render(report,language=report.preferences?.language??'zh',depth=report.preferences?.depth??'brief'){
- const zh=language==='zh', title=zh?'周易投稿择时':'Zhouyi Paper Submit Advisor',lines=['# '+title,'', '**'+(zh?'状态':'Status')+'**: '+report.status,''];
+ const zh=language==='zh', title=zh?'科研黄历 · 投稿择日':'Research Almanac · Submission Timing',lines=['# '+title,'', '**'+(zh?'状态':'Status')+'**: '+report.status,''];
  if(report.mode==='project'){
  lines.push('**'+safe(report.project_summary.title)+'** · '+safe(report.timezone),'',
  '| # | '+(zh?'操作窗口':'Operation window')+' | '+(zh?'建议点击':'Suggested click')+' | '+(zh?'方位参考':'Direction reference')+' | '+(zh?'准备状态':'Readiness')+' |','|---|---|---|---|---|');

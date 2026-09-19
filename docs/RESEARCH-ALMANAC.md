@@ -6,9 +6,9 @@ updated: 2026-09-20
 tags: [research-almanac, zhouyi, weekly-planning, implementation]
 ---
 
-# 科研黄历为主，周易投稿为辅
+# 科研黄历：科研安排与投稿择日
 
-从 0.10.0 起，沿用同一个 `zhouyi-paper-submit-advisor` Skill、目录和本地记录库。默认入口生成一周科研黄历；投稿作为周计划中的可选辅助模块，原有单独投稿调用保持可用。
+0.11.0 将产品统一命名为“科研黄历 / Research Almanac”，调用名与发布文件夹为 `research-almanac`。科研安排与投稿择日沿用同一个 Skill 和本地记录库。默认入口生成一周科研黄历；投稿作为周计划中的可选辅助模块，原有单独投稿调用保持可用。
 
 ## 已实现的融合
 
@@ -16,7 +16,7 @@ tags: [research-almanac, zhouyi, weekly-planning, implementation]
 |---|---|---|
 | 日常主界面 | 七天日期、六大学科、每日行动与产物、各学科节奏、经典原文与解释 | `weekly` |
 | 项目安排 | 任务时长、依赖、截止、可用时间、固定安排与未排入事项 | 同一份 weekly 输入 |
-| 投稿辅助 | 精确操作窗口、朝向、八卦、个人星座、适用学术依据与原有完整报告 | 可选 `submission` |
+| 投稿择日 | 精确操作窗口、朝向、八卦、个人星座、适用学术依据与原有完整报告 | 可选 `submission` |
 | 单独投稿 | 原有排序、比较、选定、复核、实际提交记录 | `recommend` 等原命令 |
 | 本地回顾 | 保存本次输入与结果，读取往期科研黄历和投稿记录 | `history-html` |
 
@@ -74,7 +74,7 @@ node scripts/cli.js render runs/project-week/weekly.json en
 
 ~~~text
 runs/project-week/
-  report.html              主输出：科研黄历＋展开式投稿辅助
+  report.html              主输出：科研黄历＋展开式投稿择日
   weekly.json              保存的整周结果
   input.json               完整本次输入
   record.json              不可覆盖的输入与结果记录

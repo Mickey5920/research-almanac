@@ -2,7 +2,7 @@
 type: submission-guide
 status: active
 created: 2026-09-14
-updated: 2026-09-18
+updated: 2026-09-20
 tags: [zhouyi, skill, documentation]
 ---
 
@@ -13,7 +13,7 @@ tags: [zhouyi, skill, documentation]
 > 本页保留投稿模块的完整使用方式与 v0.9.1 界面示例。当前默认入口为[科研黄历](../README.md)，投稿可作为辅助或单独调用。
 
 
-# 投稿辅助完整指南
+# 投稿择日完整指南
 
 **结合论文准备进度、截止时间与个人日程，给出可执行的投稿安排，融入周易启示与可选的个人星座文化参考。**
 
@@ -99,7 +99,7 @@ tags: [zhouyi, skill, documentation]
 
 ### 1. 准备 Skill 文件夹
 
-在[仓库首页](https://github.com/Mickey5920/zhouyi-paper-submit-advisor)选择 **Code → Download ZIP** 并解压，保留完整的 **zhouyi-paper-submit-advisor** 文件夹，包括 `SKILL.md`、脚本、结构定义、模板和图片。将其放入你的 Agent 宿主支持的 Skill 目录；具体目录和识别方式取决于宿主。
+在[仓库首页](https://github.com/Mickey5920/research-almanac)选择 **Code → Download ZIP** 并解压，保留完整的 **zhouyi-paper-submit-advisor** 文件夹，包括 `SKILL.md`、脚本、结构定义、模板和图片。将其放入你的 Agent 宿主支持的 Skill 目录；具体目录和识别方式取决于宿主。
 
 安装 **Node.js 22 或更高版本**及 npm，在该文件夹中执行：
 
@@ -111,7 +111,7 @@ npm ci --ignore-scripts
 
 ### 2. 在 Agent 中调用
 
-> 使用 $zhouyi-paper-submit-advisor，结合我指定的论文项目，安排下周三个投稿窗口。我目前处于返修阶段，使用 Asia/Shanghai 时区。给出具体本地时间、提交朝向和已有依据，最后生成本地 HTML 报告。缺少必要的项目事实时再向我确认。
+> 使用 $research-almanac，结合我指定的论文项目，安排下周三个投稿窗口。我目前处于返修阶段，使用 Asia/Shanghai 时区。给出具体本地时间、提交朝向和已有依据，最后生成本地 HTML 报告。缺少必要的项目事实时再向我确认。
 
 可以继续补充：
 
@@ -284,11 +284,11 @@ npm test
 npm run check
 ~~~
 
-仓库包含 Windows/Linux、Node 22/24 的 [GitHub Actions 配置](../.github/workflows/test.yml)。当前执行结果见仓库的 [Actions 页面](https://github.com/Mickey5920/zhouyi-paper-submit-advisor/actions)。
+仓库包含 Windows/Linux、Node 22/24 的 [GitHub Actions 配置](../.github/workflows/test.yml)。当前执行结果见仓库的 [Actions 页面](https://github.com/Mickey5920/research-almanac/actions)。
 
 欢迎附带可复现示例的改进。代码变更应保持时区计算正确、历史记录不可变、来源可追溯，并区分实证依据与文化解读。
 
-遇到问题或有改进建议，可在 [Issues](https://github.com/Mickey5920/zhouyi-paper-submit-advisor/issues) 提供模拟示例、预期行为和 Node.js 版本。
+遇到问题或有改进建议，可在 [Issues](https://github.com/Mickey5920/research-almanac/issues) 提供模拟示例、预期行为和 Node.js 版本。
 
 ## 文档与图片
 

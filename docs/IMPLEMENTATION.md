@@ -6,7 +6,13 @@ updated: 2026-09-20
 tags: [zhouyi, implementation]
 ---
 
-# Implementation status — current release 0.10.0
+# Implementation status — current release 0.11.0
+
+## 0.11.0 — Research Almanac identity (2026-09-20)
+
+The product name is now 科研黄历 / Research Almanac. Its two workflows are 科研安排 / Research Planning and 投稿择日 / Submission Timing. The Skill invocation, package and portable folder use `research-almanac`. The HTML titles, current guides, bilingual README, screenshots and posters use the same identity. The previous name remains in historical artifacts and local compatibility paths; input/output schemas, saved history and calendar event identities stay unchanged.
+
+The embedded submission report also returns correctly to Chinese when the parent report switches back from English. Validation: all 124 Node tests and package checks pass. Browser checks confirm both report languages, new module names, Chinese/English round trips in the embedded report, three direction panels, compact desktop/mobile layout, unchanged saved payload and no remote requests.
 
 ## 0.10.0 — Research almanac as the primary workflow (2026-09-20)
 
@@ -20,7 +26,7 @@ Validation: 124 Node tests, including 14 new weekly/integration cases; browser c
 
 Full contract and limits: [Research almanac integration](RESEARCH-ALMANAC.md). Earlier sections below are historical records of prior versions.
 
-The source is published at [Mickey5920/zhouyi-paper-submit-advisor](https://github.com/Mickey5920/zhouyi-paper-submit-advisor). Installation depends on the Agent host. The current release summary distinguishes implemented features from planned work; dated sections below preserve earlier verification records.
+The source is published at [Mickey5920/research-almanac](https://github.com/Mickey5920/research-almanac). Installation depends on the Agent host. The current release summary distinguishes implemented features from planned work; dated sections below preserve earlier verification records.
 
 ## 0.9.1 — Bilingual product showcase (2026-09-18)
 

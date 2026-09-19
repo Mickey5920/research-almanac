@@ -12,7 +12,7 @@ version: 1.1.0
 implementation_status: weekly-integrated-with-limits
 ---
 
-# 科研黄历与周易投稿 Skill：项目指导文件
+# 科研黄历 Skill：项目指导文件
 
 ## 0.10.0 当前主线：科研黄历为主，投稿择时为辅
 
@@ -22,7 +22,7 @@ implementation_status: weekly-integrated-with-limits
 
 ## 1. 项目目标与使用方法
 
-开发 `zhouyi-paper-submit-advisor`，中文名称“周易论文投稿择时助手”。读取指定论文项目的准备状态，结合可追溯的传统择日、择时、择方规则，提供下一周若干适合实际执行的投稿窗口，以及与论文阶段相关的《周易》文化解释。
+开发 `research-almanac`，中文名称“科研黄历”，包含“科研安排”和“投稿择日”。读取指定论文项目的准备状态，结合可追溯的传统择日、择时、择方规则，提供下一周若干适合实际执行的投稿窗口，以及与论文阶段相关的《周易》文化解释。
 
 最终用户应得到：哪一天、当地几点至几点、建议几点执行提交、可参考的面向方位、现实与传统依据、提交前待办，以及备选安排。推荐服务于用户的文化偏好与投稿安排，不输出录用概率。
 
@@ -478,7 +478,7 @@ write_new_run_outputs(report)
 建议首版统一使用 JavaScript/Node 作为确定性运算层，降低跨语言时间转换差异。实际 Node 版本在实施时选目标环境可用且受支持的版本并锁定，本文不预填未经验证的版本号。
 
 ```text
-zhouyi-paper-submit-advisor/
+research-almanac/
 ├── SKILL.md
 ├── agents/
 │   └── openai.yaml
@@ -533,7 +533,7 @@ zhouyi-paper-submit-advisor/
 
 ```yaml
 ---
-name: zhouyi-paper-submit-advisor
+name: research-almanac
 description: 结合指定论文项目的准备状态与可追溯的传统易学规则，推荐投稿日期、具体时间和参考方位；适用于投稿择时、返修择时及相关文化解读请求。
 ---
 ```

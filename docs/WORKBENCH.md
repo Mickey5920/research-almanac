@@ -12,7 +12,7 @@ tags: [zhouyi, skill, html, history, git]
 
 ## 当前默认：科研黄历
 
-调用 `weekly` 生成七天科研安排，按需要加入投稿辅助。HTML 主界面有学科、日期、中英文和整周视图，投稿完整报告放在下方展开。两种记录可在同一只读页面切换；旧工作台只处理投稿输入。默认不使用网页表单。
+调用 `weekly` 生成七天科研安排，按需要加入投稿择日。HTML 主界面有学科、日期、中英文和整周视图，投稿完整报告放在下方展开。两种记录可在同一只读页面切换；旧工作台只处理投稿输入。默认不使用网页表单。
 
 ~~~sh
 node scripts/cli.js weekly examples/weekly-project.json --out runs/weekly-report
@@ -25,7 +25,7 @@ node scripts/cli.js weekly examples/weekly-project.json --out runs/weekly-report
 在 Agent 中调用 Skill 并提供论文项目、准备状态、日期和截止等信息。Agent 补齐所需上下文，运行 Skill 中的本地引擎，然后交付 report.html。
 
 ~~~text
-使用 $zhouyi-paper-submit-advisor，结合当前论文项目安排下周投稿时间。
+使用 $research-almanac，结合当前论文项目安排下周投稿时间。
 用 HTML 展示这次输入、结果，以及已有的本地历史。
 ~~~
 
@@ -82,7 +82,7 @@ Git 管理代码和文档，不管理私人历史；源码 ZIP 与 Git bundle �
 
 ## Git
 
-开发目录使用独立 main 分支，保留历次提交和版本标签。公开仓库：[Mickey5920/zhouyi-paper-submit-advisor](https://github.com/Mickey5920/zhouyi-paper-submit-advisor)。Git 只同步代码、文档与公开示例，私人历史继续保存在本地。
+开发目录使用独立 main 分支，保留历次提交和版本标签。公开仓库：[Mickey5920/research-almanac](https://github.com/Mickey5920/research-almanac)。Git 只同步代码、文档与公开示例，私人历史继续保存在本地。
 
 ~~~sh
 git status

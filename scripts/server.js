@@ -72,5 +72,5 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).hr
  if(!Number.isInteger(port)||port<1024||port>65535)throw new Error('PORT must be between 1024 and 65535');
  const server=createServer();
  server.on('error',e=>{console.error(e.code==='EADDRINUSE'?'端口已占用；设置 PORT 后重试。':e.message);process.exitCode=1;});
- server.listen(port,'127.0.0.1',()=>console.log('Zhouyi workspace: http://127.0.0.1:'+port));
+ server.listen(port,'127.0.0.1',()=>console.log('Research Almanac: http://127.0.0.1:'+port));
 }

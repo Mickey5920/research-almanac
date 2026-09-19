@@ -11,11 +11,11 @@ const date=s=>new Intl.DateTimeFormat(lang==='zh'?'zh-CN':'en-GB',{timeZone:curr
 const weekday=n=>(lang==='zh'?['周一','周二','周三','周四','周五','周六','周日']:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'])[n-1];
 const term=s=>lang==='en'?({'秋分':'Autumn equinox','春分':'Spring equinox','夏至':'Summer solstice','冬至':'Winter solstice'}[s]??s):s;
 function staticText(){
- document.documentElement.lang=lang==='zh'?'zh-CN':'en';document.title=l('科研黄历 · 周易投稿辅助','Research Almanac · Zhouyi Submission Support');
+ document.documentElement.lang=lang==='zh'?'zh-CN':'en';document.title=l('科研黄历 · 科研安排与投稿择日','Research Almanac · Research Planning & Submission Timing');
  document.querySelectorAll('[data-zh][data-en]').forEach(el=>el.textContent=el.dataset[lang]);
  for(const code of ['zh','en']){$('lang-'+code).setAttribute('aria-pressed',String(code===lang));$('lang-'+code).classList.toggle('active',code===lang);}
 }
-function label(r){return r.record_type==='weekly'?l('科研黄历','Almanac')+' · '+r.report.week_start+(r.report.title?' · '+r.report.title:''):l('投稿择时','Submission')+' · '+(r.report.project_summary?.title??l('周易文化解读','Yijing reflection'));}
+function label(r){return r.record_type==='weekly'?l('科研黄历','Almanac')+' · '+r.report.week_start+(r.report.title?' · '+r.report.title:''):l('投稿择日','Submission timing')+' · '+(r.report.project_summary?.title??l('周易文化解读','Yijing reflection'));}
 function classic(c){
  return '<h3>'+e(c.symbol)+' '+l('经典选读 · ','Classical reading · ')+e(lang==='zh'?c.name+'卦':c.id.toUpperCase())+'</h3><blockquote>'+e(c.quote)+'</blockquote><p>'+e(lang==='zh'?c.meaning:c.meaning_en)+'</p><details data-key="classic-source"><summary>'+l('科研启示与原文出处','Reflection and source')+'</summary><p class="termnote">'+e(t(c.reflection))+'</p><p>'+e(c.source.title+' · '+c.quote_locator)+'</p><p>'+l('按当日工作主题编选；科研联系为现代解释。','Selected for the workflow theme; the research connection is a modern interpretation.')+'</p></details>';
 }
@@ -55,7 +55,7 @@ function render(){
  $('warnings').hidden=!data.warnings.length;$('warnings').textContent=data.warnings.join('\n');
  const r=current.report,weekly=current.record_type==='weekly';
  $('weekly-content').hidden=!weekly;$('legacy-content').hidden=weekly;
- $('week-range').textContent=weekly?r.week_start.slice(5).replace('-','.')+'—'+r.week_end.slice(5).replace('-','.'):l('投稿择时','Submission');
+ $('week-range').textContent=weekly?r.week_start.slice(5).replace('-','.')+'—'+r.week_end.slice(5).replace('-','.'):l('投稿择日','Submission timing');
  $('week-meta').textContent=(weekly?r.week_start.slice(0,4)+' · ':'')+(r.timezone??l('文化模式','Cultural reading'));
  if(!weekly){showFrame('legacy-frame-slot');return;}
  const day=r.days[dayIndex],subjects=r.disciplines.filter(s=>selected==='all'||s.id===selected);

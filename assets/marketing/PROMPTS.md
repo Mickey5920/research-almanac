@@ -2,11 +2,23 @@
 type: marketing-provenance
 status: generated
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-20
 tags: [zhouyi, marketing, provenance]
 ---
 
 # Promotional images
+
+## Research Almanac name update — 2026-09-20
+
+The product is now **科研黄历 / Research Almanac**, with **科研安排 · 投稿择日 / Research Planning · Submission Timing**. Final assets: [Chinese poster](research-almanac.zh-v1.png) and [English poster](research-almanac.en-v1.png). Generated as edits with the built-in image_gen tool, using the previous Chinese and English posters as targets. The returned tool metadata does not expose a model identity. Originals and prior poster versions are retained. Both outputs were visually checked for the new headline, two function names, book checklist and footer.
+
+### Chinese edit prompt
+
+Edit target: the supplied Chinese promotional poster. Preserve the exact warm ivory paper, jade green, brass luopan compass, scholar desk, bamboo and ink landscape visual style, composition and square format. Rebrand this product from a submission-only tool to the research almanac with two functions. Replace the large top headline with exactly “科研黄历”, in very large elegant clear black Song-style Chinese typography, centered, generous spacing. Replace the line below with exactly “科研安排 · 投稿择日”. On the open book replace the heading with “一周科研安排”, then three clear checklist lines “明确重点”, “推进研究”, “从容投稿”. On the three small standing calendar cards replace their large headings with “安排”, “准备”, “提交”. Replace the bottom English line with exactly “Research Almanac”. Do not leave the old product name anywhere. Preserve all other decorative elements and beautiful lighting. Prioritize accurate legible text and simple coherent hierarchy. Do not add additional slogans or text.
+
+### English edit prompt
+
+Edit target: the supplied English promotional poster. Preserve the exact warm ivory paper, jade green, brass luopan compass, scholar desk, bamboo and ink landscape style, composition and square format. Rebrand the product. Replace the large top title with exactly “Research Almanac”, using elegant very legible black serif typography on two lines if needed. Replace the subtitle with exactly “Research Planning · Submission Timing”. On the open book use heading “Weekly Research Plan” and three checklist lines “Set priorities”, “Advance research”, “Submit with care”. Keep the three standing cards labelled “Plan”, “Prepare”, “Submit”. Replace the bottom product name with exactly “research-almanac”. Do not leave “Zhouyi Paper Submit Advisor” or any other old product name anywhere. Preserve decorative elements and lighting. Text accuracy, clarity and an uncluttered hierarchy are paramount. No extra text.
 
 ## User-requested poster revision v2
 

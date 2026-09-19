@@ -1,4 +1,4 @@
 interface:
-  display_name: "科研黄历 · 周易投稿辅助"
-  short_description: "Plan a research week with optional Zhouyi submission timing"
-  default_prompt: "Use $zhouyi-paper-submit-advisor to build next week’s research almanac and project plan, adding submission windows if needed, and save a bilingual local HTML report."
+  display_name: "科研黄历"
+  short_description: "Weekly research planning and thoughtful submission timing"
+  default_prompt: "Use $research-almanac to plan next week’s research, include submission timing when relevant, and save a bilingual local HTML report."
