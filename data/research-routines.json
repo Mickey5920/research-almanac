@@ -1,0 +1,4541 @@
+{
+  "version": "research-routines-v1",
+  "phases": [
+    {
+      "theme": {
+        "zh": "理清再出发",
+        "en": "Clear a path"
+      },
+      "tag": {
+        "zh": "归整",
+        "en": "Organize"
+      },
+      "hint": {
+        "zh": "清掉一个阻塞点，给本周留出推进空间。",
+        "en": "Identify one bottleneck and the next independent action."
+      },
+      "deliverable": {
+        "zh": "问题清单",
+        "en": "An outline and a next step"
+      },
+      "trigram": "巽",
+      "rhythm": {
+        "zh": {
+          "title": "梳理开场",
+          "flow": "轻启 → 聚焦 → 留痕",
+          "icon": "◷",
+          "blocks": [
+            {
+              "time": "09:20—09:45",
+              "title": "先理清",
+              "detail": "列清材料、依赖与一个卡点",
+              "kind": "prepare"
+            },
+            {
+              "time": "10:00—10:50",
+              "title": "疏通一处",
+              "detail": "推进一项能独立完成的任务",
+              "kind": "focus"
+            },
+            {
+              "time": "16:30—16:45",
+              "title": "留个起点",
+              "detail": "记录进展，写明下一步",
+              "kind": "record"
+            }
+          ],
+          "pause": "两段任务间走动几分钟，给思路一点空隙。",
+          "mini": {
+            "label": "时间有限时 · 15 分钟",
+            "text": "5 分钟列卡点，10 分钟处理其中最小的一步。"
+          },
+          "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+        },
+        "en": {
+          "title": "Gentle start",
+          "flow": "Prepare → Focus → Record",
+          "icon": "◷",
+          "blocks": [
+            {
+              "time": "Opening block",
+              "title": "Prepare the materials",
+              "detail": "Use available materials and confirmed commitments.",
+              "kind": "prepare"
+            },
+            {
+              "time": "Focus block",
+              "title": "Resolve one bottleneck",
+              "detail": "Identify one bottleneck and the next independent action.",
+              "kind": "focus"
+            },
+            {
+              "time": "Closing block",
+              "title": "Leave a clear next step",
+              "detail": "An outline and a next step",
+              "kind": "record"
+            }
+          ],
+          "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+          "mini": {
+            "label": "Short on time",
+            "text": "An outline and a next step. Keep one small, resumable step."
+          },
+          "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+        }
+      }
+    },
+    {
+      "theme": {
+        "zh": "专注做一件",
+        "en": "Make focused progress"
+      },
+      "tag": {
+        "zh": "推进",
+        "en": "Advance"
+      },
+      "hint": {
+        "zh": "把完整的一段时间，交给最关键的一项任务。",
+        "en": "Give one important task a protected block of attention."
+      },
+      "deliverable": {
+        "zh": "一份阶段成果",
+        "en": "One reviewable result"
+      },
+      "trigram": "震",
+      "rhythm": {
+        "zh": {
+          "title": "沉浸推进",
+          "flow": "热身 → 深入 → 回看",
+          "icon": "✎",
+          "blocks": [
+            {
+              "time": "09:00—09:15",
+              "title": "进入状态",
+              "detail": "回看已有材料，定一个小目标",
+              "kind": "prepare"
+            },
+            {
+              "time": "09:15—10:30",
+              "title": "留整块时间",
+              "detail": "写出、推完或验证一个关键部分",
+              "kind": "focus"
+            },
+            {
+              "time": "15:00—15:30",
+              "title": "换眼回看",
+              "detail": "核对结果，把依据一起保存",
+              "kind": "verify"
+            }
+          ],
+          "pause": "整块专注后留 10—15 分钟休息，再进入下一项。",
+          "mini": {
+            "label": "时间有限时 · 30 分钟",
+            "text": "5 分钟定位，20 分钟推进，5 分钟留下记录。"
+          },
+          "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+        },
+        "en": {
+          "title": "Deep focus",
+          "flow": "Warm up → Advance → Review",
+          "icon": "✎",
+          "blocks": [
+            {
+              "time": "Opening block",
+              "title": "Define a small goal",
+              "detail": "Use available materials and confirmed commitments.",
+              "kind": "prepare"
+            },
+            {
+              "time": "Focus block",
+              "title": "Work through one key part",
+              "detail": "Give one important task a protected block of attention.",
+              "kind": "focus"
+            },
+            {
+              "time": "Closing block",
+              "title": "Check and save the evidence",
+              "detail": "One reviewable result",
+              "kind": "verify"
+            }
+          ],
+          "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+          "mini": {
+            "label": "Short on time",
+            "text": "One reviewable result. Keep one small, resumable step."
+          },
+          "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+        }
+      }
+    },
+    {
+      "theme": {
+        "zh": "核对与平衡",
+        "en": "Cross-check the evidence"
+      },
+      "tag": {
+        "zh": "校准",
+        "en": "Verify"
+      },
+      "hint": {
+        "zh": "秋分看均衡，也让主张、方法与证据相互对应。",
+        "en": "Compare claims, methods and supporting materials."
+      },
+      "deliverable": {
+        "zh": "一张核查表",
+        "en": "A traceable check"
+      },
+      "trigram": "离",
+      "rhythm": {
+        "zh": {
+          "title": "交叉校准",
+          "flow": "对照 → 复核 → 归纳",
+          "icon": "◇",
+          "blocks": [
+            {
+              "time": "09:30—10:10",
+              "title": "把两边摆齐",
+              "detail": "对照主张、方法和现有材料",
+              "kind": "verify"
+            },
+            {
+              "time": "14:00—14:40",
+              "title": "换个角度查",
+              "detail": "查一个反例、差异或未解释项",
+              "kind": "verify"
+            },
+            {
+              "time": "16:20—16:35",
+              "title": "归纳发现",
+              "detail": "写明已核对项与待确认项",
+              "kind": "record"
+            }
+          ],
+          "pause": "两轮检查之间换个任务或短暂休息，再回看细节。",
+          "mini": {
+            "label": "时间有限时 · 20 分钟",
+            "text": "只核对一条关键主张及其来源，留下差异记录。"
+          },
+          "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+        },
+        "en": {
+          "title": "Cross-check",
+          "flow": "Compare → Verify → Summarize",
+          "icon": "◇",
+          "blocks": [
+            {
+              "time": "Opening block",
+              "title": "Align the evidence",
+              "detail": "Use available materials and confirmed commitments.",
+              "kind": "verify"
+            },
+            {
+              "time": "Focus block",
+              "title": "Test another explanation",
+              "detail": "Compare claims, methods and supporting materials.",
+              "kind": "verify"
+            },
+            {
+              "time": "Closing block",
+              "title": "Record discrepancies",
+              "detail": "A traceable check",
+              "kind": "record"
+            }
+          ],
+          "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+          "mini": {
+            "label": "Short on time",
+            "text": "A traceable check. Keep one small, resumable step."
+          },
+          "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+        }
+      }
+    },
+    {
+      "theme": {
+        "zh": "收口再放假",
+        "en": "Close the loop"
+      },
+      "tag": {
+        "zh": "收束",
+        "en": "Consolidate"
+      },
+      "hint": {
+        "zh": "把版本、问题和交接定下来，安心进入休息日。",
+        "en": "Save a usable version and make the handoff clear."
+      },
+      "deliverable": {
+        "zh": "阶段包与交接单",
+        "en": "A version and a handoff note"
+      },
+      "trigram": "艮",
+      "rhythm": {
+        "zh": {
+          "title": "协作收尾",
+          "flow": "收束 → 沟通 → 交接",
+          "icon": "↗",
+          "blocks": [
+            {
+              "time": "09:30—10:15",
+              "title": "收成阶段包",
+              "detail": "整理本周版本、图表与说明",
+              "kind": "record"
+            },
+            {
+              "time": "14:30—15:00",
+              "title": "对齐关键信息",
+              "detail": "写清具体问题、负责人和下一步",
+              "kind": "collaborate"
+            },
+            {
+              "time": "16:00—16:20",
+              "title": "安心收工",
+              "detail": "确认交接与下次接续点",
+              "kind": "record"
+            }
+          ],
+          "pause": "为回复和交接留缓冲，完成收尾后按自己的计划休息。",
+          "mini": {
+            "label": "时间有限时 · 15 分钟",
+            "text": "保存当前版本，再写一条“做到哪里、下一步是什么”。"
+          },
+          "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+        },
+        "en": {
+          "title": "Wrap up",
+          "flow": "Consolidate → Discuss → Handoff",
+          "icon": "↗",
+          "blocks": [
+            {
+              "time": "Opening block",
+              "title": "Gather the current results",
+              "detail": "Use available materials and confirmed commitments.",
+              "kind": "record"
+            },
+            {
+              "time": "Focus block",
+              "title": "Prepare specific questions",
+              "detail": "Save a usable version and make the handoff clear.",
+              "kind": "collaborate"
+            },
+            {
+              "time": "Closing block",
+              "title": "Save the handoff",
+              "detail": "A version and a handoff note",
+              "kind": "record"
+            }
+          ],
+          "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+          "mini": {
+            "label": "Short on time",
+            "text": "A version and a handoff note. Keep one small, resumable step."
+          },
+          "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+        }
+      }
+    },
+    {
+      "theme": {
+        "zh": "从容留白",
+        "en": "Make room to recover"
+      },
+      "tag": {
+        "zh": "休养",
+        "en": "Rest"
+      },
+      "hint": {
+        "zh": "休息与恢复，也有完整的位置。必要工作按原安排。",
+        "en": "Leave room for rest; keep confirmed essential work in place."
+      },
+      "deliverable": {
+        "zh": "从容的休息时间",
+        "en": "An optional note"
+      },
+      "trigram": "坤",
+      "rhythm": {
+        "zh": {
+          "title": "从容留白",
+          "flow": "休息 → 随手记 → 放松",
+          "icon": "☾",
+          "blocks": [
+            {
+              "time": "大部分时间",
+              "title": "安心休息",
+              "detail": "团圆、散步与自由活动",
+              "kind": "rest"
+            },
+            {
+              "time": "灵感来了",
+              "title": "随手留一句",
+              "detail": "可以记，也可以让它慢慢酝酿",
+              "kind": "light"
+            },
+            {
+              "time": "确有安排时",
+              "title": "照常衔接",
+              "detail": "必要工作依原定安排执行",
+              "kind": "fixed"
+            }
+          ],
+          "pause": "今天不设置补课清单，让恢复也占有完整的位置。",
+          "mini": {
+            "label": "轻量选择 · 随手一句",
+            "text": "若想留痕，写下一句灵感即可；不安排额外研究时段。"
+          },
+          "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+        },
+        "en": {
+          "title": "Unhurried rest",
+          "flow": "Rest → Note → Unwind",
+          "icon": "☾",
+          "blocks": [
+            {
+              "time": "Optional / as needed",
+              "title": "Take time off",
+              "detail": "Use available materials and confirmed commitments.",
+              "kind": "rest"
+            },
+            {
+              "time": "Optional / as needed",
+              "title": "Keep an idea if it comes",
+              "detail": "Leave room for rest; keep confirmed essential work in place.",
+              "kind": "light"
+            },
+            {
+              "time": "Optional / as needed",
+              "title": "Follow essential commitments",
+              "detail": "An optional note",
+              "kind": "fixed"
+            }
+          ],
+          "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+          "mini": {
+            "label": "Short on time",
+            "text": "An optional note. Keep one small, resumable step."
+          },
+          "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+        }
+      }
+    },
+    {
+      "theme": {
+        "zh": "轻读不加码",
+        "en": "Read for curiosity"
+      },
+      "tag": {
+        "zh": "轻读",
+        "en": "Browse"
+      },
+      "hint": {
+        "zh": "有余力便记一条线索，休息也完整计入计划。",
+        "en": "A page or an old note is enough, if you feel like it."
+      },
+      "deliverable": {
+        "zh": "可选的一条线索",
+        "en": "An optional reading note"
+      },
+      "trigram": "兑",
+      "rhythm": {
+        "zh": {
+          "title": "漫读拾趣",
+          "flow": "随心选 → 轻阅读 → 记一点",
+          "icon": "☷",
+          "blocks": [
+            {
+              "time": "找个闲暇",
+              "title": "挑一页喜欢的",
+              "detail": "原典、旧笔记或一张图都可以",
+              "kind": "light"
+            },
+            {
+              "time": "可选10—20分",
+              "title": "慢慢读一点",
+              "detail": "带着兴趣看一个小问题",
+              "kind": "light"
+            },
+            {
+              "time": "合上材料前",
+              "title": "留一个线索",
+              "detail": "一句话就好，然后继续休息",
+              "kind": "rest"
+            }
+          ],
+          "pause": "自由阅读不设打卡目标，想停下时就停下。",
+          "mini": {
+            "label": "轻量选择 · 一页即可",
+            "text": "只选一页，圈一个感兴趣的词，也可以选择完全休息。"
+          },
+          "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+        },
+        "en": {
+          "title": "Light reading",
+          "flow": "Choose → Read → Note",
+          "icon": "☷",
+          "blocks": [
+            {
+              "time": "Optional / as needed",
+              "title": "Choose a page",
+              "detail": "Use available materials and confirmed commitments.",
+              "kind": "light"
+            },
+            {
+              "time": "Optional / as needed",
+              "title": "Follow one question",
+              "detail": "A page or an old note is enough, if you feel like it.",
+              "kind": "light"
+            },
+            {
+              "time": "Optional / as needed",
+              "title": "Put the materials away",
+              "detail": "An optional reading note",
+              "kind": "rest"
+            }
+          ],
+          "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+          "mini": {
+            "label": "Short on time",
+            "text": "An optional reading note. Keep one small, resumable step."
+          },
+          "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+        }
+      }
+    },
+    {
+      "theme": {
+        "zh": "为下周留个开头",
+        "en": "Leave a gentle starting point"
+      },
+      "tag": {
+        "zh": "接续",
+        "en": "Reconnect"
+      },
+      "hint": {
+        "zh": "可选十分钟，写下下周第一步，然后继续休息。",
+        "en": "Optionally note the first action for your next workday."
+      },
+      "deliverable": {
+        "zh": "一句下一步",
+        "en": "One starting action"
+      },
+      "trigram": "乾",
+      "rhythm": {
+        "zh": {
+          "title": "轻启下周",
+          "flow": "回看 → 定一步 → 放下",
+          "icon": "↺",
+          "blocks": [
+            {
+              "time": "可选3分钟",
+              "title": "看见已完成",
+              "detail": "回看本周留下的一个产物",
+              "kind": "record"
+            },
+            {
+              "time": "可选7分钟",
+              "title": "定下第一步",
+              "detail": "把下次开工动作写成一句话",
+              "kind": "prepare"
+            },
+            {
+              "time": "余下时间",
+              "title": "放下清单",
+              "detail": "继续休息，留好恢复空间",
+              "kind": "rest"
+            }
+          ],
+          "pause": "这只是可选的十分钟，不把休息日排成另一个工作日。",
+          "mini": {
+            "label": "轻量选择 · 一句话",
+            "text": "写“下次打开资料，先做……”，然后收起计划。"
+          },
+          "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+        },
+        "en": {
+          "title": "Gentle restart",
+          "flow": "Review → Choose → Rest",
+          "icon": "↺",
+          "blocks": [
+            {
+              "time": "Optional / as needed",
+              "title": "Notice what is done",
+              "detail": "Use available materials and confirmed commitments.",
+              "kind": "record"
+            },
+            {
+              "time": "Optional / as needed",
+              "title": "Name the first next step",
+              "detail": "Optionally note the first action for your next workday.",
+              "kind": "prepare"
+            },
+            {
+              "time": "Optional / as needed",
+              "title": "Return to rest",
+              "detail": "One starting action",
+              "kind": "rest"
+            }
+          ],
+          "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+          "mini": {
+            "label": "Short on time",
+            "text": "One starting action. Keep one small, resumable step."
+          },
+          "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+        }
+      }
+    },
+    {
+      "theme": {
+        "zh": "交流促成形",
+        "en": "Exchange and refine"
+      },
+      "tag": {
+        "zh": "协作",
+        "en": "Discuss"
+      },
+      "hint": {
+        "zh": "把问题写具体，让一次交流推动下一步。",
+        "en": "Prepare a concrete question for a useful exchange."
+      },
+      "deliverable": {
+        "zh": "问题与后续动作",
+        "en": "A question and a follow-up"
+      },
+      "trigram": "兑",
+      "rhythm": {
+        "zh": {
+          "title": "定向交流",
+          "flow": "整理 → 交流 → 留痕",
+          "icon": "↗",
+          "blocks": [
+            {
+              "time": "09:30—10:15",
+              "title": "备齐材料",
+              "detail": "整理本周版本、图表与说明",
+              "kind": "record"
+            },
+            {
+              "time": "14:30—15:00",
+              "title": "写清问题",
+              "detail": "写清具体问题、负责人和下一步",
+              "kind": "collaborate"
+            },
+            {
+              "time": "16:00—16:20",
+              "title": "留下后续",
+              "detail": "确认交接与下次接续点",
+              "kind": "record"
+            }
+          ],
+          "pause": "为回复和交接留缓冲，完成收尾后按自己的计划休息。",
+          "mini": {
+            "label": "时间有限时 · 15 分钟",
+            "text": "保存当前版本，再写一条“做到哪里、下一步是什么”。"
+          },
+          "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+        },
+        "en": {
+          "title": "Focused exchange",
+          "flow": "Gather → Discuss → Note",
+          "icon": "↗",
+          "blocks": [
+            {
+              "time": "Opening block",
+              "title": "Collect the relevant material",
+              "detail": "Use available materials and confirmed commitments.",
+              "kind": "record"
+            },
+            {
+              "time": "Focus block",
+              "title": "Prepare one precise question",
+              "detail": "Prepare a concrete question for a useful exchange.",
+              "kind": "collaborate"
+            },
+            {
+              "time": "Closing block",
+              "title": "Record the follow-up",
+              "detail": "A question and a follow-up",
+              "kind": "record"
+            }
+          ],
+          "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+          "mini": {
+            "label": "Short on time",
+            "text": "A question and a follow-up. Keep one small, resumable step."
+          },
+          "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+        }
+      }
+    }
+  ],
+  "disciplines": [
+    {
+      "id": "humanities",
+      "name": {
+        "zh": "人文学科",
+        "en": "Humanities"
+      },
+      "icon": "书",
+      "color": "#805d8e",
+      "scope": {
+        "zh": "文学 · 历史 · 哲学 · 艺术",
+        "en": "Literature · History · Philosophy · Arts"
+      },
+      "goal": {
+        "zh": "形成可核对的论证段落与出处清单",
+        "en": "Build an argument that can be checked against its sources."
+      },
+      "tasks": [
+        {
+          "title": {
+            "zh": "收紧问题",
+            "en": "Sharpen the question"
+          },
+          "action": {
+            "zh": "把本周论点缩成一句话；核对最关键的三处引文。",
+            "en": "Write the central claim in one sentence; verify three key quotations."
+          },
+          "output": {
+            "zh": "一页论证提纲＋出处表",
+            "en": "An argument outline and source list"
+          }
+        },
+        {
+          "title": {
+            "zh": "写出段落",
+            "en": "Draft a paragraph"
+          },
+          "action": {
+            "zh": "完成一个核心分析段；给每条主张配上原文或材料。",
+            "en": "Complete one analytical paragraph and pair each claim with a passage or source."
+          },
+          "output": {
+            "zh": "一个可讨论的段落",
+            "en": "One paragraph ready for discussion"
+          }
+        },
+        {
+          "title": {
+            "zh": "照见反例",
+            "en": "Consider a counterexample"
+          },
+          "action": {
+            "zh": "对照一个反例或不同解释；补齐引文语境。",
+            "en": "Compare another interpretation and restore the context of each quotation."
+          },
+          "output": {
+            "zh": "论证修订记录",
+            "en": "An argument revision note"
+          }
+        },
+        {
+          "title": {
+            "zh": "定稿归整",
+            "en": "Consolidate the draft"
+          },
+          "action": {
+            "zh": "统一注释与术语；把要请教的问题整理成清单。",
+            "en": "Align notes and terminology; list specific questions for discussion."
+          },
+          "output": {
+            "zh": "阶段稿＋三条具体问题",
+            "en": "A versioned draft and three questions"
+          }
+        },
+        {
+          "title": {
+            "zh": "留白养思",
+            "en": "Leave room for thought"
+          },
+          "action": {
+            "zh": "休息；有灵感时只记一句，不要求完成篇幅。",
+            "en": "Rest; optionally note one idea without a writing target."
+          },
+          "output": {
+            "zh": "可选灵感便笺",
+            "en": "An optional idea note"
+          }
+        },
+        {
+          "title": {
+            "zh": "轻读一页",
+            "en": "Read one page"
+          },
+          "action": {
+            "zh": "自选一段原典或一页旧笔记，记下一个新问题。",
+            "en": "Choose a passage or an old note and follow one interesting question."
+          },
+          "output": {
+            "zh": "可选阅读札记",
+            "en": "An optional reading note"
+          }
+        },
+        {
+          "title": {
+            "zh": "提纲续接",
+            "en": "Leave an opening"
+          },
+          "action": {
+            "zh": "回看本周已写内容；为下周留一个可直接动笔的开头。",
+            "en": "Review what you wrote and leave the first line for the next session."
+          },
+          "output": {
+            "zh": "下一段的开头或一句提示",
+            "en": "An opening line or prompt"
+          }
+        },
+        {
+          "title": {
+            "zh": "讨论一处论证",
+            "en": "Discuss one argument"
+          },
+          "action": {
+            "zh": "把原文、自己的解释与一个具体问题放在一起。",
+            "en": "Prepare the passage, your interpretation and a specific question for discussion."
+          },
+          "output": {
+            "zh": "讨论备忘与修订点",
+            "en": "A discussion note"
+          }
+        }
+      ],
+      "rhythms": [
+        {
+          "zh": {
+            "title": "资料梳理",
+            "flow": "轻启 → 聚焦 → 留痕",
+            "icon": "◷",
+            "blocks": [
+              {
+                "time": "09:20—09:45",
+                "title": "圈定论点",
+                "detail": "把核心问题写成一句话",
+                "kind": "prepare"
+              },
+              {
+                "time": "10:00—10:50",
+                "title": "带着问题读",
+                "detail": "核对三处关键原文与出处",
+                "kind": "focus"
+              },
+              {
+                "time": "16:30—16:45",
+                "title": "留好提纲",
+                "detail": "把材料放回论证结构",
+                "kind": "record"
+              }
+            ],
+            "pause": "两段任务间走动几分钟，给思路一点空隙。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "围绕“收紧问题”，先做“圈定论点”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Sharpen the question",
+            "flow": "Prepare → Focus → Record",
+            "icon": "◷",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Prepare the materials",
+                "detail": "Build an argument that can be checked against its sources.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Focus block",
+                "title": "Resolve one bottleneck",
+                "detail": "Write the central claim in one sentence; verify three key quotations.",
+                "kind": "focus"
+              },
+              {
+                "time": "Closing block",
+                "title": "Leave a clear next step",
+                "detail": "An argument outline and source list",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An outline and a next step. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "写作沉浸",
+            "flow": "热身 → 深入 → 回看",
+            "icon": "✎",
+            "blocks": [
+              {
+                "time": "09:00—09:15",
+                "title": "重读上文",
+                "detail": "找准要写的这一段",
+                "kind": "prepare"
+              },
+              {
+                "time": "09:15—10:30",
+                "title": "连续写一段",
+                "detail": "先完成论证，再做措辞润色",
+                "kind": "focus"
+              },
+              {
+                "time": "15:00—15:30",
+                "title": "校订与补注",
+                "detail": "让主张、原文和注释对应",
+                "kind": "verify"
+              }
+            ],
+            "pause": "整块专注后留 10—15 分钟休息，再进入下一项。",
+            "mini": {
+              "label": "时间有限时 · 30 分钟",
+              "text": "围绕“写出段落”，先做“重读上文”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Draft a paragraph",
+            "flow": "Warm up → Advance → Review",
+            "icon": "✎",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Define a small goal",
+                "detail": "Build an argument that can be checked against its sources.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Focus block",
+                "title": "Work through one key part",
+                "detail": "Complete one analytical paragraph and pair each claim with a passage or source.",
+                "kind": "focus"
+              },
+              {
+                "time": "Closing block",
+                "title": "Check and save the evidence",
+                "detail": "One paragraph ready for discussion",
+                "kind": "verify"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "One reviewable result. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "论证回看",
+            "flow": "对照 → 复核 → 归纳",
+            "icon": "◇",
+            "blocks": [
+              {
+                "time": "09:30—10:10",
+                "title": "重看语境",
+                "detail": "把引文放回上下文",
+                "kind": "verify"
+              },
+              {
+                "time": "14:00—14:40",
+                "title": "试一个反例",
+                "detail": "比较另一种解释",
+                "kind": "verify"
+              },
+              {
+                "time": "16:20—16:35",
+                "title": "收紧表达",
+                "detail": "记录改动与保留的问题",
+                "kind": "record"
+              }
+            ],
+            "pause": "两轮检查之间换个任务或短暂休息，再回看细节。",
+            "mini": {
+              "label": "时间有限时 · 20 分钟",
+              "text": "围绕“照见反例”，先做“重看语境”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Consider a counterexample",
+            "flow": "Compare → Verify → Summarize",
+            "icon": "◇",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Align the evidence",
+                "detail": "Build an argument that can be checked against its sources.",
+                "kind": "verify"
+              },
+              {
+                "time": "Focus block",
+                "title": "Test another explanation",
+                "detail": "Compare another interpretation and restore the context of each quotation.",
+                "kind": "verify"
+              },
+              {
+                "time": "Closing block",
+                "title": "Record discrepancies",
+                "detail": "An argument revision note",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A traceable check. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "注释收口",
+            "flow": "收束 → 沟通 → 交接",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "09:30—10:15",
+                "title": "统一术语",
+                "detail": "核对引文、注释与版本",
+                "kind": "record"
+              },
+              {
+                "time": "14:30—15:00",
+                "title": "整理请教点",
+                "detail": "把问题写成可直接讨论的三条",
+                "kind": "collaborate"
+              },
+              {
+                "time": "16:00—16:20",
+                "title": "保存阶段稿",
+                "detail": "留下下次续写的开头",
+                "kind": "record"
+              }
+            ],
+            "pause": "为回复和交接留缓冲，完成收尾后按自己的计划休息。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "围绕“定稿归整”，先做“统一术语”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Consolidate the draft",
+            "flow": "Consolidate → Discuss → Handoff",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Gather the current results",
+                "detail": "Build an argument that can be checked against its sources.",
+                "kind": "record"
+              },
+              {
+                "time": "Focus block",
+                "title": "Prepare specific questions",
+                "detail": "Align notes and terminology; list specific questions for discussion.",
+                "kind": "collaborate"
+              },
+              {
+                "time": "Closing block",
+                "title": "Save the handoff",
+                "detail": "A versioned draft and three questions",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A version and a handoff note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "留白养思",
+            "flow": "团圆 → 随手记 → 放松",
+            "icon": "☾",
+            "blocks": [
+              {
+                "time": "大部分时间",
+                "title": "安心休息",
+                "detail": "让写作暂时留白",
+                "kind": "rest"
+              },
+              {
+                "time": "灵感来了",
+                "title": "偶有灵感",
+                "detail": "随手记一个句子",
+                "kind": "light"
+              },
+              {
+                "time": "确有安排时",
+                "title": "有约再见",
+                "detail": "按已确认安排交流",
+                "kind": "fixed"
+              }
+            ],
+            "pause": "今天不设置补课清单，让恢复也占有完整的位置。",
+            "mini": {
+              "label": "轻量选择 · 随手一句",
+              "text": "若想留痕，写下一句灵感即可；不安排额外研究时段。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Leave room for thought",
+            "flow": "Rest → Note → Unwind",
+            "icon": "☾",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Take time off",
+                "detail": "Build an argument that can be checked against its sources.",
+                "kind": "rest"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Keep an idea if it comes",
+                "detail": "Rest; optionally note one idea without a writing target.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Follow essential commitments",
+                "detail": "An optional idea note",
+                "kind": "fixed"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An optional note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "原典漫读",
+            "flow": "随心选 → 轻阅读 → 记一点",
+            "icon": "☷",
+            "blocks": [
+              {
+                "time": "找个闲暇",
+                "title": "随心翻开",
+                "detail": "选一段原典或旧笔记",
+                "kind": "light"
+              },
+              {
+                "time": "可选10—20分",
+                "title": "带着兴趣读",
+                "detail": "只追一个有趣的问题",
+                "kind": "light"
+              },
+              {
+                "time": "合上材料前",
+                "title": "留下札记",
+                "detail": "记一个词或一句话",
+                "kind": "rest"
+              }
+            ],
+            "pause": "自由阅读不设打卡目标，想停下时就停下。",
+            "mini": {
+              "label": "轻量选择 · 一条就好",
+              "text": "围绕“轻读一页”只留一个线索，也可以选择休息。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Read one page",
+            "flow": "Choose → Read → Note",
+            "icon": "☷",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Choose a page",
+                "detail": "Build an argument that can be checked against its sources.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Follow one question",
+                "detail": "Choose a passage or an old note and follow one interesting question.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Put the materials away",
+                "detail": "An optional reading note",
+                "kind": "rest"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An optional reading note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "续写起笔",
+            "flow": "回看 → 定一步 → 放下",
+            "icon": "↺",
+            "blocks": [
+              {
+                "time": "可选3分钟",
+                "title": "回看一段",
+                "detail": "看见本周已写的内容",
+                "kind": "record"
+              },
+              {
+                "time": "可选7分钟",
+                "title": "留个开头",
+                "detail": "写出下一段的第一句话",
+                "kind": "prepare"
+              },
+              {
+                "time": "余下时间",
+                "title": "合上文稿",
+                "detail": "让思路慢慢发酵",
+                "kind": "rest"
+              }
+            ],
+            "pause": "这只是可选的十分钟，不把休息日排成另一个工作日。",
+            "mini": {
+              "label": "轻量选择 · 一句话",
+              "text": "写明“下一段的开头或一句提示”，其余留到下次继续。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Leave an opening",
+            "flow": "Review → Choose → Rest",
+            "icon": "↺",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Notice what is done",
+                "detail": "Build an argument that can be checked against its sources.",
+                "kind": "record"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Name the first next step",
+                "detail": "Review what you wrote and leave the first line for the next session.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Return to rest",
+                "detail": "An opening line or prompt",
+                "kind": "rest"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "One starting action. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "定向交流",
+            "flow": "整理 → 交流 → 留痕",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "09:30—10:15",
+                "title": "备齐材料",
+                "detail": "整理本周版本、图表与说明",
+                "kind": "record"
+              },
+              {
+                "time": "14:30—15:00",
+                "title": "写清问题",
+                "detail": "把原文、自己的解释与一个具体问题放在一起。",
+                "kind": "collaborate"
+              },
+              {
+                "time": "16:00—16:20",
+                "title": "留下后续",
+                "detail": "确认交接与下次接续点",
+                "kind": "record"
+              }
+            ],
+            "pause": "为回复和交接留缓冲，完成收尾后按自己的计划休息。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "保存当前版本，再写一条“做到哪里、下一步是什么”。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Discuss one argument",
+            "flow": "Gather → Discuss → Note",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Collect the relevant material",
+                "detail": "Build an argument that can be checked against its sources.",
+                "kind": "record"
+              },
+              {
+                "time": "Focus block",
+                "title": "Prepare one precise question",
+                "detail": "Prepare the passage, your interpretation and a specific question for discussion.",
+                "kind": "collaborate"
+              },
+              {
+                "time": "Closing block",
+                "title": "Record the follow-up",
+                "detail": "A discussion note",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A question and a follow-up. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": {
+        "zh": "社会科学",
+        "en": "Social sciences"
+      },
+      "icon": "群",
+      "color": "#316b9a",
+      "scope": {
+        "zh": "经济 · 教育 · 社会学 · 管理",
+        "en": "Economics · Education · Sociology · Management"
+      },
+      "goal": {
+        "zh": "推进资料获取，让等待中的环节有替代任务",
+        "en": "Move available evidence forward while tracking dependencies."
+      },
+      "tasks": [
+        {
+          "title": {
+            "zh": "把等待拆开",
+            "en": "Separate the dependencies"
+          },
+          "action": {
+            "zh": "列出访谈或数据依赖；准备包含两个可选时间的简短邀约。",
+            "en": "List interview or data dependencies; draft an invitation with two possible times."
+          },
+          "output": {
+            "zh": "依赖清单＋邀约草稿",
+            "en": "A dependency list and invitation draft"
+          }
+        },
+        {
+          "title": {
+            "zh": "编码先行",
+            "en": "Code available material"
+          },
+          "action": {
+            "zh": "用已有材料完成一轮编码；记录模糊项，不替缺失内容作答。",
+            "en": "Complete one coding pass; log ambiguities without inventing missing responses."
+          },
+          "output": {
+            "zh": "编码表＋疑问清单",
+            "en": "A coding table and questions"
+          }
+        },
+        {
+          "title": {
+            "zh": "对照证据",
+            "en": "Check the evidence"
+          },
+          "action": {
+            "zh": "核对一个关键变量或主题；比较替代解释与样本边界。",
+            "en": "Verify a variable or theme and compare alternative explanations and sample boundaries."
+          },
+          "output": {
+            "zh": "变量核查表或主题备忘录",
+            "en": "A variable check or theme memo"
+          }
+        },
+        {
+          "title": {
+            "zh": "协作收口",
+            "en": "Close collaboration loops"
+          },
+          "action": {
+            "zh": "汇总待回复事项；把本周进展和具体请求写成简短摘要。",
+            "en": "Summarize progress, outstanding replies and specific requests."
+          },
+          "output": {
+            "zh": "协作摘要＋下次联系点",
+            "en": "A collaboration summary and follow-up"
+          }
+        },
+        {
+          "title": {
+            "zh": "安心休息",
+            "en": "Rest at your pace"
+          },
+          "action": {
+            "zh": "休息为主；已约定且双方确认的安排按实际执行。",
+            "en": "Prioritize rest; keep mutually confirmed commitments."
+          },
+          "output": {
+            "zh": "可选灵感记录",
+            "en": "An optional idea note"
+          }
+        },
+        {
+          "title": {
+            "zh": "整理线索",
+            "en": "Organize one lead"
+          },
+          "action": {
+            "zh": "如有余力，整理一段已获授权的访谈摘要或一条文献线索。",
+            "en": "Optionally organize an authorized interview summary or a literature lead."
+          },
+          "output": {
+            "zh": "可选资料索引",
+            "en": "An optional source index"
+          }
+        },
+        {
+          "title": {
+            "zh": "重排依赖",
+            "en": "Revisit dependencies"
+          },
+          "action": {
+            "zh": "确认哪些回复已到；选出不依赖他人答复的下周第一步。",
+            "en": "Check which responses arrived and choose a next step that can proceed independently."
+          },
+          "output": {
+            "zh": "可执行的下一步",
+            "en": "An actionable next step"
+          }
+        },
+        {
+          "title": {
+            "zh": "对齐一个请求",
+            "en": "Clarify a request"
+          },
+          "action": {
+            "zh": "整理所需材料，把待确认事项写成可直接答复的问题。",
+            "en": "Prepare one precise request and the material needed for a productive discussion."
+          },
+          "output": {
+            "zh": "具体问题与材料包",
+            "en": "A question with supporting material"
+          }
+        }
+      ],
+      "rhythms": [
+        {
+          "zh": {
+            "title": "拆开等待",
+            "flow": "轻启 → 聚焦 → 留痕",
+            "icon": "◷",
+            "blocks": [
+              {
+                "time": "09:20—09:45",
+                "title": "画出依赖",
+                "detail": "分开可独立推进与待回复事项",
+                "kind": "prepare"
+              },
+              {
+                "time": "10:00—10:50",
+                "title": "准备邀约",
+                "detail": "写好两个可选时间与具体问题",
+                "kind": "focus"
+              },
+              {
+                "time": "16:30—16:45",
+                "title": "安排替代项",
+                "detail": "把等待时间留给已有材料",
+                "kind": "record"
+              }
+            ],
+            "pause": "两段任务间走动几分钟，给思路一点空隙。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "围绕“把等待拆开”，先做“画出依赖”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Separate the dependencies",
+            "flow": "Prepare → Focus → Record",
+            "icon": "◷",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Prepare the materials",
+                "detail": "Move available evidence forward while tracking dependencies.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Focus block",
+                "title": "Resolve one bottleneck",
+                "detail": "List interview or data dependencies; draft an invitation with two possible times.",
+                "kind": "focus"
+              },
+              {
+                "time": "Closing block",
+                "title": "Leave a clear next step",
+                "detail": "A dependency list and invitation draft",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An outline and a next step. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "编码推进",
+            "flow": "热身 → 深入 → 回看",
+            "icon": "✎",
+            "blocks": [
+              {
+                "time": "09:00—09:15",
+                "title": "回看编码规则",
+                "detail": "先对齐已有定义与样本",
+                "kind": "prepare"
+              },
+              {
+                "time": "09:15—10:30",
+                "title": "完成一轮编码",
+                "detail": "模糊处记为疑问项",
+                "kind": "focus"
+              },
+              {
+                "time": "15:00—15:30",
+                "title": "回看疑问",
+                "detail": "保存编码表和方法备忘录",
+                "kind": "verify"
+              }
+            ],
+            "pause": "整块专注后留 10—15 分钟休息，再进入下一项。",
+            "mini": {
+              "label": "时间有限时 · 30 分钟",
+              "text": "围绕“编码先行”，先做“回看编码规则”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Code available material",
+            "flow": "Warm up → Advance → Review",
+            "icon": "✎",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Define a small goal",
+                "detail": "Move available evidence forward while tracking dependencies.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Focus block",
+                "title": "Work through one key part",
+                "detail": "Complete one coding pass; log ambiguities without inventing missing responses.",
+                "kind": "focus"
+              },
+              {
+                "time": "Closing block",
+                "title": "Check and save the evidence",
+                "detail": "A coding table and questions",
+                "kind": "verify"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "One reviewable result. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "证据对照",
+            "flow": "对照 → 复核 → 归纳",
+            "icon": "◇",
+            "blocks": [
+              {
+                "time": "09:30—10:10",
+                "title": "对齐变量或主题",
+                "detail": "核对口径与材料位置",
+                "kind": "verify"
+              },
+              {
+                "time": "14:00—14:40",
+                "title": "比较替代解释",
+                "detail": "检查一个边界或差异",
+                "kind": "verify"
+              },
+              {
+                "time": "16:20—16:35",
+                "title": "留下依据",
+                "detail": "写成变量表或主题备忘录",
+                "kind": "record"
+              }
+            ],
+            "pause": "两轮检查之间换个任务或短暂休息，再回看细节。",
+            "mini": {
+              "label": "时间有限时 · 20 分钟",
+              "text": "围绕“对照证据”，先做“对齐变量或主题”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Check the evidence",
+            "flow": "Compare → Verify → Summarize",
+            "icon": "◇",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Align the evidence",
+                "detail": "Move available evidence forward while tracking dependencies.",
+                "kind": "verify"
+              },
+              {
+                "time": "Focus block",
+                "title": "Test another explanation",
+                "detail": "Verify a variable or theme and compare alternative explanations and sample boundaries.",
+                "kind": "verify"
+              },
+              {
+                "time": "Closing block",
+                "title": "Record discrepancies",
+                "detail": "A variable check or theme memo",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A traceable check. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "协作闭环",
+            "flow": "收束 → 沟通 → 交接",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "09:30—10:15",
+                "title": "汇总本周进展",
+                "detail": "把已有结果与等待事项分清",
+                "kind": "record"
+              },
+              {
+                "time": "14:30—15:00",
+                "title": "写具体请求",
+                "detail": "说明需要谁确认哪一件事",
+                "kind": "collaborate"
+              },
+              {
+                "time": "16:00—16:20",
+                "title": "留下次联系点",
+                "detail": "保存摘要与后续动作",
+                "kind": "record"
+              }
+            ],
+            "pause": "为回复和交接留缓冲，完成收尾后按自己的计划休息。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "围绕“协作收口”，先做“汇总本周进展”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Close collaboration loops",
+            "flow": "Consolidate → Discuss → Handoff",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Gather the current results",
+                "detail": "Move available evidence forward while tracking dependencies.",
+                "kind": "record"
+              },
+              {
+                "time": "Focus block",
+                "title": "Prepare specific questions",
+                "detail": "Summarize progress, outstanding replies and specific requests.",
+                "kind": "collaborate"
+              },
+              {
+                "time": "Closing block",
+                "title": "Save the handoff",
+                "detail": "A collaboration summary and follow-up",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A version and a handoff note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "从容休息",
+            "flow": "团圆 → 随手记 → 放松",
+            "icon": "☾",
+            "blocks": [
+              {
+                "time": "大部分时间",
+                "title": "安心休息",
+                "detail": "给自己一段自由时间",
+                "kind": "rest"
+              },
+              {
+                "time": "灵感来了",
+                "title": "随手记线索",
+                "detail": "想到问题时简单记下",
+                "kind": "light"
+              },
+              {
+                "time": "确有安排时",
+                "title": "已有约定",
+                "detail": "按双方确认的安排执行",
+                "kind": "fixed"
+              }
+            ],
+            "pause": "今天不设置补课清单，让恢复也占有完整的位置。",
+            "mini": {
+              "label": "轻量选择 · 随手一句",
+              "text": "若想留痕，写下一句灵感即可；不安排额外研究时段。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Rest at your pace",
+            "flow": "Rest → Note → Unwind",
+            "icon": "☾",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Take time off",
+                "detail": "Move available evidence forward while tracking dependencies.",
+                "kind": "rest"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Keep an idea if it comes",
+                "detail": "Prioritize rest; keep mutually confirmed commitments.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Follow essential commitments",
+                "detail": "An optional idea note",
+                "kind": "fixed"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An optional note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "线索轻整",
+            "flow": "随心选 → 轻阅读 → 记一点",
+            "icon": "☷",
+            "blocks": [
+              {
+                "time": "找个闲暇",
+                "title": "挑一条材料",
+                "detail": "选已获授权的摘要或文献",
+                "kind": "light"
+              },
+              {
+                "time": "可选10—20分",
+                "title": "轻读轻整",
+                "detail": "记下一个主题或线索",
+                "kind": "light"
+              },
+              {
+                "time": "合上材料前",
+                "title": "放回索引",
+                "detail": "保存位置后继续休息",
+                "kind": "rest"
+              }
+            ],
+            "pause": "自由阅读不设打卡目标，想停下时就停下。",
+            "mini": {
+              "label": "轻量选择 · 一条就好",
+              "text": "围绕“整理线索”只留一个线索，也可以选择休息。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Organize one lead",
+            "flow": "Choose → Read → Note",
+            "icon": "☷",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Choose a page",
+                "detail": "Move available evidence forward while tracking dependencies.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Follow one question",
+                "detail": "Optionally organize an authorized interview summary or a literature lead.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Put the materials away",
+                "detail": "An optional source index",
+                "kind": "rest"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An optional reading note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "先做能做的",
+            "flow": "回看 → 定一步 → 放下",
+            "icon": "↺",
+            "blocks": [
+              {
+                "time": "可选3分钟",
+                "title": "看一眼回复",
+                "detail": "分清已到与仍待确认事项",
+                "kind": "record"
+              },
+              {
+                "time": "可选7分钟",
+                "title": "选独立一步",
+                "detail": "确定不依赖回复的开工动作",
+                "kind": "prepare"
+              },
+              {
+                "time": "余下时间",
+                "title": "收起消息",
+                "detail": "把余下时间还给休息",
+                "kind": "rest"
+              }
+            ],
+            "pause": "这只是可选的十分钟，不把休息日排成另一个工作日。",
+            "mini": {
+              "label": "轻量选择 · 一句话",
+              "text": "写明“可执行的下一步”，其余留到下次继续。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Revisit dependencies",
+            "flow": "Review → Choose → Rest",
+            "icon": "↺",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Notice what is done",
+                "detail": "Move available evidence forward while tracking dependencies.",
+                "kind": "record"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Name the first next step",
+                "detail": "Check which responses arrived and choose a next step that can proceed independently.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Return to rest",
+                "detail": "An actionable next step",
+                "kind": "rest"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "One starting action. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "定向交流",
+            "flow": "整理 → 交流 → 留痕",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "09:30—10:15",
+                "title": "备齐材料",
+                "detail": "整理本周版本、图表与说明",
+                "kind": "record"
+              },
+              {
+                "time": "14:30—15:00",
+                "title": "写清问题",
+                "detail": "整理所需材料，把待确认事项写成可直接答复的问题。",
+                "kind": "collaborate"
+              },
+              {
+                "time": "16:00—16:20",
+                "title": "留下后续",
+                "detail": "确认交接与下次接续点",
+                "kind": "record"
+              }
+            ],
+            "pause": "为回复和交接留缓冲，完成收尾后按自己的计划休息。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "保存当前版本，再写一条“做到哪里、下一步是什么”。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Clarify a request",
+            "flow": "Gather → Discuss → Note",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Collect the relevant material",
+                "detail": "Move available evidence forward while tracking dependencies.",
+                "kind": "record"
+              },
+              {
+                "time": "Focus block",
+                "title": "Prepare one precise question",
+                "detail": "Prepare one precise request and the material needed for a productive discussion.",
+                "kind": "collaborate"
+              },
+              {
+                "time": "Closing block",
+                "title": "Record the follow-up",
+                "detail": "A question with supporting material",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A question and a follow-up. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "name": {
+        "zh": "理学",
+        "en": "Natural sciences"
+      },
+      "icon": "理",
+      "color": "#1b786f",
+      "scope": {
+        "zh": "数学 · 物理 · 化学 · 生物基础研究",
+        "en": "Mathematics · Physics · Chemistry · Basic biology"
+      },
+      "goal": {
+        "zh": "把推导、条件和验证整理成能复查的证据",
+        "en": "Make derivations and validation conditions reproducible."
+      },
+      "tasks": [
+        {
+          "title": {
+            "zh": "对齐条件",
+            "en": "Align conditions"
+          },
+          "action": {
+            "zh": "列清假设、边界条件与变量定义；定位一处推导或复现缺口。",
+            "en": "List assumptions, boundaries and definitions; locate a proof or reproduction gap."
+          },
+          "output": {
+            "zh": "问题清单＋条件表",
+            "en": "A question list and condition table"
+          }
+        },
+        {
+          "title": {
+            "zh": "专注验证",
+            "en": "Derive or validate"
+          },
+          "action": {
+            "zh": "补一段证明或运行一个已定义的验证；固定输入与版本。",
+            "en": "Complete part of a proof or a defined validation with fixed inputs and versions."
+          },
+          "output": {
+            "zh": "证明片段或复现日志",
+            "en": "A proof fragment or reproduction log"
+          }
+        },
+        {
+          "title": {
+            "zh": "核对稳健性",
+            "en": "Check robustness"
+          },
+          "action": {
+            "zh": "比较理论与数值条件；按既定方案检查一个稳健性条件。",
+            "en": "Compare theoretical and numerical conditions; check one condition under the agreed protocol."
+          },
+          "output": {
+            "zh": "对照表＋结果说明",
+            "en": "A comparison table and interpretation"
+          }
+        },
+        {
+          "title": {
+            "zh": "结果成形",
+            "en": "Make results reviewable"
+          },
+          "action": {
+            "zh": "整理图表、单位与误差说明；核对图表是否对应同一版本。",
+            "en": "Align figures, units and uncertainty notes with the same data version."
+          },
+          "output": {
+            "zh": "图表草稿＋复现说明",
+            "en": "Draft figures and reproduction notes"
+          }
+        },
+        {
+          "title": {
+            "zh": "休息续力",
+            "en": "Recover and maintain"
+          },
+          "action": {
+            "zh": "休息为主；连续实验和既定观测按原方案保障。",
+            "en": "Rest; keep continuous experiments and planned observations on their established schedule."
+          },
+          "output": {
+            "zh": "可选问题便笺",
+            "en": "An optional question note"
+          }
+        },
+        {
+          "title": {
+            "zh": "回看一处",
+            "en": "Revisit one point"
+          },
+          "action": {
+            "zh": "可选复查一处推导或旧日志，把未解决的问题标注清楚。",
+            "en": "Optionally read a derivation or old log and mark an unresolved question."
+          },
+          "output": {
+            "zh": "可选问题批注",
+            "en": "An optional annotation"
+          }
+        },
+        {
+          "title": {
+            "zh": "搭好起点",
+            "en": "Prepare a validation"
+          },
+          "action": {
+            "zh": "把下一步验证写成输入、操作和检查项。",
+            "en": "Specify the inputs, action and check for the next validation."
+          },
+          "output": {
+            "zh": "一条明确的验证任务",
+            "en": "One explicit validation task"
+          }
+        },
+        {
+          "title": {
+            "zh": "讨论一项差异",
+            "en": "Discuss a discrepancy"
+          },
+          "action": {
+            "zh": "列清条件与差异，准备一次有针对性的研究交流。",
+            "en": "Prepare the conditions and one discrepancy for a focused research discussion."
+          },
+          "output": {
+            "zh": "对照记录与下一项核查",
+            "en": "A comparison and next check"
+          }
+        }
+      ],
+      "rhythms": [
+        {
+          "zh": {
+            "title": "条件梳理",
+            "flow": "轻启 → 聚焦 → 留痕",
+            "icon": "◷",
+            "blocks": [
+              {
+                "time": "09:20—09:45",
+                "title": "列清假设",
+                "detail": "明确变量与边界条件",
+                "kind": "prepare"
+              },
+              {
+                "time": "10:00—10:50",
+                "title": "定位一处缺口",
+                "detail": "找出推导或复现中的下一步",
+                "kind": "focus"
+              },
+              {
+                "time": "16:30—16:45",
+                "title": "留下条件表",
+                "detail": "把问题与所需材料放在一起",
+                "kind": "record"
+              }
+            ],
+            "pause": "两段任务间走动几分钟，给思路一点空隙。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "围绕“对齐条件”，先做“列清假设”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Align conditions",
+            "flow": "Prepare → Focus → Record",
+            "icon": "◷",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Prepare the materials",
+                "detail": "Make derivations and validation conditions reproducible.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Focus block",
+                "title": "Resolve one bottleneck",
+                "detail": "List assumptions, boundaries and definitions; locate a proof or reproduction gap.",
+                "kind": "focus"
+              },
+              {
+                "time": "Closing block",
+                "title": "Leave a clear next step",
+                "detail": "A question list and condition table",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An outline and a next step. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "推导与验证",
+            "flow": "热身 → 深入 → 回看",
+            "icon": "✎",
+            "blocks": [
+              {
+                "time": "准备时",
+                "title": "固定验证条件",
+                "detail": "准备好输入、版本或假设",
+                "kind": "prepare"
+              },
+              {
+                "time": "依研究流程",
+                "title": "补完一小段",
+                "detail": "推导或验证按实际流程推进",
+                "kind": "focus"
+              },
+              {
+                "time": "完成后",
+                "title": "留好复查线索",
+                "detail": "保存过程、结果与条件",
+                "kind": "verify"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "时间有限时 · 30 分钟",
+              "text": "围绕“专注验证”，先做“固定验证条件”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Derive or validate",
+            "flow": "Warm up → Advance → Review",
+            "icon": "✎",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Define a small goal",
+                "detail": "Make derivations and validation conditions reproducible.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Focus block",
+                "title": "Work through one key part",
+                "detail": "Complete part of a proof or a defined validation with fixed inputs and versions.",
+                "kind": "focus"
+              },
+              {
+                "time": "Closing block",
+                "title": "Check and save the evidence",
+                "detail": "A proof fragment or reproduction log",
+                "kind": "verify"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "One reviewable result. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "稳健复核",
+            "flow": "对照 → 复核 → 归纳",
+            "icon": "◇",
+            "blocks": [
+              {
+                "time": "09:30—10:10",
+                "title": "对照理论与数值",
+                "detail": "确认双方使用相同条件",
+                "kind": "verify"
+              },
+              {
+                "time": "14:00—14:40",
+                "title": "核查一个条件",
+                "detail": "按既定方案检查稳健性",
+                "kind": "verify"
+              },
+              {
+                "time": "16:20—16:35",
+                "title": "解释差异",
+                "detail": "把结果和边界写清楚",
+                "kind": "record"
+              }
+            ],
+            "pause": "两轮检查之间换个任务或短暂休息，再回看细节。",
+            "mini": {
+              "label": "时间有限时 · 20 分钟",
+              "text": "围绕“核对稳健性”，先做“对照理论与数值”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Check robustness",
+            "flow": "Compare → Verify → Summarize",
+            "icon": "◇",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Align the evidence",
+                "detail": "Make derivations and validation conditions reproducible.",
+                "kind": "verify"
+              },
+              {
+                "time": "Focus block",
+                "title": "Test another explanation",
+                "detail": "Compare theoretical and numerical conditions; check one condition under the agreed protocol.",
+                "kind": "verify"
+              },
+              {
+                "time": "Closing block",
+                "title": "Record discrepancies",
+                "detail": "A comparison table and interpretation",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A traceable check. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "结果成形",
+            "flow": "收束 → 沟通 → 交接",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "09:30—10:15",
+                "title": "图表与版本对齐",
+                "detail": "核对单位、误差和数据来源",
+                "kind": "record"
+              },
+              {
+                "time": "14:30—15:00",
+                "title": "整理复现说明",
+                "detail": "写明输入与关键条件",
+                "kind": "collaborate"
+              },
+              {
+                "time": "16:00—16:20",
+                "title": "打包当前成果",
+                "detail": "给下次验证留出入口",
+                "kind": "record"
+              }
+            ],
+            "pause": "为回复和交接留缓冲，完成收尾后按自己的计划休息。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "围绕“结果成形”，先做“图表与版本对齐”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Make results reviewable",
+            "flow": "Consolidate → Discuss → Handoff",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Gather the current results",
+                "detail": "Make derivations and validation conditions reproducible.",
+                "kind": "record"
+              },
+              {
+                "time": "Focus block",
+                "title": "Prepare specific questions",
+                "detail": "Align figures, units and uncertainty notes with the same data version.",
+                "kind": "collaborate"
+              },
+              {
+                "time": "Closing block",
+                "title": "Save the handoff",
+                "detail": "Draft figures and reproduction notes",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A version and a handoff note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "恢复与守候",
+            "flow": "团圆 → 随手记 → 放松",
+            "icon": "☾",
+            "blocks": [
+              {
+                "time": "大部分时间",
+                "title": "休息续力",
+                "detail": "自由活动与恢复",
+                "kind": "rest"
+              },
+              {
+                "time": "灵感来了",
+                "title": "留一条问题",
+                "detail": "想到条件或假设时记一句",
+                "kind": "light"
+              },
+              {
+                "time": "确有安排时",
+                "title": "连续研究",
+                "detail": "既定实验与观测按原方案",
+                "kind": "fixed"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "轻量选择 · 随手一句",
+              "text": "若想留痕，写下一句灵感即可；不安排额外研究时段。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Recover and maintain",
+            "flow": "Rest → Note → Unwind",
+            "icon": "☾",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Take time off",
+                "detail": "Make derivations and validation conditions reproducible.",
+                "kind": "rest"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Keep an idea if it comes",
+                "detail": "Rest; keep continuous experiments and planned observations on their established schedule.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Follow essential commitments",
+                "detail": "An optional question note",
+                "kind": "fixed"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An optional note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "推导闲读",
+            "flow": "随心选 → 轻阅读 → 记一点",
+            "icon": "☷",
+            "blocks": [
+              {
+                "time": "找个闲暇",
+                "title": "翻一处旧稿",
+                "detail": "选一段推导或已有日志",
+                "kind": "light"
+              },
+              {
+                "time": "可选10—20分",
+                "title": "圈出一个问题",
+                "detail": "只记值得继续查的地方",
+                "kind": "light"
+              },
+              {
+                "time": "合上材料前",
+                "title": "放下材料",
+                "detail": "不急于当场完成求解",
+                "kind": "rest"
+              }
+            ],
+            "pause": "自由阅读不设打卡目标，想停下时就停下。",
+            "mini": {
+              "label": "轻量选择 · 一条就好",
+              "text": "围绕“回看一处”只留一个线索，也可以选择休息。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Revisit one point",
+            "flow": "Choose → Read → Note",
+            "icon": "☷",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Choose a page",
+                "detail": "Make derivations and validation conditions reproducible.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Follow one question",
+                "detail": "Optionally read a derivation or old log and mark an unresolved question.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Put the materials away",
+                "detail": "An optional annotation",
+                "kind": "rest"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An optional reading note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "搭好验证起点",
+            "flow": "回看 → 定一步 → 放下",
+            "icon": "↺",
+            "blocks": [
+              {
+                "time": "可选3分钟",
+                "title": "回看验证记录",
+                "detail": "找到尚可继续的一项",
+                "kind": "record"
+              },
+              {
+                "time": "可选7分钟",
+                "title": "写明下一测",
+                "detail": "列出输入与一个检查项",
+                "kind": "prepare"
+              },
+              {
+                "time": "余下时间",
+                "title": "让思路休息",
+                "detail": "下次按提示接续",
+                "kind": "rest"
+              }
+            ],
+            "pause": "这只是可选的十分钟，不把休息日排成另一个工作日。",
+            "mini": {
+              "label": "轻量选择 · 一句话",
+              "text": "写明“一条明确的验证任务”，其余留到下次继续。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Prepare a validation",
+            "flow": "Review → Choose → Rest",
+            "icon": "↺",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Notice what is done",
+                "detail": "Make derivations and validation conditions reproducible.",
+                "kind": "record"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Name the first next step",
+                "detail": "Specify the inputs, action and check for the next validation.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Return to rest",
+                "detail": "One explicit validation task",
+                "kind": "rest"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "One starting action. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "定向交流",
+            "flow": "整理 → 交流 → 留痕",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "09:30—10:15",
+                "title": "备齐材料",
+                "detail": "整理本周版本、图表与说明",
+                "kind": "record"
+              },
+              {
+                "time": "14:30—15:00",
+                "title": "写清问题",
+                "detail": "列清条件与差异，准备一次有针对性的研究交流。",
+                "kind": "collaborate"
+              },
+              {
+                "time": "16:00—16:20",
+                "title": "留下后续",
+                "detail": "确认交接与下次接续点",
+                "kind": "record"
+              }
+            ],
+            "pause": "为回复和交接留缓冲，完成收尾后按自己的计划休息。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "保存当前版本，再写一条“做到哪里、下一步是什么”。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Discuss a discrepancy",
+            "flow": "Gather → Discuss → Note",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Collect the relevant material",
+                "detail": "Make derivations and validation conditions reproducible.",
+                "kind": "record"
+              },
+              {
+                "time": "Focus block",
+                "title": "Prepare one precise question",
+                "detail": "Prepare the conditions and one discrepancy for a focused research discussion.",
+                "kind": "collaborate"
+              },
+              {
+                "time": "Closing block",
+                "title": "Record the follow-up",
+                "detail": "A comparison and next check",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A question and a follow-up. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        }
+      ]
+    },
+    {
+      "id": "engineering",
+      "name": {
+        "zh": "工学",
+        "en": "Engineering"
+      },
+      "icon": "工",
+      "color": "#ae7639",
+      "scope": {
+        "zh": "计算机 · 机械 · 材料 · 环境工程",
+        "en": "Computing · Mechanical · Materials · Environmental"
+      },
+      "goal": {
+        "zh": "让版本、参数与测试结果一一对应",
+        "en": "Keep versions, parameters and results connected."
+      },
+      "tasks": [
+        {
+          "title": {
+            "zh": "锁定基线",
+            "en": "Fix the baseline"
+          },
+          "action": {
+            "zh": "确认代码、样件或模型版本；整理一个最小复现条件。",
+            "en": "Confirm the code, specimen or model version and a minimal reproduction case."
+          },
+          "output": {
+            "zh": "基线清单＋复现步骤",
+            "en": "A baseline checklist and reproduction steps"
+          }
+        },
+        {
+          "title": {
+            "zh": "完成一轮",
+            "en": "Run a planned test"
+          },
+          "action": {
+            "zh": "运行一个预定测试或对照；同时保存参数、环境与日志。",
+            "en": "Run a defined test or comparison; save parameters, environment and logs."
+          },
+          "output": {
+            "zh": "测试记录＋配置快照",
+            "en": "A test record and configuration snapshot"
+          }
+        },
+        {
+          "title": {
+            "zh": "比较差异",
+            "en": "Compare changes"
+          },
+          "action": {
+            "zh": "核对性能变化及失败案例；解释一个变动对应的影响。",
+            "en": "Check performance changes and failure cases; relate one change to its observed effect."
+          },
+          "output": {
+            "zh": "差异表＋问题定位",
+            "en": "A difference table and issue location"
+          }
+        },
+        {
+          "title": {
+            "zh": "打包成果",
+            "en": "Package the results"
+          },
+          "action": {
+            "zh": "整理图表与变更记录；为长任务确认负责人和中断方案。",
+            "en": "Gather figures and changes; confirm ownership and interruption plans for long jobs."
+          },
+          "output": {
+            "zh": "可复查的阶段包",
+            "en": "A reviewable project snapshot"
+          }
+        },
+        {
+          "title": {
+            "zh": "按需值守",
+            "en": "Rest and maintain"
+          },
+          "action": {
+            "zh": "休息为主；确需连续运行的任务按约定值守。",
+            "en": "Rest; follow the agreed monitoring plan for essential continuous jobs."
+          },
+          "output": {
+            "zh": "必要值守记录",
+            "en": "Essential monitoring records"
+          }
+        },
+        {
+          "title": {
+            "zh": "轻量回看",
+            "en": "Read a short log"
+          },
+          "action": {
+            "zh": "有余力时读一次旧日志或检查备份可用性。",
+            "en": "Optionally revisit a log or check whether a backup is usable."
+          },
+          "output": {
+            "zh": "可选日志摘要",
+            "en": "An optional log summary"
+          }
+        },
+        {
+          "title": {
+            "zh": "定义下一测",
+            "en": "Define the next test"
+          },
+          "action": {
+            "zh": "从现有差异中选一项验证，写清验收条件。",
+            "en": "Choose one change to validate and state its acceptance criteria."
+          },
+          "output": {
+            "zh": "下一轮测试卡",
+            "en": "A next-test card"
+          }
+        },
+        {
+          "title": {
+            "zh": "评审一处改动",
+            "en": "Review a change"
+          },
+          "action": {
+            "zh": "整理配置与结果，就一个具体改动准备评审材料。",
+            "en": "Prepare the configuration and evidence for one concrete change review."
+          },
+          "output": {
+            "zh": "评审记录与后续测试",
+            "en": "A review note and test follow-up"
+          }
+        }
+      ],
+      "rhythms": [
+        {
+          "zh": {
+            "title": "基线整理",
+            "flow": "轻启 → 聚焦 → 留痕",
+            "icon": "◷",
+            "blocks": [
+              {
+                "time": "09:20—09:45",
+                "title": "确认当前版本",
+                "detail": "核对代码、样件或模型",
+                "kind": "prepare"
+              },
+              {
+                "time": "10:00—10:50",
+                "title": "最小复现",
+                "detail": "只处理一个条件明确的案例",
+                "kind": "focus"
+              },
+              {
+                "time": "16:30—16:45",
+                "title": "保存基线",
+                "detail": "写清配置、环境和步骤",
+                "kind": "record"
+              }
+            ],
+            "pause": "两段任务间走动几分钟，给思路一点空隙。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "围绕“锁定基线”，先做“确认当前版本”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Fix the baseline",
+            "flow": "Prepare → Focus → Record",
+            "icon": "◷",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Prepare the materials",
+                "detail": "Keep versions, parameters and results connected.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Focus block",
+                "title": "Resolve one bottleneck",
+                "detail": "Confirm the code, specimen or model version and a minimal reproduction case.",
+                "kind": "focus"
+              },
+              {
+                "time": "Closing block",
+                "title": "Leave a clear next step",
+                "detail": "A baseline checklist and reproduction steps",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An outline and a next step. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "测试推进",
+            "flow": "热身 → 深入 → 回看",
+            "icon": "✎",
+            "blocks": [
+              {
+                "time": "运行前",
+                "title": "确认测试条件",
+                "detail": "准备参数、环境和记录方式",
+                "kind": "prepare"
+              },
+              {
+                "time": "依测试流程",
+                "title": "完成预定测试",
+                "detail": "运行时长随测试流程",
+                "kind": "focus"
+              },
+              {
+                "time": "运行后",
+                "title": "回看日志",
+                "detail": "保存配置与测试结果",
+                "kind": "verify"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "时间有限时 · 30 分钟",
+              "text": "围绕“完成一轮”，先做“确认测试条件”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Run a planned test",
+            "flow": "Warm up → Advance → Review",
+            "icon": "✎",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Define a small goal",
+                "detail": "Keep versions, parameters and results connected.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Focus block",
+                "title": "Work through one key part",
+                "detail": "Run a defined test or comparison; save parameters, environment and logs.",
+                "kind": "focus"
+              },
+              {
+                "time": "Closing block",
+                "title": "Check and save the evidence",
+                "detail": "A test record and configuration snapshot",
+                "kind": "verify"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "One reviewable result. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "差异定位",
+            "flow": "对照 → 复核 → 归纳",
+            "icon": "◇",
+            "blocks": [
+              {
+                "time": "09:30—10:10",
+                "title": "并排看结果",
+                "detail": "比较性能变化与失败案例",
+                "kind": "verify"
+              },
+              {
+                "time": "14:00—14:40",
+                "title": "定位一项变动",
+                "detail": "把现象对应到参数或版本",
+                "kind": "verify"
+              },
+              {
+                "time": "16:20—16:35",
+                "title": "留下差异表",
+                "detail": "给出可继续验证的问题",
+                "kind": "record"
+              }
+            ],
+            "pause": "两轮检查之间换个任务或短暂休息，再回看细节。",
+            "mini": {
+              "label": "时间有限时 · 20 分钟",
+              "text": "围绕“比较差异”，先做“并排看结果”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Compare changes",
+            "flow": "Compare → Verify → Summarize",
+            "icon": "◇",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Align the evidence",
+                "detail": "Keep versions, parameters and results connected.",
+                "kind": "verify"
+              },
+              {
+                "time": "Focus block",
+                "title": "Test another explanation",
+                "detail": "Check performance changes and failure cases; relate one change to its observed effect.",
+                "kind": "verify"
+              },
+              {
+                "time": "Closing block",
+                "title": "Record discrepancies",
+                "detail": "A difference table and issue location",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A traceable check. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "版本交接",
+            "flow": "收束 → 沟通 → 交接",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "09:30—10:15",
+                "title": "整理阶段包",
+                "detail": "核对成果与变更记录",
+                "kind": "record"
+              },
+              {
+                "time": "14:30—15:00",
+                "title": "对齐长任务",
+                "detail": "确认负责人和中断方案",
+                "kind": "collaborate"
+              },
+              {
+                "time": "16:00—16:20",
+                "title": "做好接续说明",
+                "detail": "保存可复查版本与下一步",
+                "kind": "record"
+              }
+            ],
+            "pause": "为回复和交接留缓冲，完成收尾后按自己的计划休息。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "围绕“打包成果”，先做“整理阶段包”，留下可接续的记录。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Package the results",
+            "flow": "Consolidate → Discuss → Handoff",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Gather the current results",
+                "detail": "Keep versions, parameters and results connected.",
+                "kind": "record"
+              },
+              {
+                "time": "Focus block",
+                "title": "Prepare specific questions",
+                "detail": "Gather figures and changes; confirm ownership and interruption plans for long jobs.",
+                "kind": "collaborate"
+              },
+              {
+                "time": "Closing block",
+                "title": "Save the handoff",
+                "detail": "A reviewable project snapshot",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A version and a handoff note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "休息与值守",
+            "flow": "团圆 → 随手记 → 放松",
+            "icon": "☾",
+            "blocks": [
+              {
+                "time": "大部分时间",
+                "title": "安心休息",
+                "detail": "把自主任务暂时放下",
+                "kind": "rest"
+              },
+              {
+                "time": "灵感来了",
+                "title": "随手记想法",
+                "detail": "只记一个改进点即可",
+                "kind": "light"
+              },
+              {
+                "time": "确有安排时",
+                "title": "确需连续运行",
+                "detail": "依原有责任与值守安排",
+                "kind": "fixed"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "轻量选择 · 随手一句",
+              "text": "若想留痕，写下一句灵感即可；不安排额外研究时段。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Rest and maintain",
+            "flow": "Rest → Note → Unwind",
+            "icon": "☾",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Take time off",
+                "detail": "Keep versions, parameters and results connected.",
+                "kind": "rest"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Keep an idea if it comes",
+                "detail": "Rest; follow the agreed monitoring plan for essential continuous jobs.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Follow essential commitments",
+                "detail": "Essential monitoring records",
+                "kind": "fixed"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An optional note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "日志轻读",
+            "flow": "随心选 → 轻阅读 → 记一点",
+            "icon": "☷",
+            "blocks": [
+              {
+                "time": "找个闲暇",
+                "title": "选一段旧日志",
+                "detail": "或选一份已有备份",
+                "kind": "light"
+              },
+              {
+                "time": "可选10—20分",
+                "title": "检查一个点",
+                "detail": "回看问题线索或备份可用性",
+                "kind": "light"
+              },
+              {
+                "time": "合上材料前",
+                "title": "留简短摘要",
+                "detail": "保存后继续自己的休息日",
+                "kind": "rest"
+              }
+            ],
+            "pause": "自由阅读不设打卡目标，想停下时就停下。",
+            "mini": {
+              "label": "轻量选择 · 一条就好",
+              "text": "围绕“轻量回看”只留一个线索，也可以选择休息。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Read a short log",
+            "flow": "Choose → Read → Note",
+            "icon": "☷",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Choose a page",
+                "detail": "Keep versions, parameters and results connected.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Follow one question",
+                "detail": "Optionally revisit a log or check whether a backup is usable.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Put the materials away",
+                "detail": "An optional log summary",
+                "kind": "rest"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An optional reading note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "定义下一测",
+            "flow": "回看 → 定一步 → 放下",
+            "icon": "↺",
+            "blocks": [
+              {
+                "time": "可选3分钟",
+                "title": "回看差异表",
+                "detail": "挑一个最值得验证的变动",
+                "kind": "record"
+              },
+              {
+                "time": "可选7分钟",
+                "title": "写测试卡",
+                "detail": "写明下一步与验收条件",
+                "kind": "prepare"
+              },
+              {
+                "time": "余下时间",
+                "title": "休息接续",
+                "detail": "留给下次开工一个清楚入口",
+                "kind": "rest"
+              }
+            ],
+            "pause": "这只是可选的十分钟，不把休息日排成另一个工作日。",
+            "mini": {
+              "label": "轻量选择 · 一句话",
+              "text": "写明“下一轮测试卡”，其余留到下次继续。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Define the next test",
+            "flow": "Review → Choose → Rest",
+            "icon": "↺",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Notice what is done",
+                "detail": "Keep versions, parameters and results connected.",
+                "kind": "record"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Name the first next step",
+                "detail": "Choose one change to validate and state its acceptance criteria.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Return to rest",
+                "detail": "A next-test card",
+                "kind": "rest"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "One starting action. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "定向交流",
+            "flow": "整理 → 交流 → 留痕",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "09:30—10:15",
+                "title": "备齐材料",
+                "detail": "整理本周版本、图表与说明",
+                "kind": "record"
+              },
+              {
+                "time": "14:30—15:00",
+                "title": "写清问题",
+                "detail": "整理配置与结果，就一个具体改动准备评审材料。",
+                "kind": "collaborate"
+              },
+              {
+                "time": "16:00—16:20",
+                "title": "留下后续",
+                "detail": "确认交接与下次接续点",
+                "kind": "record"
+              }
+            ],
+            "pause": "为回复和交接留缓冲，完成收尾后按自己的计划休息。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "保存当前版本，再写一条“做到哪里、下一步是什么”。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Review a change",
+            "flow": "Gather → Discuss → Note",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Collect the relevant material",
+                "detail": "Keep versions, parameters and results connected.",
+                "kind": "record"
+              },
+              {
+                "time": "Focus block",
+                "title": "Prepare one precise question",
+                "detail": "Prepare the configuration and evidence for one concrete change review.",
+                "kind": "collaborate"
+              },
+              {
+                "time": "Closing block",
+                "title": "Record the follow-up",
+                "detail": "A review note and test follow-up",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A question and a follow-up. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        }
+      ]
+    },
+    {
+      "id": "agriculture",
+      "name": {
+        "zh": "农学",
+        "en": "Agriculture"
+      },
+      "icon": "禾",
+      "color": "#5a8242",
+      "scope": {
+        "zh": "作物 · 土壤 · 林学 · 畜牧与生态观测",
+        "en": "Crops · Soil · Forestry · Livestock · Ecology"
+      },
+      "goal": {
+        "zh": "优先守住物候、样本和田间记录",
+        "en": "Protect real field windows and sample traceability."
+      },
+      "tasks": [
+        {
+          "title": {
+            "zh": "对齐窗口",
+            "en": "Confirm real windows"
+          },
+          "action": {
+            "zh": "按真实物候、天气与已有协议确认采样窗口；核对样本标签。",
+            "en": "Use actual phenology, weather and protocols to confirm sampling windows and labels."
+          },
+          "output": {
+            "zh": "采样清单＋标签核查表",
+            "en": "A sampling list and label check"
+          }
+        },
+        {
+          "title": {
+            "zh": "按窗推进",
+            "en": "Follow the field window"
+          },
+          "action": {
+            "zh": "执行已确认的采样或整理原图；记录时间、地点与必要环境信息。",
+            "en": "Follow confirmed sampling plans or organize original images with time and sample information."
+          },
+          "output": {
+            "zh": "原始记录＋样本目录",
+            "en": "Raw records and a sample catalogue"
+          }
+        },
+        {
+          "title": {
+            "zh": "样本成链",
+            "en": "Connect the sample trail"
+          },
+          "action": {
+            "zh": "核对原图、处理条件与样本编号是否对应。",
+            "en": "Match images, processing conditions and sample identifiers."
+          },
+          "output": {
+            "zh": "样本追踪表",
+            "en": "A sample tracking table"
+          }
+        },
+        {
+          "title": {
+            "zh": "交接清楚",
+            "en": "Make the handoff clear"
+          },
+          "action": {
+            "zh": "检查保存条件、物资与休息日交接；明确必要观测责任。",
+            "en": "Check storage, materials and essential observations; name the responsible people."
+          },
+          "output": {
+            "zh": "交接单＋必做事项",
+            "en": "A handoff and essential-task list"
+          }
+        },
+        {
+          "title": {
+            "zh": "必要照常",
+            "en": "Keep essential observations"
+          },
+          "action": {
+            "zh": "休息与必要采样并行；由实际物候和既定计划决定工作。",
+            "en": "Balance rest with necessary sampling according to real field conditions and the agreed plan."
+          },
+          "output": {
+            "zh": "必要观测记录",
+            "en": "Essential observation records"
+          }
+        },
+        {
+          "title": {
+            "zh": "守好样本",
+            "en": "Maintain the samples"
+          },
+          "action": {
+            "zh": "按既定频次完成必要观察或保存检查，其余时间休息。",
+            "en": "Follow the established observation or storage-check frequency; leave other time for rest."
+          },
+          "output": {
+            "zh": "必要维护记录",
+            "en": "Essential maintenance records"
+          }
+        },
+        {
+          "title": {
+            "zh": "整理接续",
+            "en": "Prepare the next step"
+          },
+          "action": {
+            "zh": "汇总已采数据与待补项，安排下次的第一项可行任务。",
+            "en": "Summarize collected data and missing items; choose the next feasible task."
+          },
+          "output": {
+            "zh": "数据缺项表＋下一步",
+            "en": "A missing-data list and next step"
+          }
+        },
+        {
+          "title": {
+            "zh": "对齐田间信息",
+            "en": "Align field information"
+          },
+          "action": {
+            "zh": "整理近期采样记录与一个需要协同的问题。",
+            "en": "Prepare current sampling records and one coordination question."
+          },
+          "output": {
+            "zh": "更新后的协作记录",
+            "en": "An updated coordination note"
+          }
+        }
+      ],
+      "rhythms": [
+        {
+          "zh": {
+            "title": "窗口准备",
+            "flow": "轻启 → 聚焦 → 留痕",
+            "icon": "◷",
+            "blocks": [
+              {
+                "time": "出发前",
+                "title": "确认真实窗口",
+                "detail": "依据已知物候、天气与协议",
+                "kind": "prepare"
+              },
+              {
+                "time": "准备时",
+                "title": "核对样本标签",
+                "detail": "把编号与采样清单对齐",
+                "kind": "focus"
+              },
+              {
+                "time": "收整时",
+                "title": "整理进场准备",
+                "detail": "确认物资、位置与记录项",
+                "kind": "record"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "围绕“对齐窗口”，先做“确认真实窗口”，留下可接续的记录。"
+            },
+            "note": "采样与必要维护依真实物候、天气和既定安排；其余时间可自由调整。"
+          },
+          "en": {
+            "title": "Confirm real windows",
+            "flow": "Prepare → Focus → Record",
+            "icon": "◷",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Prepare the materials",
+                "detail": "Protect real field windows and sample traceability.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Focus block",
+                "title": "Resolve one bottleneck",
+                "detail": "Use actual phenology, weather and protocols to confirm sampling windows and labels.",
+                "kind": "focus"
+              },
+              {
+                "time": "Closing block",
+                "title": "Leave a clear next step",
+                "detail": "A sampling list and label check",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An outline and a next step. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "随窗采样",
+            "flow": "热身 → 深入 → 回看",
+            "icon": "✎",
+            "blocks": [
+              {
+                "time": "采样前",
+                "title": "采样前核对",
+                "detail": "检查标签与记录工具",
+                "kind": "prepare"
+              },
+              {
+                "time": "实际窗口",
+                "title": "按已确认窗口",
+                "detail": "采样过程遵循既定方案",
+                "kind": "focus"
+              },
+              {
+                "time": "采样后",
+                "title": "采样后留档",
+                "detail": "原图、时间与样本编号对应",
+                "kind": "verify"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "时间有限时 · 30 分钟",
+              "text": "围绕“按窗推进”，先做“采样前核对”，留下可接续的记录。"
+            },
+            "note": "采样与必要维护依真实物候、天气和既定安排；其余时间可自由调整。"
+          },
+          "en": {
+            "title": "Follow the field window",
+            "flow": "Warm up → Advance → Review",
+            "icon": "✎",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Define a small goal",
+                "detail": "Protect real field windows and sample traceability.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Focus block",
+                "title": "Work through one key part",
+                "detail": "Follow confirmed sampling plans or organize original images with time and sample information.",
+                "kind": "focus"
+              },
+              {
+                "time": "Closing block",
+                "title": "Check and save the evidence",
+                "detail": "Raw records and a sample catalogue",
+                "kind": "verify"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "One reviewable result. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "样本追踪",
+            "flow": "对照 → 复核 → 归纳",
+            "icon": "◇",
+            "blocks": [
+              {
+                "time": "整理时",
+                "title": "对齐编号",
+                "detail": "把原图与样本信息连接起来",
+                "kind": "verify"
+              },
+              {
+                "time": "核对时",
+                "title": "核对处理条件",
+                "detail": "检查保存与处理记录",
+                "kind": "verify"
+              },
+              {
+                "time": "收整时",
+                "title": "整理追踪表",
+                "detail": "列明缺项与待确认处",
+                "kind": "record"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "时间有限时 · 20 分钟",
+              "text": "围绕“样本成链”，先做“对齐编号”，留下可接续的记录。"
+            },
+            "note": "采样与必要维护依真实物候、天气和既定安排；其余时间可自由调整。"
+          },
+          "en": {
+            "title": "Connect the sample trail",
+            "flow": "Compare → Verify → Summarize",
+            "icon": "◇",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Align the evidence",
+                "detail": "Protect real field windows and sample traceability.",
+                "kind": "verify"
+              },
+              {
+                "time": "Focus block",
+                "title": "Test another explanation",
+                "detail": "Match images, processing conditions and sample identifiers.",
+                "kind": "verify"
+              },
+              {
+                "time": "Closing block",
+                "title": "Record discrepancies",
+                "detail": "A sample tracking table",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A traceable check. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "田间交接",
+            "flow": "收束 → 沟通 → 交接",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "交接前",
+                "title": "清点保存与物资",
+                "detail": "核对实际条件与必需用品",
+                "kind": "record"
+              },
+              {
+                "time": "已约时间",
+                "title": "对齐必要观测",
+                "detail": "写清频次、责任人与交接点",
+                "kind": "collaborate"
+              },
+              {
+                "time": "交接后",
+                "title": "留好交接单",
+                "detail": "让下次接续有据可查",
+                "kind": "record"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "围绕“交接清楚”，先做“清点保存与物资”，留下可接续的记录。"
+            },
+            "note": "采样与必要维护依真实物候、天气和既定安排；其余时间可自由调整。"
+          },
+          "en": {
+            "title": "Make the handoff clear",
+            "flow": "Consolidate → Discuss → Handoff",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Gather the current results",
+                "detail": "Protect real field windows and sample traceability.",
+                "kind": "record"
+              },
+              {
+                "time": "Focus block",
+                "title": "Prepare specific questions",
+                "detail": "Check storage, materials and essential observations; name the responsible people.",
+                "kind": "collaborate"
+              },
+              {
+                "time": "Closing block",
+                "title": "Save the handoff",
+                "detail": "A handoff and essential-task list",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A version and a handoff note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "物候与团圆",
+            "flow": "必要观测 → 留档 → 休息",
+            "icon": "☾",
+            "blocks": [
+              {
+                "time": "真实窗口",
+                "title": "必要观测",
+                "detail": "采样与维护依真实窗口",
+                "kind": "rest"
+              },
+              {
+                "time": "完成后",
+                "title": "就地留记录",
+                "detail": "记下时间与样本变化",
+                "kind": "light"
+              },
+              {
+                "time": "其余时间",
+                "title": "其余时间",
+                "detail": "安心休息与团圆",
+                "kind": "fixed"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "轻量选择 · 随手一句",
+              "text": "若想留痕，写下一句灵感即可；不安排额外研究时段。"
+            },
+            "note": "采样与必要维护依真实物候、天气和既定安排；其余时间可自由调整。"
+          },
+          "en": {
+            "title": "Keep essential observations",
+            "flow": "Rest → Note → Unwind",
+            "icon": "☾",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Take time off",
+                "detail": "Protect real field windows and sample traceability.",
+                "kind": "rest"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Keep an idea if it comes",
+                "detail": "Balance rest with necessary sampling according to real field conditions and the agreed plan.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Follow essential commitments",
+                "detail": "Essential observation records",
+                "kind": "fixed"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An optional note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "守样与休息",
+            "flow": "按需维护 → 简记 → 休息",
+            "icon": "☷",
+            "blocks": [
+              {
+                "time": "既定频次",
+                "title": "既定频次",
+                "detail": "必要观察与保存检查照常",
+                "kind": "light"
+              },
+              {
+                "time": "完成后",
+                "title": "完成后简记",
+                "detail": "留清楚维护结果",
+                "kind": "light"
+              },
+              {
+                "time": "其余时间",
+                "title": "其余时间",
+                "detail": "休息或自由活动",
+                "kind": "rest"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "轻量选择 · 一条就好",
+              "text": "围绕“守好样本”只留一个线索，也可以选择休息。"
+            },
+            "note": "采样与必要维护依真实物候、天气和既定安排；其余时间可自由调整。"
+          },
+          "en": {
+            "title": "Maintain the samples",
+            "flow": "Choose → Read → Note",
+            "icon": "☷",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Choose a page",
+                "detail": "Protect real field windows and sample traceability.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Follow one question",
+                "detail": "Follow the established observation or storage-check frequency; leave other time for rest.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Put the materials away",
+                "detail": "Essential maintenance records",
+                "kind": "rest"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An optional reading note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "把资料接上",
+            "flow": "回看 → 定一步 → 休息",
+            "icon": "↺",
+            "blocks": [
+              {
+                "time": "可选3分钟",
+                "title": "看已有记录",
+                "detail": "回看采样进度与缺项",
+                "kind": "record"
+              },
+              {
+                "time": "可选7分钟",
+                "title": "定下一步",
+                "detail": "列出下次第一项可行任务",
+                "kind": "prepare"
+              },
+              {
+                "time": "其余时间",
+                "title": "保留必要工作",
+                "detail": "其余安排留白休息",
+                "kind": "rest"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "轻量选择 · 一句话",
+              "text": "写明“数据缺项表＋下一步”，其余留到下次继续。"
+            },
+            "note": "采样与必要维护依真实物候、天气和既定安排；其余时间可自由调整。"
+          },
+          "en": {
+            "title": "Prepare the next step",
+            "flow": "Review → Choose → Rest",
+            "icon": "↺",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Notice what is done",
+                "detail": "Protect real field windows and sample traceability.",
+                "kind": "record"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Name the first next step",
+                "detail": "Summarize collected data and missing items; choose the next feasible task.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Return to rest",
+                "detail": "A missing-data list and next step",
+                "kind": "rest"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "One starting action. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "定向交流",
+            "flow": "整理 → 交流 → 留痕",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "09:30—10:15",
+                "title": "备齐材料",
+                "detail": "整理本周版本、图表与说明",
+                "kind": "record"
+              },
+              {
+                "time": "14:30—15:00",
+                "title": "写清问题",
+                "detail": "整理近期采样记录与一个需要协同的问题。",
+                "kind": "collaborate"
+              },
+              {
+                "time": "16:00—16:20",
+                "title": "留下后续",
+                "detail": "确认交接与下次接续点",
+                "kind": "record"
+              }
+            ],
+            "pause": "为回复和交接留缓冲，完成收尾后按自己的计划休息。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "保存当前版本，再写一条“做到哪里、下一步是什么”。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Align field information",
+            "flow": "Gather → Discuss → Note",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Collect the relevant material",
+                "detail": "Protect real field windows and sample traceability.",
+                "kind": "record"
+              },
+              {
+                "time": "Focus block",
+                "title": "Prepare one precise question",
+                "detail": "Prepare current sampling records and one coordination question.",
+                "kind": "collaborate"
+              },
+              {
+                "time": "Closing block",
+                "title": "Record the follow-up",
+                "detail": "An updated coordination note",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A question and a follow-up. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        }
+      ]
+    },
+    {
+      "id": "medicine",
+      "name": {
+        "zh": "医学",
+        "en": "Medical research"
+      },
+      "icon": "医",
+      "color": "#a05768",
+      "scope": {
+        "zh": "临床研究 · 公共卫生 · 药学 · 医学基础研究",
+        "en": "Clinical research · Public health · Pharmacy"
+      },
+      "goal": {
+        "zh": "把编号、字段和时间窗核对清楚",
+        "en": "Check research definitions, identifiers and time windows."
+      },
+      "tasks": [
+        {
+          "title": {
+            "zh": "口径对齐",
+            "en": "Align research definitions"
+          },
+          "action": {
+            "zh": "核对研究编号、字段定义和随访时间窗；仅使用有权限的去标识资料。",
+            "en": "Check research IDs, field definitions and follow-up windows using authorized de-identified data."
+          },
+          "output": {
+            "zh": "数据字典核查清单",
+            "en": "A data-dictionary checklist"
+          }
+        },
+        {
+          "title": {
+            "zh": "数据核查",
+            "en": "Check research data"
+          },
+          "action": {
+            "zh": "按既定规则查缺项和逻辑冲突；把问题登记为待核查项。",
+            "en": "Apply agreed rules to missing values and logic conflicts; record items for clarification."
+          },
+          "output": {
+            "zh": "质疑项清单",
+            "en": "A data-query list"
+          }
+        },
+        {
+          "title": {
+            "zh": "图表相合",
+            "en": "Reconcile the figures"
+          },
+          "action": {
+            "zh": "核对纳排流程、分母和图表来源；逐条标明需要确认的差异。",
+            "en": "Check participant flow, denominators and figure sources; record discrepancies."
+          },
+          "output": {
+            "zh": "图表一致性记录",
+            "en": "A figure consistency record"
+          }
+        },
+        {
+          "title": {
+            "zh": "交接归档",
+            "en": "Archive and hand over"
+          },
+          "action": {
+            "zh": "整理分析版本、访问权限与休息日研究随访交接。",
+            "en": "Organize analysis versions, access and research follow-up handoffs."
+          },
+          "output": {
+            "zh": "研究交接单＋版本清单",
+            "en": "A handoff and version list"
+          }
+        },
+        {
+          "title": {
+            "zh": "连续安排",
+            "en": "Keep confirmed care in place"
+          },
+          "action": {
+            "zh": "休息为主；诊疗和值班、已确认的研究随访按原安排执行。",
+            "en": "Rest where possible; maintain clinical duties and confirmed research follow-up."
+          },
+          "output": {
+            "zh": "必要工作记录",
+            "en": "Essential work records"
+          }
+        },
+        {
+          "title": {
+            "zh": "轻量整理",
+            "en": "Read a methods note"
+          },
+          "action": {
+            "zh": "如有余力，整理去标识的方法笔记或文献条目。",
+            "en": "Optionally organize a de-identified methods note or literature entry."
+          },
+          "output": {
+            "zh": "可选方法便笺",
+            "en": "An optional methods note"
+          }
+        },
+        {
+          "title": {
+            "zh": "明确下一步",
+            "en": "Define the next check"
+          },
+          "action": {
+            "zh": "从质疑项中选出可解决的一项，标明负责人和所需材料。",
+            "en": "Choose one resolvable query and name the owner and required material."
+          },
+          "output": {
+            "zh": "一条可执行的数据核查任务",
+            "en": "An actionable data-check task"
+          }
+        },
+        {
+          "title": {
+            "zh": "澄清研究疑问",
+            "en": "Clarify one research query"
+          },
+          "action": {
+            "zh": "整理去标识的问题与字段定义，准备针对性讨论。",
+            "en": "Prepare a de-identified question and relevant definitions for discussion."
+          },
+          "output": {
+            "zh": "质疑项与后续负责人",
+            "en": "A query and follow-up owner"
+          }
+        }
+      ],
+      "rhythms": [
+        {
+          "zh": {
+            "title": "研究口径",
+            "flow": "轻启 → 聚焦 → 留痕",
+            "icon": "◷",
+            "blocks": [
+              {
+                "time": "空档15分钟",
+                "title": "核对字段定义",
+                "detail": "明确研究编号与时间窗口径",
+                "kind": "prepare"
+              },
+              {
+                "time": "可用30分钟",
+                "title": "定位待核查项",
+                "detail": "只读有权限的去标识资料",
+                "kind": "focus"
+              },
+              {
+                "time": "收整10分钟",
+                "title": "整理核查清单",
+                "detail": "把问题与对应字段连接起来",
+                "kind": "record"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "围绕“口径对齐”，先做“核对字段定义”，留下可接续的记录。"
+            },
+            "note": "研究核查可放在实际空档；诊疗、值班与随访维持原安排。"
+          },
+          "en": {
+            "title": "Align research definitions",
+            "flow": "Prepare → Focus → Record",
+            "icon": "◷",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Prepare the materials",
+                "detail": "Check research definitions, identifiers and time windows.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Focus block",
+                "title": "Resolve one bottleneck",
+                "detail": "Check research IDs, field definitions and follow-up windows using authorized de-identified data.",
+                "kind": "focus"
+              },
+              {
+                "time": "Closing block",
+                "title": "Leave a clear next step",
+                "detail": "A data-dictionary checklist",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An outline and a next step. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "数据核查",
+            "flow": "热身 → 深入 → 回看",
+            "icon": "✎",
+            "blocks": [
+              {
+                "time": "空档10分钟",
+                "title": "按规则定位",
+                "detail": "选定一组缺项或逻辑冲突",
+                "kind": "prepare"
+              },
+              {
+                "time": "可用40分钟",
+                "title": "逐项核对",
+                "detail": "按既定规则记录待确认项",
+                "kind": "focus"
+              },
+              {
+                "time": "留档10分钟",
+                "title": "保存质疑清单",
+                "detail": "列出所需材料与后续动作",
+                "kind": "verify"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "时间有限时 · 30 分钟",
+              "text": "围绕“数据核查”，先做“按规则定位”，留下可接续的记录。"
+            },
+            "note": "研究核查可放在实际空档；诊疗、值班与随访维持原安排。"
+          },
+          "en": {
+            "title": "Check research data",
+            "flow": "Warm up → Advance → Review",
+            "icon": "✎",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Define a small goal",
+                "detail": "Check research definitions, identifiers and time windows.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Focus block",
+                "title": "Work through one key part",
+                "detail": "Apply agreed rules to missing values and logic conflicts; record items for clarification.",
+                "kind": "focus"
+              },
+              {
+                "time": "Closing block",
+                "title": "Check and save the evidence",
+                "detail": "A data-query list",
+                "kind": "verify"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "One reviewable result. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "图表核对",
+            "flow": "对照 → 复核 → 归纳",
+            "icon": "◇",
+            "blocks": [
+              {
+                "time": "空档15分钟",
+                "title": "先核对分母",
+                "detail": "对齐纳排流程与统计口径",
+                "kind": "verify"
+              },
+              {
+                "time": "可用30分钟",
+                "title": "追查图表来源",
+                "detail": "逐项检查版本和对应关系",
+                "kind": "verify"
+              },
+              {
+                "time": "收整10分钟",
+                "title": "登记差异",
+                "detail": "形成可复查的一致性记录",
+                "kind": "record"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "时间有限时 · 20 分钟",
+              "text": "围绕“图表相合”，先做“先核对分母”，留下可接续的记录。"
+            },
+            "note": "研究核查可放在实际空档；诊疗、值班与随访维持原安排。"
+          },
+          "en": {
+            "title": "Reconcile the figures",
+            "flow": "Compare → Verify → Summarize",
+            "icon": "◇",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Align the evidence",
+                "detail": "Check research definitions, identifiers and time windows.",
+                "kind": "verify"
+              },
+              {
+                "time": "Focus block",
+                "title": "Test another explanation",
+                "detail": "Check participant flow, denominators and figure sources; record discrepancies.",
+                "kind": "verify"
+              },
+              {
+                "time": "Closing block",
+                "title": "Record discrepancies",
+                "detail": "A figure consistency record",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A traceable check. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "研究交接",
+            "flow": "收束 → 沟通 → 交接",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "交接前",
+                "title": "核对分析版本",
+                "detail": "确认资料与访问安排",
+                "kind": "record"
+              },
+              {
+                "time": "既定安排",
+                "title": "交接必要随访",
+                "detail": "按已确认研究计划衔接",
+                "kind": "collaborate"
+              },
+              {
+                "time": "交接后",
+                "title": "保存接续清单",
+                "detail": "写清问题、责任与下一步",
+                "kind": "record"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "围绕“交接归档”，先做“核对分析版本”，留下可接续的记录。"
+            },
+            "note": "研究核查可放在实际空档；诊疗、值班与随访维持原安排。"
+          },
+          "en": {
+            "title": "Archive and hand over",
+            "flow": "Consolidate → Discuss → Handoff",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Gather the current results",
+                "detail": "Check research definitions, identifiers and time windows.",
+                "kind": "record"
+              },
+              {
+                "time": "Focus block",
+                "title": "Prepare specific questions",
+                "detail": "Organize analysis versions, access and research follow-up handoffs.",
+                "kind": "collaborate"
+              },
+              {
+                "time": "Closing block",
+                "title": "Save the handoff",
+                "detail": "A handoff and version list",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A version and a handoff note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "值班外留白",
+            "flow": "必要工作 → 留档 → 恢复",
+            "icon": "☾",
+            "blocks": [
+              {
+                "time": "既定安排",
+                "title": "必要工作",
+                "detail": "诊疗、值班与随访按原安排",
+                "kind": "rest"
+              },
+              {
+                "time": "依原流程",
+                "title": "方便时留档",
+                "detail": "研究记录在既定流程中完成",
+                "kind": "light"
+              },
+              {
+                "time": "其余时间",
+                "title": "其余时间",
+                "detail": "把恢复与休息安排好",
+                "kind": "fixed"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "轻量选择 · 随手一句",
+              "text": "若想留痕，写下一句灵感即可；不安排额外研究时段。"
+            },
+            "note": "研究核查可放在实际空档；诊疗、值班与随访维持原安排。"
+          },
+          "en": {
+            "title": "Keep confirmed care in place",
+            "flow": "Rest → Note → Unwind",
+            "icon": "☾",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Take time off",
+                "detail": "Check research definitions, identifiers and time windows.",
+                "kind": "rest"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Keep an idea if it comes",
+                "detail": "Rest where possible; maintain clinical duties and confirmed research follow-up.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Follow essential commitments",
+                "detail": "Essential work records",
+                "kind": "fixed"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An optional note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "方法轻读",
+            "flow": "随心选 → 轻阅读 → 记一点",
+            "icon": "☷",
+            "blocks": [
+              {
+                "time": "找个闲暇",
+                "title": "选一条笔记",
+                "detail": "去标识的方法或文献记录",
+                "kind": "light"
+              },
+              {
+                "time": "可选10—20分",
+                "title": "如有余力",
+                "detail": "整理一个问题或方法线索",
+                "kind": "light"
+              },
+              {
+                "time": "合上材料前",
+                "title": "收起材料",
+                "detail": "必要工作按原安排衔接",
+                "kind": "rest"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "轻量选择 · 一条就好",
+              "text": "围绕“轻量整理”只留一个线索，也可以选择休息。"
+            },
+            "note": "研究核查可放在实际空档；诊疗、值班与随访维持原安排。"
+          },
+          "en": {
+            "title": "Read a methods note",
+            "flow": "Choose → Read → Note",
+            "icon": "☷",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Choose a page",
+                "detail": "Check research definitions, identifiers and time windows.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Follow one question",
+                "detail": "Optionally organize a de-identified methods note or literature entry.",
+                "kind": "light"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Put the materials away",
+                "detail": "An optional methods note",
+                "kind": "rest"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "An optional reading note. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "明确核查起点",
+            "flow": "回看 → 定一步 → 放下",
+            "icon": "↺",
+            "blocks": [
+              {
+                "time": "可选3分钟",
+                "title": "回看质疑项",
+                "detail": "挑一项材料可补齐的问题",
+                "kind": "record"
+              },
+              {
+                "time": "可选7分钟",
+                "title": "写明下一步",
+                "detail": "列负责人及所需材料",
+                "kind": "prepare"
+              },
+              {
+                "time": "余下时间",
+                "title": "余下时间",
+                "detail": "休息与既定工作各归其位",
+                "kind": "rest"
+              }
+            ],
+            "pause": "自主整理可分段；必要观测、连续实验与诊疗流程按既定安排。",
+            "mini": {
+              "label": "轻量选择 · 一句话",
+              "text": "写明“一条可执行的数据核查任务”，其余留到下次继续。"
+            },
+            "note": "研究核查可放在实际空档；诊疗、值班与随访维持原安排。"
+          },
+          "en": {
+            "title": "Define the next check",
+            "flow": "Review → Choose → Rest",
+            "icon": "↺",
+            "blocks": [
+              {
+                "time": "Optional / as needed",
+                "title": "Notice what is done",
+                "detail": "Check research definitions, identifiers and time windows.",
+                "kind": "record"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Name the first next step",
+                "detail": "Choose one resolvable query and name the owner and required material.",
+                "kind": "prepare"
+              },
+              {
+                "time": "Optional / as needed",
+                "title": "Return to rest",
+                "detail": "An actionable data-check task",
+                "kind": "rest"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "One starting action. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        },
+        {
+          "zh": {
+            "title": "定向交流",
+            "flow": "整理 → 交流 → 留痕",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "09:30—10:15",
+                "title": "备齐材料",
+                "detail": "整理本周版本、图表与说明",
+                "kind": "record"
+              },
+              {
+                "time": "14:30—15:00",
+                "title": "写清问题",
+                "detail": "整理去标识的问题与字段定义，准备针对性讨论。",
+                "kind": "collaborate"
+              },
+              {
+                "time": "16:00—16:20",
+                "title": "留下后续",
+                "detail": "确认交接与下次接续点",
+                "kind": "record"
+              }
+            ],
+            "pause": "为回复和交接留缓冲，完成收尾后按自己的计划休息。",
+            "mini": {
+              "label": "时间有限时 · 15 分钟",
+              "text": "保存当前版本，再写一条“做到哪里、下一步是什么”。"
+            },
+            "note": "时间块可随个人作息调整；实际预约与完整流程优先。"
+          },
+          "en": {
+            "title": "Clarify one research query",
+            "flow": "Gather → Discuss → Note",
+            "icon": "↗",
+            "blocks": [
+              {
+                "time": "Opening block",
+                "title": "Collect the relevant material",
+                "detail": "Check research definitions, identifiers and time windows.",
+                "kind": "record"
+              },
+              {
+                "time": "Focus block",
+                "title": "Prepare one precise question",
+                "detail": "Prepare a de-identified question and relevant definitions for discussion.",
+                "kind": "collaborate"
+              },
+              {
+                "time": "Closing block",
+                "title": "Record the follow-up",
+                "detail": "A query and follow-up owner",
+                "kind": "record"
+              }
+            ],
+            "pause": "Take a break between self-directed blocks; essential continuous work follows its established protocol.",
+            "mini": {
+              "label": "Short on time",
+              "text": "A question and a follow-up. Keep one small, resumable step."
+            },
+            "note": "Suggested workflow blocks, not booked appointments. Confirmed commitments take priority."
+          }
+        }
+      ]
+    }
+  ]
+}

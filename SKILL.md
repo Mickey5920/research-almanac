@@ -1,69 +1,51 @@
 ---
 name: zhouyi-paper-submit-advisor
-description: Read a specified paper project's readiness and recommend submission windows with traceable Chinese-calendar cultural references, practical deadlines, exact local times and optional facing directions. Also support Yijing text reflection, plan comparison, selection and review.
+description: Build a weekly research almanac and project work plan across six disciplines, with date-specific workflows, sourced Yijing passages and an offline bilingual HTML report. Add precise Zhouyi paper submission windows as optional support, or handle an explicit submission-only request with the existing planner. Use for research-week planning, 科研黄历 and 投稿择时, not predictions of scientific or publication success.
 metadata:
   type: agent-skill
   status: implemented-with-limits
   created: "2026-09-14"
-  updated: "2026-09-18"
+  updated: "2026-09-19"
 ---
 
-# Zhouyi Paper Submit Advisor
+# Research Almanac · Zhouyi Submission Support
 
-Use the repository's actual scripts, not invented calendar calculations. Install dependencies with npm ci --ignore-scripts once if absent. Work from this Skill folder; save user runs under runs/ or another user-authorized private output directory. Never write private project inputs into committed examples/.
+The weekly research almanac is the primary experience; submission timing is optional support. Keep the existing Skill name, one portable folder and one private history store. Use the actual local scripts. Install missing dependencies with `npm ci --ignore-scripts` from this folder. Never put private project inputs into committed examples.
 
-## Project requests
+## Choose the route
 
-1. Read the user-specified project. Start with its overview, task list, manuscript manifest and submission requirements. Read only related sections needed to resolve missing facts. Preserve source references and distinguish supplied, verified, inferred and unknown information. If several projects are equally plausible, ask which one.
-2. Follow [project context](references/project-context.md). Prepare input matching [input schema](schemas/input.schema.json). Do not invent city, birthday, readiness, deadline, journal weekday advantages or approval.
-3. Resolve the active submission stage before filling deadline. For a journal with explicitly no deadline use status none; an unknown deadline is status unknown. Use an ISO timestamp with explicit offset and source; AoE is UTC−12 only if actually specified.
-4. For live requests omit the example's fixed now. Use the known IANA timezone. next_week means the next Monday through the following Monday; rolling_7_days is a different mode.
-5. Run node scripts/cli.js recommend INPUT.json --out runs/UNIQUE-RUN. Do not overwrite prior runs. This saves the complete input/result pair to local history and creates report.html containing this invocation plus earlier records. Present a clickable absolute link to report.html as the primary output and open it in the host's file viewer if available. Include the actual result status. [Rules and limits](references/calendar-rules.md) define the currently supported tradition.
-6. Show the short recommendation card first. Separate preparation, upload/check, final submit and receipt. Unknown prerequisites remain conditions. Report concrete timestamps in the user's clock timezone; minutes are operational preferences.
-7. For natural-language adjustments, translate only the specified fields into a JSON patch, run patch, then recommend. "Cannot" is an exclusion; "prefer" is a soft hour preference. Preserve unrelated settings. For comparison use compare REPORT.json RANK RANK.
-8. On explicit selection use select; preserve that plan. To continue, review with current project facts rather than silently selecting another window. Changing display language/depth uses render, not new calendar calculation. See [plan lifecycle](references/plan-lifecycle.md).
-9. Only an explicit user statement of submission or an authorized system receipt can create a submitted record. Use confirmed: true as a boolean, never replace actual time with planned time. Save a new revision file.
+- Research almanac, next week's research, weekly work plan, or a combined research/submission request: use `weekly` and [the integration guide](docs/RESEARCH-ALMANAC.md).
+- An explicit request only for paper submission dates, directions, plan selection or review: keep `recommend` and the [submission workflow](references/submission-workflow.md).
+- A classical-text or supplied-six-line request without scheduling: use the existing cultural mode in the submission workflow; a project is not required.
 
-## Local HTML history
+Do not make the user choose a second Skill or re-enter data in a web form. The conversation is the input surface; HTML only displays saved local records.
 
-The user supplies information in the Agent conversation. Resolve project context and run the local scripts there; do not send the user to a browser form or require npm start. The HTML template is a read-only output artifact: it renders stored local inputs/results, identifies the current invocation, and supports search and historical comparison. It contains no model client, API key, network requests or calculation controls. CSS, display logic and the local record snapshot are embedded so it can open directly from disk after the Agent closes.
+## Weekly workflow
 
-Always use recommend with --out for a new recommendation, including cultural mode, to save input.json, record.json, report.html and the persistent record under .local-data/history/. Fixed input.now records the actual computation time. To view existing history without recalculating or adding a record, run node scripts/cli.js history-html --out runs/UNIQUE-HISTORY.html. A prior HTML stays a snapshot; each new invocation produces an updated HTML. Keep the same local history directory across invocations; --history-dir may select a user-authorized private location. Never infer missing inputs in legacy records. Keep personal history out of Git. See [output guide](docs/WORKBENCH.md).
+1. Resolve the known IANA timezone and desired week. A general almanac needs no manuscript, birthday or journal. Read only a user-specified project's relevant overview, current tasks, constraints and manuscript state when personalization is requested. Preserve sources and distinguish supplied or verified facts from assumptions. If several projects are equally plausible, clarify which one.
+2. Prepare JSON matching [weekly input](schemas/weekly-input.schema.json). Start from [general](examples/weekly.json) or [project](examples/weekly-project.json) examples but remove their fixed `now`, simulated tasks and deadline for real use. Omit `week_start` for the next local Monday–Sunday; a supplied `week_start` must be a Monday. Select one discipline or `all`.
+3. Map actual tasks to stable ids, estimated minutes, dependencies, earliest start, deadline and expected output. Keep unknown estimates missing, not invented. Preserve confirmed events and unavailable intervals. Include source references for project facts. Do not claim estimated tasks have been completed.
+4. Add `submission` only if there is a real submission request. It uses the existing submission input contract and must match the weekly timezone. Use `submission_task_ids` only for known required preparation tasks. The weekly engine uses the same week and computation time, and subtracts research tasks before calling the old submission engine. Readiness, author approval, deadlines and verified academic evidence remain mandatory constraints.
+5. Run `node scripts/cli.js weekly INPUT.json --out runs/UNIQUE-RUN`. This saves `input.json`, `weekly.json`, a paired `record.json`, bilingual Markdown and the primary `report.html`. When submission is included it also saves `submission.json` and `submission.html`; feasible candidates produce an ICS file without reminders.
+6. Return an absolute clickable link to `report.html` and open the file viewer if available. Briefly state the actual date range and any tasks requiring more time or missing estimates. The main page covers all six disciplines with daily/weekly views; user tasks are a separate saved schedule. Submission details are folded beneath it.
+7. For adjustments, copy the previous weekly input into a new private file, update only requested facts, remove the stale `now`, and run again to a new directory. Re-resolve the target week when the user changes it. Never overwrite a previous input, result or historical record. Render stored Markdown in another language with `render`, without recomputing the schedule.
 
-## Cultural requests
-
-No project, deadline or date range is required for text reflection. Run recommend using mode cultural and a supported excerpt_id, or omit it for the default short excerpt. The curated collection contains four excerpts from two chapters. Do not suggest full-book coverage.
-
-For user-supplied six line values use cultural.action cast, lines bottom to top with 6/7/8/9. This records supplied lines and transforms moving lines; it does not perform random coin casting, Meihua, Qimen or full 64-hexagram interpretation. Continue with the same reading object. Unsupported methods must be stated as unavailable.
-
-## Evidence and optional features
-
-For every HTML report include window explanations and the reference library. Read [academic evidence rules](references/academic-evidence.md) when resolving a target venue. The Agent, not the HTML, checks official author instructions, actual editorial-office timezone/hours if published, and the conference's year/track/stage deadline including any explicit AoE rule. Save target-specific facts in input.academic_evidence with status, source URL and checked date; its target must match project.target. Not found and unknown are useful outcomes. Never invent office hours from a publisher address or apply a general journal example as the target's policy.
-
-The reference books are a catalog of eligible sources, not a claim that all divination engines are implemented. Only supported and actually calculated factors may explain a window. Meihua, Qimen and Bazi remain unavailable; do not invent favorable configurations from their book titles. The general literature snapshot is descriptive; it does not automatically alter ranking. Target-specific timing evidence may affect ranking only through the verified academic_timing policy below. No personal acceptance probabilities.
-
-Read [sources and decisions](docs/DECISIONS.md) when explaining conventions. Classical quotations come only from data/excerpts.json; modern explanations and blessings are original. A direction is the library's daily Xi-shen direction, optionally adapted to facing, not Wenchang or Qimen. No acceptance probabilities.
-
-The CLI exports ICS but creates no scheduled reminders. If the user requests reminders and the host offers an actual tool, use it within the user's authorization, record its returned ID/status privately, and accurately report failures and plan changes. Without a host tool say unavailable.
-
-Use backplan for estimated preparation tasks, and the generated fixed-north direction.svg as a schematic, never a live compass. See [commands](docs/COMMANDS.md) and [release status](docs/IMPLEMENTATION.md) for supported vs deferred features.
-
-## Optional zodiac and window astrology
-
-New project recommendations include a locally calculated moon tropical zodiac sign and Mercury motion at the exact recommended click time. Set input.astrology.enabled to false to omit this module. input.astrology.personal_sign optionally accepts a Chinese zodiac-sign name such as 处女座; ask only if the user wants personalization, and never infer it from their work or request a birth date. No birthplace or birth time is needed.
-
-The engine computes geocentric ecliptic positions with astronomy-engine. Tropical signs divide longitude into twelve equal 30-degree sectors, not IAU constellation boundaries. Mercury motion is a centered 12-hour finite difference with a 0.02 degree/day near-station threshold. Support is limited to 1900–2100; outside this range astrology is omitted. Personal-sign symbolism is an explicit modern tie-breaker after real constraints, verified academic timing, user preferences and calendar preference; it does not claim acceptance effects. Save results at recommendation time. Old records without astrology remain unchanged; the HTML must not calculate or infer missing charts.
-
-## Priority principle
+## Priority and interpretation
 
 玄学提供仪式感，科学提供优先级。
 
-For target-specific academic timing, verify the primary source and save input.academic_timing with target (must match project.target), timezone, preferred_weekdays (ISO Monday=1 through Sunday=7), and evidence containing status verified, source_url, checked_at, conclusion and applicability. Explain why the source applies to this journal, submission stage and current context. A historical single-journal association is not automatically a current recommendation; do not extrapolate accepted-only samples into acceptance rates. Do not fabricate a universal weekend penalty. If applicability cannot be established, omit academic_timing and retain the study as background reference only.
+Confirmed clinical care, continuous experiments, field windows, appointments, task dependencies and hard deadlines take priority. Weekly scheduling is a conservative sequential single-person plan, not a guaranteed optimal resource allocation. Defaults are 20% daily buffer, three tasks per day and workday availability of 09:00–12:00 and 14:00–17:00; they are editable planning choices, not empirical claims. Explicit availability overrides the holiday default. Unknown durations stay in the unplanned list.
 
-Preparation, availability and hard deadlines remain mandatory. Sort by deadline buffer, applicable academic preference, user hour preference, traditional calendar preference, then personal-zodiac symbolic tie-breaker. Academic evidence overrides strict traditional filtering. Preserve diversity across dates. The output timing_policy explains conflicts and cites the evidence. If no policy matches a feasible window, retain feasible alternatives and their unmatched status; never move past a deadline for a preferred weekday.
+The bundled 2026 mainland China holiday table has an official source. Unknown years use a labelled weekday fallback. Other timezones retain practical local scheduling without invented Chinese-calendar facts. Never infer foreign editorial-office closures from local holidays.
 
-Ask for the personal sign only when the user requests personalized astrology and has not supplied one. The report analyses that user's timing; it does not label a window as suitable for a general zodiac audience. The personal sign is optional. Current zodiac tie-breaking uses symbolic element relationships with the computed Moon sign; it is a declared cultural convention, not an empirical success model.
+Daily rhythms are varied workflow suggestions saved with the result, not auspicious appointments. Six-discipline suggestions cover humanities, social sciences, natural sciences, engineering, agriculture and medical research. No arbitrary luck scores, fabricated Qimen charts or medical treatment advice. Reference existing protocols for fieldwork, clinical commitments and experiments.
 
-## Eight trigrams and original passages
+Classical passages and explanations come from `data/bagua.json`; show the original, chapter, plain-language meaning and a separately identifiable modern reflection. Daily passages are chosen by workflow theme, not computed divination. Submission-facing trigrams continue to use the old direction mapping. For submission evidence and personal zodiac preferences, follow [academic rules](references/academic-evidence.md) and the full submission workflow. No universal weekend penalty or acceptance probability.
 
-Read [trigram reference](references/bagua.md) when explaining 八卦 or classical meanings. Use data/bagua.json and scripts/bagua.js to relate an existing facing direction to a Later Heaven trigram. Explain the exact original passage, its chapter, a plain-language meaning, and a separately labelled modern submission reflection. Chinese originals stay unchanged in English output. The HTML and bilingual Markdown expose this layer automatically; it does not change timing scores or create a divination. Do not infer a trigram for a missing direction or pass a trigram quotation off as the source of a minute-level recommendation.
+## Saved local reports
+
+Keep the same private `.local-data/history/` across invocations; `--history-dir` can select another user-authorized private location. `weekly` and `recommend` both save paired input/result records. Old records without `record_type` remain submission records and are not rewritten. A mixed report lets the user switch between almanacs and original submission reports. The old form workbench remains submission-only; normal use requires no service.
+
+`node scripts/cli.js history-html --out runs/UNIQUE-HISTORY.html` re-exports existing history without calculation or a new record. A prior HTML stays a snapshot. CSS, images, translations and saved records are embedded. No AI client, key, remote asset requests or input forms are needed. Language and view changes never alter raw records. Keep user runs and history out of Git and public screenshots.
+
+No reminder, message, actual submission or social-media publication is performed by generating a plan. Use separate available host tools only if the user asks for those actions. See [commands](docs/COMMANDS.md), [current implementation](docs/IMPLEMENTATION.md) and [output guide](docs/WORKBENCH.md).

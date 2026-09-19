@@ -17,6 +17,7 @@ async function body(req){
  try{return JSON.parse(Buffer.concat(chunks).toString('utf8'));}catch{throw new Error('JSON 格式错误。');}
 }
 export async function snapshotHtml(records){
+ if(records.some(r=>r.record_type==='weekly'))return renderHistoryHtml({records});
  const [html,css,js]=await Promise.all(['web/index.html','web/style.css','web/app.js'].map(p=>readFile(join(root,p),'utf8')));
  return html.replace('<link rel="stylesheet" href="/style.css">',()=>'<style>'+css+'</style>')
  .replace('<script src="/app.js" defer></script>',()=>'<script>window.__SNAPSHOT__='+escapeJson({records,warnings:[],version})+';</script><script>'+js+'</script>');
@@ -56,8 +57,7 @@ export function createServer({dataDir=join(root,'.local-data','history')}={}){
      return send(201,{record});
     }
     if(path==='/api/import'){
-     const record=b.report?b:{report:b,input:null};validateReport(record.report);
-     if(record.input)validateInput(record.input);
+     const record=b.report?b:{report:b,input:null};
      const saved=await store.add({input:record.input??null,report:record.report,source:record.input?'import':'legacy-import'});
      return send(201,{record:saved});
     }

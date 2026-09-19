@@ -113,7 +113,7 @@ function showRecord(r){
  renderHistory();populateComparison();
 }
 function download(name,content,type){const url=URL.createObjectURL(new Blob([content],{type})),a=node('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);}
-async function refreshHistory(){const data=offline?window.__SNAPSHOT__:await api('/api/history');records=data.records;if(data.warnings?.length)notice(data.warnings.join('\n'),true);renderHistory();return data;}
+async function refreshHistory(){const data=offline?window.__SNAPSHOT__:await api('/api/history');records=data.records.filter(r=>r.record_type!=='weekly');if(data.warnings?.length)notice(data.warnings.join('\n'),true);renderHistory();return data;}
 $('search').addEventListener('input',renderHistory);
 $('form-mode').addEventListener('click',()=>{setMode('form');saveDraft();});
 $('json-mode').addEventListener('click',()=>{setMode('json');saveDraft();});
@@ -145,7 +145,7 @@ $('import-button').addEventListener('click',()=>$('import-file').click());
 $('import-file').addEventListener('change',async()=>{
  const file=$('import-file').files[0];if(!file)return;
  try{if(file.size>1024*1024)throw new Error('文件超过 1 MB。');
- const data=await api('/api/import',{method:'POST',body:await file.text()});await refreshHistory();showRecord(data.record);notice('记录已导入，原文件未更改。');
+ const data=await api('/api/import',{method:'POST',body:await file.text()});await refreshHistory();if(data.record.record_type==='weekly')notice('科研黄历已导入，可在首页或导出的只读报告中查看。');else{showRecord(data.record);notice('记录已导入，原文件未更改。');}
  }catch(error){notice('导入失败：'+error.message,true);}finally{$('import-file').value='';}
 });
 $('export-html').addEventListener('click',async()=>{

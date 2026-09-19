@@ -1,0 +1,14 @@
+{
+  "region": "CN-mainland", "year": 2026,
+  "source": {"title": "国务院办公厅关于2026年部分节假日安排的通知", "title_en": "State Council: 2026 public holiday arrangements", "url": "https://www.gov.cn/gongbao/2025/issue_12406/202511/content_7048922.html", "checked_at": "2026-09-19", "kind": "official"},
+  "breaks": [
+    {"start": "2026-01-01", "end": "2026-01-03", "name": {"zh": "元旦", "en": "New Year"}},
+    {"start": "2026-02-15", "end": "2026-02-23", "name": {"zh": "春节", "en": "Spring Festival"}},
+    {"start": "2026-04-04", "end": "2026-04-06", "name": {"zh": "清明节", "en": "Qingming"}},
+    {"start": "2026-05-01", "end": "2026-05-05", "name": {"zh": "劳动节", "en": "Labour Day"}},
+    {"start": "2026-06-19", "end": "2026-06-21", "name": {"zh": "端午节", "en": "Dragon Boat Festival"}},
+    {"start": "2026-09-25", "end": "2026-09-27", "name": {"zh": "中秋节", "en": "Mid-Autumn Festival"}},
+    {"start": "2026-10-01", "end": "2026-10-07", "name": {"zh": "国庆节", "en": "National Day"}}
+  ],
+  "working_weekends": ["2026-01-04", "2026-02-14", "2026-02-28", "2026-05-09", "2026-09-20", "2026-10-10"]
+}

@@ -4,6 +4,7 @@ import {fileURLToPath} from 'node:url';
 const root=fileURLToPath(new URL('..',import.meta.url));
 const required=['SKILL.md','README.md','README.en.md','README.zh-CN.md','LICENSE','package-lock.json','docs/PROJECT-GUIDE.md','docs/IMPLEMENTATION.md','docs/WORKBENCH.md','assets/interface/cosmic-luopan-v1.png','web/report.css','web/report.html','web/report.js','scripts/window-reasons.js','data/reference-library.json','references/academic-evidence.md','scripts/report-html.js','web/index.html','web/app.js','web/style.css','scripts/server.js','assets/marketing/hero.png','assets/marketing/poster.zh.png'];
 for(const p of required)if(!existsSync(join(root,p)))throw new Error('Missing '+p);
+for(const p of ['scripts/weekly.js','scripts/weekly-html.js','schemas/weekly-input.schema.json','schemas/weekly-output.schema.json','web/weekly.html','web/weekly.css','web/weekly.js','data/research-routines.json','data/holidays-cn-2026.json','docs/RESEARCH-ALMANAC.md','references/submission-workflow.md','examples/weekly.json','examples/weekly-project.json','assets/screenshots/almanac.v0100.zh-CN.png','assets/screenshots/almanac.v0100.en.png'])if(!existsSync(join(root,p)))throw new Error('Missing '+p);
 const skip=new Set(['node_modules','runs','.local-data','.git','.cache','dist']);
 let count=0,links=0;
 function walk(dir){for(const name of readdirSync(dir)){if(skip.has(name))continue;const p=join(dir,name);if(statSync(p).isDirectory()){walk(p);continue;}count++;

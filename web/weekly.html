@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; frame-src 'self' about:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<title>科研黄历 · 周易投稿辅助</title><!-- STYLE --></head><body><!-- ART -->
+<div class="wrap">
+<header class="header"><div><div class="brand"><span class="seal">研</span><span class="eyebrow">RESEARCH ALMANAC · ZHOUYI</span></div>
+<h1 data-zh="科研黄历" data-en="Research Almanac">科研黄历</h1><p class="intro" data-zh="一周科研有安排，投稿择时有依循。" data-en="A considered research week, with submission timing alongside."></p></div>
+<div class="righthead"><div class="weekno"><b id="week-range"></b><span id="week-meta"></span></div><div class="ornament" aria-hidden="true"><span>☯</span></div></div></header>
+<div class="tools"><div class="record-control"><label for="record" data-zh="本次与往期" data-en="Saved reports"></label><select id="record"></select><span id="record-status" class="muted"></span></div>
+<div class="controls"><button id="lang-zh" aria-pressed="true">中文</button><button id="lang-en" aria-pressed="false">English</button><button id="print" data-zh="打印" data-en="Print"></button></div></div>
+<p id="warnings" class="notice" hidden></p>
+<section id="weekly-content">
+<div class="tools main-tools"><p id="week-note" class="note"></p><div class="controls"><label for="discipline" class="muted" data-zh="学科" data-en="Discipline"></label><select id="discipline"></select><button id="daily" class="active" data-zh="每日黄历" data-en="Day" aria-pressed="true"></button><button id="weekly" data-zh="整周安排" data-en="Week" aria-pressed="false"></button></div></div>
+<nav class="week" id="days" aria-label="Dates"></nav>
+<div class="sectionbar"><h2 id="daytitle"></h2><p id="dayhint" class="hint"></p></div>
+<section id="project-plan" class="project-plan" hidden></section>
+<div class="daypanel" id="daypanel"><div class="content"><main class="subjectgrid" id="subjects" aria-live="polite"></main><aside class="aside"><div class="asidecard" id="rhythm"></div><div class="asidecard quote" id="quote"></div></aside></div></div>
+<section id="weekpanel" hidden><div class="matrixbox" tabindex="0" aria-label="Weekly tasks"><table class="matrix" id="matrix"></table></div><div id="project-week"></div></section>
+<div class="support">
+<details id="submission"><summary><span data-zh="◈ 投稿辅助" data-en="◈ Submission support"></span><span id="submission-count"></span></summary><div id="submission-body"></div><details id="full-submission" hidden><summary data-zh="查看完整投稿报告 · 朝向、八卦、星座与依据" data-en="Full submission report · direction, trigrams, zodiac and evidence"></summary><div id="submission-frame-slot"></div></details></details>
+<details id="sources-panel"><summary data-zh="☷ 安排依据与经典来源" data-en="☷ Planning basis and sources"></summary><div id="sources"></div></details>
+<details id="input-panel"><summary data-zh="▤ 本次输入与完整记录" data-en="▤ Inputs and saved result"></summary><div id="input-content"></div></details>
+<details id="unplanned-panel" hidden><summary id="unplanned-title"></summary><div id="unplanned"></div></details>
+</div></section>
+<section id="legacy-content" hidden><p class="muted" data-zh="已保存的投稿报告，可在上方切回科研黄历。" data-en="Saved submission report. Choose an almanac above to return."></p><div id="legacy-frame-slot"></div></section>
+<footer><b data-zh="玄学提供仪式感，科学提供优先级" data-en="Tradition offers ritual; science sets priorities."></b><p data-zh="科研黄历为主 · 投稿择时为辅 · 在 Agent 对话中调整" data-en="Research first · Submission alongside · Adjust in your Agent conversation"></p></footer>
+</div><!-- DATA --><!-- SCRIPT --></body></html>

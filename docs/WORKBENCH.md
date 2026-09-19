@@ -2,13 +2,23 @@
 type: user-guide
 status: active
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-20
 tags: [zhouyi, skill, html, history, git]
 ---
 
 # Agent 调用与 HTML 本地记录输出
 
 [简体中文 README](../README.md) · [English README](../README.en.md)
+
+## 当前默认：科研黄历
+
+调用 `weekly` 生成七天科研安排，按需要加入投稿辅助。HTML 主界面有学科、日期、中英文和整周视图，投稿完整报告放在下方展开。两种记录可在同一只读页面切换；旧工作台只处理投稿输入。默认不使用网页表单。
+
+~~~sh
+node scripts/cli.js weekly examples/weekly-project.json --out runs/weekly-report
+~~~
+
+详细流程见[融合指导](RESEARCH-ALMANAC.md)。以下保留原投稿功能与本地记录说明。
 
 ## 用户怎么用
 

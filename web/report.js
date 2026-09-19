@@ -218,4 +218,10 @@ if(data.warnings.length){$('warnings').hidden=false;$('warnings').textContent='é
 $('search').addEventListener('input',renderList);$('compare-select').addEventListener('change',compare);
 if(records.length)show(records.find(r=>r.record_id===data.current_record_id)??records[0]);
 else{$('empty').hidden=false;$('result-content').hidden=true;renderList();}
+// The offline weekly wrapper may select a saved submission in this frame.
+window.addEventListener('message',event=>{
+ if(window.parent===window||event.source!==window.parent||event.data?.type!=='select-saved-submission')return;
+ const record=records.find(r=>r.record_id===event.data.record_id);if(record)show(record);
+ const language=event.data.language;if(['zh','en'].includes(language))document.querySelector('[data-language="'+language+'"]')?.click();
+});
 })();

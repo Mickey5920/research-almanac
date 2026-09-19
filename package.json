@@ -1,8 +1,8 @@
 {
   "name": "zhouyi-paper-submit-advisor",
-  "version": "0.9.1",
+  "version": "0.10.0",
   "private": true,
-  "description": "Local, evidence-labelled paper submission planning with Yijing cultural reflection",
+  "description": "Weekly research almanac and project planning with optional Zhouyi submission support",
   "type": "module",
   "engines": {
     "node": ">=22"
@@ -10,9 +10,10 @@
   "scripts": {
     "start": "node scripts/server.js",
     "test": "node --test tests/*.test.js",
-    "demo": "node scripts/cli.js recommend examples/project.json --out runs/demo",
+    "demo": "node scripts/cli.js weekly examples/weekly-project.json --out runs/demo",
     "check": "node scripts/check-package.js",
-    "pack:release": "node scripts/pack-release.js"
+    "pack:release": "node scripts/pack-release.js",
+    "demo:submission": "node scripts/cli.js recommend examples/project.json --out runs/submission-demo"
   },
   "dependencies": {
     "ajv": "8.20.0",

@@ -2,11 +2,23 @@
 type: implementation-record
 status: active
 created: 2026-09-14
-updated: 2026-09-18
+updated: 2026-09-20
 tags: [zhouyi, implementation]
 ---
 
-# Implementation status — current release 0.9.1
+# Implementation status — current release 0.10.0
+
+## 0.10.0 — Research almanac as the primary workflow (2026-09-20)
+
+The `weekly` command generates seven local days, six discipline plans, saved bilingual daily rhythms, sourced trigram readings and optional actual project scheduling. Availability, fixed events, dependencies, task estimates and deadlines drive the schedule. A local sourced 2026 mainland China holiday table preserves holiday and make-up workdays. Unsupported years use a labelled weekday fallback.
+
+The original submission engine is embedded as optional support and remains callable with `recommend`. Weekly research tasks and fixed commitments are removed from submission availability; required preparation remains conditional until confirmed complete. The standalone and embedded full submission reports preserve direction, bagua, zodiac, academic sources and original plan operations.
+
+Weekly records use a separate schema and a history type; existing records without a type remain readable and are not rewritten. Offline HTML switches between saved almanacs and original submission reports. The old form workbench stays submission-only. The README and Skill entry now lead with weekly research.
+
+Validation: 124 Node tests, including 14 new weekly/integration cases; browser checks for 49 date/discipline combinations, 42 weekly cells, English switching, all three embedded submission directions, 390px mobile width, immutable saved payload and no HTTP requests or page errors. The browser run is separate from the Node suite. Compactness depends on viewport and expanded details. New public screenshots use synthetic inputs.
+
+Full contract and limits: [Research almanac integration](RESEARCH-ALMANAC.md). Earlier sections below are historical records of prior versions.
 
 The source is published at [Mickey5920/zhouyi-paper-submit-advisor](https://github.com/Mickey5920/zhouyi-paper-submit-advisor). Installation depends on the Agent host. The current release summary distinguishes implemented features from planned work; dated sections below preserve earlier verification records.
 

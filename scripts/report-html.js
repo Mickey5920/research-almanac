@@ -6,6 +6,13 @@ import {HistoryStore} from './history-store.js';
 import {windowReasons} from './window-reasons.js';
 export const defaultHistoryDir=fileURLToPath(new URL('../.local-data/history/',import.meta.url));
 export async function renderHistoryHtml({records,warnings=[],current_record_id=null}){
+ if(records.some(r=>r.record_type==='weekly')){
+  const {renderWeeklyHistoryHtml}=await import('./weekly-html.js');
+  return renderWeeklyHistoryHtml({records,warnings,current_record_id});
+ }
+ return renderSubmissionHistoryHtml({records,warnings,current_record_id});
+}
+export async function renderSubmissionHistoryHtml({records,warnings=[],current_record_id=null}){
  const [template,baseCss,js,reportCss,i18n]=await Promise.all(['report.html','style.css','report.js','report.css','i18n.js'].map(p=>readFile(new URL('../web/'+p,import.meta.url),'utf8')));
  const pageArt=await readFile(new URL('../assets/interface/celestial-page-v1.png',import.meta.url));
  const css=baseCss+'\n'+reportCss;

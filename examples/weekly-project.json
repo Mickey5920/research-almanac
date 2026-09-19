@@ -1,0 +1,27 @@
+{
+  "schema_version": "weekly-1.0",
+  "timezone": "Asia/Shanghai",
+  "now": "2026-09-19T08:00:00+08:00",
+  "region": "CN-mainland",
+  "title": "示例研究项目 / Example research project",
+  "discipline": "all",
+  "fixed_events": [
+    {"title": "已约组会 / Confirmed lab meeting", "start": "2026-09-22T14:00:00+08:00", "end": "2026-09-22T15:00:00+08:00", "source": "Synthetic example"}
+  ],
+  "tasks": [
+    {"id": "figures", "title": "核对图表 / Check figures", "minutes": 60, "deadline": "2026-09-21T18:00:00+08:00", "output": "版本一致的图表 / Version-matched figures", "source": "Synthetic example"},
+    {"id": "response", "title": "整理回复 / Revise response letter", "minutes": 90, "depends_on": ["figures"], "not_before": "2026-09-22T09:00:00+08:00", "output": "回复与稿件对应表 / Response-to-manuscript checklist", "source": "Synthetic example"},
+    {"id": "package", "title": "确认附件 / Check attachments", "minutes": 30, "depends_on": ["response"], "not_before": "2026-09-23T09:00:00+08:00", "output": "投稿材料包 / Submission package", "source": "Synthetic example"},
+    {"id": "followup", "title": "规划后续验证 / Plan follow-up validation", "minutes": 45, "not_before": "2026-09-24T09:00:00+08:00", "output": "下一轮验证任务 / Next validation task", "source": "Synthetic example"}
+  ],
+  "submission_task_ids": ["figures", "response", "package"],
+  "submission": {
+    "mode": "project",
+    "timezone": "Asia/Shanghai",
+    "project": {"title": "示例论文 / Example manuscript", "stage": "revision", "manuscript_version": "synthetic-v1"},
+    "readiness": {"status": "conditional", "conditions": ["确认合作者同意 / Confirm coauthor approval"]},
+    "deadline": {"status": "user_supplied", "at": "2026-09-28T18:00:00+08:00", "source": "Synthetic example deadline"},
+    "astrology": {"personal_sign": "处女座"},
+    "preferences": {"count": 3}
+  }
+}

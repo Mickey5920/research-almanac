@@ -2,17 +2,21 @@
 type: usage-guide
 status: active
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-20
 tags: [zhouyi, skill, documentation]
 ---
 
 # Commands
 
-Default Agent output: recommend with --out saves input.json, record.json and report.html plus persistent local history. Return report.html to the user. Use node scripts/cli.js history-html --out runs/history-new.html to rebuild history without a calculation. Both commands accept --history-dir PRIVATE-DIRECTORY. The HTML does not connect to AI models or require a service.
+Default Agent output: weekly with --out saves the weekly plan, input.json, record.json and report.html plus persistent local history. Explicit submission-only requests keep recommend. Return report.html to the user. Use node scripts/cli.js history-html --out runs/history-new.html to rebuild history without a calculation. Both commands accept --history-dir PRIVATE-DIRECTORY. The HTML does not connect to AI models or require a service.
 
 Run commands from the repository root. Requires Node 22+ and npm. Install with `npm ci --ignore-scripts`. Run `npm test` and `npm run check`.
 
 ~~~sh
+node scripts/cli.js weekly examples/weekly.json --out runs/general-week
+node scripts/cli.js weekly examples/weekly-project.json --out runs/project-week
+node scripts/cli.js validate-weekly examples/weekly-project.json
+node scripts/cli.js render runs/project-week/weekly.json en
 node scripts/cli.js recommend examples/project.json --out runs/my-demo
 node scripts/cli.js compare runs/my-demo/recommendations.json 1 2
 node scripts/cli.js select runs/my-demo/recommendations.json 1 --out runs/plan-1.json
@@ -32,5 +36,7 @@ A submission confirmation file has `{"confirmed":true}` plus optional actual_cli
 
 Readiness fields are supplied facts, not an automated scientific review. CLI commands do not open a submission portal, send emails, check journal sites or set external reminders. The Skill's host agent supplies those contextual facts or optional authorized capabilities.
 
-Output: recommendations.json, report.md, report.en.md, manifest.json; project candidates also produce submission-windows.ics and direction.svg. The SVG is a fixed-north schematic. The ICS contains candidate events, no alarms. Full original input is saved in input.json and record.json, paired with results in private local history. report.html embeds these records. Keep runs and .local-data private.
+Weekly output: weekly.json, input.json, record.json, report.html, bilingual Markdown and manifest.json. Optional submission adds submission.json, submission.html and candidate ICS. See [integration guide](RESEARCH-ALMANAC.md).
+
+Submission output: recommendations.json, report.md, report.en.md, manifest.json; project candidates also produce submission-windows.ics and direction.svg. The SVG is a fixed-north schematic. The ICS contains candidate events, no alarms. Full original input is saved in input.json and record.json, paired with results in private local history. report.html embeds these records. Keep runs and .local-data private.
 

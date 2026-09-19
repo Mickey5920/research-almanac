@@ -1,18 +1,22 @@
 ---
 type: project-guide
-status: design-ready
+status: active
 created: 2026-09-13
-updated: 2026-09-14
+updated: 2026-09-20
 tags:
   - skill-design
   - paper-submission
   - zhouyi
   - implementation-guide
 version: 1.1.0
-implementation_status: preview-implemented-with-limits
+implementation_status: weekly-integrated-with-limits
 ---
 
-# 周易论文投稿择时 Skill：项目指导文件
+# 科研黄历与周易投稿 Skill：项目指导文件
+
+## 0.10.0 当前主线：科研黄历为主，投稿择时为辅
+
+默认生成七天科研黄历、六大学科建议和项目工作安排；原投稿引擎作为可选辅助，保留单独调用。新的实施与验收基线见 [RESEARCH-ALMANAC.md](RESEARCH-ALMANAC.md)，包括输入、任务约束、节奏、经典来源、中英文 HTML 与新旧历史兼容。后文保留原投稿模块的详细设计；与当前入口不同的表述按本节及融合指导执行。
 
 > 本文件是后续开发、测试和验收的设计基线。本文件保留完整设计基线。已实现范围和验证证据以 IMPLEMENTATION.md 为准；奇门、八字等高阶项仍未完成。文中默认值属于产品设计选择，除非明确给出来源，不代表古籍定论或出版规律。
 
