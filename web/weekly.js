@@ -3,7 +3,8 @@
 const $=id=>document.getElementById(id),data=JSON.parse($('weekly-records').textContent);
 const records=data.records;
 let current=records.find(r=>r.record_id===data.current_record_id)??records.find(r=>r.record_type==='weekly')??records[0];
-let lang=current?.report.language??'zh',dayIndex=0,view='day',selected=current?.report.discipline??'all',frame=null;
+const initialSelection=r=>r?.report.personalization?'profile':r?.report.discipline??'all';
+let lang=current?.report.language??'zh',dayIndex=0,view='day',selected=initialSelection(current),frame=null;
 const e=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const t=x=>typeof x==='string'?x:x?.[lang]??'';
 const l=(zh,en)=>lang==='zh'?zh:en;
@@ -19,9 +20,9 @@ function label(r){return r.record_type==='weekly'?l('科研黄历','Almanac')+' 
 function classic(c){
  return '<h3>'+e(c.symbol)+' '+l('经典选读 · ','Classical reading · ')+e(lang==='zh'?c.name+'卦':c.id.toUpperCase())+'</h3><blockquote>'+e(c.quote)+'</blockquote><p>'+e(lang==='zh'?c.meaning:c.meaning_en)+'</p><details data-key="classic-source"><summary>'+l('科研启示与原文出处','Reflection and source')+'</summary><p class="termnote">'+e(t(c.reflection))+'</p><p>'+e(c.source.title+' · '+c.quote_locator)+'</p><p>'+l('按当日工作主题编选；科研联系为现代解释。','Selected for the workflow theme; the research connection is a modern interpretation.')+'</p></details>';
 }
-function rhythm(plan){
+function rhythm(plan,full=false){
  const r=plan[lang],colors={prepare:'#a17a38',focus:'#24776c',verify:'#477897',record:'#60875b',collaborate:'#af8550',rest:'#b99861',light:'#876e99',fixed:'#376b68'};
- return '<h3>'+e(r.icon)+' '+l('今日节奏 · ','Daily rhythm · ')+e(r.title)+'</h3><p class="rhythm-meta">'+e(r.flow)+'</p>'+r.blocks.map(b=>'<div class="rhythm-slot"><time>'+e(b.time)+'</time><div style="--slot-color:'+(colors[b.kind]??colors.focus)+'"><b>'+e(b.title)+'</b><span>'+e(b.detail)+'</span></div></div>').join('')+'<details class="rhythm-short" data-key="rhythm-mini"><summary>'+e(r.mini.label)+'</summary><p>'+e(r.mini.text)+'</p><p>'+e(r.pause)+'</p><p>'+e(r.note)+'</p></details>';
+ return '<h3>'+e(r.icon)+' '+l('今日节奏 · ','Daily rhythm · ')+e(r.title)+'</h3><p class="rhythm-meta">'+e(r.flow)+'</p>'+r.blocks.map(b=>'<div class="rhythm-slot"><time>'+e(b.time)+'</time><div style="--slot-color:'+(colors[b.kind]??colors.focus)+'"><b>'+e(b.title)+'</b><span>'+e(b.detail)+'</span></div></div>').join('')+'<details class="rhythm-short" data-key="rhythm-mini"><summary>'+e(full?l('完整节奏与轻量版本','Full workflow and smallest step'):r.mini.label)+'</summary><p>'+e(r.mini.text)+'</p><p>'+e(r.pause)+'</p><p>'+e(r.note)+'</p>'+(full?r.blocks.map(b=>'<p><b>'+e(b.title)+'</b> · '+e(b.detail)+'</p>').join(''):'')+'</details>';
 }
 function syncFrame(){if(frame)frame.contentWindow?.postMessage({type:'select-saved-submission',record_id:current.record_id,language:lang},'*');}
 function showFrame(slot){
@@ -47,6 +48,14 @@ function submission(r){
  if($('full-submission').open)showFrame('submission-frame-slot');
 }
 function taskRows(items){return items.map(x=>'<div class="task-row"><time>'+e(date(x.start))+' — '+e(date(x.end).split(' ').at(-1))+'</time><div><b>'+e(x.title)+'</b>'+(x.output?'<span>'+e(x.output)+'</span>':'')+'</div><small>'+e(x.minutes?x.minutes+' min':l('已定安排','Fixed commitment'))+'</small></div>').join('');}
+function taskDetails(x,key,scope='',goal=''){
+ if(!x.steps)return '<details data-key="'+e(key)+'"><summary>'+l('学科目标与范围','Scope and goal')+'</summary><p>'+e(scope)+'</p><p>'+e(goal)+'</p></details>';
+ return '<details class="execution" data-key="'+e(key)+'"><summary>'+l('执行清单 · 核查 · 轻量版本','Steps · Checks · Smallest step')+'</summary><p class="effort">'+e(t(x.effort))+'</p><ol>'+x.steps.map(s=>'<li>'+e(t(s))+'</li>').join('')+'<div class="detail-note check"><b>'+l('✓ 核查点','✓ Check')+'</b><p>'+e(t(x.checkpoint))+'</p></div><div class="detail-note mini"><b>'+l('◌ 轻量版本','◌ Smallest step')+'</b><p>'+e(t(x.minimum))+'</p></div><div class="detail-note"><b>'+l('↗ 卡住时','↗ When blocked')+'</b><p>'+e(t(x.blocked))+'</p></div><div class="detail-note"><b>'+l('＋ 有余力时','＋ If capacity remains')+'</b><p>'+e(t(x.extension))+'</p></div>'+(scope?'<p>'+e(scope)+' · '+e(goal)+'</p>':'')+'</details>';
+}
+function personalCards(p,d,r){
+ const lead='<article class="profile-lead"><div class="subjecthead"><h3>'+l('◈ 本阶段主线','◈ Stage focus')+'</h3><span class="tag">'+e(t(p.stage.name))+'</span></div><p>'+e(t(d.stage_focus))+'</p><details class="method-detail" data-key="profile-methods"><summary>'+l('研究方法与推进检查','Methods and progress checks')+(d.methods.length?' · '+d.methods.length:'')+'</summary><div class="method-grid">'+d.methods.map(m=>'<section><b>'+e(t(m.name))+'</b><p>'+e(t(m.action))+'</p><p class="output">'+e(t(m.output))+'</p><p class="muted">'+e(t(m.checkpoint))+'</p></section>').join('')+'</div><p><b>'+l('阶段核查：','Stage check: ')+'</b>'+e(t(d.stage_checkpoint))+'</p>'+(d.integration?'<p class="integration"><b>'+l('交叉衔接：','Integration: ')+'</b>'+e(t(d.integration))+'</p>':'')+'</details></article>';
+ return lead+d.tracks.map(x=>{const s=r.disciplines.find(s=>s.id===x.group);return '<article class="subject personal-task" style="--accent:'+(/^#[a-fA-F0-9]{6}$/.test(s?.color)?s.color:'#24776c')+'"><div class="subjecthead"><h3><span class="icon" aria-hidden="true">'+e(s?.icon??'研')+'</span>'+e(t(x.name))+'</h3><span class="tag">'+e(t(x.title))+'</span></div><p class="action">'+e(t(x.action))+'</p><div class="output"><b>'+l('留下什么','Output')+'</b> · '+e(t(x.output))+'</div>'+taskDetails(x,'profile-'+x.field_id)+'</article>';}).join('');
+}
 function render(){
  const openKeys=new Set([...document.querySelectorAll('details[data-key][open]')].map(d=>d.dataset.key));
  staticText();
@@ -58,8 +67,11 @@ function render(){
  $('week-range').textContent=weekly?r.week_start.slice(5).replace('-','.')+'—'+r.week_end.slice(5).replace('-','.'):l('投稿择日','Submission timing');
  $('week-meta').textContent=(weekly?r.week_start.slice(0,4)+' · ':'')+(r.timezone??l('文化模式','Cultural reading'));
  if(!weekly){showFrame('legacy-frame-slot');return;}
- const day=r.days[dayIndex],subjects=r.disciplines.filter(s=>selected==='all'||s.id===selected);
- $('discipline').innerHTML='<option value="all">'+l('全部六大学科','All six disciplines')+'</option>'+r.disciplines.map(s=>'<option value="'+e(s.id)+'">'+e(t(s.name))+'</option>').join('');$('discipline').value=selected;
+ const day=r.days[dayIndex],p=r.personalization,pday=p?.week[dayIndex],personal=selected==='profile'&&p;
+ const subjects=r.disciplines.filter(s=>selected==='all'||s.id===selected);
+ $('discipline').innerHTML=(p?'<option value="profile">'+l('我的研究安排','My research plan')+'</option>':'')+'<option value="all">'+l('全部学科概览','All discipline groups')+'</option>'+r.disciplines.map(s=>'<option value="'+e(s.id)+'">'+e(t(s.name))+'</option>').join('');$('discipline').value=selected;
+ $('profile-context').hidden=!p;
+ $('profile-context').innerHTML=p?'<div class="profile-chips"><b>'+l('研究画像','Research profile')+'</b>'+p.fields.map(f=>'<span class="profile-chip field">'+e(t(f.name))+'</span>').join('')+'<span class="profile-chip stage">'+e(t(p.stage.name))+'</span>'+p.methods.map(m=>'<span class="profile-chip method">'+e(t(m.name))+'</span>').join('')+(p.degree?'<span class="profile-chip degree">'+e(t(p.degree.name))+'</span>':'')+'</div>'+(p.focus?'<details data-key="profile-focus"><summary>'+l('本周关注','This week’s focus')+'</summary><p>'+e(p.focus)+'</p></details>':''):'';
  const holidays=[...new Set(r.days.filter(d=>d.holiday).map(d=>t(d.holiday)))];
  $('week-note').textContent=(r.title?r.title+' · ':'')+(holidays.length?holidays.join(' / ')+' · ':'')+l('先看一周，再做今天的一步。','See the week, then choose today’s step.');
  $('days').innerHTML=r.days.map((d,i)=>'<button type="button" class="day '+(i===dayIndex?'active':'')+'" data-day="'+i+'" aria-pressed="'+(i===dayIndex)+'"><span class="top"><strong>'+d.date.slice(-2)+'</strong><small>'+weekday(d.weekday)+'</small></span><span class="mood"><span>'+e(t(d.tag))+'</span><span class="festival">'+e(d.calendar?.term?term(d.calendar.term):d.makeup?l('调休工作日','Workday'):d.holiday?t(d.holiday):'')+'</span></span><small>'+e(d.calendar?d.calendar.ganzhi+' · '+d.calendar.lunar:l('当地日期','Local date'))+'</small></button>').join('');
@@ -68,17 +80,21 @@ function render(){
  $('dayhint').textContent=view==='day'?t(day.hint):l('每日重点与对应产物，点击日期查看详细安排。','Daily focus and outputs. Choose a date for the details.');
  $('daypanel').hidden=view!=='day';$('weekpanel').hidden=view!=='week';
  for(const id of ['daily','weekly']){$(id).classList.toggle('active',(id==='daily')===(view==='day'));$(id).setAttribute('aria-pressed',String((id==='daily')===(view==='day')));}
- $('subjects').innerHTML=subjects.map(s=>{const x=s.week[dayIndex];return '<article class="subject" style="--accent:'+(/^#[a-fA-F0-9]{6}$/.test(s.color)?s.color:'#24776c')+'"><div class="subjecthead"><h3><span class="icon" aria-hidden="true">'+e(s.icon)+'</span>'+e(t(s.name))+'</h3><span class="tag">'+e(t(x.title))+'</span></div><p class="action">'+e(t(x.action))+'</p><div class="output"><b>'+l('留下什么','Output')+'</b> · '+e(t(x.output))+'</div><details data-key="subject-'+e(s.id)+'"><summary>'+l('学科目标与范围','Scope and goal')+'</summary><p>'+e(t(s.scope))+'</p><p>'+e(t(s.goal))+'</p></details></article>';}).join('');
- const plan=selected==='all'?day.rhythm:subjects[0].rhythms[dayIndex];$('rhythm').dataset.planId=plan.id;$('rhythm').innerHTML=rhythm(plan);
+ $('subjects').classList.toggle('personal-grid',Boolean(personal));
+ $('subjects').innerHTML=personal?personalCards(p,pday,r):subjects.map(s=>{const x=s.week[dayIndex];return '<article class="subject" style="--accent:'+(/^#[a-fA-F0-9]{6}$/.test(s.color)?s.color:'#24776c')+'"><div class="subjecthead"><h3><span class="icon" aria-hidden="true">'+e(s.icon)+'</span>'+e(t(s.name))+'</h3><span class="tag">'+e(t(x.title))+'</span></div><p class="action">'+e(t(x.action))+'</p><div class="output"><b>'+l('留下什么','Output')+'</b> · '+e(t(x.output))+'</div>'+taskDetails(x,'subject-'+s.id,t(s.scope),t(s.goal))+'</article>';}).join('');
+ const plan=personal?pday.rhythm:selected==='all'?day.rhythm:subjects[0].rhythms[dayIndex];$('rhythm').dataset.planId=plan.id;$('rhythm').innerHTML=rhythm(plan,Boolean(personal));
+ $('rhythm').classList.toggle('personal-rhythm',Boolean(personal));
  $('quote').innerHTML=classic(day.classic);
- $('matrix').innerHTML='<thead><tr><th>'+l('学科','Discipline')+'</th>'+r.days.map(d=>'<th>'+weekday(d.weekday)+' '+d.date.slice(5)+'<br><span>'+e(t(d.tag))+'</span></th>').join('')+'</tr></thead><tbody>'+subjects.map(s=>'<tr><th scope="row">'+e(t(s.name))+'</th>'+s.week.map(x=>'<td><b>'+e(t(x.title))+'</b><span>'+e(t(x.output))+'</span></td>').join('')+'</tr>').join('')+'</tbody>';
+ const rows=personal?[...pday.tracks.map((x,i)=>({name:x.name,week:p.week.map(d=>d.tracks[i])})),...p.methods.map((x,i)=>({name:x.name,week:p.week.map(d=>({title:d.methods[i].action,output:d.methods[i].output}))}))]:subjects;
+ $('matrix').innerHTML='<thead><tr><th>'+l(personal?'研究方向':'学科',personal?'Research area':'Discipline')+'</th>'+r.days.map((d,i)=>'<th><button class="matrix-day" data-date="'+i+'">'+weekday(d.weekday)+' '+d.date.slice(5)+'</button><br><span>'+e(t(d.tag))+'</span></th>').join('')+'</tr></thead><tbody>'+rows.map(s=>'<tr><th scope="row">'+e(t(s.name))+'</th>'+s.week.map(x=>'<td><b>'+e(t(x.title))+'</b><span>'+e(t(x.output))+'</span></td>').join('')+'</tr>').join('')+'</tbody>';
+ $('matrix').querySelectorAll('[data-date]').forEach(b=>b.onclick=()=>{dayIndex=Number(b.dataset.date);view='day';render();});
  const sameDate=x=>new Intl.DateTimeFormat('en-CA',{timeZone:r.timezone,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(x));
  const today=[...r.schedule.filter(x=>sameDate(x.start)===day.date),...r.fixed_events.filter(x=>sameDate(x.start)<=day.date&&sameDate(new Date(Date.parse(x.end)-1).toISOString())>=day.date)].sort((a,b)=>Date.parse(a.start)-Date.parse(b.start));
  $('project-plan').hidden=!today.length||view!=='day';
  $('project-plan').innerHTML='<details data-key="project-day"><summary>'+l('◷ 今日项目安排','◷ Today’s project plan')+' · '+today.length+'<span class="project-brief"> · '+e(today.map(x=>date(x.start)+' '+x.title).join(' / '))+'</span></summary>'+taskRows(today)+'</details>';
  $('project-week').innerHTML=r.schedule.length||r.fixed_events.length?'<details data-key="project-week"><summary>'+l('◷ 项目任务与已定安排','◷ Project tasks and fixed commitments')+'</summary>'+taskRows([...r.schedule,...r.fixed_events].sort((a,b)=>Date.parse(a.start)-Date.parse(b.start)))+'</details>':'';
  submission(current);
- $('sources').innerHTML='<p><b>'+l('历法事实','Calendar facts')+'</b> · '+l('日期、已保存的假期表及本地历法计算。','Dates, the saved holiday table and local calendar calculations.')+'</p><p><b>'+l('设计建议','Planning interpretation')+'</b> · '+l('六大学科任务与节奏按研究流程编排，经典按主题选读。','Tasks and rhythms follow research workflows; passages follow the daily theme.')+'</p><p><b>'+l('待验证','To validate')+'</b> · '+l('通用建议是否适配项目，要结合真实资料、预约和任务状态。','Fit to a specific project depends on actual materials, commitments and task status.')+'</p>'+r.assumptions.map(a=>'<p>'+e(t(a))+'</p>').join('')+'<ul>'+r.sources.filter(s=>/^https:\/\//.test(s.url)).map(s=>'<li><a href="'+e(s.url)+'" target="_blank" rel="noopener noreferrer">'+e(lang==='zh'?s.title:s.title_en??s.title)+'</a></li>').join('')+'</ul>';
+ $('sources').innerHTML='<p><b>'+l('历法事实','Calendar facts')+'</b> · '+l('日期、已保存的假期表及本地历法计算。','Dates, the saved holiday table and local calendar calculations.')+'</p><p><b>'+l('设计建议','Planning interpretation')+'</b> · '+l('专业、方法与阶段建议按研究流程组合，六类概览可切换查看；经典按主题选读。','Tasks and rhythms follow research workflows; passages follow the daily theme.')+'</p><p><b>'+l('待验证','To validate')+'</b> · '+l('通用建议是否适配项目，要结合真实资料、预约和任务状态。','Fit to a specific project depends on actual materials, commitments and task status.')+'</p>'+r.assumptions.map(a=>'<p>'+e(t(a))+'</p>').join('')+'<ul>'+r.sources.filter(s=>/^https:\/\//.test(s.url)).map(s=>'<li><a href="'+e(s.url)+'" target="_blank" rel="noopener noreferrer">'+e(lang==='zh'?s.title:s.title_en??s.title)+'</a></li>').join('')+'</ul>';
  $('input-content').innerHTML='<p>'+l('仅展示本次生成时保存的资料。更新请回到 Agent 对话。','Shows the data saved for this invocation. Request changes in your Agent conversation.')+'</p><details data-key="input-json"><summary>Input JSON</summary><pre>'+e(JSON.stringify(current.input,null,2))+'</pre></details><details data-key="result-json"><summary>Result JSON</summary><pre>'+e(JSON.stringify(r,null,2))+'</pre></details>';
  $('unplanned-panel').hidden=!r.unscheduled.length;$('unplanned-title').textContent=l('◇ 待安排事项','◇ Tasks to arrange')+' · '+r.unscheduled.length;
  const reasons={needs_estimate:l('补充预计时长后安排','Add an estimated duration'),dependency_unavailable:l('前置任务安排后继续','Schedule the prerequisite first'),no_feasible_slot:l('当前时段未容纳，可调整时长或日程','Needs additional time or adjusted availability')};
@@ -88,7 +104,7 @@ function render(){
 $('lang-zh').onclick=()=>{lang='zh';render();syncFrame();};$('lang-en').onclick=()=>{lang='en';render();syncFrame();};
 $('daily').onclick=()=>{view='day';render();};$('weekly').onclick=()=>{view='week';render();};
 $('discipline').onchange=ev=>{selected=ev.target.value;render();};
-$('record').onchange=ev=>{current=records.find(r=>r.record_id===ev.target.value);dayIndex=0;selected=current.report.discipline??'all';render();};
+$('record').onchange=ev=>{current=records.find(r=>r.record_id===ev.target.value);dayIndex=0;selected=initialSelection(current);render();};
 $('full-submission').addEventListener('toggle',()=>{if($('full-submission').open)showFrame('submission-frame-slot');});
 $('print').onclick=()=>window.print();render();
 })();

@@ -1,0 +1,19 @@
+{
+  "schema_version": "weekly-1.0",
+  "timezone": "Asia/Shanghai",
+  "now": "2026-09-19T08:00:00+08:00",
+  "title": "设计研究示例 / Design research example",
+  "research_profile": {
+    "specialties": [
+      "design",
+      "arts"
+    ],
+    "methods": [
+      "practice",
+      "qualitative"
+    ],
+    "stage": "writing",
+    "degree": "professional_master",
+    "focus": "整理原型迭代与访谈证据 / Organize prototype iterations and interview evidence"
+  }
+}

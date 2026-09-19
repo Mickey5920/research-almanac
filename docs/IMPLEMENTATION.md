@@ -6,7 +6,15 @@ updated: 2026-09-20
 tags: [zhouyi, implementation]
 ---
 
-# Implementation status — current release 0.11.0
+# Implementation status — current release 0.12.0
+
+## 0.12.0 — Research direction, method and stage (2026-09-20)
+
+The optional `research_profile` combines up to four built-in/custom directions and four selected methods with the current stage. The local catalog contains 14 category lookups, 38 direction templates, 12 methods and 9 research stages plus a general fallback. Unknown methods and stages are not inferred; academic/professional degree labels are display metadata. The categories reference the 2022 education catalog; the direction templates and workflow guidance are project-authored.
+
+Personal HTML opens on the saved profile, with stage focus, direction-specific actions, execution steps, outputs, checks, small alternatives and optional extensions. Method checks and cross-field integration expand in place. Six-group overview, personal weekly matrix, date navigation, bilingual Markdown and all submission functionality remain available. New suggestions do not create scheduled tasks or alter actual constraints. Older records remain unchanged.
+
+Validation: 136 Node tests pass, covering all built-in directions and method/stage combinations, clinical/lab differentiation, writing/revision/defense behavior, custom text, malformed profiles, calendar light days, unchanged task scheduling, saved-content escaping and old-history compatibility. Browser validation covers both languages, seven dates, 28 personal and 42 overview cells, detailed cards, historical records, embedded submission and offline rendering.
 
 ## 0.11.0 — Research Almanac identity (2026-09-20)
 

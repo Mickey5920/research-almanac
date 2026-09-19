@@ -40,3 +40,14 @@ Weekly output: weekly.json, input.json, record.json, report.html, bilingual Mark
 
 Submission output: recommendations.json, report.md, report.en.md, manifest.json; project candidates also produce submission-windows.ics and direction.svg. The SVG is a fixed-north schematic. The ICS contains candidate events, no alarms. Full original input is saved in input.json and record.json, paired with results in private local history. report.html embeds these records. Keep runs and .local-data private.
 
+
+## Research profile catalog
+
+~~~sh
+node scripts/cli.js profile-catalog
+node scripts/cli.js weekly examples/weekly-personalized.json --out runs/personal-week
+node scripts/cli.js weekly examples/weekly-creative.json --out runs/creative-week
+~~~
+
+The catalog lists ids for built-in directions, category lookup, methods, stages and degree labels. Profile matching and custom/combined fields are described in [research profile](../references/research-profile.md). Examples are synthetic; use actual project facts and remove fixed `now` for real calls.
+

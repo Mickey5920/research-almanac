@@ -14,12 +14,12 @@ tags: [research-almanac, zhouyi, skill, documentation]
 
 Plan your research week, then choose a submission window for a prepared manuscript.
 
-An Agent Skill that brings daily actions, expected outputs, discipline-specific rhythms and sourced Yijing readings into a compact weekly plan. When submission is relevant, expand the existing planner for exact times, facing directions, trigrams and supporting evidence.
+An Agent Skill for master’s and doctoral researchers across fields. It adapts weekly guidance to your research direction, methods and stage, with concrete actions, expected outputs and sourced Yijing readings. When submission is relevant, expand the existing planner for exact times, facing directions, trigrams and supporting evidence.
 
 <p align="center"><strong>Tradition offers ritual; science sets priorities.</strong></p>
-<p align="center">v0.11.0 · Node.js 22+ · Local computation · Offline bilingual HTML · MIT</p>
+<p align="center">v0.12.0 · Node.js 22+ · Local computation · Offline bilingual HTML · MIT</p>
 
-![English research almanac: seven days, six disciplines, daily rhythms and submission timing](assets/screenshots/almanac.v0110.en.png)
+![English research almanac: personal research directions, stage, daily actions and submission timing](assets/screenshots/almanac.v0120.en.png)
 
 [Features](#a-clearer-research-week) · [Quick start](#quick-start) · [Submission timing](#submission-timing) · [Saved reports](#one-invocation-one-saved-record) · [Planning rules](#how-the-plan-is-built)
 
@@ -28,17 +28,24 @@ An Agent Skill that brings daily actions, expected outputs, discipline-specific 
 | Feature | What you get |
 |---|---|
 | Seven-day almanac | Local Monday–Sunday dates, daily themes, supported calendar facts and saved holidays |
-| Six disciplines | Humanities, social sciences, natural sciences, engineering, agriculture and medical research |
+| Research directions | 14 lookup categories, 38 direction templates, combined fields and custom specialties |
+| Methods and stages | 12 research methods and 9 stages, with different guidance for proposals, analysis, writing and revision |
+| Six overview groups | Humanities, social sciences, natural sciences, engineering, agriculture and medical research |
+| Actionable daily guidance | Steps, outputs, checks, a smallest useful step, blocked-task alternatives and optional extensions |
 | Varied daily rhythms | Organize, advance, check, discuss, consolidate, recover, read and reconnect |
 | Project scheduling | Tasks arranged around durations, dependencies, deadlines, availability and fixed commitments |
-| Weekly overview | A 6 × 7 table of daily priorities and outputs, with details available on demand |
+| Weekly overview | Seven days for your selected fields and methods, or all six groups; click a date to inspect the day |
 | Original passages | Trigram passages, chapter references, plain-language meanings and modern reflections |
 | Chinese / English | Offline translations of the interface and built-in guidance, preserving user text and classical originals |
 | Saved reports | Switch between research almanacs and the original submission reports |
 
-![Weekly overview with six disciplines and seven days](assets/screenshots/almanac-week.v0110.en.png)
+Expand a task to see where to start, how to proceed, what to retain, and a smaller step when time or inputs are limited.
 
-Use the general view to orient the week. Add actual project tasks for a schedule that reflects your constraints. Tasks without estimates or feasible slots remain visible for follow-up; planning them does not mark them completed.
+![Expanded task: execution steps, expected output, checks and a smallest useful step](assets/screenshots/almanac-detail.v0120.en.png)
+
+![Weekly overview of research directions and methods across seven days](assets/screenshots/almanac-week.v0120.en.png)
+
+Provide a research profile to open on “My research plan”; clinical record analysis, lab research, creative practice and textual research receive different guidance. Without a profile, the six-group overview remains available. Add actual project tasks for a schedule that reflects your constraints. Tasks without estimates or feasible slots remain visible for follow-up; planning them does not mark them completed.
 
 ## Quick start
 
@@ -58,6 +65,10 @@ After installation, the local engine and exported HTML require no model API key.
 
 > Use $research-almanac to build next week's research almanac and weekly work plan across all six disciplines. My timezone is Asia/Shanghai. Keep research planning primary, add submission timing when relevant, and save an offline HTML report with Chinese/English switching.
 
+For tailored guidance:
+
+> I am a doctoral researcher combining clinical research and AI, currently analyzing data using cohort methods and computation. Focus on cohort definitions, data splits and model evaluation. Include daily steps, outputs, checks and a smallest useful step; keep other disciplines available through the selector.
+
 For a specific project:
 
 > Plan next week around my specified paper project. I need to check figures, revise the response letter and confirm attachments. Read the available tasks and deadlines; I have a lab meeting on Tuesday afternoon. Include submission windows if preparation and availability permit.
@@ -74,8 +85,11 @@ For an adjustment:
 # General research almanac
 node scripts/cli.js weekly examples/weekly.json --out runs/first-week
 
-# Project plan with submission timing
-node scripts/cli.js weekly examples/weekly-project.json --out runs/project-week
+# Personal plan with submission timing
+node scripts/cli.js weekly examples/weekly-personalized.json --out runs/personal-week
+
+# Available directions, methods and stages
+node scripts/cli.js profile-catalog
 ~~~
 
 Open **report.html** in the output directory. Examples use fixed synthetic dates and tasks. For real use, remove `now` and supply actual project facts. Use a new output directory for each invocation.
@@ -131,7 +145,7 @@ The HTML embeds the saved inputs, results, images and display logic. New request
 <details>
 <summary>View the Chinese interface</summary>
 
-![Chinese research almanac showing the same saved synthetic record](assets/screenshots/almanac.v0110.zh-CN.png)
+![Chinese research almanac showing the same saved synthetic record](assets/screenshots/almanac.v0120.zh-CN.png)
 
 </details>
 
@@ -146,6 +160,8 @@ The HTML embeds the saved inputs, results, images and display logic. New request
 - Applicable verified academic evidence takes priority over traditional timing. A single study does not establish a universal weekend rejection rule; no personal acceptance probabilities are produced.
 
 The task library, rhythms and scheduling defaults are planning suggestions. Scheduling is sequential for one person without overnight task splits. Multi-person optimization, full Qimen/Bazi/Meihua calculation and automatic submission are not implemented. See the [integration guide](docs/RESEARCH-ALMANAC.md) for the exact input contract and scope.
+
+The direction templates and six display groups are project-authored, not an exhaustive official degree-program catalog. Unlisted specialties can be supplied as custom text. See the [research profile guide](references/research-profile.md) for matching, defaults and scope.
 
 ## Development and distribution
 

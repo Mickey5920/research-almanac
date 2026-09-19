@@ -1,0 +1,1675 @@
+{
+  "version": "research-profiles-v1",
+  "source": {
+    "title": "研究生教育学科专业目录（2022年）",
+    "title_en": "Catalogue of Graduate Education Disciplines (2022)",
+    "url": "https://www.moe.gov.cn/srcsite/A22/moe_833/202209/t20220914_660828.html",
+    "kind": "classification"
+  },
+  "note": {
+    "zh": "14 门类用于检索；方向标签、六个展示学科群与工作建议为本项目编排，不是完整官方专业目录。",
+    "en": "The 14 categories support lookup. Direction tags, six display groups and work suggestions are project-authored, not a complete official program directory."
+  },
+  "categories": [
+    {
+      "id": "01",
+      "name": {
+        "zh": "哲学",
+        "en": "Philosophy"
+      }
+    },
+    {
+      "id": "02",
+      "name": {
+        "zh": "经济学",
+        "en": "Economics"
+      }
+    },
+    {
+      "id": "03",
+      "name": {
+        "zh": "法学",
+        "en": "Law and political/social studies"
+      }
+    },
+    {
+      "id": "04",
+      "name": {
+        "zh": "教育学",
+        "en": "Education"
+      }
+    },
+    {
+      "id": "05",
+      "name": {
+        "zh": "文学",
+        "en": "Literature and languages"
+      }
+    },
+    {
+      "id": "06",
+      "name": {
+        "zh": "历史学",
+        "en": "History"
+      }
+    },
+    {
+      "id": "07",
+      "name": {
+        "zh": "理学",
+        "en": "Natural sciences"
+      }
+    },
+    {
+      "id": "08",
+      "name": {
+        "zh": "工学",
+        "en": "Engineering"
+      }
+    },
+    {
+      "id": "09",
+      "name": {
+        "zh": "农学",
+        "en": "Agriculture"
+      }
+    },
+    {
+      "id": "10",
+      "name": {
+        "zh": "医学",
+        "en": "Medicine"
+      }
+    },
+    {
+      "id": "11",
+      "name": {
+        "zh": "军事学",
+        "en": "Military studies"
+      }
+    },
+    {
+      "id": "12",
+      "name": {
+        "zh": "管理学",
+        "en": "Management"
+      }
+    },
+    {
+      "id": "13",
+      "name": {
+        "zh": "艺术学",
+        "en": "Arts"
+      }
+    },
+    {
+      "id": "14",
+      "name": {
+        "zh": "交叉学科",
+        "en": "Interdisciplinary studies"
+      }
+    }
+  ],
+  "specialties": [
+    {
+      "id": "philosophy",
+      "category": "01",
+      "group": "humanities",
+      "suggested_method": "text",
+      "name": {
+        "zh": "哲学与伦理",
+        "en": "Philosophy and ethics"
+      },
+      "material": {
+        "zh": "关键概念、原典与反对意见",
+        "en": "Key concepts, primary texts and objections"
+      },
+      "action": {
+        "zh": "拆出一条论证的前提与结论，对照原文检验关键推论",
+        "en": "Separate premises from a conclusion and check the inference against the source"
+      },
+      "output": {
+        "zh": "概念—论证—反例对照表",
+        "en": "A concept, argument and counterexample map"
+      },
+      "check": {
+        "zh": "概念是否前后一致；引文是否支持当前解释",
+        "en": "Check consistent definitions and whether citations support the interpretation"
+      }
+    },
+    {
+      "id": "economics",
+      "category": "02",
+      "group": "social",
+      "suggested_method": "secondary_data",
+      "name": {
+        "zh": "经济与金融",
+        "en": "Economics and finance"
+      },
+      "material": {
+        "zh": "变量字典、识别假设与样本口径",
+        "en": "Variable definitions, identification assumptions and sample rules"
+      },
+      "action": {
+        "zh": "核对样本筛选与识别思路，整理基准结果及替代解释",
+        "en": "Check sample selection and identification, then organize baseline results and alternative explanations"
+      },
+      "output": {
+        "zh": "识别假设与结果核对表",
+        "en": "An identification and results checklist"
+      },
+      "check": {
+        "zh": "区分相关性与因果主张；核对样本变化",
+        "en": "Distinguish association from causal claims and trace sample changes"
+      }
+    },
+    {
+      "id": "law",
+      "category": "03",
+      "group": "social",
+      "suggested_method": "text",
+      "name": {
+        "zh": "法学",
+        "en": "Law"
+      },
+      "material": {
+        "zh": "法规版本、判例与争议问题",
+        "en": "Versions of statutes, cases and disputed questions"
+      },
+      "action": {
+        "zh": "按同一争点比较法规依据与判例理由，写出适用边界",
+        "en": "Compare statutes and case reasoning on one issue and record the limits of applicability"
+      },
+      "output": {
+        "zh": "争点—依据—判例矩阵",
+        "en": "An issue, authority and case matrix"
+      },
+      "check": {
+        "zh": "法律文本的日期、效力与引用位置是否准确",
+        "en": "Verify dates, authority and citation locations of legal texts"
+      }
+    },
+    {
+      "id": "politics",
+      "category": "03",
+      "group": "social",
+      "suggested_method": "qualitative",
+      "name": {
+        "zh": "政治与公共政策",
+        "en": "Politics and public policy"
+      },
+      "material": {
+        "zh": "政策文本、制度背景与案例",
+        "en": "Policy texts, institutional context and cases"
+      },
+      "action": {
+        "zh": "对照政策目标、执行机制和实际证据，整理案例差异",
+        "en": "Compare objectives, implementation mechanisms and evidence across cases"
+      },
+      "output": {
+        "zh": "政策机制与案例对照表",
+        "en": "A policy mechanism and case comparison"
+      },
+      "check": {
+        "zh": "区分政策表述、解释和观察证据",
+        "en": "Distinguish policy statements, interpretations and observed evidence"
+      }
+    },
+    {
+      "id": "sociology",
+      "category": "03",
+      "group": "social",
+      "suggested_method": "qualitative",
+      "name": {
+        "zh": "社会学与社会工作",
+        "en": "Sociology and social work"
+      },
+      "material": {
+        "zh": "访谈转录、田野笔记与编码本",
+        "en": "Transcripts, field notes and a codebook"
+      },
+      "action": {
+        "zh": "精读一段材料，补充编码定义并保留不符合预期的片段",
+        "en": "Read one passage closely, refine codes and retain disconfirming excerpts"
+      },
+      "output": {
+        "zh": "带出处的编码备忘录",
+        "en": "A coding memo with source locations"
+      },
+      "check": {
+        "zh": "匿名化、语境与反例是否一并保留",
+        "en": "Preserve anonymity, context and counterexamples"
+      }
+    },
+    {
+      "id": "education",
+      "category": "04",
+      "group": "social",
+      "suggested_method": "survey",
+      "name": {
+        "zh": "教育学",
+        "en": "Education"
+      },
+      "material": {
+        "zh": "教学情境、量表条目与学习证据",
+        "en": "Teaching context, instrument items and learning evidence"
+      },
+      "action": {
+        "zh": "对齐研究问题、测量条目与教学过程，梳理资料缺口",
+        "en": "Align questions, instrument items and teaching processes, then identify evidence gaps"
+      },
+      "output": {
+        "zh": "问题—测量—情境对照表",
+        "en": "A question, measure and context map"
+      },
+      "check": {
+        "zh": "测量是否对应研究问题；同意与资料权限是否清楚",
+        "en": "Check alignment of measures and clarity of consent and data permissions"
+      }
+    },
+    {
+      "id": "psychology",
+      "category": "04",
+      "group": "social",
+      "suggested_method": "survey",
+      "name": {
+        "zh": "心理学",
+        "en": "Psychology"
+      },
+      "material": {
+        "zh": "构念定义、量表或任务与分析计划",
+        "en": "Construct definitions, measures or tasks and an analysis plan"
+      },
+      "action": {
+        "zh": "核对计分规则、排除标准与分析计划，整理构念对应证据",
+        "en": "Check scoring, exclusion rules and the analysis plan against construct evidence"
+      },
+      "output": {
+        "zh": "构念与测量检查表",
+        "en": "A construct and measurement checklist"
+      },
+      "check": {
+        "zh": "预先设定与事后探索是否分开记录",
+        "en": "Record planned and exploratory analyses separately"
+      }
+    },
+    {
+      "id": "sports",
+      "category": "04",
+      "group": "social",
+      "suggested_method": "secondary_data",
+      "name": {
+        "zh": "体育与运动科学",
+        "en": "Sport and exercise research"
+      },
+      "material": {
+        "zh": "测量协议、训练记录与运动数据",
+        "en": "Measurement protocols, training logs and movement data"
+      },
+      "action": {
+        "zh": "对齐测量时间、条件和编号，检查数据单位与缺失情况",
+        "en": "Align measurement times, conditions and identifiers; inspect units and missingness"
+      },
+      "output": {
+        "zh": "运动数据与条件核对表",
+        "en": "A movement data and conditions checklist"
+      },
+      "check": {
+        "zh": "研究整理不替代训练、康复或采集的既定专业方案",
+        "en": "Keep research organization consistent with established training, rehabilitation and collection protocols"
+      }
+    },
+    {
+      "id": "literature",
+      "category": "05",
+      "group": "humanities",
+      "suggested_method": "text",
+      "name": {
+        "zh": "文学与文化研究",
+        "en": "Literature and cultural studies"
+      },
+      "material": {
+        "zh": "文本版本、关键段落与研究争论",
+        "en": "Text editions, key passages and scholarly debates"
+      },
+      "action": {
+        "zh": "细读一个片段，将文本证据与核心论点逐项对应",
+        "en": "Read a passage closely and connect textual evidence to the central argument"
+      },
+      "output": {
+        "zh": "可追溯的细读笔记",
+        "en": "Traceable close-reading notes"
+      },
+      "check": {
+        "zh": "解释是否超出文本证据；版本页码是否完整",
+        "en": "Check interpretive scope, edition and page references"
+      }
+    },
+    {
+      "id": "language",
+      "category": "05",
+      "group": "humanities",
+      "suggested_method": "text",
+      "name": {
+        "zh": "语言、翻译与传播",
+        "en": "Language, translation and communication"
+      },
+      "material": {
+        "zh": "语料、转写规范与语境信息",
+        "en": "Corpus data, transcription conventions and context"
+      },
+      "action": {
+        "zh": "对齐语料来源、标注口径与分析单位，比较代表性例子",
+        "en": "Align corpus sources, annotation rules and units; compare representative examples"
+      },
+      "output": {
+        "zh": "语料标注与例证清单",
+        "en": "An annotation and example register"
+      },
+      "check": {
+        "zh": "保留例子的上下文、来源与选择理由",
+        "en": "Retain context, provenance and selection rationale"
+      }
+    },
+    {
+      "id": "history",
+      "category": "06",
+      "group": "humanities",
+      "suggested_method": "text",
+      "name": {
+        "zh": "历史学",
+        "en": "History"
+      },
+      "material": {
+        "zh": "史料、版本、年代与相关研究",
+        "en": "Primary sources, editions, dates and scholarship"
+      },
+      "action": {
+        "zh": "交叉核对一项叙述的史料依据，标注材料间的差异",
+        "en": "Cross-check the sources for one historical account and annotate disagreements"
+      },
+      "output": {
+        "zh": "史料互证与年代对照表",
+        "en": "A source corroboration and chronology table"
+      },
+      "check": {
+        "zh": "区分史料记载与现代解释",
+        "en": "Distinguish source testimony from modern interpretation"
+      }
+    },
+    {
+      "id": "archaeology",
+      "category": "06",
+      "group": "humanities",
+      "suggested_method": "field",
+      "name": {
+        "zh": "考古与文博",
+        "en": "Archaeology and museum studies"
+      },
+      "material": {
+        "zh": "器物编号、地层记录与档案",
+        "en": "Object identifiers, stratigraphic records and archives"
+      },
+      "action": {
+        "zh": "核对编号、出土语境与照片记录，梳理同类材料",
+        "en": "Check identifiers, contexts and photographs, then organize comparable material"
+      },
+      "output": {
+        "zh": "器物—语境—图像索引",
+        "en": "An object, context and image index"
+      },
+      "check": {
+        "zh": "保留原始记录、位置关系与授权条件",
+        "en": "Preserve original records, contextual relationships and access conditions"
+      }
+    },
+    {
+      "id": "mathematics",
+      "category": "07",
+      "group": "science",
+      "suggested_method": "theory",
+      "name": {
+        "zh": "数学与统计",
+        "en": "Mathematics and statistics"
+      },
+      "material": {
+        "zh": "定义、假设、证明草稿与反例",
+        "en": "Definitions, assumptions, proof drafts and counterexamples"
+      },
+      "action": {
+        "zh": "展开一处省略的推导，检查边界情形并标出未证步骤",
+        "en": "Expand an omitted step, test boundary cases and mark unproved claims"
+      },
+      "output": {
+        "zh": "证明缺口与边界检查表",
+        "en": "A proof-gap and boundary-case checklist"
+      },
+      "check": {
+        "zh": "结论所用假设是否齐全；是否存在反例",
+        "en": "Check every required assumption and possible counterexamples"
+      }
+    },
+    {
+      "id": "physics",
+      "category": "07",
+      "group": "science",
+      "suggested_method": "theory",
+      "name": {
+        "zh": "物理与天文",
+        "en": "Physics and astronomy"
+      },
+      "material": {
+        "zh": "模型假设、推导与观测或模拟结果",
+        "en": "Model assumptions, derivations and observations or simulations"
+      },
+      "action": {
+        "zh": "核对量纲、近似条件与一个可验证的模型预期",
+        "en": "Check dimensions, approximation conditions and one testable model implication"
+      },
+      "output": {
+        "zh": "假设—量纲—验证对照表",
+        "en": "An assumptions, dimensions and validation table"
+      },
+      "check": {
+        "zh": "标注近似的适用范围与误差来源",
+        "en": "State approximation limits and error sources"
+      }
+    },
+    {
+      "id": "chemistry",
+      "category": "07",
+      "group": "science",
+      "suggested_method": "wet_lab",
+      "name": {
+        "zh": "化学",
+        "en": "Chemistry"
+      },
+      "material": {
+        "zh": "实验批次、表征文件与已定实验记录",
+        "en": "Batch records, characterization files and established protocols"
+      },
+      "action": {
+        "zh": "关联批次与原始表征文件，检查空白、对照和重复记录",
+        "en": "Link batches to raw characterization files and check blanks, controls and replicates"
+      },
+      "output": {
+        "zh": "批次与表征索引",
+        "en": "A batch and characterization index"
+      },
+      "check": {
+        "zh": "实验操作沿用已批准方案，记录条件与版本",
+        "en": "Follow approved procedures and preserve condition and version records"
+      }
+    },
+    {
+      "id": "biology",
+      "category": "07",
+      "group": "science",
+      "suggested_method": "wet_lab",
+      "name": {
+        "zh": "生物与生命科学",
+        "en": "Biology and life sciences"
+      },
+      "material": {
+        "zh": "样本元数据、对照设计与原始读数",
+        "en": "Sample metadata, controls and raw measurements"
+      },
+      "action": {
+        "zh": "核对样本关系、批次和对照，整理可复查的分析入口",
+        "en": "Check sample relationships, batches and controls; organize a reproducible analysis entry point"
+      },
+      "output": {
+        "zh": "样本—批次—对照表",
+        "en": "A sample, batch and control table"
+      },
+      "check": {
+        "zh": "区分生物学重复与技术重复，保留原始值",
+        "en": "Distinguish biological and technical replicates and preserve raw values"
+      }
+    },
+    {
+      "id": "earth",
+      "category": "07",
+      "group": "science",
+      "suggested_method": "field",
+      "name": {
+        "zh": "地学与环境科学",
+        "en": "Earth and environmental sciences"
+      },
+      "material": {
+        "zh": "坐标、时段、仪器与观测记录",
+        "en": "Coordinates, time intervals, instruments and observations"
+      },
+      "action": {
+        "zh": "对齐空间坐标与时间尺度，核对校准及缺测标记",
+        "en": "Align spatial and temporal scales; check calibration and missing-data flags"
+      },
+      "output": {
+        "zh": "时空观测与质量标记表",
+        "en": "A spatiotemporal observation and quality-flag table"
+      },
+      "check": {
+        "zh": "说明坐标系、时间基准与观测覆盖范围",
+        "en": "Document coordinate systems, time standards and coverage"
+      }
+    },
+    {
+      "id": "computer",
+      "category": "08",
+      "group": "engineering",
+      "suggested_method": "computation",
+      "name": {
+        "zh": "计算机与软件",
+        "en": "Computing and software"
+      },
+      "material": {
+        "zh": "代码版本、测试用例与运行环境",
+        "en": "Code revisions, test cases and runtime environments"
+      },
+      "action": {
+        "zh": "复现一条关键流程，记录输入、环境、输出及失败用例",
+        "en": "Reproduce one critical path and record inputs, environment, outputs and failures"
+      },
+      "output": {
+        "zh": "可复现运行记录",
+        "en": "A reproducible run record"
+      },
+      "check": {
+        "zh": "代码、依赖版本与报告结果能否一一对应",
+        "en": "Link code and dependency versions to reported results"
+      }
+    },
+    {
+      "id": "ai",
+      "category": "14",
+      "group": "engineering",
+      "suggested_method": "computation",
+      "name": {
+        "zh": "人工智能与数据科学",
+        "en": "AI and data science"
+      },
+      "material": {
+        "zh": "数据划分、基线、配置与评估指标",
+        "en": "Data splits, baselines, configurations and evaluation metrics"
+      },
+      "action": {
+        "zh": "核对数据划分与基线，再整理一项消融或误差分析",
+        "en": "Check data splits and baselines, then organize one ablation or error analysis"
+      },
+      "output": {
+        "zh": "基线—消融—误差对照表",
+        "en": "A baseline, ablation and error comparison"
+      },
+      "check": {
+        "zh": "检查数据泄漏、比较条件与算力预算",
+        "en": "Check leakage, comparable conditions and compute budget"
+      }
+    },
+    {
+      "id": "mechanical",
+      "category": "08",
+      "group": "engineering",
+      "suggested_method": "computation",
+      "name": {
+        "zh": "机械与制造",
+        "en": "Mechanical and manufacturing research"
+      },
+      "material": {
+        "zh": "结构版本、边界条件与测试记录",
+        "en": "Design revisions, boundary conditions and test records"
+      },
+      "action": {
+        "zh": "对照结构改动与性能指标，核对仿真和测试的条件",
+        "en": "Connect design changes to metrics and compare simulation and test conditions"
+      },
+      "output": {
+        "zh": "结构改动与性能追踪表",
+        "en": "A design-change and performance log"
+      },
+      "check": {
+        "zh": "边界条件、单位与测量误差是否一致",
+        "en": "Check boundary conditions, units and measurement uncertainty"
+      }
+    },
+    {
+      "id": "electronics",
+      "category": "08",
+      "group": "engineering",
+      "suggested_method": "computation",
+      "name": {
+        "zh": "电子、电气与通信",
+        "en": "Electronics, electrical engineering and communications"
+      },
+      "material": {
+        "zh": "参数表、波形或日志与测试配置",
+        "en": "Parameters, waveforms or logs and test configurations"
+      },
+      "action": {
+        "zh": "对齐配置与测量记录，复查异常区段及对照条件",
+        "en": "Align configurations and measurements; inspect anomalous intervals and controls"
+      },
+      "output": {
+        "zh": "配置—测量—异常记录",
+        "en": "A configuration, measurement and anomaly log"
+      },
+      "check": {
+        "zh": "核对采样率、单位、校准与环境条件",
+        "en": "Check sampling rates, units, calibration and environment"
+      }
+    },
+    {
+      "id": "materials",
+      "category": "08",
+      "group": "engineering",
+      "suggested_method": "wet_lab",
+      "name": {
+        "zh": "材料科学与工程",
+        "en": "Materials science and engineering"
+      },
+      "material": {
+        "zh": "制备批次、表征与性能记录",
+        "en": "Preparation batches, characterization and performance records"
+      },
+      "action": {
+        "zh": "串联制备、结构和性能证据，标注不同批次的差异",
+        "en": "Connect preparation, structure and performance evidence; mark batch differences"
+      },
+      "output": {
+        "zh": "制备—结构—性能对照表",
+        "en": "A processing, structure and performance table"
+      },
+      "check": {
+        "zh": "保留原始曲线、样本批次和重复记录",
+        "en": "Preserve raw curves, batches and replicate records"
+      }
+    },
+    {
+      "id": "civil",
+      "category": "08",
+      "group": "engineering",
+      "suggested_method": "computation",
+      "name": {
+        "zh": "土木、建筑与规划",
+        "en": "Civil engineering, architecture and planning"
+      },
+      "material": {
+        "zh": "场地资料、模型版本与设计约束",
+        "en": "Site evidence, model revisions and design constraints"
+      },
+      "action": {
+        "zh": "对齐场地证据与模型假设，整理设计选择的比较依据",
+        "en": "Align site evidence and model assumptions; compare the basis for design choices"
+      },
+      "output": {
+        "zh": "约束—方案—验证表",
+        "en": "A constraints, options and validation table"
+      },
+      "check": {
+        "zh": "区分设计假设、实测数据与规范要求",
+        "en": "Distinguish design assumptions, observations and code requirements"
+      }
+    },
+    {
+      "id": "environmental",
+      "category": "08",
+      "group": "engineering",
+      "suggested_method": "field",
+      "name": {
+        "zh": "环境工程",
+        "en": "Environmental engineering"
+      },
+      "material": {
+        "zh": "工况、采样点与检测记录",
+        "en": "Operating conditions, sampling sites and measurements"
+      },
+      "action": {
+        "zh": "对齐工况变化与采样时段，检查进出项及记录完整性",
+        "en": "Align operating changes with sampling periods and inspect inputs, outputs and record completeness"
+      },
+      "output": {
+        "zh": "工况与样本追踪表",
+        "en": "An operating-condition and sample log"
+      },
+      "check": {
+        "zh": "核对单位、时间滞后和质量控制记录",
+        "en": "Check units, time lags and quality-control records"
+      }
+    },
+    {
+      "id": "crop",
+      "category": "09",
+      "group": "agriculture",
+      "suggested_method": "field",
+      "name": {
+        "zh": "作物与农业资源",
+        "en": "Crop and agricultural resource research"
+      },
+      "material": {
+        "zh": "地块、物候、处理与样本记录",
+        "en": "Plots, phenology, treatments and sample records"
+      },
+      "action": {
+        "zh": "核对地块与处理编号，整理物候、环境和采样元数据",
+        "en": "Check plot and treatment identifiers; organize phenology, environment and sampling metadata"
+      },
+      "output": {
+        "zh": "地块—处理—样本台账",
+        "en": "A plot, treatment and sample ledger"
+      },
+      "check": {
+        "zh": "实际物候与必要采样窗口优先",
+        "en": "Respect real phenology and essential sampling windows"
+      }
+    },
+    {
+      "id": "forestry",
+      "category": "09",
+      "group": "agriculture",
+      "suggested_method": "field",
+      "name": {
+        "zh": "林学与生态观测",
+        "en": "Forestry and ecological observation"
+      },
+      "material": {
+        "zh": "样地、物种、坐标与监测记录",
+        "en": "Plots, species, coordinates and monitoring records"
+      },
+      "action": {
+        "zh": "核对样地定位与物种记录，对齐监测时间和方法",
+        "en": "Check plot locations and species records; align monitoring times and methods"
+      },
+      "output": {
+        "zh": "样地监测索引",
+        "en": "A plot-monitoring index"
+      },
+      "check": {
+        "zh": "说明观测努力、方法差异与缺测情况",
+        "en": "Record observation effort, method differences and missingness"
+      }
+    },
+    {
+      "id": "animal",
+      "category": "09",
+      "group": "agriculture",
+      "suggested_method": "field",
+      "name": {
+        "zh": "畜牧、兽医与水产",
+        "en": "Animal, veterinary and aquatic research"
+      },
+      "material": {
+        "zh": "个体编号、分组与观察记录",
+        "en": "Individual identifiers, groups and observations"
+      },
+      "action": {
+        "zh": "核对个体与分组对应，整理观察周期和既定记录",
+        "en": "Check identifiers against groups and organize observation periods and established records"
+      },
+      "output": {
+        "zh": "个体与观察周期台账",
+        "en": "An individual and observation-period ledger"
+      },
+      "check": {
+        "zh": "照护与连续观察依既定方案进行",
+        "en": "Maintain care and continuous observation under established protocols"
+      }
+    },
+    {
+      "id": "clinical",
+      "category": "10",
+      "group": "medicine",
+      "suggested_method": "clinical",
+      "name": {
+        "zh": "临床与口腔研究",
+        "en": "Clinical and dental research"
+      },
+      "material": {
+        "zh": "病例定义、索引日期、终点与随访记录",
+        "en": "Case definitions, index dates, endpoints and follow-up records"
+      },
+      "action": {
+        "zh": "核对入排标准、索引日期与结局定义，整理缺失及排除原因",
+        "en": "Check eligibility, index dates and outcomes; organize missingness and exclusion reasons"
+      },
+      "output": {
+        "zh": "病例流程与变量核对表",
+        "en": "A case-flow and variable checklist"
+      },
+      "check": {
+        "zh": "研究记录与诊疗安排分开；核对权限与匿名化",
+        "en": "Separate research records from care commitments and check access and de-identification"
+      }
+    },
+    {
+      "id": "basic_medicine",
+      "category": "10",
+      "group": "medicine",
+      "suggested_method": "wet_lab",
+      "name": {
+        "zh": "基础医学",
+        "en": "Basic medical sciences"
+      },
+      "material": {
+        "zh": "样本来源、批次、对照与检测结果",
+        "en": "Sample origins, batches, controls and assay results"
+      },
+      "action": {
+        "zh": "对齐样本信息与检测批次，整理对照和重复证据",
+        "en": "Align sample metadata with assay batches and organize controls and replicates"
+      },
+      "output": {
+        "zh": "样本—批次—结果映射表",
+        "en": "A sample, batch and result map"
+      },
+      "check": {
+        "zh": "结果是否可追溯到原始记录与既定方案",
+        "en": "Trace results to raw records and established protocols"
+      }
+    },
+    {
+      "id": "public_health",
+      "category": "10",
+      "group": "medicine",
+      "suggested_method": "secondary_data",
+      "name": {
+        "zh": "公共卫生与流行病学",
+        "en": "Public health and epidemiology"
+      },
+      "material": {
+        "zh": "暴露定义、结局、分母与数据字典",
+        "en": "Exposure definitions, outcomes, denominators and a data dictionary"
+      },
+      "action": {
+        "zh": "核对人群分母、观察期与变量定义，整理偏倚和缺失处理",
+        "en": "Check denominators, observation periods and variable definitions; document bias and missing-data handling"
+      },
+      "output": {
+        "zh": "人群与变量定义表",
+        "en": "A population and variable-definition table"
+      },
+      "check": {
+        "zh": "时间先后、混杂与选择过程是否说明",
+        "en": "Document temporal order, confounding and selection"
+      }
+    },
+    {
+      "id": "pharmacy",
+      "category": "10",
+      "group": "medicine",
+      "suggested_method": "wet_lab",
+      "name": {
+        "zh": "药学与中药研究",
+        "en": "Pharmaceutical research"
+      },
+      "material": {
+        "zh": "样品批次、分析方法与测量记录",
+        "en": "Sample batches, analytical methods and measurements"
+      },
+      "action": {
+        "zh": "对齐批次与分析方法版本，核查对照、校准和原始记录",
+        "en": "Align batches with analytical method versions; check controls, calibration and raw records"
+      },
+      "output": {
+        "zh": "批次与方法追踪表",
+        "en": "A batch and method traceability table"
+      },
+      "check": {
+        "zh": "沿用既定研究方案，区分研究数据与临床建议",
+        "en": "Follow established research protocols and keep research data distinct from clinical advice"
+      }
+    },
+    {
+      "id": "nursing",
+      "category": "10",
+      "group": "medicine",
+      "suggested_method": "qualitative",
+      "name": {
+        "zh": "护理与健康服务",
+        "en": "Nursing and health services"
+      },
+      "material": {
+        "zh": "服务流程、访谈或观察与结局定义",
+        "en": "Service workflows, interviews or observations and outcome definitions"
+      },
+      "action": {
+        "zh": "对齐服务过程与资料来源，整理障碍、资源和结局口径",
+        "en": "Align service processes with evidence sources; organize barriers, resources and outcome definitions"
+      },
+      "output": {
+        "zh": "服务流程与证据矩阵",
+        "en": "A service-process and evidence matrix"
+      },
+      "check": {
+        "zh": "保护参与者信息，保留不同角色的语境",
+        "en": "Protect participant information and retain role-specific context"
+      }
+    },
+    {
+      "id": "military",
+      "category": "11",
+      "group": "social",
+      "suggested_method": "text",
+      "name": {
+        "zh": "军事学文献与组织研究",
+        "en": "Military literature and organizational studies"
+      },
+      "material": {
+        "zh": "公开文献、历史材料与组织研究问题",
+        "en": "Public literature, historical material and organizational questions"
+      },
+      "action": {
+        "zh": "梳理公开材料的出处、术语和论证范围，比较不同解释",
+        "en": "Trace public sources, terminology and argument scope; compare interpretations"
+      },
+      "output": {
+        "zh": "公开文献与观点对照表",
+        "en": "A public-source and interpretation table"
+      },
+      "check": {
+        "zh": "仅整理有权使用的资料，区分文献研究与实际行动",
+        "en": "Use authorized material and distinguish scholarship from operational action"
+      }
+    },
+    {
+      "id": "management",
+      "category": "12",
+      "group": "social",
+      "suggested_method": "secondary_data",
+      "name": {
+        "zh": "管理、会计与公共管理",
+        "en": "Management, accounting and public administration"
+      },
+      "material": {
+        "zh": "组织情境、变量或案例与理论机制",
+        "en": "Organizational context, variables or cases and theoretical mechanisms"
+      },
+      "action": {
+        "zh": "对照理论机制与变量或案例证据，记录替代解释",
+        "en": "Compare mechanisms with variables or case evidence and record alternatives"
+      },
+      "output": {
+        "zh": "机制—证据—情境表",
+        "en": "A mechanism, evidence and context table"
+      },
+      "check": {
+        "zh": "管理含义是否超出样本和识别范围",
+        "en": "Keep practical implications within the sample and identification limits"
+      }
+    },
+    {
+      "id": "arts",
+      "category": "13",
+      "group": "humanities",
+      "suggested_method": "practice",
+      "name": {
+        "zh": "艺术与创作研究",
+        "en": "Arts and creative practice"
+      },
+      "material": {
+        "zh": "作品版本、参考材料与创作日志",
+        "en": "Work versions, references and process journals"
+      },
+      "action": {
+        "zh": "围绕一个表达问题比较两个版本，记录选择理由与反馈",
+        "en": "Compare two versions around one expressive question and document choices and feedback"
+      },
+      "output": {
+        "zh": "作品迭代与研究反思页",
+        "en": "A work-iteration and research-reflection sheet"
+      },
+      "check": {
+        "zh": "作品变化与研究问题之间是否有明确联系",
+        "en": "Make the connection between creative changes and the research question explicit"
+      }
+    },
+    {
+      "id": "performance",
+      "category": "13",
+      "group": "humanities",
+      "suggested_method": "practice",
+      "name": {
+        "zh": "音乐、戏剧与表演",
+        "en": "Music, theatre and performance"
+      },
+      "material": {
+        "zh": "谱本、排练记录与授权音视频",
+        "en": "Scores, rehearsal logs and authorized recordings"
+      },
+      "action": {
+        "zh": "围绕一个表达片段对照记录，整理处理方式与研究观察",
+        "en": "Compare records of one passage and document interpretive choices and observations"
+      },
+      "output": {
+        "zh": "片段分析与排练反思记录",
+        "en": "A passage-analysis and rehearsal-reflection record"
+      },
+      "check": {
+        "zh": "说明记录情境、版本与使用授权",
+        "en": "Document context, version and usage permissions"
+      }
+    },
+    {
+      "id": "design",
+      "category": "14",
+      "group": "engineering",
+      "suggested_method": "practice",
+      "name": {
+        "zh": "设计与人机交互",
+        "en": "Design and human-computer interaction"
+      },
+      "material": {
+        "zh": "设计问题、原型与用户反馈",
+        "en": "Design questions, prototypes and user feedback"
+      },
+      "action": {
+        "zh": "对照一个用户需求迭代原型，记录取舍及验证证据",
+        "en": "Iterate a prototype against one user need and record trade-offs and validation evidence"
+      },
+      "output": {
+        "zh": "原型版本与验证记录",
+        "en": "A prototype revision and validation record"
+      },
+      "check": {
+        "zh": "区分审美偏好、用户证据与研究结论",
+        "en": "Distinguish aesthetic preference, user evidence and research conclusions"
+      }
+    },
+    {
+      "id": "interdisciplinary",
+      "category": "14",
+      "group": "science",
+      "suggested_method": "secondary_data",
+      "name": {
+        "zh": "交叉研究",
+        "en": "Interdisciplinary research"
+      },
+      "material": {
+        "zh": "各领域术语、资料与共同研究问题",
+        "en": "Terminology, evidence and a shared question across fields"
+      },
+      "action": {
+        "zh": "建立跨领域概念和数据接口的对应关系，定位一处衔接问题",
+        "en": "Map concepts and data interfaces across fields and locate one integration issue"
+      },
+      "output": {
+        "zh": "跨领域概念与接口表",
+        "en": "A cross-field concept and interface map"
+      },
+      "check": {
+        "zh": "同名概念是否同义；单位、尺度和假设能否衔接",
+        "en": "Check meanings, units, scales and assumptions across fields"
+      }
+    }
+  ],
+  "methods": [
+    {
+      "id": "text",
+      "name": {
+        "zh": "文献与文本研究",
+        "en": "Literature and textual research"
+      },
+      "steps": [
+        {
+          "zh": "定位一个问题的原始出处，记录版本与页码",
+          "en": "Locate primary evidence for one question and record edition and pages"
+        },
+        {
+          "zh": "比较支持、反对与例外材料，保留语境",
+          "en": "Compare support, objections and exceptions in context"
+        },
+        {
+          "zh": "写一段论证并把每个关键判断连回出处",
+          "en": "Draft a paragraph with each key claim linked to its source"
+        }
+      ],
+      "output": {
+        "zh": "来源—论点对应表",
+        "en": "A source-to-claim map"
+      },
+      "check": {
+        "zh": "引文、转述与个人解释分开标注",
+        "en": "Label quotation, paraphrase and interpretation separately"
+      }
+    },
+    {
+      "id": "qualitative",
+      "name": {
+        "zh": "访谈与质性研究",
+        "en": "Interviews and qualitative research"
+      },
+      "steps": [
+        {
+          "zh": "核对授权与匿名化，选取可使用的材料",
+          "en": "Check consent and anonymization; choose authorized material"
+        },
+        {
+          "zh": "对一个片段编码，记录定义变化与反例",
+          "en": "Code one excerpt and log definition changes and counterexamples"
+        },
+        {
+          "zh": "将主题与例证连接，写一则分析备忘录",
+          "en": "Connect themes to excerpts in an analytic memo"
+        }
+      ],
+      "output": {
+        "zh": "编码本更新与分析备忘录",
+        "en": "A codebook update and analytic memo"
+      },
+      "check": {
+        "zh": "保留语境与不一致证据，不只摘取支持性片段",
+        "en": "Retain context and inconsistent evidence, not only supportive excerpts"
+      }
+    },
+    {
+      "id": "survey",
+      "name": {
+        "zh": "问卷、量表与行为研究",
+        "en": "Surveys, measures and behavioral research"
+      },
+      "steps": [
+        {
+          "zh": "核对构念、题项、计分和版本",
+          "en": "Check constructs, items, scoring and versions"
+        },
+        {
+          "zh": "检查缺失、异常与预定排除标准",
+          "en": "Inspect missingness, anomalies and predefined exclusions"
+        },
+        {
+          "zh": "整理测量表现与研究问题之间的关系",
+          "en": "Document how measurement evidence relates to the question"
+        }
+      ],
+      "output": {
+        "zh": "测量与数据检查记录",
+        "en": "A measurement and data-check record"
+      },
+      "check": {
+        "zh": "保留原始数据与处理日志，说明探索性改动",
+        "en": "Preserve raw data and logs and label exploratory changes"
+      }
+    },
+    {
+      "id": "secondary_data",
+      "name": {
+        "zh": "数据分析与实证研究",
+        "en": "Data analysis and empirical research"
+      },
+      "steps": [
+        {
+          "zh": "核对样本口径、变量字典和时间关系",
+          "en": "Check sample rules, variable definitions and temporal order"
+        },
+        {
+          "zh": "运行已有分析或最小验证，保留日志与配置",
+          "en": "Run an existing analysis or a minimal check and save logs and configuration"
+        },
+        {
+          "zh": "检查结果与假设的对应，列出稳健性问题",
+          "en": "Connect results to assumptions and list robustness questions"
+        }
+      ],
+      "output": {
+        "zh": "可复查分析记录与结果表",
+        "en": "A reproducible analysis record and results table"
+      },
+      "check": {
+        "zh": "报告缺失、排除、探索范围与不确定性",
+        "en": "Report missingness, exclusions, exploration and uncertainty"
+      }
+    },
+    {
+      "id": "theory",
+      "name": {
+        "zh": "理论推导与证明",
+        "en": "Theoretical derivation and proof"
+      },
+      "steps": [
+        {
+          "zh": "列清定义、假设和要证明的命题",
+          "en": "List definitions, assumptions and the proposition"
+        },
+        {
+          "zh": "补齐一个推导环节，测试特殊与边界情形",
+          "en": "Complete one derivation step and test special and boundary cases"
+        },
+        {
+          "zh": "标记已证、依赖结果与待证部分",
+          "en": "Mark proved, dependent and unproved components"
+        }
+      ],
+      "output": {
+        "zh": "可继续检查的证明草稿",
+        "en": "An inspectable proof draft"
+      },
+      "check": {
+        "zh": "每一步推理都能回到明确的条件",
+        "en": "Tie each inference to explicit conditions"
+      }
+    },
+    {
+      "id": "computation",
+      "name": {
+        "zh": "计算、仿真与算法",
+        "en": "Computation, simulation and algorithms"
+      },
+      "steps": [
+        {
+          "zh": "固定代码、环境、数据版本与评估设置",
+          "en": "Fix code, environment, data versions and evaluation settings"
+        },
+        {
+          "zh": "先跑最小可复现用例，再做预算内的比较",
+          "en": "Run a minimal reproducible case before a budgeted comparison"
+        },
+        {
+          "zh": "保存配置、随机性来源、日志和错误案例",
+          "en": "Save configurations, randomness sources, logs and failure cases"
+        }
+      ],
+      "output": {
+        "zh": "运行清单、结果与错误案例",
+        "en": "A run manifest, results and failure cases"
+      },
+      "check": {
+        "zh": "测试数据、比较条件与资源预算保持清楚",
+        "en": "Keep test data, comparison conditions and resource budgets explicit"
+      }
+    },
+    {
+      "id": "wet_lab",
+      "name": {
+        "zh": "实验室研究",
+        "en": "Laboratory research"
+      },
+      "steps": [
+        {
+          "zh": "对照既定方案检查预约、样本与记录准备",
+          "en": "Check bookings, samples and documentation against the established protocol"
+        },
+        {
+          "zh": "整理既定实验的批次、对照与原始读数",
+          "en": "Organize batches, controls and raw readings from established experiments"
+        },
+        {
+          "zh": "记录偏差、异常与后续需要核实的问题",
+          "en": "Log deviations, anomalies and questions for follow-up"
+        }
+      ],
+      "output": {
+        "zh": "批次记录与原始数据索引",
+        "en": "A batch record and raw-data index"
+      },
+      "check": {
+        "zh": "连续操作和实验条件依既定方案，不按通用时间块中断",
+        "en": "Keep continuous operations and conditions aligned with the established protocol"
+      }
+    },
+    {
+      "id": "clinical",
+      "name": {
+        "zh": "临床资料与队列研究",
+        "en": "Clinical records and cohort research"
+      },
+      "steps": [
+        {
+          "zh": "核对授权、入排标准、索引日期与终点定义",
+          "en": "Check authorization, eligibility, index dates and endpoint definitions"
+        },
+        {
+          "zh": "核查随访窗口、字段缺项与排除原因",
+          "en": "Check follow-up windows, missing fields and exclusion reasons"
+        },
+        {
+          "zh": "整理匿名化数据字典与待核查事项",
+          "en": "Prepare a de-identified data dictionary and query list"
+        }
+      ],
+      "output": {
+        "zh": "病例流程、字典与核查清单",
+        "en": "A case flow, dictionary and query list"
+      },
+      "check": {
+        "zh": "研究整理服从既定诊疗与随访安排",
+        "en": "Fit research organization around established care and follow-up commitments"
+      }
+    },
+    {
+      "id": "field",
+      "name": {
+        "zh": "田野、采样与观测",
+        "en": "Fieldwork, sampling and observation"
+      },
+      "steps": [
+        {
+          "zh": "核对预约、实际窗口、编号与设备记录",
+          "en": "Check appointments, real windows, identifiers and equipment records"
+        },
+        {
+          "zh": "整理既定采样或观察的时间、位置与条件",
+          "en": "Organize time, location and conditions for planned sampling or observation"
+        },
+        {
+          "zh": "同步原始记录、备份与交接信息",
+          "en": "Synchronize raw records, backups and handover information"
+        }
+      ],
+      "output": {
+        "zh": "可追溯的现场记录包",
+        "en": "A traceable field-record package"
+      },
+      "check": {
+        "zh": "实际窗口、天气和已定流程优先",
+        "en": "Respect real windows, weather and established procedures"
+      }
+    },
+    {
+      "id": "practice",
+      "name": {
+        "zh": "设计、创作与实践研究",
+        "en": "Design, creative and practice research"
+      },
+      "steps": [
+        {
+          "zh": "明确一个设计或创作问题及评价依据",
+          "en": "Define one creative or design question and its evaluation basis"
+        },
+        {
+          "zh": "保留旧版本，围绕该问题完成一次迭代",
+          "en": "Preserve the prior version and make one question-led iteration"
+        },
+        {
+          "zh": "整理反馈、取舍与研究反思",
+          "en": "Organize feedback, trade-offs and research reflection"
+        }
+      ],
+      "output": {
+        "zh": "版本对照与实践反思",
+        "en": "A version comparison and practice reflection"
+      },
+      "check": {
+        "zh": "同时保存作品和产生研究判断的过程证据",
+        "en": "Preserve both the work and the process evidence behind research judgments"
+      }
+    },
+    {
+      "id": "review",
+      "name": {
+        "zh": "系统综述与证据整理",
+        "en": "Systematic review and evidence synthesis"
+      },
+      "steps": [
+        {
+          "zh": "核对检索范围、日期与纳入标准",
+          "en": "Check search scope, dates and eligibility criteria"
+        },
+        {
+          "zh": "记录筛选或提取决定，保留排除原因",
+          "en": "Log screening or extraction decisions and exclusion reasons"
+        },
+        {
+          "zh": "核对证据表、偏倚问题与综合口径",
+          "en": "Check evidence tables, bias concerns and synthesis definitions"
+        }
+      ],
+      "output": {
+        "zh": "检索、筛选与提取追踪表",
+        "en": "A search, screening and extraction log"
+      },
+      "check": {
+        "zh": "区分协议内分析与后续调整并记录理由",
+        "en": "Distinguish planned analyses from later changes and log reasons"
+      }
+    },
+    {
+      "id": "mixed",
+      "name": {
+        "zh": "混合方法与跨域整合",
+        "en": "Mixed methods and cross-field integration"
+      },
+      "steps": [
+        {
+          "zh": "明确不同资料各回答什么问题",
+          "en": "State which question each evidence stream addresses"
+        },
+        {
+          "zh": "对齐样本、时间与概念，保留互相矛盾的发现",
+          "en": "Align samples, times and concepts while retaining conflicting findings"
+        },
+        {
+          "zh": "制作联合展示并记录整合后的解释边界",
+          "en": "Create a joint display and state the limits of integration"
+        }
+      ],
+      "output": {
+        "zh": "多来源证据联合展示",
+        "en": "A joint display of evidence streams"
+      },
+      "check": {
+        "zh": "整合结论能追溯到各自的方法与资料",
+        "en": "Trace integrated conclusions to each method and evidence source"
+      }
+    }
+  ],
+  "stages": [
+    {
+      "id": "general",
+      "name": {
+        "zh": "通用推进",
+        "en": "General progress"
+      },
+      "action": {
+        "zh": "选择当前最有依据、能独立推进的一步",
+        "en": "Choose an evidence-grounded step that can move forward independently"
+      },
+      "output": {
+        "zh": "一份可复查的阶段产物",
+        "en": "One reviewable intermediate output"
+      },
+      "check": {
+        "zh": "下一步的输入和完成标志是否清楚",
+        "en": "Make the next input and completion condition clear"
+      }
+    },
+    {
+      "id": "exploration",
+      "name": {
+        "zh": "选题与问题形成",
+        "en": "Topic exploration"
+      },
+      "action": {
+        "zh": "比较已有解释与尚未解决的问题，收紧一个可研究的问题",
+        "en": "Compare existing explanations with unresolved issues and narrow one researchable question"
+      },
+      "output": {
+        "zh": "问题卡与可行性清单",
+        "en": "A research-question card and feasibility list"
+      },
+      "check": {
+        "zh": "问题是否有资料基础、研究价值与可完成范围",
+        "en": "Check evidence access, value and feasible scope"
+      }
+    },
+    {
+      "id": "proposal",
+      "name": {
+        "zh": "开题与方案",
+        "en": "Proposal and study design"
+      },
+      "action": {
+        "zh": "把问题、资料、方法、预期贡献与现实约束逐项对齐",
+        "en": "Align the question, evidence, methods, intended contribution and practical constraints"
+      },
+      "output": {
+        "zh": "问题—方法—资料路线图",
+        "en": "A question, method and evidence roadmap"
+      },
+      "check": {
+        "zh": "关键假设、权限、资源和替代方案是否明确",
+        "en": "Clarify assumptions, permissions, resources and fallback options"
+      }
+    },
+    {
+      "id": "pilot",
+      "name": {
+        "zh": "预研与小规模验证",
+        "en": "Pilot and feasibility work"
+      },
+      "action": {
+        "zh": "先检查一个最小流程能否产生可解释、可保存的记录",
+        "en": "Check whether one minimal workflow yields interpretable, preservable records"
+      },
+      "output": {
+        "zh": "预研记录与方案调整清单",
+        "en": "A pilot record and proposed adjustments"
+      },
+      "check": {
+        "zh": "先核实流程和记录完整性，再决定扩大范围",
+        "en": "Verify workflow and record completeness before expanding scope"
+      }
+    },
+    {
+      "id": "collection",
+      "name": {
+        "zh": "资料收集与实验",
+        "en": "Collection and experiments"
+      },
+      "action": {
+        "zh": "按既定方案推进资料或实验记录，维护编号与版本对应",
+        "en": "Follow the established plan while maintaining identifiers and version links"
+      },
+      "output": {
+        "zh": "当次资料台账与质量记录",
+        "en": "A collection ledger and quality record"
+      },
+      "check": {
+        "zh": "预约、权限、关键窗口与完整流程是否得到遵守",
+        "en": "Respect bookings, permissions, essential windows and complete procedures"
+      }
+    },
+    {
+      "id": "analysis",
+      "name": {
+        "zh": "分析与验证",
+        "en": "Analysis and validation"
+      },
+      "action": {
+        "zh": "连接原始材料、处理步骤和结果，核查一个关键解释",
+        "en": "Connect raw evidence, processing and results; examine one key interpretation"
+      },
+      "output": {
+        "zh": "结果表与验证记录",
+        "en": "A results table and validation log"
+      },
+      "check": {
+        "zh": "区分预定与探索分析，记录替代解释和不确定性",
+        "en": "Separate planned and exploratory analyses; record alternatives and uncertainty"
+      }
+    },
+    {
+      "id": "writing",
+      "name": {
+        "zh": "论文写作",
+        "en": "Manuscript writing"
+      },
+      "action": {
+        "zh": "围绕一个主张组织段落、图表与引用，补齐证据链",
+        "en": "Build paragraphs, figures and references around one claim and its evidence"
+      },
+      "output": {
+        "zh": "一节草稿与主张—证据表",
+        "en": "A section draft and claim-evidence map"
+      },
+      "check": {
+        "zh": "结论、图表、正文与引用是否一致",
+        "en": "Align conclusions, figures, prose and citations"
+      }
+    },
+    {
+      "id": "revision",
+      "name": {
+        "zh": "返修与回应",
+        "en": "Revision and response"
+      },
+      "action": {
+        "zh": "拆解一条评审意见，定位修改位置并准备对应依据",
+        "en": "Break down one review comment, locate the revision and prepare supporting evidence"
+      },
+      "output": {
+        "zh": "意见—修改—回复对照表",
+        "en": "A comment, revision and response map"
+      },
+      "check": {
+        "zh": "回复是否回答原问题，稿件和附件是否同步",
+        "en": "Answer the original concern and keep manuscript and supplements aligned"
+      }
+    },
+    {
+      "id": "defense",
+      "name": {
+        "zh": "答辩与汇报",
+        "en": "Defense and presentation"
+      },
+      "action": {
+        "zh": "围绕问题、方法、发现和边界整理一段清晰讲述",
+        "en": "Build a clear account of the question, methods, findings and limits"
+      },
+      "output": {
+        "zh": "汇报页与关键问答卡",
+        "en": "A presentation segment and question cards"
+      },
+      "check": {
+        "zh": "每个核心结论是否能指向证据并说明局限",
+        "en": "Support each main conclusion with evidence and its limits"
+      }
+    },
+    {
+      "id": "archiving",
+      "name": {
+        "zh": "收尾与归档",
+        "en": "Completion and archiving"
+      },
+      "action": {
+        "zh": "整理最终版本、数据字典、运行说明与授权范围",
+        "en": "Organize final versions, dictionaries, run instructions and access conditions"
+      },
+      "output": {
+        "zh": "可交接的研究资料包",
+        "en": "A handover-ready research package"
+      },
+      "check": {
+        "zh": "后续读者能否定位材料、理解版本并复查结果",
+        "en": "Enable later readers to locate evidence, understand versions and inspect results"
+      }
+    }
+  ],
+  "degrees": [
+    {
+      "id": "academic_master",
+      "name": {
+        "zh": "学术硕士",
+        "en": "Academic master’s"
+      }
+    },
+    {
+      "id": "professional_master",
+      "name": {
+        "zh": "专业硕士",
+        "en": "Professional master’s"
+      }
+    },
+    {
+      "id": "academic_doctor",
+      "name": {
+        "zh": "学术博士",
+        "en": "Academic doctorate"
+      }
+    },
+    {
+      "id": "professional_doctor",
+      "name": {
+        "zh": "专业博士",
+        "en": "Professional doctorate"
+      }
+    }
+  ]
+}

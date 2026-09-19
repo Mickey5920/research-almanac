@@ -1,6 +1,6 @@
 {
   "name": "research-almanac",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "private": true,
   "description": "Research Almanac: weekly research planning and submission timing with sourced cultural reflection",
   "type": "module",

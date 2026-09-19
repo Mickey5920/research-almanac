@@ -1,45 +1,346 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object", "additionalProperties": false,
-  "required": ["timezone"],
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "timezone"
+  ],
   "properties": {
-    "schema_version": {"const": "weekly-1.0"},
-    "timezone": {"type": "string"},
-    "now": {"type": "string", "format": "date-time"},
-    "week_start": {"type": "string", "format": "date"},
-    "region": {"enum": ["CN-mainland", "none"]},
-    "title": {"type": "string", "minLength": 1, "maxLength": 300},
-    "discipline": {"enum": ["all", "humanities", "social", "science", "engineering", "agriculture", "medicine"]},
-    "availability": {"type": "array", "maxItems": 100, "items": {"$ref": "#/definitions/interval"}},
-    "excluded_intervals": {"type": "array", "maxItems": 100, "items": {"$ref": "#/definitions/interval"}},
-    "fixed_events": {"type": "array", "maxItems": 100, "items": {"type": "object", "additionalProperties": false, "required": ["title", "start", "end"], "properties": {
-      "title": {"type": "string", "minLength": 1, "maxLength": 300},
-      "start": {"type": "string", "format": "date-time"}, "end": {"type": "string", "format": "date-time"},
-      "source": {"type": "string", "maxLength": 1000}
-    }}},
-    "tasks": {"type": "array", "maxItems": 100, "items": {"type": "object", "additionalProperties": false, "required": ["id", "title"], "properties": {
-      "id": {"type": "string", "pattern": "^[A-Za-z0-9_-]{1,80}$"},
-      "title": {"type": "string", "minLength": 1, "maxLength": 300},
-      "minutes": {"type": "integer", "minimum": 5, "maximum": 1440},
-      "status": {"enum": ["pending", "done"]},
-      "priority": {"type": "integer", "minimum": 1, "maximum": 3},
-      "depends_on": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
-      "not_before": {"type": "string", "format": "date-time"},
-      "deadline": {"type": "string", "format": "date-time"},
-      "output": {"type": "string", "maxLength": 1000},
-      "source": {"type": "string", "maxLength": 1000}
-    }}},
-    "preferences": {"type": "object", "additionalProperties": false, "properties": {
-      "buffer_ratio": {"type": "number", "minimum": 0, "maximum": 0.5},
-      "max_tasks_per_day": {"type": "integer", "minimum": 1, "maximum": 10},
-      "language": {"enum": ["zh", "en"]}
-    }},
-    "submission": {"type": "object"},
-    "submission_task_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}
+    "schema_version": {
+      "const": "weekly-1.0"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "now": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "week_start": {
+      "type": "string",
+      "format": "date"
+    },
+    "region": {
+      "enum": [
+        "CN-mainland",
+        "none"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "discipline": {
+      "enum": [
+        "all",
+        "humanities",
+        "social",
+        "science",
+        "engineering",
+        "agriculture",
+        "medicine"
+      ]
+    },
+    "availability": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "$ref": "#/definitions/interval"
+      }
+    },
+    "excluded_intervals": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "$ref": "#/definitions/interval"
+      }
+    },
+    "fixed_events": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "start",
+          "end"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "source": {
+            "type": "string",
+            "maxLength": 1000
+          }
+        }
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]{1,80}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "minutes": {
+            "type": "integer",
+            "minimum": 5,
+            "maximum": 1440
+          },
+          "status": {
+            "enum": [
+              "pending",
+              "done"
+            ]
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "depends_on": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "not_before": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "deadline": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "output": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "source": {
+            "type": "string",
+            "maxLength": 1000
+          }
+        }
+      }
+    },
+    "preferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "buffer_ratio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.5
+        },
+        "max_tasks_per_day": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "language": {
+          "enum": [
+            "zh",
+            "en"
+          ]
+        }
+      }
+    },
+    "submission": {
+      "type": "object"
+    },
+    "submission_task_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "research_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "specialties": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 4,
+          "items": {
+            "enum": [
+              "philosophy",
+              "economics",
+              "law",
+              "politics",
+              "sociology",
+              "education",
+              "psychology",
+              "sports",
+              "literature",
+              "language",
+              "history",
+              "archaeology",
+              "mathematics",
+              "physics",
+              "chemistry",
+              "biology",
+              "earth",
+              "computer",
+              "ai",
+              "mechanical",
+              "electronics",
+              "materials",
+              "civil",
+              "environmental",
+              "crop",
+              "forestry",
+              "animal",
+              "clinical",
+              "basic_medicine",
+              "public_health",
+              "pharmacy",
+              "nursing",
+              "military",
+              "management",
+              "arts",
+              "performance",
+              "design",
+              "interdisciplinary"
+            ]
+          }
+        },
+        "custom_specialties": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "category"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "category": {
+                "enum": [
+                  "01",
+                  "02",
+                  "03",
+                  "04",
+                  "05",
+                  "06",
+                  "07",
+                  "08",
+                  "09",
+                  "10",
+                  "11",
+                  "12",
+                  "13",
+                  "14"
+                ]
+              }
+            }
+          }
+        },
+        "methods": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 4,
+          "items": {
+            "enum": [
+              "text",
+              "qualitative",
+              "survey",
+              "secondary_data",
+              "theory",
+              "computation",
+              "wet_lab",
+              "clinical",
+              "field",
+              "practice",
+              "review",
+              "mixed"
+            ]
+          }
+        },
+        "stage": {
+          "enum": [
+            "general",
+            "exploration",
+            "proposal",
+            "pilot",
+            "collection",
+            "analysis",
+            "writing",
+            "revision",
+            "defense",
+            "archiving"
+          ]
+        },
+        "degree": {
+          "enum": [
+            "academic_master",
+            "professional_master",
+            "academic_doctor",
+            "professional_doctor"
+          ]
+        },
+        "focus": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        }
+      }
+    }
   },
   "definitions": {
-    "interval": {"type": "object", "additionalProperties": false, "required": ["start", "end"], "properties": {
-      "start": {"type": "string", "format": "date-time"}, "end": {"type": "string", "format": "date-time"}
-    }}
+    "interval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end"
+      ],
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
   }
 }

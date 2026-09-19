@@ -1,33 +1,316 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object", "additionalProperties": false,
-  "required": ["schema_version", "mode", "run_id", "generated_at", "version", "timezone", "week_start", "week_end", "title", "discipline", "language", "days", "disciplines", "schedule", "unscheduled", "fixed_events", "sources", "assumptions", "calendar_status", "submission"],
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "mode",
+    "run_id",
+    "generated_at",
+    "version",
+    "timezone",
+    "week_start",
+    "week_end",
+    "title",
+    "discipline",
+    "language",
+    "days",
+    "disciplines",
+    "schedule",
+    "unscheduled",
+    "fixed_events",
+    "sources",
+    "assumptions",
+    "calendar_status",
+    "submission"
+  ],
   "properties": {
-    "schema_version": {"const": "weekly-1.0"}, "mode": {"const": "weekly"},
-    "run_id": {"type": "string", "format": "uuid"}, "generated_at": {"type": "string", "format": "date-time"},
-    "version": {"type": "string"}, "timezone": {"type": "string"},
-    "week_start": {"type": "string", "format": "date"}, "week_end": {"type": "string", "format": "date"},
-    "title": {"type": "string"}, "discipline": {"type": "string"}, "language": {"enum": ["zh", "en"]},
-    "calendar_status": {"enum": ["available", "unavailable_for_timezone"]},
-    "days": {"type": "array", "minItems": 7, "maxItems": 7, "items": {"type": "object", "required": ["date", "weekday", "working", "phase", "theme", "rhythm", "classic"], "properties": {
-      "date": {"type": "string", "format": "date"}, "weekday": {"type": "integer", "minimum": 1, "maximum": 7},
-      "working": {"type": "boolean"}, "phase": {"type": "integer", "minimum": 0, "maximum": 7},
-      "theme": {"$ref": "#/definitions/bilingual"}, "rhythm": {"type": "object"}, "classic": {"type": "object"}
-    }}},
-    "disciplines": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "required": ["id", "name", "week", "rhythms"], "properties": {
-      "id": {"type": "string"}, "name": {"$ref": "#/definitions/bilingual"},
-      "week": {"type": "array", "minItems": 7, "maxItems": 7}, "rhythms": {"type": "array", "minItems": 7, "maxItems": 7}
-    }}},
-    "schedule": {"type": "array", "items": {"type": "object", "required": ["id", "title", "start", "end", "minutes"], "properties": {
-      "id": {"type": "string"}, "title": {"type": "string"}, "start": {"type": "string", "format": "date-time"}, "end": {"type": "string", "format": "date-time"}, "minutes": {"type": "integer", "minimum": 5}
-    }}},
-    "unscheduled": {"type": "array", "items": {"type": "object", "required": ["id", "title", "reason"], "properties": {
-      "id": {"type": "string"}, "title": {"type": "string"}, "reason": {"enum": ["needs_estimate", "dependency_unavailable", "no_feasible_slot"]}
-    }}},
-    "fixed_events": {"type": "array", "items": {"type": "object", "required": ["title", "start", "end"], "properties": {"title": {"type": "string"}, "start": {"type": "string", "format": "date-time"}, "end": {"type": "string", "format": "date-time"}}}},
-    "sources": {"type": "array", "items": {"type": "object", "required": ["title", "url"]}},
-    "assumptions": {"type": "array", "items": {"$ref": "#/definitions/bilingual"}},
-    "submission": {"type": ["object", "null"]}
+    "schema_version": {
+      "const": "weekly-1.0"
+    },
+    "mode": {
+      "const": "weekly"
+    },
+    "run_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "version": {
+      "type": "string"
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "week_start": {
+      "type": "string",
+      "format": "date"
+    },
+    "week_end": {
+      "type": "string",
+      "format": "date"
+    },
+    "title": {
+      "type": "string"
+    },
+    "discipline": {
+      "type": "string"
+    },
+    "language": {
+      "enum": [
+        "zh",
+        "en"
+      ]
+    },
+    "calendar_status": {
+      "enum": [
+        "available",
+        "unavailable_for_timezone"
+      ]
+    },
+    "days": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "required": [
+          "date",
+          "weekday",
+          "working",
+          "phase",
+          "theme",
+          "rhythm",
+          "classic"
+        ],
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "weekday": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 7
+          },
+          "working": {
+            "type": "boolean"
+          },
+          "phase": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 7
+          },
+          "theme": {
+            "$ref": "#/definitions/bilingual"
+          },
+          "rhythm": {
+            "type": "object"
+          },
+          "classic": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "disciplines": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "week",
+          "rhythms"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "$ref": "#/definitions/bilingual"
+          },
+          "week": {
+            "type": "array",
+            "minItems": 7,
+            "maxItems": 7
+          },
+          "rhythms": {
+            "type": "array",
+            "minItems": 7,
+            "maxItems": 7
+          }
+        }
+      }
+    },
+    "schedule": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "start",
+          "end",
+          "minutes"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "minutes": {
+            "type": "integer",
+            "minimum": 5
+          }
+        }
+      }
+    },
+    "unscheduled": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "reason"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "reason": {
+            "enum": [
+              "needs_estimate",
+              "dependency_unavailable",
+              "no_feasible_slot"
+            ]
+          }
+        }
+      }
+    },
+    "fixed_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "start",
+          "end"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "title",
+          "url"
+        ]
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/bilingual"
+      }
+    },
+    "submission": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "personalization": {
+      "type": "object",
+      "required": [
+        "catalog_version",
+        "fields",
+        "methods",
+        "stage",
+        "degree",
+        "focus",
+        "week"
+      ],
+      "properties": {
+        "catalog_version": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "array",
+          "maxItems": 4
+        },
+        "methods": {
+          "type": "array",
+          "maxItems": 4
+        },
+        "stage": {
+          "type": "object"
+        },
+        "degree": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "focus": {
+          "type": "string"
+        },
+        "week": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7
+        }
+      }
+    }
   },
-  "definitions": {"bilingual": {"type": "object", "required": ["zh", "en"], "properties": {"zh": {"type": "string"}, "en": {"type": "string"}}}}
+  "definitions": {
+    "bilingual": {
+      "type": "object",
+      "required": [
+        "zh",
+        "en"
+      ],
+      "properties": {
+        "zh": {
+          "type": "string"
+        },
+        "en": {
+          "type": "string"
+        }
+      }
+    }
+  }
 }

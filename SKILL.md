@@ -1,11 +1,11 @@
 ---
 name: research-almanac
-description: Build a weekly research almanac and project work plan across six disciplines, with date-specific workflows, sourced Yijing passages and an offline bilingual HTML report. Add precise Zhouyi paper submission windows as optional support, or handle an explicit submission-only request with the existing planner. Use for research-week planning, 科研黄历 and 投稿择时, not predictions of scientific or publication success.
+description: Build a personalized weekly research almanac and project work plan using research direction, method and stage, with sourced Yijing passages and an offline bilingual HTML report. Add precise Zhouyi paper submission windows as optional support, or handle an explicit submission-only request with the existing planner. Use for research-week planning, 科研黄历 and 投稿择时, not predictions of scientific or publication success.
 metadata:
   type: agent-skill
   status: implemented-with-limits
   created: "2026-09-14"
-  updated: "2026-09-19"
+  updated: "2026-09-20"
 ---
 
 # 科研黄历 · Research Almanac
@@ -23,11 +23,11 @@ Do not make the user choose a second Skill or re-enter data in a web form. The c
 ## Weekly workflow
 
 1. Resolve the known IANA timezone and desired week. A general almanac needs no manuscript, birthday or journal. Read only a user-specified project's relevant overview, current tasks, constraints and manuscript state when personalization is requested. Preserve sources and distinguish supplied or verified facts from assumptions. If several projects are equally plausible, clarify which one.
-2. Prepare JSON matching [weekly input](schemas/weekly-input.schema.json). Start from [general](examples/weekly.json) or [project](examples/weekly-project.json) examples but remove their fixed `now`, simulated tasks and deadline for real use. Omit `week_start` for the next local Monday–Sunday; a supplied `week_start` must be a Monday. Select one discipline or `all`.
+2. Prepare JSON matching [weekly input](schemas/weekly-input.schema.json). Start from [general](examples/weekly.json) or [project](examples/weekly-project.json) examples but remove their fixed `now`, simulated tasks and deadline for real use. Omit `week_start` for the next local Monday–Sunday; a supplied `week_start` must be a Monday. Select one display group or `all`. When the user provides a specialty, method or stage, add `research_profile` using [profile matching](references/research-profile.md). Use known project facts first; avoid turning optional profile fields into a mandatory questionnaire. Unspecified methods remain empty and an unspecified stage stays general. Read available ids with `node scripts/cli.js profile-catalog`.
 3. Map actual tasks to stable ids, estimated minutes, dependencies, earliest start, deadline and expected output. Keep unknown estimates missing, not invented. Preserve confirmed events and unavailable intervals. Include source references for project facts. Do not claim estimated tasks have been completed.
 4. Add `submission` only if there is a real submission request. It uses the existing submission input contract and must match the weekly timezone. Use `submission_task_ids` only for known required preparation tasks. The weekly engine uses the same week and computation time, and subtracts research tasks before calling the old submission engine. Readiness, author approval, deadlines and verified academic evidence remain mandatory constraints.
 5. Run `node scripts/cli.js weekly INPUT.json --out runs/UNIQUE-RUN`. This saves `input.json`, `weekly.json`, a paired `record.json`, bilingual Markdown and the primary `report.html`. When submission is included it also saves `submission.json` and `submission.html`; feasible candidates produce an ICS file without reminders.
-6. Return an absolute clickable link to `report.html` and open the file viewer if available. Briefly state the actual date range and any tasks requiring more time or missing estimates. The main page covers all six disciplines with daily/weekly views; user tasks are a separate saved schedule. Submission details are folded beneath it.
+6. Return an absolute clickable link to `report.html` and open the file viewer if available. Briefly state the actual date range and any tasks requiring more time or missing estimates. A supplied research profile opens on the personal plan; all six display groups remain available through the selector. Daily cards include steps, outputs, checks, a smallest useful step and alternatives when blocked. User tasks remain a separate saved schedule. Submission details are folded beneath it.
 7. For adjustments, copy the previous weekly input into a new private file, update only requested facts, remove the stale `now`, and run again to a new directory. Re-resolve the target week when the user changes it. Never overwrite a previous input, result or historical record. Render stored Markdown in another language with `render`, without recomputing the schedule.
 
 ## Priority and interpretation
@@ -38,7 +38,7 @@ Confirmed clinical care, continuous experiments, field windows, appointments, ta
 
 The bundled 2026 mainland China holiday table has an official source. Unknown years use a labelled weekday fallback. Other timezones retain practical local scheduling without invented Chinese-calendar facts. Never infer foreign editorial-office closures from local holidays.
 
-Daily rhythms are varied workflow suggestions saved with the result, not auspicious appointments. Six-discipline suggestions cover humanities, social sciences, natural sciences, engineering, agriculture and medical research. No arbitrary luck scores, fabricated Qimen charts or medical treatment advice. Reference existing protocols for fieldwork, clinical commitments and experiments.
+Daily rhythms are varied workflow suggestions saved with the result, not auspicious appointments. The six overview groups cover humanities, social sciences, natural sciences, engineering, agriculture and medical research. The local catalog adds 14 lookup categories, 38 direction templates, 12 methods and 9 research stages, plus a general fallback. These direction templates are not an exhaustive official degree-program catalog. Combine up to four directions and four explicitly selected methods; preserve unlisted specialties through `custom_specialties`. Academic/professional master’s and doctoral labels are metadata, not automatic workload assumptions. Never convert suggested actions into booked tasks without known durations and real project constraints. No arbitrary luck scores, fabricated Qimen charts or medical treatment advice. Reference existing protocols for fieldwork, clinical commitments and experiments.
 
 Classical passages and explanations come from `data/bagua.json`; show the original, chapter, plain-language meaning and a separately identifiable modern reflection. Daily passages are chosen by workflow theme, not computed divination. Submission-facing trigrams continue to use the old direction mapping. For submission evidence and personal zodiac preferences, follow [academic rules](references/academic-evidence.md) and the full submission workflow. No universal weekend penalty or acceptance probability.
 

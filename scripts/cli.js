@@ -8,6 +8,7 @@ import {validateReport} from './validate-report.js';
 import {publishAgentReport,exportLocalHistory,defaultHistoryDir} from './report-html.js';
 import {weekly,validateWeeklyInput,validateWeeklyReport} from './weekly.js';
 import {publishWeeklyReport,renderWeeklyMarkdown} from './weekly-html.js';
+import {profileCatalog} from './research-profile.js';
 const args=process.argv.slice(2),cmd=args.shift(),outIndex=args.indexOf('--out');
 const out=outIndex>=0?args.splice(outIndex,2)[1]:null;
 const historyIndex=args.indexOf('--history-dir');
@@ -19,7 +20,9 @@ function save(value){
  writeFileSync(p,JSON.stringify(value,null,2)+'\n',{flag:'wx'});console.log(p);
 }
 try{
- if(cmd==='weekly'){
+ if(cmd==='profile-catalog'){
+  save({categories:profileCatalog.categories,specialties:profileCatalog.specialties.map(({id,name,category,group,suggested_method})=>({id,name,category,group,suggested_method})),methods:profileCatalog.methods.map(({id,name})=>({id,name})),stages:profileCatalog.stages.map(({id,name})=>({id,name})),degrees:profileCatalog.degrees,note:profileCatalog.note});
+ }else if(cmd==='weekly'){
   if(!args[0])throw new Error('Weekly input JSON required');const input=load(args[0]);validateWeeklyInput(input);
   if(!input.now)input.now=new Date().toISOString();const report=weekly(input);
   if(!out)save(report);else{
@@ -62,7 +65,7 @@ try{
  }else if(cmd==='validate-weekly'){validateWeeklyInput(load(args[0]));console.log('Valid weekly input');
  }else if(cmd==='validate'){validateInput(load(args[0]));console.log('Valid input');
  }else{
- console.log('Research Almanac 0.11.0\nCommands:\n weekly weekly-input.json --out runs/new-week\n validate-weekly weekly-input.json\n history-html --out runs/history-new.html [--history-dir PRIVATE-DIR]\n recommend input.json --out runs/new-run\n render report.json [zh|en] [brief|detailed]\n compare report.json 1 2\n select report.json 1 --out runs/plan.json\n patch input.json patch.json --out runs/updated-input.json\n review plan.json [updated-input.json] --out runs/reviewed-plan.json\n submitted plan.json confirmation.json --out runs/submitted-plan.json\n backplan tasks.json\n validate input.json\n reminder-status\nAll --out destinations must be new. Calendar export does not create reminders.');
+ console.log('Research Almanac 0.12.0\nCommands:\n profile-catalog\n weekly weekly-input.json --out runs/new-week\n validate-weekly weekly-input.json\n history-html --out runs/history-new.html [--history-dir PRIVATE-DIR]\n recommend input.json --out runs/new-run\n render report.json [zh|en] [brief|detailed]\n compare report.json 1 2\n select report.json 1 --out runs/plan.json\n patch input.json patch.json --out runs/updated-input.json\n review plan.json [updated-input.json] --out runs/reviewed-plan.json\n submitted plan.json confirmation.json --out runs/submitted-plan.json\n backplan tasks.json\n validate input.json\n reminder-status\nAll --out destinations must be new. Calendar export does not create reminders.');
  if(cmd&&cmd!=='help'&&cmd!=='--help')process.exitCode=1;
  }
 }catch(error){console.error('Error: '+error.message);process.exitCode=1;}
