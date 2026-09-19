@@ -294,6 +294,18 @@
           "maxItems": 7
         }
       }
+    },
+    "week_focus": {
+      "type": "object",
+      "required": [
+        "kind",
+        "user_focus",
+        "goal",
+        "priorities",
+        "deliverables",
+        "questions",
+        "action_map"
+      ]
     }
   },
   "definitions": {

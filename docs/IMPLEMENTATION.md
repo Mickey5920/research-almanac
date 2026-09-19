@@ -6,7 +6,17 @@ updated: 2026-09-20
 tags: [zhouyi, implementation]
 ---
 
-# Implementation status — current release 0.12.0
+# Implementation status — current release 0.13.0
+
+## 0.13.0 — Open checklists and detailed research activities (2026-09-20)
+
+Execution checklists open by default. The six-group overview links to discipline details, and weekly subject names and cells navigate to the appropriate discipline and day. Explicit collapse choices survive language changes. The compact overview remains separate from expanded daily details.
+
+The local bilingual activity catalog contains 54 guides: nine activity types for each of six groups. Each guide includes steps, an output and a check. Daily plans choose up to two activities using workflow phase, stage and supplied methods; a collapsible library keeps the other options available. Writing, revision, defense and archiving review existing experiments and code. Recovery days add no activities; light days retain optional short steps.
+
+Saved weekly focus now includes priorities, suggested outputs, questions and activity dates. HTML and Markdown use saved content; opening an old snapshot does not enrich or mutate it. Activity suggestions never create scheduled tasks.
+
+Validation: 144 Node tests and package/link checks pass. Browser checks cover both languages, all seven dates, six clickable disciplines, expanded execution lists, preserved collapse state, nine-item libraries, weekly-cell navigation, rich focus, legacy records, three submission direction panels, unchanged saved data and zero remote requests. The overview fits 1366 × 900 and 1440 × 1000 desktop viewports; detailed checklists scroll as needed. At 390 px, the overview, personal plan and expanded library stay within the viewport width.
 
 ## 0.12.0 — Research direction, method and stage (2026-09-20)
 

@@ -25,12 +25,19 @@ export function renderWeeklyMarkdown(report,language='zh'){
  const lines=['# '+(zh?'科研黄历 · 一周安排':'Research Almanac · Weekly Plan'),'',report.week_start+' — '+report.week_end+' · '+report.timezone,'',safe(report.title)];
  const p=report.personalization;
  if(p)lines.push('',(zh?'研究方向：':'Research areas: ')+p.fields.map(f=>safe(t(f.name))).join(' + '),(zh?'阶段：':'Stage: ')+t(p.stage.name),(zh?'方法：':'Methods: ')+p.methods.map(m=>t(m.name)).join(' / '),safe(p.focus));
+ const focus=p?.week_focus??report.week_focus;
+ if(focus){
+  lines.push('','## '+(zh?'本周关注':'This week’s focus'),'',safe(t(focus.goal)));
+  for(const [key,label] of [['priorities',zh?'重点目标':'Priorities'],['deliverables',zh?'建议产物':'Suggested outputs'],['questions',zh?'值得想清楚':'Questions to explore']])lines.push('','### '+label,...focus[key].map(x=>'- '+safe(t(x))));
+  if(focus.action_map.length)lines.push('','### '+(zh?'本周操作分布':'Activities across the week'),...focus.action_map.map(a=>'- '+safe(t(a.name))+' · '+a.dates.join(' / ')));
+ }
  for(const [i,d] of report.days.entries()){
   lines.push('','## '+d.date+' · '+t(d.theme),'',t(d.hint),'');
   const tasks=p?p.week[i].tracks:report.disciplines.map(s=>({name:s.name,...s.week[i]}));
   if(p)lines.push('**'+(zh?'本阶段主线':'Stage focus')+'** · '+t(p.week[i].stage_focus),'');
   for(const task of tasks){
    lines.push('### '+safe(t(task.name))+' · '+t(task.title),'',safe(t(task.action)),'',(zh?'产物：':'Output: ')+safe(t(task.output)));
+   for(const activity of task.operations??[])lines.push('','#### '+safe(t(activity.title)),...activity.steps.map((step,i)=>(i+1)+'. '+safe(t(step))),(zh?'产物：':'Output: ')+safe(t(activity.output)),(zh?'核查：':'Check: ')+safe(t(activity.check)));
    if(task.steps)lines.push('',...task.steps.map((s,i)=>(i+1)+'. '+safe(t(s))),'',(zh?'核查：':'Check: ')+safe(t(task.checkpoint)),(zh?'轻量版本：':'Smallest step: ')+safe(t(task.minimum)),(zh?'卡住时：':'When blocked: ')+safe(t(task.blocked)),(zh?'有余力时：':'If capacity remains: ')+safe(t(task.extension)),'');
   }
   if(p){

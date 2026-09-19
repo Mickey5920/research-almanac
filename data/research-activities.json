@@ -1,0 +1,1928 @@
+{
+  "version": "research-activities-v1",
+  "kind": "workflow_suggestion",
+  "categories": [
+    {
+      "id": "read",
+      "name": {
+        "zh": "文献阅读",
+        "en": "Read literature"
+      },
+      "icon": "▤"
+    },
+    {
+      "id": "visualize",
+      "name": {
+        "zh": "画图与表达",
+        "en": "Make figures"
+      },
+      "icon": "◇"
+    },
+    {
+      "id": "synthesize",
+      "name": {
+        "zh": "总结归纳",
+        "en": "Synthesize"
+      },
+      "icon": "≡"
+    },
+    {
+      "id": "think",
+      "name": {
+        "zh": "思考问题",
+        "en": "Think through questions"
+      },
+      "icon": "◉"
+    },
+    {
+      "id": "reproduce",
+      "name": {
+        "zh": "论文复现",
+        "en": "Reproduce a paper"
+      },
+      "icon": "↻"
+    },
+    {
+      "id": "experiment",
+      "name": {
+        "zh": "实验与试做",
+        "en": "Experiment or pilot"
+      },
+      "icon": "⚗"
+    },
+    {
+      "id": "code",
+      "name": {
+        "zh": "代码与工具",
+        "en": "Code and tools"
+      },
+      "icon": "⌘"
+    },
+    {
+      "id": "write",
+      "name": {
+        "zh": "论文写作",
+        "en": "Write"
+      },
+      "icon": "✎"
+    },
+    {
+      "id": "discuss",
+      "name": {
+        "zh": "讨论与反馈",
+        "en": "Discuss"
+      },
+      "icon": "↗"
+    }
+  ],
+  "groups": {
+    "humanities": [
+      {
+        "id": "read",
+        "category": {
+          "zh": "文献阅读",
+          "en": "Read literature"
+        },
+        "icon": "▤",
+        "title": {
+          "zh": "精读一篇，追到原典",
+          "en": "Read a paper back to its sources"
+        },
+        "steps": [
+          {
+            "zh": "先读问题、论点和结尾，标出作者真正回应的争论",
+            "en": "Identify the question, claim and debate before reading in detail"
+          },
+          {
+            "zh": "追查一个关键引文的原典、版本和上下文",
+            "en": "Trace one important quotation to its primary text, edition and context"
+          },
+          {
+            "zh": "写下可借鉴的论证方法与一处不同意见",
+            "en": "Note a useful argumentative move and one point of disagreement"
+          }
+        ],
+        "output": {
+          "zh": "文献卡：问题、论点、原典、可用位置",
+          "en": "A reading card with question, claim, sources and possible use"
+        },
+        "check": {
+          "zh": "页码、版本和引文语境相互对应",
+          "en": "Match page numbers, editions and quotation context"
+        }
+      },
+      {
+        "id": "visualize",
+        "category": {
+          "zh": "画图与表达",
+          "en": "Make figures"
+        },
+        "icon": "◇",
+        "title": {
+          "zh": "把论证画成一张图",
+          "en": "Draw an argument map"
+        },
+        "steps": [
+          {
+            "zh": "列出主张、分论点、证据与反例",
+            "en": "List the claim, subclaims, evidence and counterexamples"
+          },
+          {
+            "zh": "用箭头区分支持、转折和前提关系",
+            "en": "Use arrows to distinguish support, contrast and prerequisites"
+          },
+          {
+            "zh": "在缺少依据的连线上标记待补材料",
+            "en": "Mark links that still need supporting evidence"
+          }
+        ],
+        "output": {
+          "zh": "论证图、概念图或历史时间线",
+          "en": "An argument map, concept map or timeline"
+        },
+        "check": {
+          "zh": "图中的连接能对应到原文或明确解释",
+          "en": "Trace each connection to a text or an explicit interpretation"
+        }
+      },
+      {
+        "id": "synthesize",
+        "category": {
+          "zh": "总结归纳",
+          "en": "Synthesize"
+        },
+        "icon": "≡",
+        "title": {
+          "zh": "做一页主题综述",
+          "en": "Write a one-page thematic synthesis"
+        },
+        "steps": [
+          {
+            "zh": "把读过的材料按观点或问题分组",
+            "en": "Group reading by position or question"
+          },
+          {
+            "zh": "比较共识、分歧及使用材料的差别",
+            "en": "Compare agreement, disagreement and differences in evidence"
+          },
+          {
+            "zh": "用一段话说明自己的切入点和仍缺的材料",
+            "en": "State your entry point and the evidence still needed"
+          }
+        ],
+        "output": {
+          "zh": "主题综述页与引用索引",
+          "en": "A thematic synthesis with a citation index"
+        },
+        "check": {
+          "zh": "按问题组织观点，保留不同解释",
+          "en": "Organize around questions while retaining competing interpretations"
+        }
+      },
+      {
+        "id": "think",
+        "category": {
+          "zh": "思考问题",
+          "en": "Think through questions"
+        },
+        "icon": "◉",
+        "title": {
+          "zh": "追问一个关键概念",
+          "en": "Interrogate one central concept"
+        },
+        "steps": [
+          {
+            "zh": "用自己的话定义论文中的一个核心概念",
+            "en": "Define a central concept in your own words"
+          },
+          {
+            "zh": "找一个不符合现有解释的例子",
+            "en": "Find a case that does not fit the current interpretation"
+          },
+          {
+            "zh": "据此收紧问题或补充适用边界",
+            "en": "Narrow the question or refine its limits"
+          }
+        ],
+        "output": {
+          "zh": "概念定义、反例与修订后的问题",
+          "en": "A definition, counterexample and revised question"
+        },
+        "check": {
+          "zh": "分清原作者用法与自己的分析用法",
+          "en": "Separate the source author’s usage from your analytical usage"
+        }
+      },
+      {
+        "id": "reproduce",
+        "category": {
+          "zh": "论文复现",
+          "en": "Reproduce a paper"
+        },
+        "icon": "↻",
+        "title": {
+          "zh": "重走一篇论文的论证",
+          "en": "Retrace a published argument"
+        },
+        "steps": [
+          {
+            "zh": "选一条可核查的结论，列出论文使用的原始材料",
+            "en": "Choose a checkable claim and list its primary evidence"
+          },
+          {
+            "zh": "按作者顺序重做引文定位、文本比较或编码",
+            "en": "Repeat source lookup, textual comparison or coding in the author’s sequence"
+          },
+          {
+            "zh": "记录能够重现的步骤、差异和缺少的信息",
+            "en": "Record reproduced steps, differences and missing information"
+          }
+        ],
+        "output": {
+          "zh": "论证重建与差异记录",
+          "en": "An argument reconstruction and discrepancy log"
+        },
+        "check": {
+          "zh": "区分重现原论证与赞同其结论",
+          "en": "Distinguish retracing the argument from accepting its conclusion"
+        }
+      },
+      {
+        "id": "experiment",
+        "category": {
+          "zh": "实验与试做",
+          "en": "Experiment or pilot"
+        },
+        "icon": "⚗",
+        "title": {
+          "zh": "试做一个分析或创作小样",
+          "en": "Pilot an analysis or creative fragment"
+        },
+        "steps": [
+          {
+            "zh": "挑一小段文本、一个片段或一个创作问题",
+            "en": "Choose a short text, passage or creative question"
+          },
+          {
+            "zh": "试用已经选定的分析规则或创作方法，保留旧版本",
+            "en": "Try the selected analytical or creative method and retain the prior version"
+          },
+          {
+            "zh": "记录方法是否可执行以及哪里需要调整",
+            "en": "Note feasibility and changes needed"
+          }
+        ],
+        "output": {
+          "zh": "小样、标注样例与方法反思",
+          "en": "A pilot fragment, annotation example and method reflection"
+        },
+        "check": {
+          "zh": "把试做经验与正式研究结论分开",
+          "en": "Keep pilot observations separate from final research conclusions"
+        }
+      },
+      {
+        "id": "code",
+        "category": {
+          "zh": "代码与工具",
+          "en": "Code and tools"
+        },
+        "icon": "⌘",
+        "title": {
+          "zh": "核查语料或整理脚本",
+          "en": "Check a corpus or processing script"
+        },
+        "steps": [
+          {
+            "zh": "已有数字工具任务时，准备一份小规模测试文本",
+            "en": "For an existing digital task, prepare a small test text"
+          },
+          {
+            "zh": "检查编码、分词、检索或标注的实际输出",
+            "en": "Inspect encoding, tokenization, search or annotation output"
+          },
+          {
+            "zh": "手工复核几个样例，保存参数和改动",
+            "en": "Manually verify examples and save parameters and changes"
+          }
+        ],
+        "output": {
+          "zh": "工具检查记录与可复查样例",
+          "en": "A tool-check log and inspectable examples"
+        },
+        "check": {
+          "zh": "数字处理结果能回到原文，异常字符不被静默丢弃",
+          "en": "Trace processed output to the original and detect lost characters"
+        }
+      },
+      {
+        "id": "write",
+        "category": {
+          "zh": "论文写作",
+          "en": "Write"
+        },
+        "icon": "✎",
+        "title": {
+          "zh": "写成一个完整论证段",
+          "en": "Write one complete argumentative paragraph"
+        },
+        "steps": [
+          {
+            "zh": "先写一句主张，再选最直接的文本依据",
+            "en": "State a claim and select direct textual support"
+          },
+          {
+            "zh": "补充从引文到主张之间的解释",
+            "en": "Explain the connection between the evidence and claim"
+          },
+          {
+            "zh": "核查引用并写出与下一段的衔接",
+            "en": "Check citations and connect the next paragraph"
+          }
+        ],
+        "output": {
+          "zh": "带完整出处的段落草稿",
+          "en": "A paragraph draft with complete references"
+        },
+        "check": {
+          "zh": "段落包含主张、证据和解释",
+          "en": "Include a claim, evidence and interpretation"
+        }
+      },
+      {
+        "id": "discuss",
+        "category": {
+          "zh": "讨论与反馈",
+          "en": "Discuss"
+        },
+        "icon": "↗",
+        "title": {
+          "zh": "带着一段文字讨论",
+          "en": "Discuss a concrete passage"
+        },
+        "steps": [
+          {
+            "zh": "选一段卡住的论证，附上相关原文",
+            "en": "Choose a difficult argument and attach the relevant source text"
+          },
+          {
+            "zh": "提出一个明确问题，而非泛泛询问写得怎样",
+            "en": "Ask one precise question about it"
+          },
+          {
+            "zh": "把反馈转成可以执行的改写或补证任务",
+            "en": "Turn feedback into a specific revision or evidence task"
+          }
+        ],
+        "output": {
+          "zh": "讨论问题与修改清单",
+          "en": "A discussion question and revision list"
+        },
+        "check": {
+          "zh": "保留反馈理由与自己的取舍",
+          "en": "Record the reasons for feedback and your decisions"
+        }
+      }
+    ],
+    "social": [
+      {
+        "id": "read",
+        "category": {
+          "zh": "文献阅读",
+          "en": "Read literature"
+        },
+        "icon": "▤",
+        "title": {
+          "zh": "读清识别逻辑和测量",
+          "en": "Read identification and measurement carefully"
+        },
+        "steps": [
+          {
+            "zh": "提取研究问题、理论机制、样本和核心变量",
+            "en": "Extract the question, mechanism, sample and key variables"
+          },
+          {
+            "zh": "核对识别或解释策略依赖哪些条件",
+            "en": "Identify the assumptions behind identification or interpretation"
+          },
+          {
+            "zh": "记录局限、可迁移部分及与自己项目的差别",
+            "en": "Note limits, transferable ideas and differences from your project"
+          }
+        ],
+        "output": {
+          "zh": "问题—机制—方法文献卡",
+          "en": "A question, mechanism and method reading card"
+        },
+        "check": {
+          "zh": "把作者报告的证据与自己的延伸解释分开",
+          "en": "Separate reported evidence from your extrapolation"
+        }
+      },
+      {
+        "id": "visualize",
+        "category": {
+          "zh": "画图与表达",
+          "en": "Make figures"
+        },
+        "icon": "◇",
+        "title": {
+          "zh": "画清机制与数据关系",
+          "en": "Visualize mechanisms and data relationships"
+        },
+        "steps": [
+          {
+            "zh": "先明确要表达的是机制、样本结构还是结果比较",
+            "en": "Choose whether the figure explains a mechanism, sample or comparison"
+          },
+          {
+            "zh": "画机制图、样本流程图、系数图或主题关系图",
+            "en": "Create a mechanism, sample-flow, coefficient or theme diagram"
+          },
+          {
+            "zh": "补上分母、单位、区间及图注来源",
+            "en": "Add denominators, units, intervals and source notes"
+          }
+        ],
+        "output": {
+          "zh": "一张可解释的机制或结果图",
+          "en": "An interpretable mechanism or results figure"
+        },
+        "check": {
+          "zh": "相关关系图不自动代表因果关系",
+          "en": "Do not label an association diagram as causal evidence"
+        }
+      },
+      {
+        "id": "synthesize",
+        "category": {
+          "zh": "总结归纳",
+          "en": "Synthesize"
+        },
+        "icon": "≡",
+        "title": {
+          "zh": "把结果写成研究备忘录",
+          "en": "Turn results into a research memo"
+        },
+        "steps": [
+          {
+            "zh": "归纳目前最稳定的发现和不一致结果",
+            "en": "Summarize stable findings and inconsistent results"
+          },
+          {
+            "zh": "对照理论机制和替代解释",
+            "en": "Compare mechanisms and alternative explanations"
+          },
+          {
+            "zh": "列出需要补的材料、分析或访谈问题",
+            "en": "List remaining evidence, analyses or interview questions"
+          }
+        ],
+        "output": {
+          "zh": "发现—解释—下一步备忘录",
+          "en": "A findings, interpretation and next-step memo"
+        },
+        "check": {
+          "zh": "同时保留不支持原预期的证据",
+          "en": "Retain evidence that does not support the initial expectation"
+        }
+      },
+      {
+        "id": "think",
+        "category": {
+          "zh": "思考问题",
+          "en": "Think through questions"
+        },
+        "icon": "◉",
+        "title": {
+          "zh": "拆开一个解释问题",
+          "en": "Unpack one interpretive question"
+        },
+        "steps": [
+          {
+            "zh": "写清你希望解释的现象与比较对象",
+            "en": "Specify the phenomenon and comparison"
+          },
+          {
+            "zh": "列出可能的混杂、选择过程或竞争机制",
+            "en": "List potential confounding, selection or competing mechanisms"
+          },
+          {
+            "zh": "选择一项可区分解释的资料或核查",
+            "en": "Choose evidence or a check that separates explanations"
+          }
+        ],
+        "output": {
+          "zh": "解释假设与证据需求表",
+          "en": "An explanation and evidence-needs table"
+        },
+        "check": {
+          "zh": "把可检验判断与价值判断分开",
+          "en": "Separate testable claims from value judgments"
+        }
+      },
+      {
+        "id": "reproduce",
+        "category": {
+          "zh": "论文复现",
+          "en": "Reproduce a paper"
+        },
+        "icon": "↻",
+        "title": {
+          "zh": "复现一张表或一段编码",
+          "en": "Reproduce a table or coding step"
+        },
+        "steps": [
+          {
+            "zh": "定位论文的样本筛选、变量口径与代码或编码规则",
+            "en": "Locate sample rules, variable definitions and code or coding rules"
+          },
+          {
+            "zh": "用可获得且有权使用的材料重做一个主要结果",
+            "en": "Reproduce one main result using available authorized material"
+          },
+          {
+            "zh": "逐项比较样本量、统计量或主题划分的差异",
+            "en": "Compare sample counts, statistics or thematic differences"
+          }
+        ],
+        "output": {
+          "zh": "复现表与差异说明",
+          "en": "A reproduction table and discrepancy notes"
+        },
+        "check": {
+          "zh": "资料或细节不足时，写清复现到哪一步",
+          "en": "State the reproduced scope when data or details are missing"
+        }
+      },
+      {
+        "id": "experiment",
+        "category": {
+          "zh": "实验与试做",
+          "en": "Experiment or pilot"
+        },
+        "icon": "⚗",
+        "title": {
+          "zh": "预试问卷或访谈流程",
+          "en": "Pilot a questionnaire or interview workflow"
+        },
+        "steps": [
+          {
+            "zh": "对照既定研究方案检查条目、顺序与记录表",
+            "en": "Check items, order and forms against the established plan"
+          },
+          {
+            "zh": "在授权范围内进行小范围预试或桌面演练",
+            "en": "Run an authorized small pilot or a desk-based walkthrough"
+          },
+          {
+            "zh": "记录歧义、流程阻塞与需要调整的内容",
+            "en": "Record ambiguity, bottlenecks and proposed changes"
+          }
+        ],
+        "output": {
+          "zh": "预试记录与工具修订表",
+          "en": "A pilot log and instrument revision sheet"
+        },
+        "check": {
+          "zh": "正式招募和资料收集遵循既定审批与同意流程",
+          "en": "Use the established approval and consent process for actual recruitment and collection"
+        }
+      },
+      {
+        "id": "code",
+        "category": {
+          "zh": "代码与工具",
+          "en": "Code and tools"
+        },
+        "icon": "⌘",
+        "title": {
+          "zh": "调通一段数据处理代码",
+          "en": "Debug one data-processing step"
+        },
+        "steps": [
+          {
+            "zh": "保留原始数据，准备最小输入样例",
+            "en": "Preserve raw data and prepare a minimal input example"
+          },
+          {
+            "zh": "逐步检查合并键、缺失处理、编码和样本筛选",
+            "en": "Check join keys, missingness, coding and sample filters step by step"
+          },
+          {
+            "zh": "加一项样本量或取值范围检查并记录版本",
+            "en": "Add a sample-count or value-range check and record the version"
+          }
+        ],
+        "output": {
+          "zh": "处理日志、检查结果与修订脚本",
+          "en": "Processing logs, checks and a revised script"
+        },
+        "check": {
+          "zh": "能解释每一步为什么增加或减少了样本",
+          "en": "Explain why each step changes the sample"
+        }
+      },
+      {
+        "id": "write",
+        "category": {
+          "zh": "论文写作",
+          "en": "Write"
+        },
+        "icon": "✎",
+        "title": {
+          "zh": "写清一项发现及其边界",
+          "en": "Write a finding and its limits"
+        },
+        "steps": [
+          {
+            "zh": "选一项结果，先写其回答了什么问题",
+            "en": "Choose a result and state which question it answers"
+          },
+          {
+            "zh": "连接表格、机制解释和相关文献",
+            "en": "Connect the table, mechanism and literature"
+          },
+          {
+            "zh": "补充适用人群、样本和识别局限",
+            "en": "State population, sample and identification limits"
+          }
+        ],
+        "output": {
+          "zh": "结果或讨论段落草稿",
+          "en": "A results or discussion paragraph"
+        },
+        "check": {
+          "zh": "结论强度与设计和证据一致",
+          "en": "Match claim strength to design and evidence"
+        }
+      },
+      {
+        "id": "discuss",
+        "category": {
+          "zh": "讨论与反馈",
+          "en": "Discuss"
+        },
+        "icon": "↗",
+        "title": {
+          "zh": "把等待变成具体问题",
+          "en": "Turn a dependency into a precise question"
+        },
+        "steps": [
+          {
+            "zh": "整理访谈、数据或合作环节的一个阻塞点",
+            "en": "Identify one interview, data or collaboration bottleneck"
+          },
+          {
+            "zh": "准备简短背景、已有尝试与需要决定的选项",
+            "en": "Prepare context, attempted steps and decision options"
+          },
+          {
+            "zh": "记录反馈并安排可独立推进的下一步",
+            "en": "Record feedback and identify an independent next step"
+          }
+        ],
+        "output": {
+          "zh": "待确认问题与独立推进项",
+          "en": "An open question and independent next step"
+        },
+        "check": {
+          "zh": "讨论准备不等于已联系或已获同意",
+          "en": "Preparing a discussion does not mean contact or approval occurred"
+        }
+      }
+    ],
+    "science": [
+      {
+        "id": "read",
+        "category": {
+          "zh": "文献阅读",
+          "en": "Read literature"
+        },
+        "icon": "▤",
+        "title": {
+          "zh": "读透假设、模型与验证",
+          "en": "Read assumptions, models and validation"
+        },
+        "steps": [
+          {
+            "zh": "提取核心问题、符号定义和关键假设",
+            "en": "Extract the problem, notation and key assumptions"
+          },
+          {
+            "zh": "沿一条推导或实验结果检查支撑链",
+            "en": "Follow one derivation or experimental result through its evidence"
+          },
+          {
+            "zh": "记录可检验预测、边界情况和未解释现象",
+            "en": "Note testable predictions, boundary cases and unexplained observations"
+          }
+        ],
+        "output": {
+          "zh": "模型与证据阅读卡",
+          "en": "A model and evidence reading card"
+        },
+        "check": {
+          "zh": "区分证明、数值证据与经验观察",
+          "en": "Distinguish proof, numerical evidence and observation"
+        }
+      },
+      {
+        "id": "visualize",
+        "category": {
+          "zh": "画图与表达",
+          "en": "Make figures"
+        },
+        "icon": "◇",
+        "title": {
+          "zh": "让模型或结果可见",
+          "en": "Visualize a model or result"
+        },
+        "steps": [
+          {
+            "zh": "明确变量、单位和需要展示的关系",
+            "en": "Define variables, units and the relationship to display"
+          },
+          {
+            "zh": "绘制示意图、相图、拟合图或误差图",
+            "en": "Create a schematic, phase diagram, fit or error plot"
+          },
+          {
+            "zh": "标注条件、误差来源与图中不可外推的范围",
+            "en": "Annotate conditions, error sources and extrapolation limits"
+          }
+        ],
+        "output": {
+          "zh": "带条件与单位的研究图",
+          "en": "A figure with conditions and units"
+        },
+        "check": {
+          "zh": "从图回查原始值、模型参数与绘图设置",
+          "en": "Trace the figure to raw values, model parameters and plot settings"
+        }
+      },
+      {
+        "id": "synthesize",
+        "category": {
+          "zh": "总结归纳",
+          "en": "Synthesize"
+        },
+        "icon": "≡",
+        "title": {
+          "zh": "整理已证与待证",
+          "en": "Separate established and open results"
+        },
+        "steps": [
+          {
+            "zh": "列出已经完成的推导、验证和观察",
+            "en": "List completed derivations, checks and observations"
+          },
+          {
+            "zh": "把缺口按假设、方法和数据分组",
+            "en": "Group gaps by assumptions, methods and data"
+          },
+          {
+            "zh": "写出下一项最有区分度的验证",
+            "en": "Describe the next discriminating check"
+          }
+        ],
+        "output": {
+          "zh": "已证—待证—验证路线表",
+          "en": "An established, open and validation map"
+        },
+        "check": {
+          "zh": "不要把尚未验证的猜想写成事实",
+          "en": "Keep untested conjectures distinct from facts"
+        }
+      },
+      {
+        "id": "think",
+        "category": {
+          "zh": "思考问题",
+          "en": "Think through questions"
+        },
+        "icon": "◉",
+        "title": {
+          "zh": "从边界情况重新想",
+          "en": "Think through a boundary case"
+        },
+        "steps": [
+          {
+            "zh": "把关键关系写成最简形式",
+            "en": "Write the central relation in its simplest form"
+          },
+          {
+            "zh": "检查极限、特殊情形、对称性或反例",
+            "en": "Inspect limits, special cases, symmetry or counterexamples"
+          },
+          {
+            "zh": "据此修订假设或提出一个明确问题",
+            "en": "Refine an assumption or formulate a precise question"
+          }
+        ],
+        "output": {
+          "zh": "边界分析与问题便笺",
+          "en": "A boundary-case analysis and question note"
+        },
+        "check": {
+          "zh": "每个推论都写明使用的条件",
+          "en": "State the conditions used for each inference"
+        }
+      },
+      {
+        "id": "reproduce",
+        "category": {
+          "zh": "论文复现",
+          "en": "Reproduce a paper"
+        },
+        "icon": "↻",
+        "title": {
+          "zh": "重现一个推导或基准结果",
+          "en": "Reproduce a derivation or benchmark"
+        },
+        "steps": [
+          {
+            "zh": "收集原文定义、参数、条件与可用资料",
+            "en": "Collect definitions, parameters, conditions and available material"
+          },
+          {
+            "zh": "从最小例子重做一段证明、计算或公开数据分析",
+            "en": "Reproduce a proof segment, calculation or public-data analysis from a minimal case"
+          },
+          {
+            "zh": "比较结果和误差，定位最早出现差异的步骤",
+            "en": "Compare results and errors; locate the first divergence"
+          }
+        ],
+        "output": {
+          "zh": "复现笔记与差异定位",
+          "en": "Reproduction notes and a divergence analysis"
+        },
+        "check": {
+          "zh": "保持条件一致并记录无法获得的细节",
+          "en": "Keep conditions aligned and record unavailable details"
+        }
+      },
+      {
+        "id": "experiment",
+        "category": {
+          "zh": "实验与试做",
+          "en": "Experiment or pilot"
+        },
+        "icon": "⚗",
+        "title": {
+          "zh": "推进已定实验并留好记录",
+          "en": "Advance an established experiment with traceable records"
+        },
+        "steps": [
+          {
+            "zh": "对照既定方案核对预约、样本、对照与记录准备",
+            "en": "Check bookings, samples, controls and forms against the established protocol"
+          },
+          {
+            "zh": "按既定流程开展已安排工作，保留原始读数和条件",
+            "en": "Carry out the scheduled work under that protocol and retain raw readings and conditions"
+          },
+          {
+            "zh": "整理批次、异常与下一步核查项",
+            "en": "Organize batches, anomalies and follow-up checks"
+          }
+        ],
+        "output": {
+          "zh": "实验日志与原始数据索引",
+          "en": "An experiment log and raw-data index"
+        },
+        "check": {
+          "zh": "理论项目可转为数值试验；连续流程按原方案执行",
+          "en": "For theoretical work use a numerical check; follow established continuous procedures"
+        }
+      },
+      {
+        "id": "code",
+        "category": {
+          "zh": "代码与工具",
+          "en": "Code and tools"
+        },
+        "icon": "⌘",
+        "title": {
+          "zh": "检查计算与分析脚本",
+          "en": "Check computation and analysis scripts"
+        },
+        "steps": [
+          {
+            "zh": "固定输入、环境和参数，选一个可手算的小例子",
+            "en": "Fix inputs, environment and parameters; choose a hand-checkable case"
+          },
+          {
+            "zh": "定位单位、边界条件、数值精度或索引问题",
+            "en": "Inspect units, boundaries, numerical precision or indexing"
+          },
+          {
+            "zh": "保存最小测试与修订前后的结果",
+            "en": "Save the minimal test and before-and-after results"
+          }
+        ],
+        "output": {
+          "zh": "最小测试与计算修订记录",
+          "en": "A minimal test and computation revision log"
+        },
+        "check": {
+          "zh": "结果变化能够解释，不只以代码运行成功为标准",
+          "en": "Explain result changes rather than relying only on successful execution"
+        }
+      },
+      {
+        "id": "write",
+        "category": {
+          "zh": "论文写作",
+          "en": "Write"
+        },
+        "icon": "✎",
+        "title": {
+          "zh": "把一个结果写完整",
+          "en": "Write one result completely"
+        },
+        "steps": [
+          {
+            "zh": "先写问题、条件和结果各一句",
+            "en": "State the question, conditions and result"
+          },
+          {
+            "zh": "补齐必要推导、图表或数据来源",
+            "en": "Add the required derivation, figure or data source"
+          },
+          {
+            "zh": "交代误差、未证部分和适用范围",
+            "en": "Describe error, unproved parts and scope"
+          }
+        ],
+        "output": {
+          "zh": "带条件与验证的结果段",
+          "en": "A results passage with conditions and validation"
+        },
+        "check": {
+          "zh": "符号、单位、图表与文字一致",
+          "en": "Align notation, units, figures and prose"
+        }
+      },
+      {
+        "id": "discuss",
+        "category": {
+          "zh": "讨论与反馈",
+          "en": "Discuss"
+        },
+        "icon": "↗",
+        "title": {
+          "zh": "拿一个缺口去交流",
+          "en": "Discuss one specific gap"
+        },
+        "steps": [
+          {
+            "zh": "准备可独立阅读的问题、推导或异常图",
+            "en": "Prepare a self-contained question, derivation or anomaly plot"
+          },
+          {
+            "zh": "列出尝试过的路径及各自卡在哪里",
+            "en": "List attempted approaches and where each stalled"
+          },
+          {
+            "zh": "把反馈转成下一项可验证的任务",
+            "en": "Turn feedback into a verifiable next task"
+          }
+        ],
+        "output": {
+          "zh": "讨论页与下一项验证",
+          "en": "A discussion sheet and next validation step"
+        },
+        "check": {
+          "zh": "保留暂未解决的问题与不同判断",
+          "en": "Retain unresolved questions and differing interpretations"
+        }
+      }
+    ],
+    "engineering": [
+      {
+        "id": "read",
+        "category": {
+          "zh": "文献阅读",
+          "en": "Read literature"
+        },
+        "icon": "▤",
+        "title": {
+          "zh": "读懂实现与比较条件",
+          "en": "Read implementation and comparison conditions"
+        },
+        "steps": [
+          {
+            "zh": "提取任务、系统假设、主要结构与评价指标",
+            "en": "Extract the task, system assumptions, design and metrics"
+          },
+          {
+            "zh": "检查实现细节、数据、设备或资源条件",
+            "en": "Inspect implementation, data, equipment and resources"
+          },
+          {
+            "zh": "记录值得验证的改动及公平比较的前提",
+            "en": "Record a testable change and the requirements for fair comparison"
+          }
+        ],
+        "output": {
+          "zh": "方法—实现—评价阅读卡",
+          "en": "A method, implementation and evaluation card"
+        },
+        "check": {
+          "zh": "区分论文声称、实际设置和自己的推测",
+          "en": "Separate reported claims, actual settings and your assumptions"
+        }
+      },
+      {
+        "id": "visualize",
+        "category": {
+          "zh": "画图与表达",
+          "en": "Make figures"
+        },
+        "icon": "◇",
+        "title": {
+          "zh": "画清系统与性能差异",
+          "en": "Visualize a system and its performance"
+        },
+        "steps": [
+          {
+            "zh": "先选系统结构、流程、性能还是错误案例",
+            "en": "Choose architecture, workflow, performance or failure cases"
+          },
+          {
+            "zh": "用已有数据绘制结构图、对比图或误差分布",
+            "en": "Draw an architecture diagram, comparison or error distribution from existing data"
+          },
+          {
+            "zh": "标注版本、指标方向、单位和比较条件",
+            "en": "Label versions, metric direction, units and comparison conditions"
+          }
+        ],
+        "output": {
+          "zh": "结构图或可追溯性能图",
+          "en": "An architecture diagram or traceable performance figure"
+        },
+        "check": {
+          "zh": "图中的比较使用一致口径和明确的数据版本",
+          "en": "Use consistent comparisons and explicit data versions"
+        }
+      },
+      {
+        "id": "synthesize",
+        "category": {
+          "zh": "总结归纳",
+          "en": "Synthesize"
+        },
+        "icon": "≡",
+        "title": {
+          "zh": "总结版本改动与证据",
+          "en": "Summarize revisions and evidence"
+        },
+        "steps": [
+          {
+            "zh": "列出本轮结构、参数、代码或材料的实际改动",
+            "en": "List actual design, parameter, code or material changes"
+          },
+          {
+            "zh": "把每项改动与对应测试、性能和失败案例连接",
+            "en": "Link changes to tests, performance and failures"
+          },
+          {
+            "zh": "确定值得保留的改动与下一轮验证点",
+            "en": "Choose changes to retain and the next validation target"
+          }
+        ],
+        "output": {
+          "zh": "改动—结果—决策记录",
+          "en": "A change, result and decision log"
+        },
+        "check": {
+          "zh": "保留无收益或负向结果，避免只记录最佳运行",
+          "en": "Retain neutral and negative results as well as the best run"
+        }
+      },
+      {
+        "id": "think",
+        "category": {
+          "zh": "思考问题",
+          "en": "Think through questions"
+        },
+        "icon": "◉",
+        "title": {
+          "zh": "找准一个真正的瓶颈",
+          "en": "Identify one actual bottleneck"
+        },
+        "steps": [
+          {
+            "zh": "从日志、性能或失败案例描述问题",
+            "en": "Describe the problem using logs, metrics or failures"
+          },
+          {
+            "zh": "列出可能原因和能够区分它们的检查",
+            "en": "List possible causes and discriminating checks"
+          },
+          {
+            "zh": "优先选择成本可控的一项验证",
+            "en": "Choose one check within the available budget"
+          }
+        ],
+        "output": {
+          "zh": "瓶颈假设与验证顺序",
+          "en": "A bottleneck hypothesis and validation order"
+        },
+        "check": {
+          "zh": "先区分问题成因，再决定是否增加复杂度",
+          "en": "Separate causes before adding complexity"
+        }
+      },
+      {
+        "id": "reproduce",
+        "category": {
+          "zh": "论文复现",
+          "en": "Reproduce a paper"
+        },
+        "icon": "↻",
+        "title": {
+          "zh": "先复现一个基线",
+          "en": "Reproduce one baseline first"
+        },
+        "steps": [
+          {
+            "zh": "固定论文、代码提交、环境、数据划分和配置",
+            "en": "Fix the paper, code revision, environment, data split and configuration"
+          },
+          {
+            "zh": "先跑最小用例，再在预算内复现一个主要指标",
+            "en": "Run a minimal case, then reproduce a main metric within budget"
+          },
+          {
+            "zh": "比较日志和结果，记录差异及复现范围",
+            "en": "Compare logs and results and document differences and scope"
+          }
+        ],
+        "output": {
+          "zh": "基线运行清单与差异报告",
+          "en": "A baseline run manifest and discrepancy report"
+        },
+        "check": {
+          "zh": "核对比较条件、随机性和数据泄漏风险",
+          "en": "Check comparison conditions, randomness and data leakage"
+        }
+      },
+      {
+        "id": "experiment",
+        "category": {
+          "zh": "实验与试做",
+          "en": "Experiment or pilot"
+        },
+        "icon": "⚗",
+        "title": {
+          "zh": "做一项有对照的测试",
+          "en": "Run one controlled comparison"
+        },
+        "steps": [
+          {
+            "zh": "对照既定方案明确变量、对照与资源预算",
+            "en": "Define variables, controls and resources using the established plan"
+          },
+          {
+            "zh": "执行已安排的性能测试、仿真或消融，完整保存日志",
+            "en": "Run the scheduled test, simulation or ablation and retain full logs"
+          },
+          {
+            "zh": "比较改动前后并标记不稳定或异常结果",
+            "en": "Compare before and after and flag unstable or anomalous results"
+          }
+        ],
+        "output": {
+          "zh": "测试或消融记录与结果对照",
+          "en": "A test or ablation log and comparison"
+        },
+        "check": {
+          "zh": "设备、连续实验和安全条件按既定方案执行",
+          "en": "Follow established equipment, continuous-experiment and safety procedures"
+        }
+      },
+      {
+        "id": "code",
+        "category": {
+          "zh": "代码与工具",
+          "en": "Code and tools"
+        },
+        "icon": "⌘",
+        "title": {
+          "zh": "用最小用例调代码",
+          "en": "Debug with a minimal case"
+        },
+        "steps": [
+          {
+            "zh": "保存当前版本，提取能稳定触发问题的最小输入",
+            "en": "Save the current version and isolate a reproducible minimal input"
+          },
+          {
+            "zh": "定位首次偏离预期的步骤，每次只改一个关键因素",
+            "en": "Locate the first unexpected step and change one key factor at a time"
+          },
+          {
+            "zh": "运行相关回归检查，记录修复依据与影响",
+            "en": "Run relevant regression checks and record the fix and its impact"
+          }
+        ],
+        "output": {
+          "zh": "最小复现、修订代码与测试记录",
+          "en": "A minimal reproduction, revised code and test log"
+        },
+        "check": {
+          "zh": "确认问题已解决且相邻功能仍可用",
+          "en": "Confirm the issue is resolved and adjacent behavior still works"
+        }
+      },
+      {
+        "id": "write",
+        "category": {
+          "zh": "论文写作",
+          "en": "Write"
+        },
+        "icon": "✎",
+        "title": {
+          "zh": "写清方法与实验对应",
+          "en": "Connect the method to its evaluation"
+        },
+        "steps": [
+          {
+            "zh": "用一段话说明方法解决什么问题",
+            "en": "Explain what problem the method addresses"
+          },
+          {
+            "zh": "逐项对应结构、实现设置与实验验证",
+            "en": "Connect architecture, implementation and evaluation"
+          },
+          {
+            "zh": "核对图表、版本、指标及资源说明",
+            "en": "Check figures, versions, metrics and resource descriptions"
+          }
+        ],
+        "output": {
+          "zh": "方法或实验段落草稿",
+          "en": "A methods or evaluation draft"
+        },
+        "check": {
+          "zh": "避免遗漏使结果无法复查的设置",
+          "en": "Include settings needed to inspect the result"
+        }
+      },
+      {
+        "id": "discuss",
+        "category": {
+          "zh": "讨论与反馈",
+          "en": "Discuss"
+        },
+        "icon": "↗",
+        "title": {
+          "zh": "用失败案例组织讨论",
+          "en": "Organize a discussion around a failure"
+        },
+        "steps": [
+          {
+            "zh": "准备一个代表性失败、日志或性能图",
+            "en": "Prepare a representative failure, log or performance figure"
+          },
+          {
+            "zh": "列出已排除的原因与剩余假设",
+            "en": "List ruled-out causes and remaining hypotheses"
+          },
+          {
+            "zh": "记录下一步谁需要确认什么以及可独立执行的检查",
+            "en": "Record decisions to confirm and checks that can proceed independently"
+          }
+        ],
+        "output": {
+          "zh": "问题定位页与行动清单",
+          "en": "A diagnosis sheet and action list"
+        },
+        "check": {
+          "zh": "讨论材料包含复现条件与实际证据",
+          "en": "Include reproduction conditions and evidence"
+        }
+      }
+    ],
+    "agriculture": [
+      {
+        "id": "read",
+        "category": {
+          "zh": "文献阅读",
+          "en": "Read literature"
+        },
+        "icon": "▤",
+        "title": {
+          "zh": "读清对象、环境与试验设计",
+          "en": "Read the organism, environment and study design"
+        },
+        "steps": [
+          {
+            "zh": "提取物种或品种、环境、物候与研究问题",
+            "en": "Extract species or cultivar, environment, phenology and question"
+          },
+          {
+            "zh": "核对处理、重复、观察周期及样本单位",
+            "en": "Check treatments, replicates, observation periods and sample units"
+          },
+          {
+            "zh": "记录可借鉴的方法与当地条件的差别",
+            "en": "Note useful methods and differences from local conditions"
+          }
+        ],
+        "output": {
+          "zh": "对象—环境—方法文献卡",
+          "en": "An organism, environment and method card"
+        },
+        "check": {
+          "zh": "区分不同地点、季节和处理条件下的结论",
+          "en": "Keep location, season and treatment differences explicit"
+        }
+      },
+      {
+        "id": "visualize",
+        "category": {
+          "zh": "画图与表达",
+          "en": "Make figures"
+        },
+        "icon": "◇",
+        "title": {
+          "zh": "画出地块、物候与样本关系",
+          "en": "Map plots, phenology and samples"
+        },
+        "steps": [
+          {
+            "zh": "核对地块或个体编号、处理和采样日期",
+            "en": "Check plot or individual identifiers, treatments and dates"
+          },
+          {
+            "zh": "画样地布局、物候时间线或响应变化图",
+            "en": "Draw a plot layout, phenology timeline or response plot"
+          },
+          {
+            "zh": "标注环境变化、缺测与重复结构",
+            "en": "Annotate environmental changes, missingness and replication"
+          }
+        ],
+        "output": {
+          "zh": "样地或物候图与数据说明",
+          "en": "A plot or phenology figure with data notes"
+        },
+        "check": {
+          "zh": "图中编号能追溯到现场和原始记录",
+          "en": "Trace identifiers to field sites and original records"
+        }
+      },
+      {
+        "id": "synthesize",
+        "category": {
+          "zh": "总结归纳",
+          "en": "Synthesize"
+        },
+        "icon": "≡",
+        "title": {
+          "zh": "合上一本完整田间账",
+          "en": "Consolidate a field ledger"
+        },
+        "steps": [
+          {
+            "zh": "对齐采样、环境、处理与观测记录",
+            "en": "Align sampling, environmental, treatment and observation records"
+          },
+          {
+            "zh": "整理异常、偏离方案与需要补充的元数据",
+            "en": "Document anomalies, deviations and missing metadata"
+          },
+          {
+            "zh": "写下下一窗口的准备项与交接信息",
+            "en": "List preparations and handover notes for the next window"
+          }
+        ],
+        "output": {
+          "zh": "完整台账、异常清单与交接页",
+          "en": "A ledger, anomaly list and handover sheet"
+        },
+        "check": {
+          "zh": "原始值、编号和时间记录保持可追溯",
+          "en": "Keep raw values, identifiers and times traceable"
+        }
+      },
+      {
+        "id": "think",
+        "category": {
+          "zh": "思考问题",
+          "en": "Think through questions"
+        },
+        "icon": "◉",
+        "title": {
+          "zh": "区分处理效应与环境变化",
+          "en": "Think through treatment and environment"
+        },
+        "steps": [
+          {
+            "zh": "选择一个变化明显的观察结果",
+            "en": "Choose an observation with a noticeable change"
+          },
+          {
+            "zh": "比较处理、环境、物候与测量条件的解释",
+            "en": "Compare treatment, environment, phenology and measurement explanations"
+          },
+          {
+            "zh": "列出能区分这些解释的记录或观察",
+            "en": "List records or observations that distinguish them"
+          }
+        ],
+        "output": {
+          "zh": "环境与处理解释便笺",
+          "en": "An environment and treatment interpretation note"
+        },
+        "check": {
+          "zh": "不把单次观察直接推广到其他季节或地点",
+          "en": "Avoid generalizing a single observation across seasons or sites"
+        }
+      },
+      {
+        "id": "reproduce",
+        "category": {
+          "zh": "论文复现",
+          "en": "Reproduce a paper"
+        },
+        "icon": "↻",
+        "title": {
+          "zh": "复查一项分析或记录流程",
+          "en": "Reproduce an analysis or recording workflow"
+        },
+        "steps": [
+          {
+            "zh": "选论文中的一项统计、指标计算或观测编码",
+            "en": "Select a statistic, index calculation or observation coding step"
+          },
+          {
+            "zh": "使用可获得材料重做计算并核对单位和分母",
+            "en": "Repeat the calculation with available material and check units and denominators"
+          },
+          {
+            "zh": "记录环境或样本条件不一致带来的差异",
+            "en": "Record differences in environmental or sample conditions"
+          }
+        ],
+        "output": {
+          "zh": "复核表与适用条件说明",
+          "en": "A reproduction table and applicability notes"
+        },
+        "check": {
+          "zh": "数值重现与现场条件重现分别说明",
+          "en": "Distinguish numerical reproduction from reproducing field conditions"
+        }
+      },
+      {
+        "id": "experiment",
+        "category": {
+          "zh": "实验与试做",
+          "en": "Experiment or pilot"
+        },
+        "icon": "⚗",
+        "title": {
+          "zh": "按真实窗口推进采样与试验",
+          "en": "Work within real sampling and trial windows"
+        },
+        "steps": [
+          {
+            "zh": "按已定方案核对物候、预约、样本编号和设备准备",
+            "en": "Check phenology, bookings, identifiers and equipment under the established plan"
+          },
+          {
+            "zh": "完成既定采样或观测，记录现场条件与偏差",
+            "en": "Perform scheduled sampling or observation and record conditions and deviations"
+          },
+          {
+            "zh": "检查样本交接、保存记录与原始数据备份",
+            "en": "Check handover, storage records and raw-data backups"
+          }
+        ],
+        "output": {
+          "zh": "当次采样或试验记录包",
+          "en": "A sampling or trial record package"
+        },
+        "check": {
+          "zh": "必要采样、照护和连续观测以实际方案为准",
+          "en": "Use actual protocols for essential sampling, care and continuous observation"
+        }
+      },
+      {
+        "id": "code",
+        "category": {
+          "zh": "代码与工具",
+          "en": "Code and tools"
+        },
+        "icon": "⌘",
+        "title": {
+          "zh": "调通样本与观测数据整理",
+          "en": "Debug sample and observation processing"
+        },
+        "steps": [
+          {
+            "zh": "用少量记录检查地块、个体和时间键",
+            "en": "Check plot, individual and time keys on a small sample"
+          },
+          {
+            "zh": "核对单位换算、重复记录和缺测标记",
+            "en": "Check unit conversions, duplicates and missing-data flags"
+          },
+          {
+            "zh": "对照原始台账验证输出并保存处理说明",
+            "en": "Verify output against the source ledger and save processing notes"
+          }
+        ],
+        "output": {
+          "zh": "清洗脚本与台账核对结果",
+          "en": "A cleaning script and ledger cross-check"
+        },
+        "check": {
+          "zh": "保留原始记录，避免误合并不同个体或时间",
+          "en": "Preserve originals and avoid merging distinct individuals or times"
+        }
+      },
+      {
+        "id": "write",
+        "category": {
+          "zh": "论文写作",
+          "en": "Write"
+        },
+        "icon": "✎",
+        "title": {
+          "zh": "把试验条件写具体",
+          "en": "Write the study conditions explicitly"
+        },
+        "steps": [
+          {
+            "zh": "说明地点、对象、时间、处理和样本单位",
+            "en": "Describe site, organism, time, treatments and sample units"
+          },
+          {
+            "zh": "把结果与环境背景和既有研究对应",
+            "en": "Connect results to environmental context and prior work"
+          },
+          {
+            "zh": "交代缺测、偏差与结论适用条件",
+            "en": "Document missingness, deviations and applicability"
+          }
+        ],
+        "output": {
+          "zh": "方法或结果段落与条件表",
+          "en": "A methods or results passage and conditions table"
+        },
+        "check": {
+          "zh": "条件描述足以理解比较和结论范围",
+          "en": "Describe conditions well enough to assess comparisons and scope"
+        }
+      },
+      {
+        "id": "discuss",
+        "category": {
+          "zh": "讨论与反馈",
+          "en": "Discuss"
+        },
+        "icon": "↗",
+        "title": {
+          "zh": "对齐下一次现场窗口",
+          "en": "Align the next field window"
+        },
+        "steps": [
+          {
+            "zh": "整理真实物候、已定任务与所需资源",
+            "en": "Summarize phenology, scheduled tasks and resources"
+          },
+          {
+            "zh": "列出样本、设备或交接中待确认的事项",
+            "en": "List sampling, equipment or handover decisions"
+          },
+          {
+            "zh": "保留可独立完成的整理任务作为衔接",
+            "en": "Keep an independent documentation task available"
+          }
+        ],
+        "output": {
+          "zh": "窗口准备与交接清单",
+          "en": "A window-preparation and handover checklist"
+        },
+        "check": {
+          "zh": "准备清单不替代实际预约或现场判断",
+          "en": "A preparation list does not replace bookings or field judgment"
+        }
+      }
+    ],
+    "medicine": [
+      {
+        "id": "read",
+        "category": {
+          "zh": "文献阅读",
+          "en": "Read literature"
+        },
+        "icon": "▤",
+        "title": {
+          "zh": "读清研究设计与结局",
+          "en": "Read the design and outcomes"
+        },
+        "steps": [
+          {
+            "zh": "提取研究人群或样本、设计、暴露和结局",
+            "en": "Extract population or samples, design, exposures and outcomes"
+          },
+          {
+            "zh": "核对纳排、观察期、对照及主要分析",
+            "en": "Check eligibility, follow-up, controls and primary analyses"
+          },
+          {
+            "zh": "记录偏倚、适用范围与和本项目的差异",
+            "en": "Record bias concerns, applicability and project differences"
+          }
+        ],
+        "output": {
+          "zh": "设计—结局—局限文献卡",
+          "en": "A design, outcome and limitations card"
+        },
+        "check": {
+          "zh": "研究证据整理不直接转成诊疗结论",
+          "en": "Keep evidence organization distinct from clinical decisions"
+        }
+      },
+      {
+        "id": "visualize",
+        "category": {
+          "zh": "画图与表达",
+          "en": "Make figures"
+        },
+        "icon": "◇",
+        "title": {
+          "zh": "画清流程与研究结果",
+          "en": "Visualize study flow and results"
+        },
+        "steps": [
+          {
+            "zh": "确定展示病例流程、时间窗、样本关系还是结果",
+            "en": "Choose case flow, time windows, sample relationships or results"
+          },
+          {
+            "zh": "用已有数据制作流程图、时间线或带区间的结果图",
+            "en": "Use existing data for a flowchart, timeline or result figure with intervals"
+          },
+          {
+            "zh": "核对分母、编号、单位、时间起点和图注",
+            "en": "Check denominators, identifiers, units, time origins and captions"
+          }
+        ],
+        "output": {
+          "zh": "病例或样本流程图、时间线或结果图",
+          "en": "A case or sample flowchart, timeline or result figure"
+        },
+        "check": {
+          "zh": "保持匿名化，图中数字能回查到分析记录",
+          "en": "Maintain de-identification and trace numbers to analysis records"
+        }
+      },
+      {
+        "id": "synthesize",
+        "category": {
+          "zh": "总结归纳",
+          "en": "Synthesize"
+        },
+        "icon": "≡",
+        "title": {
+          "zh": "整理证据与核查事项",
+          "en": "Summarize evidence and data queries"
+        },
+        "steps": [
+          {
+            "zh": "汇总定义已明确、数据已核查和仍有缺口的部分",
+            "en": "Summarize resolved definitions, checked data and remaining gaps"
+          },
+          {
+            "zh": "对照主要发现、偏倚与替代解释",
+            "en": "Compare main findings, bias concerns and alternatives"
+          },
+          {
+            "zh": "生成下一轮资料核查或写作的具体问题",
+            "en": "List specific queries or writing questions for the next round"
+          }
+        ],
+        "output": {
+          "zh": "研究备忘录与待核查表",
+          "en": "A research memo and query list"
+        },
+        "check": {
+          "zh": "明确哪些已核实、哪些仍待确认",
+          "en": "Distinguish verified items from open queries"
+        }
+      },
+      {
+        "id": "think",
+        "category": {
+          "zh": "思考问题",
+          "en": "Think through questions"
+        },
+        "icon": "◉",
+        "title": {
+          "zh": "想清时间顺序与解释边界",
+          "en": "Think through temporal order and interpretation"
+        },
+        "steps": [
+          {
+            "zh": "画出暴露、索引日期、检测或随访与结局的顺序",
+            "en": "Map exposure, index date, measurement or follow-up and outcome order"
+          },
+          {
+            "zh": "列出选择、测量、批次或混杂的可能影响",
+            "en": "List possible selection, measurement, batch or confounding effects"
+          },
+          {
+            "zh": "选择已有资料能支持的一项核查",
+            "en": "Choose one check supported by existing evidence"
+          }
+        ],
+        "output": {
+          "zh": "时间关系图与解释问题清单",
+          "en": "A temporal map and interpretation questions"
+        },
+        "check": {
+          "zh": "不以未经核实的研究推断改变诊疗或实验方案",
+          "en": "Keep unverified research inferences separate from care or protocol changes"
+        }
+      },
+      {
+        "id": "reproduce",
+        "category": {
+          "zh": "论文复现",
+          "en": "Reproduce a paper"
+        },
+        "icon": "↻",
+        "title": {
+          "zh": "复现一个研究结果或分析步骤",
+          "en": "Reproduce a research result or analysis step"
+        },
+        "steps": [
+          {
+            "zh": "定位论文定义、处理规则、代码及可用公开资料",
+            "en": "Locate definitions, processing rules, code and available public material"
+          },
+          {
+            "zh": "在有权使用的数据上重做一个统计、图表或预处理步骤",
+            "en": "Repeat a statistic, figure or preprocessing step using authorized data"
+          },
+          {
+            "zh": "比较样本量、时间定义和结果，记录差异",
+            "en": "Compare sample counts, temporal definitions and results; document differences"
+          }
+        ],
+        "output": {
+          "zh": "复现记录、结果对照与差异说明",
+          "en": "A reproduction log, comparison and discrepancy notes"
+        },
+        "check": {
+          "zh": "不把无法获得的数据或参数假定为已知",
+          "en": "Keep unavailable data and parameters explicitly unresolved"
+        }
+      },
+      {
+        "id": "experiment",
+        "category": {
+          "zh": "实验与试做",
+          "en": "Experiment or pilot"
+        },
+        "icon": "⚗",
+        "title": {
+          "zh": "推进已定研究操作与记录",
+          "en": "Advance established research procedures and records"
+        },
+        "steps": [
+          {
+            "zh": "区分临床资料整理与实验室任务，核对对应方案和权限",
+            "en": "Distinguish clinical-record work from lab tasks and check the relevant plan and access"
+          },
+          {
+            "zh": "按既定安排处理研究记录或开展已批准实验，保留编号、批次和原始记录",
+            "en": "Follow the schedule for records or approved experiments and retain identifiers, batches and raw records"
+          },
+          {
+            "zh": "整理缺项、异常、对照和交接事项",
+            "en": "Organize missing items, anomalies, controls and handover notes"
+          }
+        ],
+        "output": {
+          "zh": "研究日志、样本或病例核查表",
+          "en": "A research log and sample or case checklist"
+        },
+        "check": {
+          "zh": "诊疗、照护、连续实验与随访按实际既定方案执行",
+          "en": "Follow established care, continuous-experiment and follow-up commitments"
+        }
+      },
+      {
+        "id": "code",
+        "category": {
+          "zh": "代码与工具",
+          "en": "Code and tools"
+        },
+        "icon": "⌘",
+        "title": {
+          "zh": "调试变量构建与分析流程",
+          "en": "Debug variable construction and analysis"
+        },
+        "steps": [
+          {
+            "zh": "使用脱敏或合成小样例核对病例、样本和日期键",
+            "en": "Use de-identified or synthetic examples to check case, sample and date keys"
+          },
+          {
+            "zh": "检查单位、时间窗、缺失标记、排除规则和数据划分",
+            "en": "Inspect units, windows, missingness, exclusions and data splits"
+          },
+          {
+            "zh": "核对流程计数与结果，保存代码版本及检查日志",
+            "en": "Verify flow counts and results; save code versions and check logs"
+          }
+        ],
+        "output": {
+          "zh": "分析脚本、流程计数与检查日志",
+          "en": "An analysis script, flow counts and check log"
+        },
+        "check": {
+          "zh": "避免编号错配、时间穿越或数据泄漏",
+          "en": "Check identifier mismatches, temporal leakage and data leakage"
+        }
+      },
+      {
+        "id": "write",
+        "category": {
+          "zh": "论文写作",
+          "en": "Write"
+        },
+        "icon": "✎",
+        "title": {
+          "zh": "写清设计、发现与局限",
+          "en": "Write the design, findings and limits"
+        },
+        "steps": [
+          {
+            "zh": "选定一项发现，明确对应人群或样本与分析",
+            "en": "Choose a finding and specify its population or samples and analysis"
+          },
+          {
+            "zh": "对齐正文、表图、结局定义和数值",
+            "en": "Align prose, tables, figures, outcome definitions and numbers"
+          },
+          {
+            "zh": "说明研究设计能支持的解释范围及局限",
+            "en": "State the interpretation and limits supported by the design"
+          }
+        ],
+        "output": {
+          "zh": "可核查的结果或讨论段落",
+          "en": "An inspectable results or discussion passage"
+        },
+        "check": {
+          "zh": "结论强度与证据相称，术语和数字一致",
+          "en": "Match claims to evidence and keep terminology and numbers consistent"
+        }
+      },
+      {
+        "id": "discuss",
+        "category": {
+          "zh": "讨论与反馈",
+          "en": "Discuss"
+        },
+        "icon": "↗",
+        "title": {
+          "zh": "带着具体研究疑点交流",
+          "en": "Discuss a precise research query"
+        },
+        "steps": [
+          {
+            "zh": "准备匿名化的问题说明与相关记录位置",
+            "en": "Prepare a de-identified query and relevant record locations"
+          },
+          {
+            "zh": "区分数据定义、分析方法和解释层面的疑点",
+            "en": "Separate definition, analysis and interpretation questions"
+          },
+          {
+            "zh": "记录需要确认的判断和可继续推进的工作",
+            "en": "Record decisions to confirm and work that can continue"
+          }
+        ],
+        "output": {
+          "zh": "研究疑点与后续核查清单",
+          "en": "A research query and follow-up checklist"
+        },
+        "check": {
+          "zh": "交流材料只使用授权范围内的信息",
+          "en": "Use information within the authorized scope"
+        }
+      }
+    ]
+  }
+}

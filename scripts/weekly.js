@@ -8,6 +8,7 @@ import {instant,recommend,validateInput} from './core.js';
 import {validateReport} from './validate-report.js';
 import {baguaLibrary} from './bagua.js';
 import {buildResearchProfile,validateResearchProfile,validatePersonalizedReport,enrichTask,profileCatalog} from './research-profile.js';
+import {attachActivities,activityLibrary,buildWeekFocus,validateActivities,validateWeekFocus} from './research-activities.js';
 
 const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),'utf8'));
 const routines=read('../data/research-routines.json'),holidays=read('../data/holidays-cn-2026.json');
@@ -117,9 +118,12 @@ export function weekly(input){
    rhythm:{id:'general-'+d.date,date:d.date,...structuredClone(p.rhythm)},
    classic:{...structuredClone(trigram),source:baguaLibrary.source,reflection:p.hint,selection:'workflow-theme'}});
  }
- const disciplines=routines.disciplines.map(s=>({id:s.id,name:s.name,icon:s.icon,color:s.color,scope:s.scope,goal:s.goal,
-  week:days.map(d=>enrichTask(s.tasks[d.phase],d.phase)),
-  rhythms:days.map(d=>({id:s.id+'-'+d.date,date:d.date,...structuredClone(s.rhythms[d.phase])}))}));
+ const disciplines=routines.disciplines.map(s=>{
+  const week=days.map(d=>attachActivities(enrichTask(s.tasks[d.phase],d.phase),{day:d,group:s.id}));
+  return {id:s.id,name:s.name,icon:s.icon,color:s.color,scope:s.scope,goal:s.goal,week,
+   activity_library:activityLibrary(s.id),week_focus:buildWeekFocus({days,tracks:[{name:s.name,week}],goal:s.goal,question:bilingual('本周哪项工作最能推动当前问题？','Which task would most advance the current question?')}),
+   rhythms:days.map(d=>({id:s.id+'-'+d.date,date:d.date,...structuredClone(s.rhythms[d.phase])}))};
+ });
  const availability=input.availability!==undefined?input.availability.map(interval):days.filter(d=>d.working).flatMap(d=>{
   const x=DateTime.fromISO(d.date,{zone});return [[+x.set({hour:9}),+x.set({hour:12})],[+x.set({hour:14}),+x.set({hour:17})]];
  });
@@ -168,6 +172,7 @@ export function weekly(input){
  const report={schema_version:'weekly-1.0',mode:'weekly',run_id:randomUUID(),generated_at:now.toUTC().toISO(),version,timezone:zone,
   week_start:start.toISODate(),week_end:end.minus({days:1}).toISODate(),title:input.title??'',discipline:input.discipline??'all',language:input.preferences?.language??'zh',
   calendar_status:calendar?'available':'unavailable_for_timezone',days,disciplines,schedule:plan.scheduled,unscheduled:plan.unscheduled,fixed_events:structuredClone(fixed),sources,assumptions,submission,
+  week_focus:buildWeekFocus({days,tracks:disciplines,goal:bilingual('选一个主要问题，把阅读、推进、表达和复盘连成一周。','Choose one main question and connect reading, progress, communication and reflection across the week.'),question:bilingual('选择哪个方向作为这周的主要工作线？','Which research area will be the main focus this week?')}),
   ...(personalization?{personalization}:{})};
  validateWeeklyReport(report);return report;
 }
@@ -198,13 +203,17 @@ export function validateWeeklyReport(r){
  if(r.discipline!=='all'&&!ids.includes(r.discipline))throw Error('Unknown selected discipline');
  for(const s of r.disciplines){
   if(!bi(s.scope)||!bi(s.goal)||!text(s.color)||!text(s.icon))throw Error('Invalid discipline content');
+  if(s.activity_library)validateActivities(s.activity_library,{library:true});
+  validateWeekFocus(s.week_focus,r.days);
   s.week.forEach((task,i)=>{
    if(!['title','action','output'].every(k=>bi(task?.[k])))throw Error('Invalid discipline task');
    if(task.steps&&(!Array.isArray(task.steps)||task.steps.length<2||!task.steps.every(bi)||!['checkpoint','minimum','blocked','extension','effort'].every(k=>bi(task[k]))))throw Error('Invalid detailed discipline task');
+   if(task.operations){validateActivities(task.operations);if(task.operations.some(a=>a.optional!==!r.days[i].working))throw Error('Invalid research activity workload');}
    rhythm(s.rhythms[i],r.days[i].date,s.id+'-'+r.days[i].date);
   });
  }
  validatePersonalizedReport(r.personalization,r.days);
+ validateWeekFocus(r.week_focus,r.days);
  const scheduled=[...r.schedule].sort((a,b)=>ms(a.start)-ms(b.start));
  if(new Set(scheduled.map(t=>t.id)).size!==scheduled.length)throw Error('Duplicate scheduled task');
  for(const [i,t] of scheduled.entries()){

@@ -1,4 +1,5 @@
 import {readFileSync} from 'node:fs';
+import {attachActivities,activityLibrary,buildWeekFocus,validateActivities,validateWeekFocus} from './research-activities.js';
 
 export const profileCatalog=JSON.parse(readFileSync(new URL('../data/research-profiles.json',import.meta.url),'utf8'));
 const bi=(zh,en)=>({zh,en});
@@ -83,7 +84,7 @@ export function buildResearchProfile(input,days){
   material:bi('已提供的研究资料与任务','Supplied research materials and tasks'),action:stage.action,output:stage.output,check:stage.check}];
  const methods=(p.methods??[]).map(id=>find('methods',id));
  const week=days.map(day=>{
-  const tracks=workingFields.map(f=>fieldTask(f,stage,day)),methodCards=methods.map(m=>methodTask(m,stage,day));
+  const tracks=workingFields.map(f=>attachActivities(fieldTask(f,stage,day),{day,group:f.group,stage:stage.id,methods:methods.map(m=>m.id),context:f.material})),methodCards=methods.map(m=>methodTask(m,stage,day));
   const light=day.phase>=4&&day.phase<=6;
   const steps=[tracks[0].steps[0],methodCards[0]?.action??tracks[0].action,tracks[0].output];
   const rhythm={id:'profile-'+day.date,date:day.date};
@@ -98,7 +99,9 @@ export function buildResearchProfile(input,days){
  });
  return {catalog_version:profileCatalog.version,fields:fields.map(({id,name,category,group,origin})=>({id,name,category,group,origin})),
   methods:methods.map(({id,name})=>({id,name:clone(name)})),stage:{id:stage.id,name:clone(stage.name),origin:p.stage?'user':'general'},
-  degree:p.degree?clone(find('degrees',p.degree)):null,focus:p.focus??'',week};
+  degree:p.degree?clone(find('degrees',p.degree)):null,focus:p.focus??'',week,
+  activity_libraries:Object.fromEntries(workingFields.map(f=>[f.id,activityLibrary(f.group,{stage:stage.id})])),
+  week_focus:buildWeekFocus({days,tracks:workingFields.map((f,i)=>({name:f.name,week:week.map(d=>d.tracks[i])})),goal:stage.action,question:stage.check,userFocus:p.focus??''})};
 }
 
 export function validatePersonalizedReport(p,days){
@@ -111,6 +114,12 @@ export function validatePersonalizedReport(p,days){
  assert(new Set(p.fields.map(f=>f.id)).size===p.fields.length&&new Set(p.methods.map(m=>m.id)).size===p.methods.length);
  p.fields.forEach(f=>assert(isBi(f.name)&&groups.includes(f.group)&&find('categories',f.category)));
  p.methods.forEach(m=>assert(isBi(m.name)&&typeof m.id==='string'));
+ validateWeekFocus(p.week_focus,days);
+ if(p.activity_libraries){
+  assert(typeof p.activity_libraries==='object'&&!Array.isArray(p.activity_libraries));
+  assert(JSON.stringify(Object.keys(p.activity_libraries).sort())===JSON.stringify((p.fields.length?p.fields.map(f=>f.id):['general']).sort()));
+  Object.values(p.activity_libraries).forEach(items=>validateActivities(items,{library:true}));
+ }
  p.week.forEach((d,i)=>{
   assert(d.date===days[i].date&&d.phase===days[i].phase&&d.light===(d.phase>=4&&d.phase<=6)&&isBi(d.title)&&isBi(d.stage_focus)&&isBi(d.stage_checkpoint));
   assert(d.tracks?.length===(p.fields.length||1)&&d.methods?.length===p.methods.length);
@@ -118,6 +127,7 @@ export function validatePersonalizedReport(p,days){
   d.tracks.forEach((t,j)=>{
    assert(t.field_id===(p.fields[j]?.id??'general')&&groups.includes(t.group));
    assert(['name','title','action','output','checkpoint','minimum','blocked','extension','effort'].every(k=>isBi(t[k]))&&t.steps?.length>=2&&t.steps.every(isBi));
+   if(t.operations){validateActivities(t.operations);assert(t.operations.every(a=>a.optional===d.light));}
   });
   d.methods.forEach((m,j)=>assert(m.id===p.methods[j].id&&['name','action','output','checkpoint'].every(k=>isBi(m[k]))));
   assert(d.rhythm?.date===d.date&&d.rhythm.id==='profile-'+d.date);
